@@ -5,6 +5,8 @@ Start featurecloud controller on this directory.
 Build the image.
 ```featurecloud app build . featurecloud.ai/fc_multiple_factor_analysis```
 
+We are currently editing the config file in the root directory.
+
 Then execute the tests in either the featurecloud website or through the terminal command.
 Please see this link for more reference https://github.com/FeatureCloud/fc-flimma
 

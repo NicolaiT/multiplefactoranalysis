@@ -156,6 +156,8 @@ class AggregateStdState(AppState):
         self.broadcast_data(out)
         return 'apply_scaling'
 
+
+
 @app_state('start_power_iteration', Role.BOTH)
 class PowerIterationStartState(AppState):
     def register(self):
@@ -196,7 +198,7 @@ class PowerIterationStartState(AppState):
 class ScaleDataState(AppState):
 
     def register(self):
-        self.register_transition('start_power_iteration', Role.BOTH)
+        self.register_transition('mfa_prerequisites', Role.BOTH)
 
 
     def run(self):
@@ -204,7 +206,25 @@ class ScaleDataState(AppState):
         incoming = self.await_data()
         self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable)
 
-        return 'start_power_iteration'
+        return 'mfa_prerequisites'
+
+@app_state('mfa_prerequisites', Role.BOTH)
+class MFAPrerequisites(AppState):
+    def register(self):
+        self.register_transition('run_pca', Role.BOTH)
+    
+    def run(self):
+        print('Calling prerequisites')
+        return 'run_pca'
+    
+@app_state('run_pca', Role.BOTH)
+class RunPCA(AppState):
+    def register(self):
+        self.register_transition('start_power_iteration', Role.BOTH)
+    
+    def run(self):
+        print('Starting pca')
+        return 'start_power_iteration' 
 
 
 @app_state('aggregate_h', Role.COORDINATOR)
@@ -230,8 +250,6 @@ class AggregateHState(AppState):
         out = self.load('svd').out
         self.broadcast_data(out)
         return 'compute_g_and_local_norm'
-
-
 
 
 @app_state('update_h', Role.BOTH)
@@ -459,7 +477,7 @@ class AggregateHAndFinishState(AppState):
 @app_state('get_h_and_finish', Role.BOTH)
 class NormalizeGState(AppState):
     def register(self):
-        self.register_transition('save_results', Role.BOTH)
+        self.register_transition('mfa_final', Role.BOTH) # save_results
         self.register_transition('share_projections', Role.COORDINATOR)
 
     def run(self):
@@ -475,14 +493,14 @@ class NormalizeGState(AppState):
         if config.send_projections and self.is_coordinator:
             return 'share_projections'
         else:
-            return 'save_results'
+            return 'mfa_final' # save_results
 
 
 
 @app_state('normalize_g', Role.BOTH)
 class NormalizeGState(AppState):
     def register(self):
-        self.register_transition('save_results', Role.BOTH)
+        self.register_transition('mfa_final', Role.BOTH) # save_results
         self.register_transition('share_projections', Role.COORDINATOR)
 
     def run(self):
@@ -498,13 +516,13 @@ class NormalizeGState(AppState):
         if config.send_projections and self.is_coordinator:
             return 'share_projections'
         else:
-            return 'save_results'
+            return 'mfa_final' # save_results
 
 
 @app_state('share_projections', Role.COORDINATOR)
 class ShareProjectionsState(AppState):
     def register(self):
-        self.register_transition('save_results', Role.COORDINATOR)
+        self.register_transition('mfa_final', Role.COORDINATOR) # save_results
 
 
     def run(self):
@@ -512,6 +530,15 @@ class ShareProjectionsState(AppState):
         self.load('svd').redistribute_projections(incoming)
         out = self.load('svd').out
         self.broadcast_data(out)
+        return 'mfa_final' # original: save_results
+
+@app_state('mfa_final', Role.BOTH)
+class MFAFinal(AppState):
+    def register(self):
+        self.register_transition('save_results')
+
+    def run(self):
+        print('MFA Final')
         return 'save_results'
 
 
