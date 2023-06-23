@@ -10,6 +10,13 @@ We are currently editing the config file in the root directory.
 Then execute the tests in either the featurecloud website or through the terminal command.
 Please see this link for more reference https://github.com/FeatureCloud/fc-flimma
 
+Guide
+https://medium.com/developing-federated-applications-in-featurecloud
+
+"Documentation"
+https://github.com/FeatureCloud/FeatureCloud/blob/master/FeatureCloud/app/engine/app.py
+
+
 # FeatureCloud Singular Value decomposition Application
 
 ## FeatureCloud
