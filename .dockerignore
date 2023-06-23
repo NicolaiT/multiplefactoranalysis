@@ -2,3 +2,6 @@ venv
 .idea
 .gitignore
 .gitattributes
+
+# We do not include the data itself for privacy reasons
+data/*
