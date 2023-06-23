@@ -49,8 +49,8 @@ class FCFederatedPCA:
     def copy_configuration(self, config):
         print('[STARTUP] Copy configuration and create dir')
         self.config_available = config.config_available
-        self.input_file = op.join(INPUT_DIR,config.input_dir, config.input_file)
-        os.makedirs(op.join(OUTPUT_DIR,config.output_dir), exist_ok=True)
+        self.input_file = op.join(INPUT_DIR, config.input_dir, config.input_file)
+        os.makedirs(op.join(OUTPUT_DIR, config.output_dir), exist_ok=True)
         self.left_eigenvector_file = op.join(OUTPUT_DIR,config.output_dir,  config.left_eigenvector_file)
         self.right_eigenvector_file = op.join(OUTPUT_DIR,config.output_dir, config.right_eigenvector_file)
         self.eigenvalue_file = op.join(OUTPUT_DIR,config.output_dir, config.eigenvalue_file)
@@ -261,7 +261,7 @@ class FCFederatedPCA:
 
 
     def compute_projections(self):
-        self.pca.projections = np.dot(self.tabdata.scaled, self.pca.G)
+        self.pca.projections = np.dot(self.tabdata.scaled.T, self.pca.H)
         print(self.pca.projections.shape)
         if self.subsample:
             cov = np.cov(self.pca.projections.T)

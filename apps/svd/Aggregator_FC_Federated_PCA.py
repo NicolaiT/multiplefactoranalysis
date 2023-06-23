@@ -28,14 +28,12 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
         -------
 
         '''
-        print("unifying rows")
         print(incoming)
         mysample_count = 0
         myintersect = set(incoming[0][COParams.ROW_NAMES.n])
-        print(f'intersect {myintersect}')
+
         nandict = {}
         for s in incoming:
-            print(f'Incoming {s}')
             for n, v in zip(s[COParams.ROW_NAMES.n], s[COParams.NAN.n]):
                 if n in nandict:
                     nandict[n] = nandict[n]+v
@@ -43,12 +41,10 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
                     nandict[n] = v
             myintersect = myintersect.intersection(set(s[COParams.ROW_NAMES.n]))
             mysample_count = s[COParams.SAMPLE_COUNT.n]+mysample_count
-        print(f'max nan fraction: {self.max_nan_fraction}')
+
         select = []
         for n in nandict:
-            print(f'n: {n}, nandict[n]: {nandict[n]}, mysample_count: {mysample_count}')
             fract = nandict[n]/mysample_count
-            print(f'fract {fract}')
             if fract<=self.max_nan_fraction:
                 select.append(n)
 

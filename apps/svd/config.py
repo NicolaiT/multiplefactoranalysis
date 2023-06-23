@@ -102,7 +102,7 @@ class FCConfig:
                     self.output_delimiter = parameter_list['output']['delimiter']
                 except KeyError:
                     print('YAML file does not follow specification: missing key: output delimiter')
-                    print('Setting default: eigenvalues.tsv')
+                    print('Setting default: tab')
                     self.output_delimiter = '\t'
 
                 try:
@@ -165,5 +165,5 @@ class FCConfig:
                 print('[API] /setup config file found ... parsing done')
 
         else:
-            print('[API] /setup no configuration file found')
+            print('[API] /setup NO CONFIGURATION FOUND')
             self.config_available = False

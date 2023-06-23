@@ -29,6 +29,8 @@ class InitialState(AppState):
     def register(self):
         self.register_transition('check_row_names', Role.COORDINATOR)
         self.register_transition('wait_for_params', Role.PARTICIPANT)
+        self.register_transition('terminal', Role.BOTH)
+
 
     def run(self):
         self.configure()
@@ -42,9 +44,13 @@ class InitialState(AppState):
         self.load('svd').copy_configuration(self.config)
         print('[STARTUP] Configuration copied')
 
+        if not self.config.config_available:
+            return 'terminal'
+
         # READ INPUT DATA
         self.load('svd').read_input_files()
         out = self.load('svd').out
+
 
         self.send_data_to_coordinator(out)
 
