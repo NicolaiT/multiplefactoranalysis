@@ -1,9 +1,9 @@
 bottle
 jsonpickle
 joblib
-numpy
+numpy~=1.20.0
 bios
 pydot
 pyyaml
-scipy
-pandas
+scipy~=1.8.1
+pandas~=1.4.4
