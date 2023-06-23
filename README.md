@@ -16,6 +16,12 @@ https://medium.com/developing-federated-applications-in-featurecloud
 "Documentation"
 https://github.com/FeatureCloud/FeatureCloud/blob/master/FeatureCloud/app/engine/app.py
 
+Compare the results in this article:
+https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-10-32
+
+Other references:
+https://personal.utdallas.edu/~herve/Abdi-MFA2007-pretty.pdf
+
 
 # FeatureCloud Singular Value decomposition Application
 
