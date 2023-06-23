@@ -1,3 +1,13 @@
+# FeatureCloud Multiple Factor Analysis 
+Start featurecloud controller on this directory.
+´´´featurecloud controller start´´´
+
+Build the image.
+´´´featurecloud app build . featurecloud.ai/fc_multiple_factor_analysis´´´
+
+Then execute the tests in either the featurecloud website or through the terminal command.
+Please see this link for more reference https://github.com/FeatureCloud/fc-flimma
+
 # FeatureCloud Singular Value decomposition Application
 
 ## FeatureCloud
