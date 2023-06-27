@@ -50,6 +50,11 @@ class FCFederatedPCA:
         print('[STARTUP] Copy configuration and create dir')
         self.config_available = config.config_available
         self.input_file = op.join(INPUT_DIR, config.input_dir, config.input_file)
+        
+        self.input_files = [op.join(INPUT_DIR, file) for file in os.listdir(INPUT_DIR) if file.startswith(config.input_files) and file.endswith(config.extension)]
+        print(f'TEST: {self.input_files}')
+
+        
         os.makedirs(op.join(OUTPUT_DIR, config.output_dir), exist_ok=True)
         self.left_eigenvector_file = op.join(OUTPUT_DIR,config.output_dir,  config.left_eigenvector_file)
         self.right_eigenvector_file = op.join(OUTPUT_DIR,config.output_dir, config.right_eigenvector_file)

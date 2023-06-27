@@ -12,6 +12,11 @@ class FCConfig:
 
         self.config_available = False
         self.input_file = None
+        
+        # test
+        self.input_files = None
+        self.extension = '.csv'
+        
         self.left_eigenvector_file = None
         self.right_eigenvector_file = None
         self.projection_file = None
@@ -24,15 +29,18 @@ class FCConfig:
         self.encryption = False
         self.use_smpc = False
         self.exponent = 3
-        self.send_projections=False
-        self.subsample = True
-
+        
         self.center = True
         self.unit_variance = True
         self.highly_variable = True
         self.perc_highly_var = 0.1
         self.log_transform = True
         self.max_nan_fraction = 0.5
+        
+        # hard coded
+        self.send_projections=False
+        self.subsample = True
+
 
     def parse_configuration(self):
         print('[API] /setup parsing parameter file ')
@@ -69,7 +77,28 @@ class FCConfig:
                 except KeyError:
                     print('YAML file does not follow specification: missing key .data. or .dir.')
                     raise KeyError
+                
+                # test
+                
+                try:
+                    self.input_files = parameter_list['input']['datas']
+                
+                except KeyError:
+                    print('YAML file does not follow specification: missing key .datas.')
+                    raise KeyError
+                
+                try:
+                    self.extension = parameter_list['input']['extension']
+                
+                except KeyError:
+                    print(f'Using default extension {self.extension}.')
 
+                
+            
+            
+            
+            
+            
                 try:
                     self.sep = parameter_list['input']['delimiter']
                 except KeyError:
@@ -150,17 +179,17 @@ class FCConfig:
                 except KeyError:
                     print('Scaling functionalities not specified.')
 
-                try:
-                    self.send_projections = parameter_list['privacy']['send_projections']
-                    self.subsample = parameter_list['privacy']['subsample_projections']
-                    #self.use_smpc = parameter_list['privacy']['use_smpc']
-                    #self.exponent = parameter_list['privacy']['exponent']
-                    self.use_smpc=False
-                    self.exponent = 3
+                # try:
+                #     self.send_projections = parameter_list['privacy']['send_projections']
+                #     self.subsample = parameter_list['privacy']['subsample_projections']
+                #     #self.use_smpc = parameter_list['privacy']['use_smpc']
+                #     #self.exponent = parameter_list['privacy']['exponent']
+                #     self.use_smpc=False
+                #     self.exponent = 3
 
-                except KeyError:
-                    print('YAML file does not follow specification: privacy settings')
-                    raise KeyError
+                # except KeyError:
+                #     print('YAML file does not follow specification: privacy settings')
+                #     raise KeyError
 
                 print('[API] /setup config file found ... parsing done')
 

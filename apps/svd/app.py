@@ -31,7 +31,6 @@ class InitialState(AppState):
         self.register_transition('wait_for_params', Role.PARTICIPANT)
         self.register_transition('terminal', Role.BOTH)
 
-
     def run(self):
         self.configure()
         print('[STARTUP] Instantiate SVD')
@@ -156,8 +155,6 @@ class AggregateStdState(AppState):
         self.broadcast_data(out)
         return 'apply_scaling'
 
-
-
 @app_state('start_power_iteration', Role.BOTH)
 class PowerIterationStartState(AppState):
     def register(self):
@@ -211,21 +208,58 @@ class ScaleDataState(AppState):
 @app_state('mfa_prerequisites', Role.BOTH)
 class MFAPrerequisites(AppState):
     def register(self):
-        self.register_transition('run_pca', Role.BOTH)
+        self.register_transition('seperate_pca', Role.BOTH)
     
     def run(self):
+        self.store(key='seperate_pca_counter', value=0)
         print('Calling prerequisites')
-        return 'run_pca'
+        return 'seperate_pca'
     
-@app_state('run_pca', Role.BOTH)
-class RunPCA(AppState):
+@app_state('seperate_pca', Role.BOTH)
+class SeperatePCA(AppState):
+    def register(self):
+        self.register_transition('init_pca', Role.BOTH)
+        self.register_transition('concat', Role.BOTH)
+    
+    def run(self):
+        counter = self.load(key='seperate_pca_counter')
+        if counter == 0: # remember to check for number of omics here
+            print('Starting concat')
+            return 'concat'
+        else:
+            print('Init pca')
+            self.store(key='pca_flag', value='s_flag')
+            counter += 1
+            self.store(key='seperate_pca_counter', value=counter)
+            return 'init_pca' 
+        
+@app_state('init_pca', Role.BOTH)
+class InitPCA(AppState):
     def register(self):
         self.register_transition('start_power_iteration', Role.BOTH)
     
     def run(self):
-        print('Starting pca')
-        return 'start_power_iteration' 
+        print('Starting PCA')
+        return 'start_power_iteration'
 
+@app_state('concat', Role.BOTH)
+class Concat(AppState):
+    def register(self):
+        self.register_transition('global_pca', Role.BOTH)
+    
+    def run(self):
+        print('Starting global PCA')
+        return 'global_pca'
+    
+@app_state('global_pca', Role.BOTH)
+class GlobalPCA(AppState):
+    def register(self):
+        self.register_transition('init_pca', Role.BOTH)
+    
+    def run(self):
+        print('init PCA')
+        self.store(key='pca_flag', value='g_flag')
+        return 'init_pca'
 
 @app_state('aggregate_h', Role.COORDINATOR)
 class AggregateHState(AppState):
@@ -522,7 +556,7 @@ class NormalizeGState(AppState):
 @app_state('share_projections', Role.COORDINATOR)
 class ShareProjectionsState(AppState):
     def register(self):
-        self.register_transition('mfa_final', Role.COORDINATOR) # save_results
+        self.register_transition('factor_analysis', Role.COORDINATOR) # save_results
 
 
     def run(self):
@@ -530,7 +564,17 @@ class ShareProjectionsState(AppState):
         self.load('svd').redistribute_projections(incoming)
         out = self.load('svd').out
         self.broadcast_data(out)
-        return 'mfa_final' # original: save_results
+        print('Starting factor analysis')
+        return 'factor_analysis' # original: save_results
+
+@app_state('factor_analysis', Role.BOTH)
+class FactorAnalysis(AppState):
+    def register(self):
+        self.register_transition('mfa_final')
+
+    def run(self):
+        print('Starting MFA final')
+        return 'mfa_final'
 
 @app_state('mfa_final', Role.BOTH)
 class MFAFinal(AppState):
@@ -538,7 +582,7 @@ class MFAFinal(AppState):
         self.register_transition('save_results')
 
     def run(self):
-        print('MFA Final')
+        print('Starting save results')
         return 'save_results'
 
 
