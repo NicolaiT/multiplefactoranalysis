@@ -223,3 +223,5 @@
 {"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_1_1687854317","time":"2023-06-27T08:26:18Z"}
 {"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_1_1687854317","time":"2023-06-27T08:26:18Z"}
 {"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_1_1687854317","time":"2023-06-27T08:26:18Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)","time":"2023-06-27T10:09:17Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)","time":"2023-06-27T10:21:34Z"}

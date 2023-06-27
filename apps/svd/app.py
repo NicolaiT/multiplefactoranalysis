@@ -4,7 +4,9 @@ from engine.app import AppState, app_state, Role
 
 from apps.svd.config import FCConfig
 from apps.svd.Aggregator_FC_Federated_PCA import AggregatorFCFederatedPCA
+from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
 from apps.svd.Client_FC_FederatedPCA import ClientFCFederatedPCA
+from apps.svd.Client_FC_FederatedMFA import ClientFCFederatedMFA
 from apps.svd.Steps import Step
 from apps.svd.COParams import COParams
 
@@ -36,22 +38,22 @@ class InitialState(AppState):
         print('[STARTUP] Instantiate SVD')
         self.progress_increment = 1/(20+self.config.k*2)
         if self.is_coordinator:
-            self.store('svd' ,AggregatorFCFederatedPCA())
+            self.store('mfa', AggregatorFCFederatedMFA()) 
         else:
-            self.store('svd', ClientFCFederatedPCA())
-        self.load('svd').step = Step.LOAD_CONFIG
-        self.load('svd').copy_configuration(self.config)
+            self.store('mfa', ClientFCFederatedMFA()) 
+        # self.load('svd').step = Step.LOAD_CONFIG 
+        self.load('mfa').copy_configuration(self.config)
         print('[STARTUP] Configuration copied')
 
         if not self.config.config_available:
             return 'terminal'
 
         # READ INPUT DATA
-        self.load('svd').read_input_files()
-        out = self.load('svd').out
+        self.load('mfa').read_input_files() # [o1, o2, ... , on]
+        outs = self.load('mfa').outs # [out1, out2, ... , outn]
 
 
-        self.send_data_to_coordinator(out)
+        self.send_data_to_coordinator(outs) # send outs
 
         if self.is_coordinator:
             return 'check_row_names'
@@ -71,11 +73,11 @@ class CheckRowNames(AppState):
 
     def run(self):
         print('gathering')
-        incoming = self.gather_data()
+        incoming = self.gather_data()# recieve outs
         print('unifying row names')
-        self.load('svd').unify_row_names(incoming)
-        out = self.load('svd').out
-        self.broadcast_data(out)
+        self.load('mfa').unify_row_names(incoming)
+        outs = self.load('mfa').outs 
+        self.broadcast_data(outs)
         return 'wait_for_params'
 
 
@@ -93,19 +95,19 @@ class WaitForParamsState(AppState):
         self.register_transition('start_power_iteration', Role.BOTH)
 
     def run(self):
-        incoming = self.await_data(is_json=False)
+        incoming = self.await_data(is_json=False) # recieving outs
         print('setting parameters')
-        self.load('svd').set_parameters(incoming)
-        self.load('svd').select_rows(incoming)
-        config = self.load('configuration')
+        self.load('mfa').set_parameters(incoming) 
+        self.load('mfa').select_rows(incoming) 
+        # config = self.load('configuration') # not needed?
         #if not config.center:
         #    return 'start_power_iteration'
 
 
 
-        self.load('svd').compute_sums()
-        out = self.load('svd').out
-        self.send_data_to_coordinator(out)
+        self.load('mfa').compute_sums() 
+        outs = self.load('mfa').outs 
+        self.send_data_to_coordinator(outs)
         if self.is_coordinator:
             return 'aggregate_sums'
         else:
@@ -118,11 +120,11 @@ class AggregateSummaryStatsState(AppState):
         self.register_transition('compute_std', Role.COORDINATOR)
 
     def run(self):
-        incoming = self.gather_data()
+        incoming = self.gather_data() # recieves outs
         print('setting parameters')
-        self.load('svd').compute_means(incoming)
-        out = self.load('svd').out
-        self.broadcast_data(out)
+        self.load('mfa').compute_means(incoming)
+        outs = self.load('mfa').outs 
+        self.broadcast_data(outs) 
         return 'compute_std'
 
 
@@ -133,10 +135,10 @@ class ComputeSummaryStatsState(AppState):
         self.register_transition('apply_scaling', Role.PARTICIPANT)
 
     def run(self):
-        incoming = self.await_data()
-        self.load('svd').compute_sum_of_squares(incoming)
-        out = self.load('svd').out
-        self.send_data_to_coordinator(out)
+        incoming = self.await_data() # recieves outs
+        self.load('mfa').compute_sum_of_squares(incoming) 
+        outs = self.load('mfa').outs
+        self.send_data_to_coordinator(outs) 
         if self.is_coordinator:
             return 'aggregate_stds'
         else:
@@ -148,13 +150,75 @@ class AggregateStdState(AppState):
         self.register_transition('apply_scaling', Role.COORDINATOR)
 
     def run(self):
-        incoming = self.gather_data()
+        incoming = self.gather_data() # recieves outs
         print('setting parameters')
-        self.load('svd').compute_std(incoming)
-        out = self.load('svd').out
-        self.broadcast_data(out)
+        self.load('mfa').compute_std(incoming) 
+        outs = self.load('mfa').outs
+        self.broadcast_data(outs) 
         return 'apply_scaling'
 
+@app_state('apply_scaling', Role.BOTH)
+class ScaleDataState(AppState):
+
+    def register(self):
+        self.register_transition('mfa_prerequisites', Role.BOTH)
+
+
+    def run(self):
+        config = self.load('configuration')
+        incoming = self.await_data() # outs
+        self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable) # mfa
+
+        return 'mfa_prerequisites'
+
+@app_state('mfa_prerequisites', Role.BOTH)
+class MFAPrerequisites(AppState):
+    def register(self):
+        self.register_transition('seperate_pca', Role.BOTH)
+    
+    def run(self):
+        self.store(key='seperate_pca_counter', value=0)
+        print('Calling prerequisites')
+        return 'seperate_pca'
+    
+@app_state('seperate_pca', Role.BOTH)
+class SeperatePCA(AppState):
+    def register(self):
+        self.register_transition('init_pca', Role.BOTH)
+        self.register_transition('concat', Role.BOTH)
+    
+    def run(self):
+        counter = self.load(key='seperate_pca_counter')
+        n_omics = len(self.load(key='mfa').tabdatas)
+        if counter == n_omics: # remember to check for number of omics here
+            print('Starting concat')
+            return 'concat'
+        else:
+            print('Init pca')
+            self.store(key='pca_flag', value='s_flag')
+            self.store(key='data', value=self.load('mfa').get_omics_data(counter))
+            counter += 1
+            self.store(key='seperate_pca_counter', value=counter)
+            return 'init_pca' 
+        
+@app_state('init_pca', Role.BOTH)
+class InitPCA(AppState):
+    def register(self):
+        self.register_transition('start_power_iteration', Role.BOTH)
+    
+    def run(self):
+        print('Starting PCA')
+        if self.is_coordinator:
+            self.store('svd', AggregatorFCFederatedPCA()) #mfa
+        else:
+            self.store('svd', ClientFCFederatedPCA()) #mfa
+        
+        config = self.load('mfa').get_configuration()
+        self.load('svd').set_configuration(config)
+        data = self.load('data')
+        self.load('svd')
+        return 'start_power_iteration'
+    
 @app_state('start_power_iteration', Role.BOTH)
 class PowerIterationStartState(AppState):
     def register(self):
@@ -189,58 +253,6 @@ class PowerIterationStartState(AppState):
                 return 'aggregate_h'
             else:
                 return 'update_h'
-
-
-@app_state('apply_scaling', Role.BOTH)
-class ScaleDataState(AppState):
-
-    def register(self):
-        self.register_transition('mfa_prerequisites', Role.BOTH)
-
-
-    def run(self):
-        config = self.load('configuration')
-        incoming = self.await_data()
-        self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable)
-
-        return 'mfa_prerequisites'
-
-@app_state('mfa_prerequisites', Role.BOTH)
-class MFAPrerequisites(AppState):
-    def register(self):
-        self.register_transition('seperate_pca', Role.BOTH)
-    
-    def run(self):
-        self.store(key='seperate_pca_counter', value=0)
-        print('Calling prerequisites')
-        return 'seperate_pca'
-    
-@app_state('seperate_pca', Role.BOTH)
-class SeperatePCA(AppState):
-    def register(self):
-        self.register_transition('init_pca', Role.BOTH)
-        self.register_transition('concat', Role.BOTH)
-    
-    def run(self):
-        counter = self.load(key='seperate_pca_counter')
-        if counter == 0: # remember to check for number of omics here
-            print('Starting concat')
-            return 'concat'
-        else:
-            print('Init pca')
-            self.store(key='pca_flag', value='s_flag')
-            counter += 1
-            self.store(key='seperate_pca_counter', value=counter)
-            return 'init_pca' 
-        
-@app_state('init_pca', Role.BOTH)
-class InitPCA(AppState):
-    def register(self):
-        self.register_transition('start_power_iteration', Role.BOTH)
-    
-    def run(self):
-        print('Starting PCA')
-        return 'start_power_iteration'
 
 @app_state('concat', Role.BOTH)
 class Concat(AppState):

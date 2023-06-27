@@ -44,7 +44,25 @@ class FCFederatedPCA:
         self.std = None
 
         self.total_sampels = 0
-
+        
+    def set_configuration(self, config):
+        self.exponent = config['exponent']
+        self.sep = config['sep']
+        self.has_rownames = config['has_rownames']
+        self.has_colnames = config['has_colnames']
+        self.subsample = config['subsample']
+        self.center = config['center']
+        self.unit_variance = config['unit_variance']
+        self.highly_variable = config['highly_variable']
+        self.perc_highly_var = config['perc_highly_var']
+        self.log_transform = config['log_transform']
+        self.max_nan_fraction = config['max_nan_fraction']
+        
+    def set_data(self, data):
+        self.k = data['k']
+        self.k2 = data['k2']
+        self.tabdata = data['tabdata']
+        
 
     def copy_configuration(self, config):
         print('[STARTUP] Copy configuration and create dir')
@@ -52,7 +70,7 @@ class FCFederatedPCA:
         self.input_file = op.join(INPUT_DIR, config.input_dir, config.input_file)
         
         self.input_files = [op.join(INPUT_DIR, file) for file in os.listdir(INPUT_DIR) if file.startswith(config.input_files) and file.endswith(config.extension)]
-        print(f'TEST: {self.input_files}')
+        print(self.input_files)
 
         
         os.makedirs(op.join(OUTPUT_DIR, config.output_dir), exist_ok=True)
