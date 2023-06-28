@@ -1,0 +1,57 @@
+2023-06-28 13:03:08,773 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 13:03:08,775 INFO supervisord started with pid 7
+2023-06-28 13:03:09,778 INFO spawned: 'nginx' with pid 10
+2023-06-28 13:03:09,780 INFO spawned: 'app' with pid 11
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 55
+    self.outs = [])
+                  ^
+SyntaxError: unmatched ')'
+2023-06-28 13:03:10,651 INFO exited: app (exit status 1; not expected)
+2023-06-28 13:03:11,652 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 13:03:11,655 INFO spawned: 'app' with pid 47
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 55
+    self.outs = [])
+                  ^
+SyntaxError: unmatched ')'
+2023-06-28 13:03:12,506 INFO exited: app (exit status 1; not expected)
+2023-06-28 13:03:14,509 INFO spawned: 'app' with pid 71
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 55
+    self.outs = [])
+                  ^
+SyntaxError: unmatched ')'
+2023-06-28 13:03:15,159 INFO exited: app (exit status 1; not expected)
+2023-06-28 13:03:18,164 INFO spawned: 'app' with pid 95
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 55
+    self.outs = [])
+                  ^
+SyntaxError: unmatched ')'
+2023-06-28 13:03:18,588 INFO exited: app (exit status 1; not expected)
+2023-06-28 13:03:19,589 INFO gave up: app entered FATAL state, too many start retries too quickly

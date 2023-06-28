@@ -19,10 +19,51 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
         FCFederatedMFA.__init__(self)
         
     def convert_incoming(self, incomings):
-        incoming_omics = [[]] * len(incomings[0])
-        for idx in range(len(incoming_omics)):
-            for incoming in incomings:
+        
+        # how it is:
+        # INCOMINGS
+        # 2 clients, 3 omics
+        # [
+        # c[{o},{o},{o}],
+        # c[{o},{o},{o}],
+        # ]
+
+        # INCOMING OMICS
+        # 2 clients, 3 omics
+        # [
+        # [
+        # {}, {}, {}, {}, {}, {}
+        # ],
+        # [
+        # {}, {}, {}, {}, {}, {}
+        # ],
+        # [
+        # {}, {}, {}, {}, {}, {}
+        # ]
+        # ]
+
+
+        # how it should be
+        # INCOMING OMICS
+        # [[],[],[]] ->
+        # [[c1o1,c2o1],[c1o2,c2o2],[c1o3,c2o3]] ->
+
+        print("-----")
+        print("len(incomings)", len(incomings))
+        print("-----")
+        print("incomings", incomings)
+        incoming_omics = [[]] * len(incomings[0]) # [[],[],[]]
+        for idx in range(len(incoming_omics)): # 3 if 3 omics
+            for incoming in incomings: # 2 if 2 clients
                 incoming_omics[idx].append(incoming[idx])
+        print("-----")
+        print("len(incoming_omics)", len(incoming_omics))
+        print("-----")
+        print("incoming_omics", incoming_omics)
+        print("-----")
+        print("len(incoming_omics)", len(incoming_omics))
+        print("len(incoming_omics[0])", len(incoming_omics[0]))
+        return 1
         return incoming_omics
         
     def unify_row_names(self, incomings):
@@ -40,8 +81,6 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
         '''
         incoming_omics = self.convert_incoming(incomings)
         self.outs = []
-        print("incoming_omics")
-        print(incoming_omics)
         for idx, incoming in enumerate(incoming_omics):
             print(incoming)
             mysample_count = 0
@@ -67,7 +106,7 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             myintersect = myintersect.intersection(set(select))
             self.total_sampels.append(mysample_count)
             print("idx", idx)
-            print("incomings len", len(incomings))
+            print("incoming len", len(incoming))
             print("self.k len", len(self.k))
             self.outs[idx] = {COParams.PCS.n: self.k[idx], COParams.SEND_PROJ: self.send_projections}
             newrownames = list(myintersect)
