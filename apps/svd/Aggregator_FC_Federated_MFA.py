@@ -18,6 +18,13 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
 
         FCFederatedMFA.__init__(self)
         
+    def convert_incoming(self, incomings):
+        incoming_omics = [[]] * len(incomings[0])
+        for idx in range(len(incoming_omics)):
+            for incoming in incomings:
+                incoming_omics[idx].append(incoming[idx])
+        return incoming_omics
+        
     def unify_row_names(self, incomings):
         '''
         Make sure the clients use a set of common row names.
@@ -31,7 +38,11 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
         -------
 
         '''
-        for idx, incoming in enumerate(incomings):
+        incoming_omics = self.convert_incoming(incomings)
+        self.outs = []
+        print("incoming_omics")
+        print(incoming_omics)
+        for idx, incoming in enumerate(incoming_omics):
             print(incoming)
             mysample_count = 0
             myintersect = set(incoming[0][COParams.ROW_NAMES.n])
@@ -55,7 +66,10 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             print(select)
             myintersect = myintersect.intersection(set(select))
             self.total_sampels.append(mysample_count)
-            self.outs[idx] = {COParams.PCS.n: self.k, COParams.SEND_PROJ: self.send_projections}
+            print("idx", idx)
+            print("incomings len", len(incomings))
+            print("self.k len", len(self.k))
+            self.outs[idx] = {COParams.PCS.n: self.k[idx], COParams.SEND_PROJ: self.send_projections}
             newrownames = list(myintersect)
             self.outs[idx][COParams.ROW_NAMES.n] = newrownames
 
@@ -68,7 +82,9 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             print('[API] [COORDINATOR] row names identified!')
     
     def compute_means(self, incomings):
-        for idx, incoming in enumerate(incomings):
+        incoming_omics = self.convert_incoming(incomings)
+        self.outs = []
+        for idx, incoming in enumerate(incoming_omics):
             print(incoming)
             my_sums = []
             my_samples = 0
@@ -88,7 +104,9 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             self.number_of_samples.append(my_samples)
     
     def compute_std(self, incomings):
-        for idx, incoming in enumerate(incomings):
+        incoming_omics = self.convert_incoming(incomings)
+        self.outs = []
+        for idx, incoming in enumerate(incoming_omics):
             my_ssq  = []
             for s in incoming:
                 print(s[COParams.SUM_OF_SQUARES.n])
@@ -97,7 +115,7 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             my_ssq = np.nansum(my_ssq, axis=0)
             print('COMPUTE STD')
             print(my_ssq)
-            val_per_row = [v-1 for v in self.values_per_row]
+            val_per_row = [v-1 for v in self.values_per_row[idx]]
             variances = my_ssq/(val_per_row)
             my_ssq = np.sqrt(variances)
             self.std.append(my_ssq)

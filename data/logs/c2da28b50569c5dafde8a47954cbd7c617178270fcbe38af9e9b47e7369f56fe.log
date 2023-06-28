@@ -1,0 +1,57 @@
+2023-06-28 08:37:01,324 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 08:37:01,326 INFO supervisord started with pid 7
+2023-06-28 08:37:02,328 INFO spawned: 'nginx' with pid 10
+2023-06-28 08:37:02,329 INFO spawned: 'app' with pid 11
+2023-06-28 08:37:03,358 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 08:37:03,358 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 28.06.23 08:37:05] [Level: info] id: 82813cd327b60c46
+[Time: 28.06.23 08:37:05] [Level: info] coordinator: False
+[Time: 28.06.23 08:37:05] [Level: info] clients: ['82813cd327b60c46', '190e36fbf9273912']
+[Time: 28.06.23 08:37:05] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+[STARTUP] Configuration copied
+Log Transform performed
+[[ 6.74542027e-02  1.81002875e-01  1.61967477e-01 ...  5.41621673e-02
+   2.44542698e-01 -2.60220260e-01]
+ [-4.61545797e-01 -1.99712471e-03  2.53967477e-01 ...  8.65162167e-01
+  -9.04573017e-02  1.22779740e-01]
+ [ 1.17454203e-01  1.64002875e-01 -1.81032523e-01 ...  1.16216733e-03
+   2.59542698e-01 -1.47220260e-01]
+ ...
+ [ 6.77109851e-01  5.27812409e-01  8.69196496e-01 ...  1.60968399e+00
+   4.71524132e-01  6.26844003e-01]
+ [-2.01389015e+00  7.88124088e-02  9.97196496e-01 ...  5.29683994e-01
+   6.37524132e-01  1.15884400e+00]
+ [-9.82890149e-01  4.64312409e-01  1.32619650e+00 ...  1.64683994e-01
+   2.29524132e-01  5.23344003e-01]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 9.41741748e-02  2.40012477e-01  2.16569689e-01 ...  7.60968214e-02
+   3.15615728e-01 -4.34832304e-01]
+ [-8.93104451e-01 -2.88412285e-03  3.26499931e-01 ...  8.99301072e-01
+  -1.36786728e-01  1.67074937e-01]
+ [ 1.60215706e-01  2.19094622e-01 -2.88121934e-01 ...  1.67567952e-03
+   3.32900030e-01 -2.29754931e-01]
+ ...
+ [ 7.45977189e-01  6.11467414e-01  9.02418238e-01 ...  1.38387512e+00
+   5.57311202e-01  7.02075918e-01]
+ [            nan  1.09444021e-01  9.97976281e-01 ...  6.13233648e-01
+   7.11516168e-01  1.11025900e+00]
+ [-5.86902895e+00  5.50223383e-01  1.21797297e+00 ...  2.19938570e-01
+   2.98100052e-01  6.07241769e-01]]
+[Time: 28.06.23 08:37:05] [Level: info] transition: wait_for_params
+[Time: 28.06.23 08:37:06] [Level: info] state: wait_for_params
+[CTRL] GET /data

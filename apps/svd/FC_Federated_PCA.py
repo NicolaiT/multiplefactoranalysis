@@ -62,7 +62,10 @@ class FCFederatedPCA:
         self.k = data['k']
         self.k2 = data['k2']
         self.tabdata = data['tabdata']
-        
+        self.std = data['std']
+        self.sos = data['sos']
+        self.variances = data['variances']
+        self.total_sampels = data['total_sampels']
 
     def copy_configuration(self, config):
         print('[STARTUP] Copy configuration and create dir')

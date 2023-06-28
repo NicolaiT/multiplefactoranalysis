@@ -1,0 +1,1385 @@
+2023-06-28 07:47:59,639 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 07:47:59,641 INFO supervisord started with pid 7
+2023-06-28 07:48:00,644 INFO spawned: 'nginx' with pid 10
+2023-06-28 07:48:00,646 INFO spawned: 'app' with pid 11
+2023-06-28 07:48:01,675 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 07:48:01,675 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 28.06.23 07:48:09] [Level: info] id: 4a1a279f70becdc0
+[Time: 28.06.23 07:48:09] [Level: info] coordinator: True
+[Time: 28.06.23 07:48:09] [Level: info] clients: ['4a1a279f70becdc0', '004f245664a6fb1a']
+[Time: 28.06.23 07:48:09] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+[STARTUP] Configuration copied
+Log Transform performed
+[[ 0.2305604   0.71134801  0.358525   ... -0.418475    0.02686903
+   0.43296748]
+ [ 0.7685604   0.49434801  0.623525   ...  0.158525    0.30886903
+   0.68796748]
+ [ 0.2005604   0.18034801  0.617525   ... -0.303475    0.14986903
+   0.50396748]
+ ...
+ [ 0.33603731  1.17897856  1.95058322 ...  1.26352924  1.74509741
+   0.99718212]
+ [ 0.13803731 -1.54702144 -0.67241678 ... -1.63047076 -4.82490259
+  -0.95181788]
+ [ 0.76753731  2.08097856 -0.60541678 ...  2.45852924  1.20309741
+   2.93318212]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 0.29931547  0.77513317  0.44204111 ... -0.78208688  0.03825218
+   0.51900587]
+ [ 0.82257549  0.57951617  0.6991296  ...  0.21228918  0.38832074
+   0.75528711]
+ [ 0.26370798  0.23921228  0.69378801 ... -0.52175296  0.20146954
+   0.58877337]
+ ...
+ [ 0.41796029  1.123652    1.56100015 ...  1.17857395  1.45685734
+   0.99796589]
+ [ 0.18654785         nan -1.61006665 ...         nan         nan
+  -4.37535846]
+ [ 0.82174067  1.62338864 -1.3415985  ...  1.79015866  1.13953329
+   1.97569699]]
+Log Transform performed
+[[ 0.2305604   0.71134801  0.358525   ... -0.418475    0.02686903
+   0.43296748]
+ [ 0.7685604   0.49434801  0.623525   ...  0.158525    0.30886903
+   0.68796748]
+ [ 0.2005604   0.18034801  0.617525   ... -0.303475    0.14986903
+   0.50396748]
+ ...
+ [ 0.33603731  1.17897856  1.95058322 ...  1.26352924  1.74509741
+   0.99718212]
+ [ 0.13803731 -1.54702144 -0.67241678 ... -1.63047076 -4.82490259
+  -0.95181788]
+ [ 0.76753731  2.08097856 -0.60541678 ...  2.45852924  1.20309741
+   2.93318212]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 0.29931547  0.77513317  0.44204111 ... -0.78208688  0.03825218
+   0.51900587]
+ [ 0.82257549  0.57951617  0.6991296  ...  0.21228918  0.38832074
+   0.75528711]
+ [ 0.26370798  0.23921228  0.69378801 ... -0.52175296  0.20146954
+   0.58877337]
+ ...
+ [ 0.41796029  1.123652    1.56100015 ...  1.17857395  1.45685734
+   0.99796589]
+ [ 0.18654785         nan -1.61006665 ...         nan         nan
+  -4.37535846]
+ [ 0.82174067  1.62338864 -1.3415985  ...  1.79015866  1.13953329
+   1.97569699]]
+[Time: 28.06.23 07:48:09] [Level: info] transition: check_row_names
+[Time: 28.06.23 07:48:10] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}]
+['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6', 'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8', 'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3', 'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1', 'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1', 'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1', 'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160', 'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R', 'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2', 'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1', 'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2', 'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560', 'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN', 'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52', 'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF', 'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1', 'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3', 'IGFBP3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A', 'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT', 'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2', 'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3', 'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2', 'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1', 'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1', 'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432', 'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1', 'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629', 'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1', 'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682', 'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ', 'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1', 'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B', 'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5', 'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7', 'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217', 'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30', 'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1', 'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7', 'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1', 'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN', 'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2', 'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963', 'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS', 'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A', 'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT', 'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1', 'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2', 'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3', 'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1', 'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1', 'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1', 'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK', 'ANK3', 'AI002301', 'NCF1', 'NY.SAR.48', 'AA598555', 'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187', 'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1', 'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19', 'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A', 'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20', 'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC', 'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC', 'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2', 'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG', 'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1', 'MGP']
+['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']
+[34, 34, 34, 24, 34, 20, 8, 24, 34, 8, 24, 28, 16, 34, 34, 28, 32, 28, 34, 26, 20, 16, 32, 30, 28, 0, 34, 34, 2, 24, 34, 12, 22, 34, 34, 32, 26, 30, 32, 34, 34, 26, 22, 34, 24, 26, 34, 34, 28, 20, 34, 16, 28, 26, 0, 16, 32, 32, 34, 22, 20, 2, 32, 34, 34, 6, 34, 32, 8, 14, 32, 26, 20, 34, 14, 0, 34, 34, 32, 28, 32, 32, 34, 34, 16, 6, 34, 34, 10, 24, 34, 4, 32, 32, 34, 8, 10, 34, 26, 34, 34, 34, 34, 34, 34, 34, 30, 8, 34, 34, 34, 28, 32, 32, 32, 22, 12, 34, 34, 32, 34, 34, 22, 34, 20, 20, 32, 30, 32, 34, 32, 30, 34, 34, 34, 24, 16, 20, 30, 34, 34, 34, 32, 34, 34, 20, 34, 32, 34, 18, 10, 34, 34, 34, 30, 4, 28, 4, 32, 18, 34, 34, 18, 32, 28, 34, 10, 26, 0, 30, 34, 32, 18, 30, 18, 32, 34, 10, 8, 32, 20, 34, 34, 32, 34, 12, 26, 34, 24, 34, 32, 16, 22, 24, 34, 34, 34, 8, 20, 34, 20, 22, 22, 14, 30, 28, 30, 32, 22, 28, 34, 18, 22, 32, 32, 34, 10, 34, 12, 14, 34, 32, 34, 34, 22, 34, 4, 34, 34, 34, 32, 34, 32, 34, 12, 32, 26, 34, 34, 34, 30, 34, 32, 32, 30, 32, 30, 32, 18, 32, 18, 32, 18, 28, 34, 34, 34, 10, 28, 34, 32, 34, 16, 32, 30, 34, 34, 22, 34, 34, 20, 8, 34, 32, 34, 26, 32, 22, 12, 34, 34, 2, 12, 34, 34, 34, 34, 30, 34, 32, 16, 18, 20, 32, 34, 32, 30, 28, 34, 34, 22, 34, 34, 34, 34, 32, 34, 32, 34, 34, 32, 30, 10, 2, 26, 32, 24, 10, 28, 26, 24, 30, 22, 34, 14, 18, 34, 2, 28, 24, 34, 34, 22, 34, 34, 34, 32, 28, 34, 16, 30, 34, 12, 28, 34, 18, 28, 34, 34, 32, 22, 32, 34, 24, 10, 32, 34, 0, 34, 34, 12, 32, 32, 28, 34, 24, 32, 32, 30, 26, 22, 34, 18, 32, 34, 32, 34, 32, 34, 24, 24, 34, 18, 34, 30, 18, 34, 34, 34, 34, 16, 30, 18, 34, 32, 34, 34, 34, 24, 22, 26, 20, 22, 34, 34, 16, 34, 16, 34, 34, 10, 22, 28, 34, 24, 10, 22, 32, 30, 34, 22, 34]
+[API] [COORDINATOR] row names identified!
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}]
+['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6', 'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8', 'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3', 'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1', 'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1', 'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1', 'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160', 'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R', 'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2', 'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1', 'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2', 'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560', 'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN', 'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52', 'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF', 'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1', 'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3', 'IGFBP3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A', 'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT', 'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2', 'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3', 'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2', 'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1', 'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1', 'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432', 'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1', 'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629', 'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1', 'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682', 'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ', 'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1', 'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B', 'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5', 'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7', 'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217', 'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30', 'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1', 'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7', 'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1', 'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN', 'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2', 'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963', 'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS', 'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A', 'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT', 'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1', 'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2', 'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3', 'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1', 'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1', 'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1', 'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK', 'ANK3', 'AI002301', 'NCF1', 'NY.SAR.48', 'AA598555', 'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187', 'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1', 'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19', 'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A', 'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20', 'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC', 'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC', 'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2', 'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG', 'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1', 'MGP']
+['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']
+[50, 52, 52, 46, 52, 40, 8, 44, 52, 16, 46, 36, 22, 52, 46, 46, 52, 40, 48, 38, 32, 36, 46, 48, 48, 2, 52, 44, 8, 38, 52, 24, 38, 52, 52, 52, 32, 48, 52, 46, 48, 38, 30, 50, 42, 50, 52, 52, 48, 20, 48, 38, 38, 50, 4, 24, 52, 46, 52, 26, 20, 14, 38, 52, 52, 14, 52, 52, 12, 22, 52, 34, 32, 48, 18, 0, 50, 52, 50, 46, 52, 48, 52, 52, 30, 14, 52, 52, 22, 52, 52, 18, 52, 50, 52, 18, 28, 52, 32, 50, 52, 52, 46, 52, 52, 50, 52, 22, 48, 52, 52, 48, 44, 46, 50, 36, 24, 52, 52, 48, 52, 52, 30, 50, 42, 28, 52, 48, 52, 44, 42, 46, 52, 52, 46, 32, 22, 30, 50, 52, 44, 52, 38, 50, 52, 36, 52, 42, 52, 36, 28, 52, 52, 52, 42, 12, 40, 2, 50, 26, 50, 52, 28, 52, 50, 52, 20, 44, 0, 46, 52, 46, 20, 50, 28, 52, 52, 26, 4, 48, 38, 52, 52, 52, 48, 28, 38, 52, 34, 52, 46, 18, 30, 30, 52, 52, 52, 8, 30, 52, 18, 36, 32, 28, 44, 48, 38, 50, 24, 50, 50, 36, 32, 52, 52, 52, 6, 52, 6, 18, 52, 50, 50, 52, 36, 52, 14, 52, 52, 52, 40, 52, 52, 52, 28, 48, 48, 52, 52, 52, 52, 52, 52, 50, 44, 50, 46, 52, 28, 52, 12, 50, 32, 42, 52, 52, 50, 22, 46, 52, 52, 52, 24, 52, 50, 52, 52, 42, 52, 50, 40, 16, 52, 52, 52, 40, 44, 30, 22, 44, 52, 8, 18, 52, 52, 52, 52, 48, 52, 52, 22, 32, 32, 40, 52, 52, 48, 50, 52, 52, 48, 52, 52, 52, 52, 52, 52, 52, 50, 52, 52, 50, 34, 2, 46, 52, 38, 16, 52, 44, 46, 44, 22, 52, 16, 22, 52, 2, 48, 38, 50, 52, 40, 50, 52, 44, 48, 44, 52, 22, 46, 48, 22, 48, 52, 20, 50, 52, 52, 52, 30, 52, 52, 40, 20, 50, 52, 2, 52, 52, 30, 52, 52, 44, 52, 38, 52, 44, 44, 42, 24, 50, 16, 46, 52, 52, 52, 48, 52, 36, 34, 52, 32, 52, 44, 18, 52, 52, 52, 52, 20, 40, 28, 52, 46, 52, 44, 52, 40, 40, 30, 20, 34, 52, 52, 18, 50, 18, 48, 52, 10, 34, 46, 52, 42, 4, 28, 52, 52, 52, 32, 52]
+[API] [COORDINATOR] row names identified!
+OUTS
+[{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']}, {'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']}]
+[Time: 28.06.23 07:48:14] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 28.06.23 07:48:15] [Level: info] state: wait_for_params
+setting parameters
+INCOMINGS
+[{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']}, {'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']}]
+INCOMING
+{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']}
+K
+[43, 43]
+incoming[COParams.PCS.n]
+43
+INCOMING
+{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']}
+K
+[43, 43]
+incoming[COParams.PCS.n]
+43
+['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']
+INDEX
+[141, 31, 300, 414, 16, 392, 263, 139, 169, 128, 290, 353, 158, 81, 9, 208, 14, 323, 383, 93, 100, 296, 255, 379, 65, 292, 362, 34, 89, 415, 242, 92, 205, 56, 171, 123, 95, 334, 190, 339, 163, 165, 82, 73, 96, 212, 328, 279, 43, 193, 410, 133, 413, 157, 265, 79, 23, 254, 119, 181, 196, 399, 132, 173, 217, 314, 421, 219, 77, 140, 78, 114, 243, 248, 90, 368, 259, 55, 29, 183, 357, 35, 37, 321, 385, 288, 7, 308, 159, 261, 348, 167, 228, 60, 387, 324, 268, 129, 102, 376, 201, 307, 312, 22, 344, 57, 277, 333, 350, 136, 175, 138, 27, 67, 223, 304, 239, 232, 12, 336, 302, 19, 184, 281, 303, 156, 381, 87, 61, 396, 38, 260, 36, 326, 289, 266, 202, 270, 44, 8, 359, 126, 405, 236, 373, 309, 397, 109, 49, 422, 144, 17, 180, 209, 215, 354, 394, 250, 337, 225, 24, 152, 284, 287, 177, 5, 71, 278, 317, 6, 148, 46, 151, 130, 84, 294, 125, 272, 142, 295, 391, 150, 335, 299, 423, 113, 301, 216, 187, 246, 388, 409, 161, 249, 28, 45, 251, 99, 370, 407, 199, 68, 153, 226, 282, 21, 101, 274, 235, 121, 198, 174, 262, 48, 195, 285, 256, 197, 264, 346, 42, 404, 155, 120, 411, 97, 115, 127, 13, 420, 85, 240, 112, 338, 69, 149, 349, 147, 245, 402, 200, 170, 238, 188, 341, 51, 122, 366, 211, 229, 298, 347, 325, 166, 64, 2, 32, 400, 380, 108, 231, 241, 305, 111, 72, 234, 419, 91, 364, 210, 203, 143, 59, 329, 237, 206, 214, 343, 222, 15, 58, 247, 227, 271, 33, 377, 318, 351, 191, 75, 106, 179, 361, 356, 316, 395, 4, 178, 382, 398, 393, 273, 365, 369, 403, 76, 230, 306, 137, 98, 416, 313, 372, 233, 315, 352, 168, 74, 160, 172, 311, 252, 390, 66, 176, 194, 224, 378, 319, 94, 164, 286, 408, 363, 0, 280, 70, 269, 213, 293, 257, 331, 358, 389, 103, 118, 332, 52, 50, 189, 135, 62, 374, 104, 291, 18, 412, 204, 406, 20, 124, 11, 26, 88, 345, 275, 40, 267, 192, 186, 276, 25, 253, 47, 360, 401, 310, 244, 327, 63, 110, 417, 207, 145, 367, 117, 39, 146, 386, 105, 342, 86, 80, 340, 10, 83, 258, 41, 218, 107, 330, 116, 185, 1, 283, 134, 154, 320, 297, 375, 355, 53, 384, 418, 221, 220, 371, 3, 162, 182, 131, 322]
+['FABP3', 'ZNF419B', 'FCGRT', 'LOC283130', 'CACNB2', 'NR4A1', 'GYPC', 'PEG3', 'MOAP1', 'NNMT', 'ITPKA', 'NY.SAR.48', 'COL1A2', 'ASPA', 'AKR1C2', 'SP100', 'C1orf63', 'PDE4DIP', 'H41096', 'UBA52', 'VEGF', 'L1CAM', 'W93688', 'PCP4', 'BLVRB', 'RBP4', 'IQSEC1', 'KCNJ1', 'PLP2', 'STK17A', 'FLJ38984', 'T97457', 'FGF13', 'KCNK6', 'ID4', 'TIMP3', 'TSPYL1', 'DSCR1L1', 'WWTR1', 'PRKCB1', 'SUV39H1', 'TNC', 'TIMP1', 'MYCBP2', 'FAM84B', 'PRKAR1B', 'IL1RAP', 'H24428', 'HNRNPG.T', 'AA906888', 'BNIP2', 'CD58', 'FBL', 'AEBP1', 'CDC20B', 'LOC541471', 'HBXIP', 'DEF6', 'NPL', 'H86813', 'SOX4', 'CAV1', 'TCF7L1', 'SERPING1', 'HLA.A', 'SPINT2', 'SLC15A2', 'IGFBP5', 'ITGA5', 'TMEM49', 'PPP3CB', 'STEAP3', 'PYGL', 'LY96', 'S100A11', 'PRSS1', 'CDKN1A', 'TMEM146', 'ZNF549', 'RPS3A', 'TAP1', 'MGC18216', 'FBXO32', 'EDG3', 'CTHRC1', 'HPRT1', 'AKR1C1', 'DNASE1L1', 'COL6A2', 'GOT1', 'NLK', 'STC1', 'KCNMA1', 'UBE4B', 'DYNLT1', 'MMP2', 'PLOD2', 'TBC1D7', 'COL1A1', 'FBXW7', 'FLJ35740', 'NUAK1', 'FBXO2', 'KIAA1543', 'YWHAH', 'TFDP2', 'KCNQ2', 'MAL2', 'AI002301', 'AA131320', 'HMOX1', 'MST150', 'LOC283070', 'MYBPC2', 'DPYD', 'HAMP', 'RAB30', 'LTF', 'VASP', 'DDN', 'PTPRZ1', 'CEAL1', 'PLAU', 'NSF', 'ADCY1', 'LOC400451', 'IGHG1', 'CHI3L2', 'NDUFB11', 'TXNDC', 'ZNF329', 'PHLDA1', 'PSG5', 'LAPTM5', 'LAMA4', 'TNFAIP3', 'FN1', 'AA669383', 'AP4B1', 'CCDC3', 'AI263051', 'WDR7', 'SYT7', 'AA975768', 'ITGA3', 'GPNMB', 'PALLD', 'C9orf48', 'BCAM', 'NPTX1', 'ADM', 'CLCA3', 'AA489629', 'HCLS1', 'AI335002', 'AA598555', 'MDFI', 'IGF2BP3', 'CBLN2', 'AI822135', 'ZNF226', 'COL3A1', 'IL21R', 'APCS', 'R70506', 'PARD3', 'TNFRSF12A', 'CKMT1A', 'PRSS3', 'SPAG6', 'CSPG2', 'LRBA', 'RAB27B', 'MRC2', 'IMAGE.33267', 'OSBPL1A', 'PNCK', 'MDK', 'SLC16A3', 'CAMKK2', 'AA424849', 'CBX6', 'C6orf12', 'SLC35A2', 'MGP', 'LGALS3', 'AI005038', 'A2BP1', 'STMN1', 'GBP1', 'GAS1', 'TncRNA', 'HSPG2', 'AA181288', 'DCLRE1B', 'ZNF160', 'CALM1', 'CLIC1', 'CYR61', 'PARP14', 'AA029415', 'MSN', 'KIAA1644', 'LMO7', 'RAB11FIP4', 'DUS3L', 'AA281932', 'CCL2', 'LOC389831', 'PDE2A', 'SERPINA3', 'RND3', 'EFHB', 'EGLN2', 'LOC146795', 'URP2', 'USP3', 'COL9A2', 'MYC', 'UGCG', 'D21S2089E', 'SCN2B', 'C16orf5', 'ARPP.19', 'FZD7', 'RALY', 'IGFBP3', 'X37864', 'ACAD8', 'PPP1R14A', 'SOCS3', 'FCGR2B', 'PPP3CA', 'GBP2', 'H08563', 'WASF1', 'ANK3', 'VAMP2', 'KNS2', 'NDST1', 'PRKCZ', 'MAPKBP1', 'MB', 'FBXL16', 'S100A1', 'APOC1', 'COL4A2', 'HLA.F', 'LSP1', 'PCDHGC3', 'H91845', 'SERPINI1', 'S100A10', 'DKFZp313A2432', 'IGSF3', 'SVIL', 'DDEF1', 'ZFHX1B', 'SRPX', 'LHFPL2', 'AA479357', 'C4A', 'CD44', 'EDNRB', 'CAPG', 'AA490257', 'N98591', 'SETD5', 'NPC2', 'MGC26694', 'LOC388610', 'SERPINH1', 'COX6A2', 'HLA.G', 'NOTCH1', 'STXBP1', 'CLTB', 'BCL2A1', 'L3MBTL4', 'USP6NL', 'ZNF233', 'IL32', 'ADFP', 'CLSTN3', 'DMN', 'AA598631', 'PLTP', 'NCF1', 'EPHB1', 'RTN3', 'PSD3', 'ANXA1', 'C1orf187', 'ID3', 'NCF2', 'LYN', 'ADARB2', 'APOC2', 'FAM84A', 'R70684', 'EPB49', 'MVP', 'AIF1', 'SAA2', 'SPARC', 'RGS16', 'MSTP9', 'FAS', 'LOC57228', 'LOC613212', 'PRKCG', 'VSNL1', 'SYNGR3', 'ZNF217', 'C8orf4', 'CA11', 'PDXP', 'EMP3', 'HEY1', 'CACNB3', 'T62491', 'CASP1', 'ESM1', 'PSG1', 'MTHFD2', 'AI262682', 'H20822', 'LUM', 'CAP2', 'DLL3', 'RFXAP', 'CAMK2A', 'MICAL2', 'DES', 'EXT1', 'KIAA0963', 'BGN', 'CDKN2D', 'YWHAG', 'DDIT4', 'X38595', 'ITGA9', 'TGFBI', 'RAB20', 'CD47', 'KLRC1', 'CCR1', 'IGF1R', 'GPSM2', 'C1R', 'DECR2', 'TTC23', 'CHN1', 'IFI30', 'HK2', 'COX7A1', 'GADD45B', 'AI871056', 'MED11', 'EID.3', 'PLAUR', 'GYPA', 'SORT1', 'MASP1', 'FREQ', 'FAM46A', 'MGC42367', 'POSTN', 'ANXA5', 'NEFH', 'PLA2G2A', 'EDG1', 'PDLIM7', 'LILRA1', 'TOMM40', 'H10054', 'HBA1', 'SNRPN', 'PRRX1', 'RBP7', 'CA12', 'HLA.DRB1', 'AI357047', 'NMNAT2', 'AI350724', 'KLRC2', 'SBP1', 'GABBR1', 'AA401952', 'ATP6V1C1', 'R52960', 'PDPN', 'H78560', 'F13A1', 'TCTEX1D1', 'AA398420', 'TSPAN6', 'OSR1', 'SNCG', 'RUNX1', 'TSPAN4', 'KLRC3', 'R61377', 'DIP2C', 'CD53', 'MST1', 'NLGN1', 'LAMB1', 'PYHIN1', 'ADAM19', 'CYBA', 'TLL2', 'HPCA', 'PRG1', 'ABCC3', 'PYCR1', 'T51726', 'MGC39606', 'RPS19BP1', 'SCAMP5', 'ABCA5', 'INPP5F']
+INDEX
+[141, 31, 300, 414, 16, 392, 263, 139, 169, 128, 290, 353, 158, 81, 9, 208, 14, 323, 383, 93, 100, 296, 255, 379, 65, 292, 362, 34, 89, 415, 242, 92, 205, 56, 171, 123, 95, 334, 190, 339, 163, 165, 82, 73, 96, 212, 328, 279, 43, 193, 410, 133, 413, 157, 265, 79, 23, 254, 119, 181, 196, 399, 132, 173, 217, 314, 421, 219, 77, 140, 78, 114, 243, 248, 90, 368, 259, 55, 29, 183, 357, 35, 37, 321, 385, 288, 7, 308, 159, 261, 348, 167, 228, 60, 387, 324, 268, 129, 102, 376, 201, 307, 312, 22, 344, 57, 277, 333, 350, 136, 175, 138, 27, 67, 223, 304, 239, 232, 12, 336, 302, 19, 184, 281, 303, 156, 381, 87, 61, 396, 38, 260, 36, 326, 289, 266, 202, 270, 44, 8, 359, 126, 405, 236, 373, 309, 397, 109, 49, 422, 144, 17, 180, 209, 215, 354, 394, 250, 337, 225, 24, 152, 284, 287, 177, 5, 71, 278, 317, 6, 148, 46, 151, 130, 84, 294, 125, 272, 142, 295, 391, 150, 335, 299, 423, 113, 301, 216, 187, 246, 388, 409, 161, 249, 28, 45, 251, 99, 370, 407, 199, 68, 153, 226, 282, 21, 101, 274, 235, 121, 198, 174, 262, 48, 195, 285, 256, 197, 264, 346, 42, 404, 155, 120, 411, 97, 115, 127, 13, 420, 85, 240, 112, 338, 69, 149, 349, 147, 245, 402, 200, 170, 238, 188, 341, 51, 122, 366, 211, 229, 298, 347, 325, 166, 64, 2, 32, 400, 380, 108, 231, 241, 305, 111, 72, 234, 419, 91, 364, 210, 203, 143, 59, 329, 237, 206, 214, 343, 222, 15, 58, 247, 227, 271, 33, 377, 318, 351, 191, 75, 106, 179, 361, 356, 316, 395, 4, 178, 382, 398, 393, 273, 365, 369, 403, 76, 230, 306, 137, 98, 416, 313, 372, 233, 315, 352, 168, 74, 160, 172, 311, 252, 390, 66, 176, 194, 224, 378, 319, 94, 164, 286, 408, 363, 0, 280, 70, 269, 213, 293, 257, 331, 358, 389, 103, 118, 332, 52, 50, 189, 135, 62, 374, 104, 291, 18, 412, 204, 406, 20, 124, 11, 26, 88, 345, 275, 40, 267, 192, 186, 276, 25, 253, 47, 360, 401, 310, 244, 327, 63, 110, 417, 207, 145, 367, 117, 39, 146, 386, 105, 342, 86, 80, 340, 10, 83, 258, 41, 218, 107, 330, 116, 185, 1, 283, 134, 154, 320, 297, 375, 355, 53, 384, 418, 221, 220, 371, 3, 162, 182, 131, 322]
+[Time: 28.06.23 07:48:15] [Level: info] transition: aggregate_sums
+[Time: 28.06.23 07:48:16] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([ 5.82899453e+00, -9.13082763e+00,  2.48621287e+01,  6.89182401e+00,
+       -3.77086352e+00, -2.13798399e+00, -7.13435256e+00,  3.22804726e+00,
+        1.44492514e+01,  4.89879253e+00, -8.08202103e+00, -1.49871955e+01,
+        9.88201619e-02,  2.45605448e+01, -1.25626687e+01, -4.10809130e+00,
+       -1.77845884e+01,  6.67694411e+00,  1.31130194e+01,  1.93861561e+00,
+       -2.82601717e+00,  8.32996456e-01,  1.00368609e+01,  4.45874417e+00,
+       -1.07188286e+01,  0.00000000e+00,  1.39062544e+01, -8.62027236e+00,
+       -5.83191264e+00, -9.16472814e+00,  5.82405207e+00, -1.15253417e+01,
+        8.06840242e+00, -1.09938301e+01,  3.13848549e+01,  1.02694247e+01,
+       -1.40101462e+01,  4.56701297e+00,  1.12735937e+01, -2.88218617e+00,
+        2.71418697e+00, -1.58089748e+00,  5.18974446e+00,  1.04613217e+01,
+        1.21819368e+01, -3.01416998e+00,  1.27464809e+01,  1.40606228e+01,
+       -2.75736249e+00,  4.77401219e+00, -7.41860354e+00, -1.00420303e+01,
+/app/apps/svd/Aggregator_FC_Federated_MFA.py:83: RuntimeWarning: invalid value encountered in true_divide
+  my_sums = my_sums/self.values_per_row[idx]
+       -9.05826053e+00,  1.01825481e+01,  0.00000000e+00, -1.20733940e+01,
+       -2.35861508e+01,  4.12439114e+00,  2.48433092e+01, -1.81941299e+01,
+        1.08081414e+01,  4.71852411e-01, -2.30628777e+00,  2.92950740e+01,
+        6.74912428e+00, -5.53381529e+00,  2.12914734e+01,  2.79606440e+00,
+       -2.10905577e+00, -6.83070841e+00,  3.49814391e+00, -1.17915245e+01,
+       -7.86219644e+00, -5.65188827e+00, -7.00084716e+00,  0.00000000e+00,
+       -1.40113462e+00, -1.99612928e+00, -8.14057291e+00,  1.17395423e+01,
+        1.56643887e+01, -1.62364545e+01,  2.69304647e+00,  1.59838276e+01,
+       -2.28854843e+00, -8.27073635e+00,  4.11139982e+00,  6.84830154e+00,
+       -1.42838830e+00,  2.24584513e+00,  1.37091307e+01, -1.16854446e+00,
+        9.73879963e+00, -1.82516261e+01,  9.81084079e+00, -9.67518547e+00,
+       -3.43288170e+00,  1.94977252e+01,  7.99058590e-01,  3.77751890e+00,
+        2.30045974e+01,  1.81849175e+01,  1.16766510e+01, -2.93690919e+00,
+        1.33174949e+01, -7.76653465e+00,  2.75800009e+01, -1.06628190e+01,
+        1.22513758e+00,  3.23357056e+01,  1.87850513e+01, -5.80318895e+00,
+       -1.05357271e+01, -1.36664674e+01,  6.96714562e+00,  1.70569283e+00,
+       -3.27831636e+00,  1.85697683e+01, -1.70564149e+01,  1.25253150e+01,
+        3.13793316e+01, -3.06316284e+00, -1.53288822e+01,  7.83935651e+00,
+       -9.96070846e+00, -1.64430565e+01,  1.78626761e+01,  2.45589993e+01,
+       -3.45735822e+00, -1.37068703e+01, -2.52277296e+01,  4.71971355e+00,
+       -6.89235464e+00,  2.30061614e+01,  5.95671265e+00, -2.05342146e+01,
+       -8.89208134e+00, -7.54018882e+00, -1.13314815e+01,  8.07813231e-01,
+       -3.78656079e+00,  1.75711514e+01,  7.69287175e-01,  7.62966637e+00,
+        6.37989830e+00, -6.03136501e-01,  2.13474739e+01, -4.93820406e+00,
+       -1.57704477e+00, -8.53910070e+00,  1.56986279e+00,  6.19501218e+00,
+        1.82030787e+01,  1.55942883e+01, -7.03746757e-01, -6.96874216e-01,
+       -3.44637744e+00, -5.57795870e+00,  1.08905928e+01, -2.33705745e+00,
+       -1.53422939e+00,  2.79852393e+01, -8.85361642e+00,  8.45718782e+00,
+        8.91013077e+00, -6.64062157e-01, -6.79530165e+00,  1.10360436e+01,
+        0.00000000e+00, -5.42270855e+00,  2.62480073e+01, -1.66676862e+01,
+       -4.81000580e-01,  8.09337799e+00, -1.70925707e+00,  1.40459932e+01,
+        1.22160394e+01, -7.85045484e+00, -2.64641573e+00,  3.38902893e-01,
+       -6.71201533e+00,  1.36456121e+01,  7.80665986e+00, -2.42450719e+00,
+        1.20551139e+00,  3.30310090e-03,  3.40951780e+00,  1.86155911e+01,
+       -4.06748899e+00,  1.76823194e+01, -3.97323928e+00, -1.76344424e+01,
+        8.37858497e-01, -1.60351829e+01, -2.80829518e+00,  2.47175546e+00,
+        2.79231767e+01, -9.31728990e+00, -1.01747156e+01,  1.26131684e+01,
+        1.04305840e+01, -3.11274906e+00, -8.52338135e+00, -1.31564294e+01,
+        2.70979753e+00, -1.19317616e+01,  3.50255500e+00,  1.70879054e+01,
+       -9.94007719e+00,  5.63142364e+00,  1.75529595e+01,  8.68438034e-01,
+       -1.36095066e+01, -7.48102545e-01,  1.25694259e+01,  1.09810668e+01,
+       -1.07908835e+01,  1.88371504e+01, -7.69257349e+00, -1.23814411e+01,
+       -1.01750957e+01,  1.99260032e+00,  4.43228835e+00,  1.14293441e+01,
+        2.70855945e+00,  1.81256004e+01,  5.12875466e-01,  2.87522538e+01,
+        2.09074573e+00,  2.95455319e+01,  2.27745375e+00,  2.24787583e+01,
+       -7.33930397e+00,  2.01225446e+01, -1.15225868e+01,  1.02966779e+01,
+        7.35816132e-01,  2.64001401e+01,  1.33417018e+01,  1.51042791e+01,
+        8.90242715e+00,  1.43047410e+01,  1.21901548e+01,  1.25470119e+01,
+        1.11025626e+00, -1.04088225e+01,  1.12779525e+01,  2.92179226e+00,
+       -9.40706773e+00,  2.74498578e+01, -1.01134825e+01,  2.04265717e+01,
+       -4.34140113e+00, -8.06667482e+00, -1.90270894e+00,  3.16675385e-01,
+        2.20434898e+00, -4.18700817e+00,  5.44373271e+00,  1.65896852e+01,
+        7.36140552e+00,  1.66170144e+01, -1.56414686e+01,  1.74399008e+01,
+        6.49871226e+00,  1.60328394e+01,  1.32861986e+01,  7.21750338e+00,
+        7.62005318e+00,  1.43327385e+01, -9.38105694e+00, -6.09098224e+00,
+       -3.55813983e+00,  8.19007006e+00,  1.91315220e+01,  6.09510392e+00,
+       -1.47956377e+01, -9.72844595e+00,  6.04630729e-01, -1.25962192e+01,
+       -6.12676808e-01,  8.74475356e-01, -5.75373829e-01,  4.89007079e+00,
+        1.49003815e-01,  2.02847498e+01,  2.71799752e+01,  9.88046312e-02,
+        2.62903595e+01,  9.53222092e+00, -1.12170557e+01,  1.48713766e+00,
+       -6.97452694e+00,  5.83213798e+00,  2.56142674e+01,  5.63282002e+00,
+       -5.27592027e+00,  9.57493436e+00,  1.92193495e+01,  1.24449930e+01,
+        1.06061548e+01,  2.04295656e+01,  2.17205952e+01,  1.58639788e+01,
+        2.24953873e+01,  1.47094980e+01,  1.09119562e+01, -3.38994067e-01,
+        9.94069114e+00, -1.33205610e+01, -1.97944457e+00,  6.99624507e+00,
+       -5.40679488e+00, -1.53720645e+00,  6.19787985e+00,  2.09196056e+01,
+        4.23145182e+00, -8.31504113e+00,  1.64299153e+01, -4.14844387e+00,
+        3.52701950e+00, -3.32564810e+00, -1.22819004e+00,  2.80641034e+00,
+        2.40142139e+00, -1.35966070e+01,  2.26617745e+01, -5.32137831e-01,
+        4.34694791e+00,  1.99752204e+01,  1.76454502e+01,  6.84721165e+00,
+       -2.90769493e+00, -1.00717879e+01,  3.09295976e+00, -7.17559865e+00,
+        1.09754109e+01, -2.76955855e-01,  1.00758527e+00, -6.50308609e+00,
+        6.36863443e-01, -8.94540727e+00,  1.00964274e+00, -2.30274990e+00,
+        1.20771070e+00,  5.30062822e+00,  8.01297606e+00,  6.49325678e+00,
+        3.85734086e+00,  1.91987116e+01, -7.68818904e+00, -2.16557725e+00,
+        2.64738310e+01,  4.95650576e+00, -8.52504804e+00, -1.13336325e+01,
+        1.82094892e+01,  0.00000000e+00,  2.40556474e+01, -4.69559948e+00,
+       -1.24558061e+00,  3.78493522e+00, -4.66745713e-01,  1.35887448e+01,
+        1.30454265e+01, -5.90503149e+00,  7.79103543e+00, -6.23517778e+00,
+       -1.03882010e+01, -1.74026030e+01,  3.02676078e+00, -3.43131044e+00,
+       -2.17327634e+01, -1.40902940e+01,  1.41956421e+01, -9.53518856e+00,
+        1.59202656e+01,  1.21405782e+01,  2.14928439e+01, -1.16633312e+01,
+        6.07746270e+00,  4.17653457e+01, -1.19123455e+01,  1.20669064e+01,
+        1.40108105e+01,  7.94689273e+00, -9.76242891e+00,  2.67130585e+01,
+        2.61773044e+01,  1.44295773e+01, -8.44514671e+00,  6.87962055e+00,
+       -3.90439660e+00,  2.11685373e+01,  1.90939086e+00,  1.43427087e+01,
+       -9.67456657e+00, -5.11336935e+00,  5.21165949e+00, -9.06918730e+00,
+       -1.36397624e+01,  5.37689073e+00, -5.93545794e+00,  3.36090277e+00,
+        1.58877253e+01, -9.52124887e+00,  1.35744163e+01, -8.61615300e+00,
+       -2.36829259e+00,  1.72111512e+01, -5.46702654e+00, -1.17363054e+01,
+       -1.44749471e+01,  2.46941688e+01,  8.57398390e+00, -2.08637508e+00,
+       -2.16549564e+01,  2.23534367e+00,  1.34442073e+01,  2.95345989e+01,
+        1.93083583e+00,  7.58750103e+00]), 'Sample count': 17}, {'Sums': array([ 5.82899453e+00, -9.13082763e+00,  2.48621287e+01,  6.89182401e+00,
+       -3.77086352e+00, -2.13798399e+00, -7.13435256e+00,  3.22804726e+00,
+        1.44492514e+01,  4.89879253e+00, -8.08202103e+00, -1.49871955e+01,
+        9.88201619e-02,  2.45605448e+01, -1.25626687e+01, -4.10809130e+00,
+       -1.77845884e+01,  6.67694411e+00,  1.31130194e+01,  1.93861561e+00,
+       -2.82601717e+00,  8.32996456e-01,  1.00368609e+01,  4.45874417e+00,
+       -1.07188286e+01,  0.00000000e+00,  1.39062544e+01, -8.62027236e+00,
+       -5.83191264e+00, -9.16472814e+00,  5.82405207e+00, -1.15253417e+01,
+        8.06840242e+00, -1.09938301e+01,  3.13848549e+01,  1.02694247e+01,
+       -1.40101462e+01,  4.56701297e+00,  1.12735937e+01, -2.88218617e+00,
+        2.71418697e+00, -1.58089748e+00,  5.18974446e+00,  1.04613217e+01,
+        1.21819368e+01, -3.01416998e+00,  1.27464809e+01,  1.40606228e+01,
+       -2.75736249e+00,  4.77401219e+00, -7.41860354e+00, -1.00420303e+01,
+       -9.05826053e+00,  1.01825481e+01,  0.00000000e+00, -1.20733940e+01,
+       -2.35861508e+01,  4.12439114e+00,  2.48433092e+01, -1.81941299e+01,
+        1.08081414e+01,  4.71852411e-01, -2.30628777e+00,  2.92950740e+01,
+        6.74912428e+00, -5.53381529e+00,  2.12914734e+01,  2.79606440e+00,
+       -2.10905577e+00, -6.83070841e+00,  3.49814391e+00, -1.17915245e+01,
+       -7.86219644e+00, -5.65188827e+00, -7.00084716e+00,  0.00000000e+00,
+       -1.40113462e+00, -1.99612928e+00, -8.14057291e+00,  1.17395423e+01,
+        1.56643887e+01, -1.62364545e+01,  2.69304647e+00,  1.59838276e+01,
+       -2.28854843e+00, -8.27073635e+00,  4.11139982e+00,  6.84830154e+00,
+       -1.42838830e+00,  2.24584513e+00,  1.37091307e+01, -1.16854446e+00,
+        9.73879963e+00, -1.82516261e+01,  9.81084079e+00, -9.67518547e+00,
+       -3.43288170e+00,  1.94977252e+01,  7.99058590e-01,  3.77751890e+00,
+        2.30045974e+01,  1.81849175e+01,  1.16766510e+01, -2.93690919e+00,
+        1.33174949e+01, -7.76653465e+00,  2.75800009e+01, -1.06628190e+01,
+        1.22513758e+00,  3.23357056e+01,  1.87850513e+01, -5.80318895e+00,
+       -1.05357271e+01, -1.36664674e+01,  6.96714562e+00,  1.70569283e+00,
+       -3.27831636e+00,  1.85697683e+01, -1.70564149e+01,  1.25253150e+01,
+        3.13793316e+01, -3.06316284e+00, -1.53288822e+01,  7.83935651e+00,
+       -9.96070846e+00, -1.64430565e+01,  1.78626761e+01,  2.45589993e+01,
+       -3.45735822e+00, -1.37068703e+01, -2.52277296e+01,  4.71971355e+00,
+       -6.89235464e+00,  2.30061614e+01,  5.95671265e+00, -2.05342146e+01,
+       -8.89208134e+00, -7.54018882e+00, -1.13314815e+01,  8.07813231e-01,
+       -3.78656079e+00,  1.75711514e+01,  7.69287175e-01,  7.62966637e+00,
+        6.37989830e+00, -6.03136501e-01,  2.13474739e+01, -4.93820406e+00,
+       -1.57704477e+00, -8.53910070e+00,  1.56986279e+00,  6.19501218e+00,
+        1.82030787e+01,  1.55942883e+01, -7.03746757e-01, -6.96874216e-01,
+       -3.44637744e+00, -5.57795870e+00,  1.08905928e+01, -2.33705745e+00,
+       -1.53422939e+00,  2.79852393e+01, -8.85361642e+00,  8.45718782e+00,
+        8.91013077e+00, -6.64062157e-01, -6.79530165e+00,  1.10360436e+01,
+        0.00000000e+00, -5.42270855e+00,  2.62480073e+01, -1.66676862e+01,
+       -4.81000580e-01,  8.09337799e+00, -1.70925707e+00,  1.40459932e+01,
+        1.22160394e+01, -7.85045484e+00, -2.64641573e+00,  3.38902893e-01,
+       -6.71201533e+00,  1.36456121e+01,  7.80665986e+00, -2.42450719e+00,
+        1.20551139e+00,  3.30310090e-03,  3.40951780e+00,  1.86155911e+01,
+       -4.06748899e+00,  1.76823194e+01, -3.97323928e+00, -1.76344424e+01,
+        8.37858497e-01, -1.60351829e+01, -2.80829518e+00,  2.47175546e+00,
+        2.79231767e+01, -9.31728990e+00, -1.01747156e+01,  1.26131684e+01,
+        1.04305840e+01, -3.11274906e+00, -8.52338135e+00, -1.31564294e+01,
+        2.70979753e+00, -1.19317616e+01,  3.50255500e+00,  1.70879054e+01,
+       -9.94007719e+00,  5.63142364e+00,  1.75529595e+01,  8.68438034e-01,
+       -1.36095066e+01, -7.48102545e-01,  1.25694259e+01,  1.09810668e+01,
+       -1.07908835e+01,  1.88371504e+01, -7.69257349e+00, -1.23814411e+01,
+       -1.01750957e+01,  1.99260032e+00,  4.43228835e+00,  1.14293441e+01,
+        2.70855945e+00,  1.81256004e+01,  5.12875466e-01,  2.87522538e+01,
+        2.09074573e+00,  2.95455319e+01,  2.27745375e+00,  2.24787583e+01,
+       -7.33930397e+00,  2.01225446e+01, -1.15225868e+01,  1.02966779e+01,
+        7.35816132e-01,  2.64001401e+01,  1.33417018e+01,  1.51042791e+01,
+        8.90242715e+00,  1.43047410e+01,  1.21901548e+01,  1.25470119e+01,
+        1.11025626e+00, -1.04088225e+01,  1.12779525e+01,  2.92179226e+00,
+       -9.40706773e+00,  2.74498578e+01, -1.01134825e+01,  2.04265717e+01,
+       -4.34140113e+00, -8.06667482e+00, -1.90270894e+00,  3.16675385e-01,
+        2.20434898e+00, -4.18700817e+00,  5.44373271e+00,  1.65896852e+01,
+        7.36140552e+00,  1.66170144e+01, -1.56414686e+01,  1.74399008e+01,
+        6.49871226e+00,  1.60328394e+01,  1.32861986e+01,  7.21750338e+00,
+        7.62005318e+00,  1.43327385e+01, -9.38105694e+00, -6.09098224e+00,
+       -3.55813983e+00,  8.19007006e+00,  1.91315220e+01,  6.09510392e+00,
+       -1.47956377e+01, -9.72844595e+00,  6.04630729e-01, -1.25962192e+01,
+       -6.12676808e-01,  8.74475356e-01, -5.75373829e-01,  4.89007079e+00,
+        1.49003815e-01,  2.02847498e+01,  2.71799752e+01,  9.88046312e-02,
+        2.62903595e+01,  9.53222092e+00, -1.12170557e+01,  1.48713766e+00,
+       -6.97452694e+00,  5.83213798e+00,  2.56142674e+01,  5.63282002e+00,
+       -5.27592027e+00,  9.57493436e+00,  1.92193495e+01,  1.24449930e+01,
+        1.06061548e+01,  2.04295656e+01,  2.17205952e+01,  1.58639788e+01,
+        2.24953873e+01,  1.47094980e+01,  1.09119562e+01, -3.38994067e-01,
+        9.94069114e+00, -1.33205610e+01, -1.97944457e+00,  6.99624507e+00,
+       -5.40679488e+00, -1.53720645e+00,  6.19787985e+00,  2.09196056e+01,
+        4.23145182e+00, -8.31504113e+00,  1.64299153e+01, -4.14844387e+00,
+        3.52701950e+00, -3.32564810e+00, -1.22819004e+00,  2.80641034e+00,
+        2.40142139e+00, -1.35966070e+01,  2.26617745e+01, -5.32137831e-01,
+        4.34694791e+00,  1.99752204e+01,  1.76454502e+01,  6.84721165e+00,
+       -2.90769493e+00, -1.00717879e+01,  3.09295976e+00, -7.17559865e+00,
+        1.09754109e+01, -2.76955855e-01,  1.00758527e+00, -6.50308609e+00,
+        6.36863443e-01, -8.94540727e+00,  1.00964274e+00, -2.30274990e+00,
+        1.20771070e+00,  5.30062822e+00,  8.01297606e+00,  6.49325678e+00,
+        3.85734086e+00,  1.91987116e+01, -7.68818904e+00, -2.16557725e+00,
+        2.64738310e+01,  4.95650576e+00, -8.52504804e+00, -1.13336325e+01,
+        1.82094892e+01,  0.00000000e+00,  2.40556474e+01, -4.69559948e+00,
+       -1.24558061e+00,  3.78493522e+00, -4.66745713e-01,  1.35887448e+01,
+        1.30454265e+01, -5.90503149e+00,  7.79103543e+00, -6.23517778e+00,
+       -1.03882010e+01, -1.74026030e+01,  3.02676078e+00, -3.43131044e+00,
+       -2.17327634e+01, -1.40902940e+01,  1.41956421e+01, -9.53518856e+00,
+        1.59202656e+01,  1.21405782e+01,  2.14928439e+01, -1.16633312e+01,
+        6.07746270e+00,  4.17653457e+01, -1.19123455e+01,  1.20669064e+01,
+        1.40108105e+01,  7.94689273e+00, -9.76242891e+00,  2.67130585e+01,
+        2.61773044e+01,  1.44295773e+01, -8.44514671e+00,  6.87962055e+00,
+       -3.90439660e+00,  2.11685373e+01,  1.90939086e+00,  1.43427087e+01,
+       -9.67456657e+00, -5.11336935e+00,  5.21165949e+00, -9.06918730e+00,
+       -1.36397624e+01,  5.37689073e+00, -5.93545794e+00,  3.36090277e+00,
+        1.58877253e+01, -9.52124887e+00,  1.35744163e+01, -8.61615300e+00,
+       -2.36829259e+00,  1.72111512e+01, -5.46702654e+00, -1.17363054e+01,
+       -1.44749471e+01,  2.46941688e+01,  8.57398390e+00, -2.08637508e+00,
+       -2.16549564e+01,  2.23534367e+00,  1.34442073e+01,  2.95345989e+01,
+        1.93083583e+00,  7.58750103e+00]), 'Sample count': 17}]
+SUMS
+[ 3.42882031e-01 -5.37107508e-01  1.46247816e+00  5.74318668e-01
+ -2.21815501e-01 -2.13798399e-01 -1.78358814e+00  2.69003938e-01
+  8.49955965e-01  1.22469813e+00 -6.73501753e-01 -1.07051396e+00
+  1.23525202e-02  1.44473793e+00 -7.38980512e-01 -2.93435093e-01
+ -1.11153678e+00  4.76924579e-01  7.71354084e-01  1.49124278e-01
+ -2.82601717e-01  1.04124557e-01  6.27303804e-01  2.97249612e-01
+ -7.65630611e-01             nan  8.18014965e-01 -5.07074845e-01
+ -5.83191264e+00 -7.63727345e-01  3.42591298e-01 -1.92089029e+00
+  7.33491129e-01 -6.46695890e-01  1.84616794e+00  6.41839042e-01
+ -1.07770355e+00  3.04467532e-01  7.04599606e-01 -1.69540363e-01
+  1.59658057e-01 -1.21607498e-01  4.71794951e-01  6.15371864e-01
+  1.01516140e+00 -2.31859229e-01  7.49792992e-01  8.27095456e-01
+ -1.96954463e-01  4.77401219e-01 -4.36388443e-01 -1.25525379e+00
+ -6.47018609e-01  7.83272930e-01             nan -1.50917425e+00
+ -1.47413442e+00  2.57774446e-01  1.46137113e+00 -1.65401181e+00
+  1.08081414e+00  4.71852411e-01 -1.44142986e-01  1.72323965e+00
+  3.97007310e-01 -1.84460510e+00  1.25243961e+00  1.74754025e-01
+ -5.27263943e-01 -9.75815488e-01  2.18633994e-01 -9.07040345e-01
+ -7.86219644e-01 -3.32464016e-01 -1.00012102e+00             nan
+ -8.24196834e-02 -1.17419369e-01 -5.08785807e-01  8.38538733e-01
+  9.79024294e-01 -1.01477841e+00  1.58414498e-01  9.40225153e-01
+ -2.86068553e-01 -2.75691212e+00  2.41847049e-01  4.02841267e-01
+ -2.85677660e-01  1.87153761e-01  8.06419451e-01 -5.84272229e-01
+  6.08674977e-01 -1.14072663e+00  5.77108282e-01 -2.41879637e+00
+ -6.86576340e-01  1.14692501e+00  6.14660454e-02  2.22206994e-01
+  1.35321161e+00  1.06970103e+00  6.86861826e-01 -1.72759364e-01
+  7.83382056e-01 -4.56854979e-01  1.83866673e+00 -2.66570475e+00
+  7.20669164e-02  1.90210033e+00  1.10500302e+00 -4.14513497e-01
+ -6.58482942e-01 -8.54154210e-01  4.35446602e-01  1.55062984e-01
+ -5.46386060e-01  1.09233931e+00 -1.00331852e+00  7.82832190e-01
+  1.84584304e+00 -1.80186049e-01 -1.39353475e+00  4.61138618e-01
+ -9.96070846e-01 -1.64430565e+00  1.11641726e+00  1.63726662e+00
+ -2.16084889e-01 -8.06286487e-01 -1.57673310e+00  3.14647570e-01
+ -4.05432626e-01  1.35330361e+00  3.50394862e-01 -1.71118455e+00
+ -1.11151017e+00 -7.54018882e-01 -7.55432101e-01  4.75184253e-02
+ -2.22738870e-01  1.03359714e+00  4.80804484e-02  4.48803904e-01
+  3.75288135e-01 -6.03136501e-02  1.25573376e+00 -3.08637754e-01
+ -9.27673396e-02 -9.48788967e-01  3.13972559e-01  3.64412481e-01
+  1.07076933e+00  9.17311074e-01 -4.69164504e-02 -3.48437108e-01
+ -2.46169817e-01 -2.78897935e+00  6.80662049e-01 -2.59673050e-01
+ -9.02487876e-02  1.64619055e+00 -9.83735158e-01  5.28574239e-01
+  6.36437912e-01 -3.90624798e-02 -1.35906033e+00  8.48926428e-01
+             nan -3.61513903e-01  1.54400043e+00 -1.04173039e+00
+ -5.34445089e-02  5.39558533e-01 -1.89917452e-01  8.77874573e-01
+  7.18590554e-01 -1.57009097e+00 -6.61603933e-01  2.11814308e-02
+ -6.71201533e-01  8.02683063e-01  4.59215286e-01 -1.51531699e-01
+  7.09124346e-02  5.50516816e-04  2.62270600e-01  1.09503477e+00
+ -3.38957416e-01  1.04013644e+00 -2.48327455e-01 -2.20430530e+00
+  7.61689542e-02 -1.33626524e+00 -1.65193834e-01  1.45397380e-01
+  1.64253980e+00 -2.32932248e+00 -1.01747156e+00  7.41951083e-01
+  1.04305840e+00 -2.82977188e-01 -7.74852850e-01 -1.87948991e+00
+  1.80653169e-01 -8.52268688e-01  2.33503667e-01  1.06799409e+00
+ -9.03643381e-01  4.02244546e-01  1.03252703e+00  9.64931149e-02
+ -1.23722787e+00 -4.67564091e-02  7.85589117e-01  6.45945105e-01
+ -2.15817670e+00  1.10806767e+00 -1.28209558e+00 -1.76877730e+00
+ -5.98535040e-01  1.24537520e-01  2.60722844e-01  6.72314357e-01
+  2.46232677e-01  1.06621179e+00  2.56437733e-01  1.69130905e+00
+  1.22985043e-01  1.73797246e+00  1.42340859e-01  1.32227990e+00
+ -4.58706498e-01  1.18367910e+00 -1.92043113e+00  6.43542372e-01
+  5.66012409e-02  1.55294942e+00  7.84805988e-01  8.88487006e-01
+  5.93495143e-01  8.41455352e-01  7.61884675e-01  7.84188247e-01
+  7.40170838e-02 -6.50551405e-01  7.51863500e-01  1.82612016e-01
+ -1.04522975e+00  1.71561611e+00 -1.12372028e+00  1.27666073e+00
+ -4.82377903e-01 -5.76191058e-01 -1.11924055e-01  1.86279638e-02
+  1.29667587e-01 -8.37401633e-01  3.88838051e-01  9.75863834e-01
+  4.60087845e-01  9.77471435e-01 -1.95518358e+00  1.08999380e+00
+  4.33247484e-01  9.43108201e-01  7.81541095e-01  6.56136671e-01
+  4.48238423e-01  8.43102267e-01 -9.38105694e-01 -1.52274556e+00
+ -2.09302343e-01  5.11879379e-01  1.12538365e+00  4.68854148e-01
+ -9.24727353e-01 -8.84404177e-01  1.00771788e-01 -7.40954071e-01
+ -3.60398122e-02  8.74475356e-01 -9.58956381e-02  2.87651223e-01
+  8.76493032e-03  1.19322058e+00  1.59882207e+00  6.58697541e-03
+  1.54649173e+00  5.95763807e-01 -1.40213196e+00  1.65237518e-01
+ -6.97452694e-01  3.64508623e-01  1.50672161e+00  3.52051251e-01
+ -3.51728018e-01  6.83923883e-01  1.13054997e+00  7.32058414e-01
+  9.64195894e-01  1.20173916e+00  1.27768207e+00  9.33175226e-01
+  1.32325808e+00  9.19343623e-01  6.41879775e-01 -2.11871292e-02
+  5.84746537e-01 -7.83562410e-01 -1.23715286e-01  4.66416338e-01
+ -1.08135898e+00 -1.53720645e+00  4.76759988e-01  1.30747535e+00
+  3.52620985e-01 -1.66300823e+00  1.17356538e+00 -3.19111067e-01
+  2.93918292e-01 -2.21709874e-01 -1.11653640e-01  1.65082961e-01
+  3.43060199e-01 -1.51073411e+00  1.33304556e+00 -5.32137831e-01
+  3.10496279e-01  1.66460170e+00  1.03796766e+00  4.02777156e-01
+ -2.64335903e-01 -5.92458112e-01  1.81938810e-01 -4.22094039e-01
+  6.85963179e-01 -1.97825611e-02  5.92697220e-02 -8.12885761e-01
+  4.24575628e-02 -5.26200427e-01  1.68273789e-01 -1.64482136e-01
+  7.10418060e-02  5.88958691e-01  5.72355433e-01  3.81956281e-01
+  2.26902403e-01  1.19991947e+00 -6.98926276e-01 -1.35348578e-01
+  1.55728418e+00  4.13042147e-01 -1.70500961e+00 -7.08352033e-01
+  1.07114643e+00             nan  1.41503808e+00 -2.76211734e-01
+ -2.07596768e-01  2.36558451e-01 -2.91716071e-02  9.70624631e-01
+  7.67378028e-01 -4.92085958e-01  4.86939715e-01 -3.89698611e-01
+ -6.92546734e-01 -1.33866177e+00  2.75160071e-01 -2.01841790e-01
+ -2.41475149e+00 -8.80643377e-01  8.35037771e-01 -5.95949285e-01
+  9.36486213e-01  7.58786139e-01  1.26428493e+00 -9.71944270e-01
+  5.06455225e-01  2.45678504e+00 -1.32359395e+00  7.09818025e-01
+  9.34054032e-01  8.82988081e-01 -5.74260524e-01  1.57135638e+00
+  1.53984143e+00  8.48798665e-01 -1.05564334e+00  4.58641370e-01
+ -4.33821844e-01  1.24520808e+00  1.19336929e-01  8.43688745e-01
+ -5.69092151e-01 -3.00786432e-01  4.34304957e-01 -8.24471573e-01
+ -1.04921249e+00  5.37689073e-01 -5.39587085e-01  1.97700163e-01
+  9.34572078e-01 -1.19015611e+00  7.98495074e-01 -1.07701912e+00
+ -1.39311329e-01  1.01242066e+00 -1.09340531e+00 -1.06693686e+00
+ -1.03392479e+00  1.45259816e+00  7.14498658e-01 -4.17275016e-01
+ -1.96863240e+00  1.39708979e-01  8.96280489e-01  1.73732935e+00
+  1.75530530e-01  4.46323590e-01]
+[{'Sums': array([ 12.09067896, -13.79142535,  33.02847201,  13.68732911,
+       -12.17424688, -29.62761045,  -1.67082379, -13.1417503 ,
+        27.55542502,   2.66034442,   0.8045894 ,  -1.40409555,
+        -4.78230685,  38.51969158, -21.01975103, -10.69871515,
+       -21.01399139,  10.77751924,  27.16574567,   1.13879269,
+         9.24182681,  -6.60654788,  18.26477853,   9.46249282,
+       -21.93867978,  -4.29094284,  31.11314393, -18.89264026,
+       -10.62831186,  -7.20280186,  20.66120721,  -3.52591034,
+        17.41221984, -10.9167252 ,  45.97798314,  17.56435916,
+       -10.03817539,  10.15013336,  21.36220119,  18.43613191,
+        -1.83722968,   1.89007035,   9.6970924 ,  10.92183477,
+        -6.14840663,   2.86749745,  23.93703121,  28.71997988,
+        -3.3441711 ,  -1.32475845, -19.48902088, -30.31692131,
+       -26.25179469,  13.86093466,  -2.90792428,  -1.1457943 ,
+       -26.61158225,  -3.11275646,  39.54552619, -17.95758935,
+        -2.2212053 ,  -9.30329039,  -9.25164412,  46.84241612,
+        14.2199471 ,  -5.70053174,  33.52150117,  14.79753612,
+       -22.46916445,  -8.32692281,  11.51791585,   2.95214255,
+       -17.33638031,  -8.69982496, -10.38412708,   0.        ,
+         0.74194322,  -7.40997458, -11.37475874,   8.40915285,
+        17.62619576, -28.36457456,   1.98259288,  14.61856994,
+        -4.85565206, -10.35051749,   1.91189131,   6.81729545,
+       -12.45257416,  -1.12024693,  23.98985169, -10.19706172,
+         7.95027644, -17.43852374,   4.46528206, -21.56934899,
+       -19.91073882,  27.06151218,  14.62317947,  11.70991654,
+        40.82423952,  28.78508495,  22.05449925,   1.36577922,
+        23.11244177,  -9.86549591,  26.19318571,  -6.14798938,
+        -5.29577789,  43.85396129,  29.45282245,   6.58457684,
+       -17.29019558, -32.03531927,  12.13315983,   0.48077122,
+        -4.06805688,  23.91328861, -22.73140106,  20.04304855,
+        54.99704955,  -7.16767318,  -6.27624583,  18.97193163,
+         2.85795905, -16.97367267,  26.72346351,  31.19544825,
+        -3.85432233,  -6.98931445, -42.05969413, -18.7368356 ,
+        -4.31984143,  37.68884501,   6.8436352 ,  -8.51951502,
+       -12.10942639, -12.85332809, -12.12891866,  -3.62180058,
+       -18.11824572,  26.26737668,  16.84658348,   9.04275858,
+         0.36566987,  -7.30715946,  26.86580367,  -2.49812998,
+         1.63773068,   1.99972477,   2.22537021,  10.69261504,
+        22.75899648,  20.82262154, -14.95447486,  -8.17783735,
+         5.45338896,  -3.29660982,  26.110256  ,  -9.37414136,
+         1.40674833,  34.04270792, -16.4616533 ,  11.44553137,
+         1.82021034,  -4.47519585,  -5.50808618,  21.44265088,
+         0.        , -16.85027158,  31.17661953, -27.99751981,
+         1.62504329,   8.25195328,   3.60519057,  20.0235761 ,
+        24.10658501, -24.51384317,  -4.69091697,  11.73791461,
+        -0.13864725,  16.77921043,   9.75255053,   8.5549901 ,
+        -1.39459144,  -8.6626107 ,  -8.32059639,  33.63947076,
+        -9.06424059,  27.9692238 ,   5.73254392,  -5.56366943,
+        -3.55982684, -12.00473787,  -7.13138958,   4.63699579,
+        48.61101754,  -8.54949151,  -4.80148692,  22.69370681,
+         6.42128328,  -2.92627835,   0.22601668, -23.66581255,
+        10.46102006, -26.1756699 ,   2.72368287,  18.09212694,
+        -2.71830458,   6.54661122,  26.50308559, -13.38712287,
+       -19.57560906,  -1.04085441,  20.57644675,  12.42787688,
+        -4.96774359,  35.29995995,  -7.30500914, -24.17960341,
+        -9.6958913 ,  -2.60969211,  22.97912874,  22.0647516 ,
+         0.91955455,  27.31601709,  -9.801032  ,  49.30995472,
+         3.50992463,  32.60760926,  10.72678737,  33.60910259,
+       -11.32760444,  25.0916295 , -18.07635069,  28.47402742,
+         2.0551514 ,  43.23166043,  28.01595643,  18.17226258,
+        18.3039158 ,  31.161377  ,  14.63879136,  27.87830433,
+        13.46970573, -23.49520722,  12.49183057,   7.55732557,
+       -19.839297  ,  41.79583218, -10.75697063,  30.33888293,
+       -18.10656222, -12.13577948,   0.83584491,  -9.10027471,
+         6.23707483,  -3.53019231,  -0.15040851,  22.95621672,
+        11.07383128,  29.86881658,  -4.83647867,  22.69103084,
+        17.63313686,  17.80468877,  12.40416129,  -6.96638785,
+         3.58458661,  34.12160421, -10.01414529, -21.8239408 ,
+        -2.44186566,  13.49287603,  25.13147477,  19.71538396,
+       -13.15755623, -14.1987079 ,  -7.51716209, -28.31312097,
+         1.00881746,  -3.6573616 ,  -4.20235084,  20.78779685,
+        -2.6843699 ,  24.19201158,  40.70549511,   8.69366812,
+        37.46381066,  17.51303628,  -8.38096741,   0.13326408,
+        -2.91761008,  -1.74105524,  38.63954234,   5.65769687,
+       -20.89204073,   8.18372317,  38.93893123,  12.39690262,
+        21.56111361,  39.3785139 ,  31.2369353 ,  11.01756797,
+        33.58978347,  23.33128318,  16.4331743 ,  -1.04576483,
+        11.44941833,  -9.80780705,  10.36417734,  19.86225691,
+       -20.07465566,  -0.70343135,  13.43556457,  40.24926761,
+         7.77675264,  -7.88465987,  17.52207812,  -5.62252869,
+        -0.91016139,   2.25030342,   8.14415673,  13.77063635,
+       -10.00858166, -20.31570443,  29.09232155,  -0.38951261,
+        12.53702641,   8.20368519,  29.33294942,  13.08384824,
+        10.43267484,   0.13043288,   2.50479606, -24.80046659,
+        17.99648404,   6.19183046,  10.6360229 , -13.59383695,
+        14.6788572 , -17.97679401, -15.27165411,  -8.86907449,
+         8.44970426,   1.64771677,  -3.10597653,   1.11478367,
+         6.16527189,  19.89728366, -17.81835168,  -7.87264398,
+        44.89808921,   6.01029438, -19.36450023, -14.87620045,
+        26.15474913,  -1.3306854 ,  32.68377127,   0.33908147,
+        -3.46526368,   5.28357117,   0.93607767,   9.22566187,
+        24.85795693,  -3.45332715,   9.07423645,   0.719246  ,
+       -25.65956312, -16.05143545,   9.30246134,  -4.48772041,
+        -8.86726943, -16.34002406,  18.7022459 ,   8.97075319,
+        19.80619136,  18.29421298,  31.79706215, -31.28590186,
+         7.31940292,  62.51287135, -23.5226948 ,  19.01943819,
+         5.41872022,   5.6754734 ,  -8.80830603,  42.9007207 ,
+        39.46076628,  24.09180801, -15.52565803,  16.96181647,
+         1.87357823,  30.85367289,   0.21463231,  22.74171752,
+       -11.26674302,  -9.34379824,  11.16029977,  -3.70192217,
+        -4.5118644 ,   9.02919613,  -5.51676749,   0.73381816,
+        23.86643678, -23.34971654,  16.07387562, -18.56264955,
+        -5.26845117,  19.65579353,  -7.20591104, -37.99057551,
+         3.81812303,  37.38101361,   1.87570403,  -5.68376764,
+       -11.86061483,   5.44156491,  21.97033376,  46.75150616,
+         7.17423233,  17.28575396]), 'Sample count': 26}, {'Sums': array([ 12.09067896, -13.79142535,  33.02847201,  13.68732911,
+       -12.17424688, -29.62761045,  -1.67082379, -13.1417503 ,
+        27.55542502,   2.66034442,   0.8045894 ,  -1.40409555,
+        -4.78230685,  38.51969158, -21.01975103, -10.69871515,
+       -21.01399139,  10.77751924,  27.16574567,   1.13879269,
+         9.24182681,  -6.60654788,  18.26477853,   9.46249282,
+       -21.93867978,  -4.29094284,  31.11314393, -18.89264026,
+       -10.62831186,  -7.20280186,  20.66120721,  -3.52591034,
+        17.41221984, -10.9167252 ,  45.97798314,  17.56435916,
+       -10.03817539,  10.15013336,  21.36220119,  18.43613191,
+        -1.83722968,   1.89007035,   9.6970924 ,  10.92183477,
+        -6.14840663,   2.86749745,  23.93703121,  28.71997988,
+        -3.3441711 ,  -1.32475845, -19.48902088, -30.31692131,
+       -26.25179469,  13.86093466,  -2.90792428,  -1.1457943 ,
+       -26.61158225,  -3.11275646,  39.54552619, -17.95758935,
+        -2.2212053 ,  -9.30329039,  -9.25164412,  46.84241612,
+        14.2199471 ,  -5.70053174,  33.52150117,  14.79753612,
+       -22.46916445,  -8.32692281,  11.51791585,   2.95214255,
+       -17.33638031,  -8.69982496, -10.38412708,   0.        ,
+         0.74194322,  -7.40997458, -11.37475874,   8.40915285,
+        17.62619576, -28.36457456,   1.98259288,  14.61856994,
+        -4.85565206, -10.35051749,   1.91189131,   6.81729545,
+       -12.45257416,  -1.12024693,  23.98985169, -10.19706172,
+         7.95027644, -17.43852374,   4.46528206, -21.56934899,
+       -19.91073882,  27.06151218,  14.62317947,  11.70991654,
+        40.82423952,  28.78508495,  22.05449925,   1.36577922,
+        23.11244177,  -9.86549591,  26.19318571,  -6.14798938,
+        -5.29577789,  43.85396129,  29.45282245,   6.58457684,
+       -17.29019558, -32.03531927,  12.13315983,   0.48077122,
+        -4.06805688,  23.91328861, -22.73140106,  20.04304855,
+        54.99704955,  -7.16767318,  -6.27624583,  18.97193163,
+         2.85795905, -16.97367267,  26.72346351,  31.19544825,
+        -3.85432233,  -6.98931445, -42.05969413, -18.7368356 ,
+        -4.31984143,  37.68884501,   6.8436352 ,  -8.51951502,
+       -12.10942639, -12.85332809, -12.12891866,  -3.62180058,
+       -18.11824572,  26.26737668,  16.84658348,   9.04275858,
+         0.36566987,  -7.30715946,  26.86580367,  -2.49812998,
+         1.63773068,   1.99972477,   2.22537021,  10.69261504,
+        22.75899648,  20.82262154, -14.95447486,  -8.17783735,
+         5.45338896,  -3.29660982,  26.110256  ,  -9.37414136,
+         1.40674833,  34.04270792, -16.4616533 ,  11.44553137,
+         1.82021034,  -4.47519585,  -5.50808618,  21.44265088,
+         0.        , -16.85027158,  31.17661953, -27.99751981,
+         1.62504329,   8.25195328,   3.60519057,  20.0235761 ,
+        24.10658501, -24.51384317,  -4.69091697,  11.73791461,
+        -0.13864725,  16.77921043,   9.75255053,   8.5549901 ,
+        -1.39459144,  -8.6626107 ,  -8.32059639,  33.63947076,
+        -9.06424059,  27.9692238 ,   5.73254392,  -5.56366943,
+        -3.55982684, -12.00473787,  -7.13138958,   4.63699579,
+        48.61101754,  -8.54949151,  -4.80148692,  22.69370681,
+         6.42128328,  -2.92627835,   0.22601668, -23.66581255,
+        10.46102006, -26.1756699 ,   2.72368287,  18.09212694,
+        -2.71830458,   6.54661122,  26.50308559, -13.38712287,
+       -19.57560906,  -1.04085441,  20.57644675,  12.42787688,
+        -4.96774359,  35.29995995,  -7.30500914, -24.17960341,
+        -9.6958913 ,  -2.60969211,  22.97912874,  22.0647516 ,
+         0.91955455,  27.31601709,  -9.801032  ,  49.30995472,
+         3.50992463,  32.60760926,  10.72678737,  33.60910259,
+       -11.32760444,  25.0916295 , -18.07635069,  28.47402742,
+         2.0551514 ,  43.23166043,  28.01595643,  18.17226258,
+        18.3039158 ,  31.161377  ,  14.63879136,  27.87830433,
+        13.46970573, -23.49520722,  12.49183057,   7.55732557,
+       -19.839297  ,  41.79583218, -10.75697063,  30.33888293,
+       -18.10656222, -12.13577948,   0.83584491,  -9.10027471,
+         6.23707483,  -3.53019231,  -0.15040851,  22.95621672,
+        11.07383128,  29.86881658,  -4.83647867,  22.69103084,
+        17.63313686,  17.80468877,  12.40416129,  -6.96638785,
+         3.58458661,  34.12160421, -10.01414529, -21.8239408 ,
+        -2.44186566,  13.49287603,  25.13147477,  19.71538396,
+       -13.15755623, -14.1987079 ,  -7.51716209, -28.31312097,
+         1.00881746,  -3.6573616 ,  -4.20235084,  20.78779685,
+        -2.6843699 ,  24.19201158,  40.70549511,   8.69366812,
+        37.46381066,  17.51303628,  -8.38096741,   0.13326408,
+        -2.91761008,  -1.74105524,  38.63954234,   5.65769687,
+       -20.89204073,   8.18372317,  38.93893123,  12.39690262,
+        21.56111361,  39.3785139 ,  31.2369353 ,  11.01756797,
+        33.58978347,  23.33128318,  16.4331743 ,  -1.04576483,
+        11.44941833,  -9.80780705,  10.36417734,  19.86225691,
+       -20.07465566,  -0.70343135,  13.43556457,  40.24926761,
+         7.77675264,  -7.88465987,  17.52207812,  -5.62252869,
+        -0.91016139,   2.25030342,   8.14415673,  13.77063635,
+       -10.00858166, -20.31570443,  29.09232155,  -0.38951261,
+        12.53702641,   8.20368519,  29.33294942,  13.08384824,
+        10.43267484,   0.13043288,   2.50479606, -24.80046659,
+        17.99648404,   6.19183046,  10.6360229 , -13.59383695,
+        14.6788572 , -17.97679401, -15.27165411,  -8.86907449,
+         8.44970426,   1.64771677,  -3.10597653,   1.11478367,
+         6.16527189,  19.89728366, -17.81835168,  -7.87264398,
+        44.89808921,   6.01029438, -19.36450023, -14.87620045,
+        26.15474913,  -1.3306854 ,  32.68377127,   0.33908147,
+        -3.46526368,   5.28357117,   0.93607767,   9.22566187,
+        24.85795693,  -3.45332715,   9.07423645,   0.719246  ,
+       -25.65956312, -16.05143545,   9.30246134,  -4.48772041,
+        -8.86726943, -16.34002406,  18.7022459 ,   8.97075319,
+        19.80619136,  18.29421298,  31.79706215, -31.28590186,
+         7.31940292,  62.51287135, -23.5226948 ,  19.01943819,
+         5.41872022,   5.6754734 ,  -8.80830603,  42.9007207 ,
+        39.46076628,  24.09180801, -15.52565803,  16.96181647,
+         1.87357823,  30.85367289,   0.21463231,  22.74171752,
+       -11.26674302,  -9.34379824,  11.16029977,  -3.70192217,
+        -4.5118644 ,   9.02919613,  -5.51676749,   0.73381816,
+        23.86643678, -23.34971654,  16.07387562, -18.56264955,
+        -5.26845117,  19.65579353,  -7.20591104, -37.99057551,
+         3.81812303,  37.38101361,   1.87570403,  -5.68376764,
+       -11.86061483,   5.44156491,  21.97033376,  46.75150616,
+         7.17423233,  17.28575396]), 'Sample count': 26}]
+SUMS
+[ 0.48362716 -0.53043944  1.27032585  0.59510127 -0.46824026 -1.48138052
+ -0.41770595 -0.59735229  1.05982404  0.33254305  0.03498215 -0.07800531
+ -0.43475517  1.4815266  -0.91390222 -0.46516153 -0.80823044  0.53887596
+  1.13190607  0.05993646  0.57761418 -0.36703044  0.79412081  0.39427053
+ -0.91411166 -4.29094284  1.19665938 -0.85875638 -2.65707797 -0.37909483
+  0.79466182 -0.29382586  0.91643262 -0.41987405  1.76838397  0.67555228
+ -0.62738596  0.42292222  0.82162312  0.80157095 -0.07655124  0.09947739
+  0.64647283  0.43687339 -0.29278127  0.1146999   0.92065505  1.10461461
+ -0.13934046 -0.13247584 -0.81204254 -1.59562744 -1.3816734   0.55443739
+ -1.45396214 -0.09548286 -1.02352239 -0.13533724  1.52098178 -1.38135303
+ -0.22212053 -1.32904148 -0.48692864  1.80163139  0.54692104 -0.81436168
+  1.28928851  0.569136   -3.74486074 -0.75699298  0.44299676  0.17365544
+ -1.08352377 -0.36249271 -1.1537919          nan  0.02967773 -0.28499902
+ -0.45499035  0.36561534  0.67793061 -1.18185727  0.07625357  0.56225269
+ -0.32371014 -1.47864536  0.07353428  0.26220367 -1.1320522  -0.04308642
+  0.9226866  -1.13300686  0.30577986 -0.69754095  0.17174162 -2.39659433
+ -1.42219563  1.04082739  0.91394872  0.46839666  1.57016306  1.10711865
+  0.95889127  0.05252997  0.88894007 -0.39461984  1.00743022 -0.55890813
+ -0.22065741  1.68669082  1.13280086  0.27435737 -0.78591798 -1.39283997
+  0.48532639  0.02670951 -0.33900474  0.91974187 -0.87428466  0.83512702
+  2.11527114 -0.27567974 -0.41841639  0.75887727  0.13609329 -1.21240519
+  1.02782552  1.29981034 -0.14824317 -0.31769611 -2.00284258 -0.81464503
+ -0.16614775  1.44957096  0.29754936 -0.53246969 -1.10085694 -0.85688854
+ -0.48515675 -0.13930002 -0.82355662  1.01028372  0.88666229  0.36171034
+  0.01406423 -0.4059533   1.03330014 -0.11895857  0.06298964  0.11109582
+  0.15895502  0.41125442  0.87534602  0.80087006 -0.71211785 -1.36297289
+  0.27266945 -3.29660982  1.04441024 -0.7210878   0.05626993  1.30933492
+ -1.17583238  0.44021274  0.07280841 -0.17212292 -0.55080862  0.97466595
+         nan -0.7326205   1.19910075 -1.21728347  0.16250433  0.33007813
+  0.25751361  0.77013754  0.92717635 -1.88568024 -2.34545848  0.48907978
+ -0.00729722  0.64535425  0.3750981   0.32903808 -0.05810798 -0.61875791
+ -0.43792613  1.2938258  -0.53319062  1.07573938  0.24924104 -0.61818549
+ -0.23732179 -0.80031586 -0.27428421  0.17834599  1.86965452 -2.13737288
+ -0.32009913  0.87283488  0.71347592 -0.16257102  0.01412604 -1.69041518
+  0.47550091 -1.09065291  0.14335173  0.72368508 -0.22652538  0.26186445
+  1.06012342 -0.74372905 -1.22347557 -0.04003286  0.7914018   0.47799526
+ -1.65591453  1.35769077 -2.43500305 -2.6866226  -0.3729189  -0.10438768
+  0.91916515  0.84864429  0.05108636  1.05061604 -1.40014743  1.89653672
+  0.1349971   1.25413882  0.53633937  1.29265779 -0.43567709  0.96506267
+ -1.29116791  1.18641781  0.08563131  1.66275617  1.07753679  0.69893318
+  0.70399676  1.1985145   0.56303044  1.11513217  0.61225935 -0.93980829
+  0.54312307  0.29066637 -1.41709264  1.60753201 -1.79282844  1.21355532
+ -1.13166014 -0.57789426  0.03214788 -0.35001057  0.24948299 -0.32092657
+ -0.0065395   0.88293141  0.42591659  1.14880064 -0.40303989  0.87273196
+  0.70532547  0.68479572  0.47708313 -0.33173275  0.13786872  1.36486417
+ -0.50070726 -2.7279926  -0.09391791  0.51895677  0.96659518  0.9857692
+ -0.59807074 -0.94658053 -0.68337837 -1.28696004  0.03880067 -0.9143404
+ -0.46692787  0.79953065 -0.103245    0.93046198  1.56559597  0.36223617
+  1.44091579  0.67357832 -0.76190613  0.008329   -0.18235063 -0.08705276
+  1.48613624  0.21760373 -0.8705017   0.32734893  1.4976512   0.47680395
+  0.89837973  1.51455823  1.20142059  0.42375261  1.29191475  0.89735705
+  0.63204517 -0.04022172  0.45797673 -0.37722335  0.39862221  0.79449028
+ -1.1808621  -0.70343135  0.58415498  1.54804875  0.40930277 -0.98558248
+  0.67392608 -0.25556949 -0.03957223  0.10228652  0.74037788  0.52963986
+ -1.25107271 -1.84688222  1.11893544 -0.38951261  0.5223761   0.4317729
+  1.17331798  0.50322493  0.52163374  0.00521732  0.09633831 -1.12729394
+  0.7498535   0.28144684  0.4090778  -1.23580336  0.63821118 -0.74903308
+ -1.38833219 -0.36954477  0.32498863  0.16477168 -0.12423906  0.04287629
+  0.23712584  0.76528014 -1.18789011 -0.302794    1.72684959  0.30051472
+ -1.93645002 -0.59504802  1.00595189 -1.3306854   1.25706813  0.01304159
+ -0.23101758  0.20321428  0.03600299  0.41934827  0.95607527 -0.18175406
+  0.34900909  0.032693   -1.16634378 -0.76435407  0.77520511 -0.17950882
+ -1.10840868 -0.71043583  0.71931715  0.34502897  0.76177659  0.76225887
+  1.22296393 -1.73810566  0.43055311  2.40434121 -1.47016842  0.73151685
+  0.24630546  0.63060816 -0.338781    1.65002772  1.51772178  0.926608
+ -1.5525658   0.84809082  0.13382702  1.18667973  0.00933184  0.87468144
+ -0.51212468 -0.35937686  0.55801499 -0.18509611 -0.30079096  0.90291961
+ -0.32451573  0.02822378  0.91793988 -2.59441295  0.64295502 -2.06251662
+ -0.2195188   0.75599206 -1.44118221 -2.23473974  0.16600535  1.43773129
+  0.08931924 -2.84188382 -0.84718677  0.20929096  0.84501284  1.79813485
+  0.44838952  0.66483669]
+[Time: 28.06.23 07:48:17] [Level: info] transition: compute_std
+[CTRL] GET /data
+[Time: 28.06.23 07:48:18] [Level: info] state: compute_std
+(422, 1)
+(422, 1)
+[Time: 28.06.23 07:48:18] [Level: info] transition: aggregate_stds
+[Time: 28.06.23 07:48:19] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[ 8.55739983  4.67499561  1.92313841 20.62324325  5.60425224 11.10238861
+  6.42214756  7.94406496 11.94000792  0.77135878 34.89014052 43.86194233
+ 20.04926898  8.02255555 20.97834489 34.19957731 39.36724719  8.28869493
+ 11.78708323  8.85043892 15.05982249 16.35632677 12.56376352 20.84013172
+ 11.40601628  0.         12.38341353 14.78062748  0.         22.17189686
+ 53.479504   23.10014852  8.86147479  5.56985881  3.53871404 38.42244621
+ 67.57095833  9.11284935  3.72697683 41.32504529  8.06786803 36.76562519
+ 12.32613189 10.67837701 17.6274836   7.71964294 14.76949179 14.50486366
+  4.53517847 32.60878455  8.01225665 17.27661426 60.88751612  9.00896022
+  0.         36.37583198 34.70820383 15.5140603   6.55790034 28.05079752
+  2.9169272   0.         52.44075142  6.55742784 36.93246685 16.8162972
+  7.99809489 16.81006872  4.01532658 13.75732851 13.63059514 42.11224484
+ 12.55614102 49.36850921  5.84779337  0.         35.75076067  3.77742602
+  6.9569094   2.61687277  2.17366565 40.7085892   7.98285052  6.50522899
+  3.48192389  2.46963421  6.38920148  6.78481385  7.13731112  9.16490199
+  4.7406647   1.01132227  9.06761474 58.07761245  7.40518617 10.97802593
+  2.91698626  5.27018879 49.31209504 16.43315777  4.26110579  1.77688427
+ 16.62741584 10.54074632  2.00091715  4.89339093  4.14105414 53.32771105
+  7.9099905   3.51126982 17.62946936 33.37186798 35.98252609 17.00291311
+ 25.01567563 12.58240843 24.01432791 20.05448229 14.85147785  6.06515342
+ 30.45735     2.45318005 44.42424888 14.33950639 15.36461659 29.70758605
+  8.21264063  8.18572319  7.95610781 43.38482777 20.96061646 22.84604487
+  3.27654309  9.25810669 11.36810825 51.7966572  19.61753886 19.23869845
+ 18.5673771   5.71371133 37.69272561  5.71356356 34.77234038 27.90194897
+ 10.34610566 14.64033448  1.15680803 24.1295887   5.11676933 30.48881383
+  2.01192038  0.79907234  7.30642909 11.74381855 14.79444561  1.28956097
+ 94.34583187  1.10505095 10.14178407 25.94812249  4.92811646  9.35427533
+ 37.15829423  8.63029521  6.33723793  6.03528909 12.41333879  9.89427488
+  0.          5.86066443  3.51030426 19.07550377  1.73330195  4.87300316
+ 15.63933325  2.19626797  8.26050606 35.60763824  1.26287099 14.68716372
+ 14.63527567  5.53995337 12.08968397 17.09562228 28.06628477  5.14088492
+  8.98416691  6.77571573 13.49251309  6.9347967  56.08639965 20.93129934
+  7.90556032 16.5674449   4.01692921  1.9966888   5.21245111  0.40627025
+ 35.33235458  6.27886542  5.86346608 10.3380868  18.24211701 10.06083469
+ 18.40074555 12.07852659 23.22163769  7.48546402 82.26904448 41.30152296
+ 23.17343772  2.24795124 34.39042401  3.48350141 22.78093622  6.001471
+ 17.6568899   6.28552372 16.1166925  10.34159195 14.37247859 50.77575608
+ 29.97293814 14.01436795  4.07669059  9.67372524  0.36761909 21.37821661
+ 14.68490335  4.44461215 27.22385448  4.82321954 49.10608616  6.60176746
+  3.70970983 58.863048   22.14104242  3.99897817 13.33794944 14.82220414
+  9.87131606 20.63792199  6.12835126 42.7554065  25.62282983 10.69621492
+ 14.59385176 62.0465768  28.74726315  8.01771228 23.63738095  7.66862727
+  6.50935923 25.51461289  2.7995254   6.11834304  6.62239681 38.63543489
+ 14.73541578  7.27186159 17.25001986 12.4988455  58.89886243 11.16945975
+ 29.47032191  9.38791925  4.05751745  5.3666276   8.09304485 34.84732879
+ 42.73924904  2.77149438  8.08283126  6.85760691 13.76316352 14.25113277
+ 32.11591666 29.01926949  4.63191476 20.74352021  1.75207535  0.
+  5.4259706  30.97867515 12.25103611  3.82995841  2.52561018 20.6688194
+ 25.29568552 21.54920672 34.57145497  8.13171172 12.07175082 30.19646048
+  4.82778808  9.92661631  6.55202794 13.63316931 10.49652516  5.72198784
+  4.41899146 19.15044061  4.28995214  7.15226891  3.93812624  9.96874381
+  8.538877    9.60323004 17.37007837 86.33787444 27.75950161 26.0369423
+  1.05801345  0.         15.03890791 10.89248257  6.48480022  3.09278089
+  8.02933928 17.72532207 16.81084725 25.78613071 19.57934476  3.06818044
+  1.42620086 32.46568564  5.9401901   0.          5.09355101 14.92967856
+  7.17391768 17.70883513 17.38731921 57.46740282  4.65022528 16.72237859
+ 41.73974964  4.5571277  12.24272424 13.55208557 49.78275059 16.03225423
+  3.08913759 13.50709005 50.32190132 11.62086509  8.60519474  6.1779763
+  1.84768523  9.82477353 42.8781316  26.20314018  2.11546395 16.79540673
+ 18.32955783 27.74911541  3.89524712  0.          1.79935201  3.565257
+ 28.50648968  3.62283126  3.37787017 21.74609829  9.36482832 23.13298362
+  6.04533971 34.10238178 14.52325606 70.91247125 20.74566785  3.85610453
+ 40.9849022  10.59567806  4.55056625 61.17485251 13.15037322 18.07333805
+  3.91271882  8.31095885 14.46304519  1.59131682 27.09728392 12.32695291
+ 13.46404548  8.07275185  3.50703787 11.40657439  2.48174548  7.62722385
+  6.29023544 30.34227363 32.2997202   8.03271354  1.58739756 12.94948368
+ 49.20504663  4.02573885 21.78299406 18.48561433 20.08811683 28.39812594
+  4.99424045  3.71486277  8.31341379 88.50267293 20.58956883 11.00736499
+ 18.25923867  5.22866235  2.4442948   9.31680054 64.61256281  5.27209025
+ 15.3671681   1.72210364 21.91809511  3.36898822 52.5333787   5.40604952
+ 27.12596503 34.12229418]
+[8.89415608e+00 4.67575149e+00 2.55082112e+00 2.06284262e+01
+ 6.63658003e+00 2.71700330e+01 1.38846842e+01 1.69509422e+01
+ 1.26887663e+01 3.95512152e+00 4.09135338e+01 5.76529704e+01
+ 2.16485113e+01 8.04556346e+00 2.14985041e+01 3.46124369e+01
+ 4.08391629e+01 8.34242656e+00 1.39970447e+01 8.95384699e+00
+ 2.24595363e+01 1.81322230e+01 1.30090101e+01 2.09813276e+01
+ 1.17146690e+01 0.00000000e+00 1.48207306e+01 1.68831858e+01
+ 1.00795752e+01 2.39472029e+01 5.69537558e+01 3.89841805e+01
+ 9.22961828e+00 6.44447734e+00 3.64156993e+00 3.84406315e+01
+ 7.02071755e+01 9.32332206e+00 3.94608888e+00 5.73570175e+01
+ 9.01638015e+00 3.74010460e+01 1.26617679e+01 1.12200260e+01
+ 3.81560520e+01 9.28098491e+00 1.52657871e+01 1.58141506e+01
+ 4.58164970e+00 3.63282849e+01 1.04112286e+01 1.82034480e+01
+ 6.84435635e+01 9.68971440e+00 0.00000000e+00 5.23640187e+01
+ 3.79570230e+01 1.79866490e+01 6.61830864e+00 2.88685685e+01
+ 1.98933147e+01 3.24321883e+00 5.43207835e+01 6.66189735e+00
+ 3.73145270e+01 2.00005017e+01 8.02117819e+00 1.92986631e+01
+ 4.54270432e+01 1.40925115e+01 1.44360136e+01 5.72949889e+01
+ 1.34400385e+01 4.93838385e+01 6.01309653e+00 0.00000000e+00
+ 3.59643798e+01 4.25483600e+00 7.00321262e+00 5.74806425e+00
+ 3.62418418e+00 4.11552348e+01 8.09760762e+00 8.93390310e+00
+ 3.49325900e+00 7.37153194e+00 6.87079767e+00 7.12105572e+00
+ 1.07190604e+01 9.80102848e+00 4.97047156e+00 1.61354165e+00
+ 1.05355419e+01 6.12202292e+01 1.01986624e+01 1.09799977e+01
+ 5.62266497e+00 5.46155278e+00 5.87595422e+01 1.74635168e+01
+ 5.06126063e+00 1.80068561e+00 1.78854162e+01 1.14035862e+01
+ 2.19033954e+00 4.95923555e+00 1.45053662e+01 7.10820791e+01
+ 9.36667855e+00 4.30009119e+00 1.76426056e+01 4.00154709e+01
+ 3.62423611e+01 2.16458306e+01 2.50554835e+01 1.27636292e+01
+ 2.42723700e+01 2.05609102e+01 1.51345234e+01 6.10890941e+00
+ 3.16914055e+01 2.60820380e+00 5.48836628e+01 1.58465275e+01
+ 2.81825729e+01 3.15729662e+01 8.33821656e+00 9.89387425e+00
+ 8.02974780e+00 4.74430772e+01 2.38657251e+01 4.19755714e+01
+ 4.24991639e+00 9.41565253e+00 1.14155833e+01 6.84690819e+01
+ 1.96184468e+01 1.93445201e+01 1.96631086e+01 6.30703058e+00
+ 4.38294192e+01 5.72280333e+00 4.60238524e+01 2.80308989e+01
+ 1.25643118e+01 1.58350022e+01 1.99791216e+00 2.47052398e+01
+ 5.52919336e+00 4.05990157e+01 2.13207258e+00 8.36373187e-01
+ 7.95566371e+00 1.19743132e+01 2.14318392e+01 3.34812668e+00
+ 9.81145504e+01 1.62042835e+00 1.22587880e+01 2.78642546e+01
+ 5.29306796e+00 1.12832945e+01 3.74904063e+01 8.75521927e+00
+ 1.07847329e+01 6.33627545e+00 1.56796929e+01 1.00998104e+01
+ 0.00000000e+00 7.92646606e+00 5.53255267e+00 1.95686059e+01
+ 2.15300706e+00 5.53123374e+00 1.74410843e+01 2.38198426e+00
+ 9.00014262e+00 3.61056212e+01 1.26043356e+01 1.81900255e+01
+ 1.90429650e+01 5.96074342e+00 1.22099709e+01 2.07907793e+01
+ 2.83492713e+01 7.44214247e+00 1.53577478e+01 7.44751957e+00
+ 1.39452316e+01 6.95634538e+00 6.00475902e+01 4.10575078e+01
+ 8.98660123e+00 2.00143458e+01 4.21924130e+00 2.01514419e+00
+ 6.08932972e+00 5.53648841e-01 4.01956377e+01 6.57008508e+00
+ 6.94971217e+00 1.04975609e+01 2.50894816e+01 1.03110795e+01
+ 1.97047734e+01 1.28741051e+01 2.33435483e+01 9.38224312e+00
+ 8.73124211e+01 4.15774150e+01 2.31863843e+01 8.60171079e+00
+ 3.43925044e+01 3.48422471e+00 2.27814768e+01 6.48099254e+00
+ 1.89182263e+01 7.34482247e+00 2.40918663e+01 1.62386719e+01
+ 1.52378235e+01 5.16142641e+01 3.73432247e+01 1.45429361e+01
+ 4.49559351e+00 9.67786010e+00 5.85616789e+00 2.20942294e+01
+ 1.46873563e+01 8.42422709e+00 2.97076117e+01 4.83813652e+00
+ 4.91145718e+01 7.41425084e+00 6.08554305e+00 6.35784678e+01
+ 2.21519981e+01 4.20395606e+00 1.47947019e+01 1.54330253e+01
+ 1.00544752e+01 2.28052730e+01 6.76103938e+00 4.45077886e+01
+ 2.99684009e+01 1.20349276e+01 1.52474403e+01 6.22333887e+01
+ 2.99918013e+01 8.20462705e+00 2.76667325e+01 7.73234397e+00
+ 1.03034660e+01 2.55146535e+01 3.15238969e+00 8.42854726e+00
+ 6.86644425e+00 3.99691673e+01 1.69239435e+01 7.41868098e+00
+ 1.72687027e+01 1.29978583e+01 7.81720626e+01 1.19247031e+01
+ 3.05807184e+01 1.05222500e+01 5.63332657e+00 1.61013736e+01
+ 9.73064388e+00 3.94753320e+01 4.46524229e+01 8.58197609e+00
+ 8.30916191e+00 6.85840834e+00 1.41917977e+01 1.77247480e+01
+ 3.38231894e+01 2.90617944e+01 8.32126360e+00 2.58116031e+01
+ 1.84729402e+00 3.19986181e+00 6.25196011e+00 3.54330244e+01
+ 1.24643219e+01 5.00367376e+00 2.54437774e+00 2.25661147e+01
+ 2.54851723e+01 2.16460883e+01 3.78505679e+01 8.35329425e+00
+ 1.47250522e+01 3.34589834e+01 4.83499196e+00 1.02158345e+01
+ 1.05889199e+01 1.54132091e+01 1.27875015e+01 6.82962016e+00
+ 4.46664090e+00 2.08139887e+01 4.38882098e+00 1.15639627e+01
+ 3.95482712e+00 9.97647836e+00 8.54052123e+00 9.60902709e+00
+ 1.76432783e+01 8.91447688e+01 3.21248849e+01 2.76514299e+01
+ 1.10751780e+00 6.95180919e-01 1.51888458e+01 1.25054548e+01
+ 6.52335412e+00 5.38730907e+00 1.15242912e+01 1.77778100e+01
+ 1.81454384e+01 2.73607357e+01 2.75648797e+01 5.32750988e+00
+ 1.92150189e+01 3.34826456e+01 6.71952350e+00 2.03419538e-02
+ 5.72205384e+00 3.31680807e+01 7.48535273e+00 1.78803610e+01
+ 2.41825503e+01 6.35400734e+01 4.77479186e+00 2.51765958e+01
+ 4.18050612e+01 5.82747582e+00 1.43229410e+01 1.49829599e+01
+ 5.51065862e+01 1.68763789e+01 1.76272707e+01 1.40957996e+01
+ 5.14182141e+01 1.32402767e+01 1.53986092e+01 8.13255533e+00
+ 1.84946205e+00 1.28473551e+01 4.55080736e+01 2.66517477e+01
+ 2.60425521e+00 1.69473558e+01 1.85973812e+01 2.79545202e+01
+ 3.96750269e+00 0.00000000e+00 2.22357862e+00 4.98760430e+00
+ 2.85097809e+01 3.64062060e+00 3.44583382e+00 2.60007771e+01
+ 9.97014133e+00 2.42886543e+01 6.34973741e+00 3.69570166e+01
+ 1.78905106e+01 7.52002526e+01 2.34961633e+01 3.86458348e+00
+ 5.63436861e+01 1.10592078e+01 4.77821771e+00 7.53418937e+01
+ 1.36692719e+01 1.80735310e+01 3.94174505e+00 1.53549981e+01
+ 1.45321788e+01 1.63807287e+00 2.72906406e+01 1.23349572e+01
+ 2.05590169e+01 8.64601249e+00 4.44969817e+00 1.15117904e+01
+ 2.49006322e+00 7.73014683e+00 8.26569093e+00 3.26173368e+01
+ 3.51997473e+01 8.09094819e+00 1.78101547e+00 1.29658130e+01
+ 4.92602166e+01 4.08409709e+00 2.19666441e+01 2.29824252e+01
+ 2.73698691e+01 2.97320594e+01 5.50305300e+00 4.20314095e+00
+ 8.31811651e+00 1.04278171e+02 2.10008448e+01 1.87770074e+01
+ 1.83686037e+01 6.34650800e+00 3.04903866e+00 2.43181997e+01
+ 8.47702157e+01 5.27584766e+00 2.00573598e+01 3.11157429e+01
+ 3.57521384e+01 3.44645465e+00 5.25728043e+01 5.46890378e+00
+ 2.79449373e+01 3.49340098e+01]
+COMPUTE STD
+[1.74515559e+01 9.35074710e+00 4.47395953e+00 4.12516695e+01
+ 1.22408323e+01 3.82724216e+01 2.03068318e+01 2.48950072e+01
+ 2.46287742e+01 4.72648030e+00 7.58036743e+01 1.01514913e+02
+ 4.16977802e+01 1.60681190e+01 4.24768490e+01 6.88120142e+01
+ 8.02064101e+01 1.66311215e+01 2.57841280e+01 1.78042859e+01
+ 3.75193588e+01 3.44885498e+01 2.55727736e+01 4.18214593e+01
+ 2.31206853e+01 0.00000000e+00 2.72041442e+01 3.16638132e+01
+ 1.00795752e+01 4.61190997e+01 1.10433260e+02 6.20843290e+01
+ 1.80910931e+01 1.20143362e+01 7.18028397e+00 7.68630777e+01
+ 1.37778134e+02 1.84361714e+01 7.67306571e+00 9.86820627e+01
+ 1.70842482e+01 7.41666712e+01 2.49878997e+01 2.18984030e+01
+ 5.57835356e+01 1.70006279e+01 3.00352789e+01 3.03190143e+01
+ 9.11682817e+00 6.89370694e+01 1.84234853e+01 3.54800623e+01
+ 1.29331080e+02 1.86986746e+01 0.00000000e+00 8.87398507e+01
+ 7.26652269e+01 3.35007093e+01 1.31762090e+01 5.69193660e+01
+ 2.28102419e+01 3.24321883e+00 1.06761535e+02 1.32193252e+01
+ 7.42469939e+01 3.68167989e+01 1.60192731e+01 3.61087318e+01
+ 4.94423698e+01 2.78498400e+01 2.80666087e+01 9.94072337e+01
+ 2.59961795e+01 9.87523477e+01 1.18608899e+01 0.00000000e+00
+ 7.17151404e+01 8.03226202e+00 1.39601220e+01 8.36493703e+00
+ 5.79784983e+00 8.18638240e+01 1.60804581e+01 1.54391321e+01
+ 6.97518289e+00 9.84116615e+00 1.32599991e+01 1.39058696e+01
+ 1.78563715e+01 1.89659305e+01 9.71113626e+00 2.62486392e+00
+ 1.96031567e+01 1.19297842e+02 1.76038486e+01 2.19580236e+01
+ 8.53965123e+00 1.07317416e+01 1.08071637e+02 3.38966745e+01
+ 9.32236642e+00 3.57756987e+00 3.45128320e+01 2.19443325e+01
+ 4.19125669e+00 9.85262647e+00 1.86464203e+01 1.24409790e+02
+ 1.72766690e+01 7.81136101e+00 3.52720750e+01 7.33873389e+01
+ 7.22248872e+01 3.86487437e+01 5.00711592e+01 2.53460376e+01
+ 4.82866979e+01 4.06153925e+01 2.99860013e+01 1.21740628e+01
+ 6.21487555e+01 5.06138385e+00 9.93079117e+01 3.01860339e+01
+ 4.35471894e+01 6.12805522e+01 1.65508572e+01 1.80795974e+01
+ 1.59858556e+01 9.08279050e+01 4.48263415e+01 6.48216162e+01
+ 7.52645948e+00 1.86737592e+01 2.27836915e+01 1.20265739e+02
+ 3.92359857e+01 3.85832186e+01 3.82304857e+01 1.20207419e+01
+ 8.15221448e+01 1.14363669e+01 8.07961928e+01 5.59328478e+01
+ 2.29104174e+01 3.04753367e+01 3.15472019e+00 4.88348285e+01
+ 1.06459627e+01 7.10878295e+01 4.14399296e+00 1.63544552e+00
+ 1.52620928e+01 2.37181318e+01 3.62262848e+01 4.63768765e+00
+ 1.92460382e+02 2.72547930e+00 2.24005721e+01 5.38123771e+01
+ 1.02211844e+01 2.06375698e+01 7.46487005e+01 1.73855145e+01
+ 1.71219708e+01 1.23715645e+01 2.80930317e+01 1.99940853e+01
+ 0.00000000e+00 1.37871305e+01 9.04285693e+00 3.86441097e+01
+ 3.88630901e+00 1.04042369e+01 3.30804175e+01 4.57825223e+00
+ 1.72606487e+01 7.17132594e+01 1.38672066e+01 3.28771892e+01
+ 3.36782407e+01 1.15006968e+01 2.42996549e+01 3.78864016e+01
+ 5.64155561e+01 1.25830274e+01 2.43419147e+01 1.42232353e+01
+ 2.74377446e+01 1.38911421e+01 1.16133990e+02 6.19888071e+01
+ 1.68921616e+01 3.65817907e+01 8.23617050e+00 4.01183300e+00
+ 1.13017808e+01 9.59919089e-01 7.55279922e+01 1.28489505e+01
+ 1.28131783e+01 2.08356477e+01 4.33315986e+01 2.03719141e+01
+ 3.81055190e+01 2.49526317e+01 4.65651860e+01 1.68677071e+01
+ 1.69581466e+02 8.28789379e+01 4.63598220e+01 1.08496620e+01
+ 6.87829284e+01 6.96772611e+00 4.55624130e+01 1.24824635e+01
+ 3.65751162e+01 1.36303462e+01 4.02085588e+01 2.65802638e+01
+ 2.96103021e+01 1.02390020e+02 6.73161629e+01 2.85573041e+01
+ 8.57228410e+00 1.93515853e+01 6.22378698e+00 4.34724460e+01
+ 2.93722596e+01 1.28688392e+01 5.69314662e+01 9.66135606e+00
+ 9.82206580e+01 1.40160183e+01 9.79525288e+00 1.22441516e+02
+ 4.42930405e+01 8.20293423e+00 2.81326513e+01 3.02552294e+01
+ 1.99257912e+01 4.34431950e+01 1.28893906e+01 8.72631951e+01
+ 5.55912307e+01 2.27311426e+01 2.98412920e+01 1.24279965e+02
+ 5.87390644e+01 1.62223393e+01 5.13041134e+01 1.54009712e+01
+ 1.68128253e+01 5.10292664e+01 5.95191508e+00 1.45468903e+01
+ 1.34888411e+01 7.86046022e+01 3.16593593e+01 1.46905426e+01
+ 3.45187225e+01 2.54967038e+01 1.37070925e+02 2.30941628e+01
+ 6.00510403e+01 1.99101692e+01 9.69084402e+00 2.14680012e+01
+ 1.78236887e+01 7.43226608e+01 8.73916719e+01 1.13534705e+01
+ 1.63919932e+01 1.37160153e+01 2.79549612e+01 3.19758807e+01
+ 6.59391060e+01 5.80810639e+01 1.29531784e+01 4.65551233e+01
+ 3.59936937e+00 3.19986181e+00 1.16779307e+01 6.64116996e+01
+ 2.47153580e+01 8.83363216e+00 5.06998792e+00 4.32349341e+01
+ 5.07808578e+01 4.31952950e+01 7.24220228e+01 1.64850060e+01
+ 2.67968030e+01 6.36554439e+01 9.66278004e+00 2.01424508e+01
+ 1.71409478e+01 2.90463784e+01 2.32840266e+01 1.25516080e+01
+ 8.88563236e+00 3.99644293e+01 8.67877313e+00 1.87162316e+01
+ 7.89295336e+00 1.99452222e+01 1.70793982e+01 1.92122571e+01
+ 3.50133567e+01 1.75482643e+02 5.98843865e+01 5.36883722e+01
+ 2.16553125e+00 6.95180919e-01 3.02277537e+01 2.33979373e+01
+ 1.30081543e+01 8.48008996e+00 1.95536305e+01 3.55031321e+01
+ 3.49562857e+01 5.31468664e+01 4.71442244e+01 8.39569032e+00
+ 2.06412198e+01 6.59483312e+01 1.26597136e+01 2.03419538e-02
+ 1.08156048e+01 4.80977593e+01 1.46592704e+01 3.55891961e+01
+ 4.15698695e+01 1.21007476e+02 9.42501714e+00 4.18989744e+01
+ 8.35448108e+01 1.03846035e+01 2.65656653e+01 2.85350455e+01
+ 1.04889337e+02 3.29086331e+01 2.07164083e+01 2.76028897e+01
+ 1.01740115e+02 2.48611418e+01 2.40038039e+01 1.43105316e+01
+ 3.69714728e+00 2.26721286e+01 8.83862051e+01 5.28548879e+01
+ 4.71971916e+00 3.37427625e+01 3.69269390e+01 5.57036356e+01
+ 7.86274981e+00 0.00000000e+00 4.02293062e+00 8.55286129e+00
+ 5.70162706e+01 7.26345185e+00 6.82370399e+00 4.77468754e+01
+ 1.93349697e+01 4.74216379e+01 1.23950771e+01 7.10593983e+01
+ 3.24137667e+01 1.46112724e+02 4.42418312e+01 7.72068802e+00
+ 9.73285883e+01 2.16548859e+01 9.32878396e+00 1.36516746e+02
+ 2.68196451e+01 3.61468691e+01 7.85446387e+00 2.36659570e+01
+ 2.89952239e+01 3.22938968e+00 5.43879245e+01 2.46619101e+01
+ 3.40230623e+01 1.67187643e+01 7.95673605e+00 2.29183648e+01
+ 4.97180870e+00 1.53573707e+01 1.45559264e+01 6.29596104e+01
+ 6.74994675e+01 1.61236617e+01 3.36841303e+00 2.59152967e+01
+ 9.84652632e+01 8.10983595e+00 4.37496382e+01 4.14680395e+01
+ 4.74579859e+01 5.81301854e+01 1.04972935e+01 7.91800372e+00
+ 1.66315303e+01 1.92780844e+02 4.15904137e+01 2.97843724e+01
+ 3.66278424e+01 1.15751703e+01 5.49333346e+00 3.36350002e+01
+ 1.49382778e+02 1.05479379e+01 3.54245279e+01 3.28378465e+01
+ 5.76702335e+01 6.81544286e+00 1.05106183e+02 1.08749533e+01
+ 5.50709024e+01 6.90563039e+01]
+[Time: 28.06.23 07:48:20] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 157, in run
+    self.load('mfa').compute_std(incoming)
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 100, in compute_std
+    val_per_row = [v-1 for v in self.values_per_row]
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 100, in <listcomp>
+    val_per_row = [v-1 for v in self.values_per_row]
+TypeError: unsupported operand type(s) for -: 'list' and 'int'
+

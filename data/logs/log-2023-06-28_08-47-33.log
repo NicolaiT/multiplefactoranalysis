@@ -1,0 +1,124 @@
+{"component":"MAIN","instance":"","level":"info","msg":"Controller start","time":"2023-06-28T08:47:33Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Mode: Dockerized (isolated)","time":"2023-06-28T08:47:33Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Configuration value 'HasGPU': false","time":"2023-06-28T08:47:33Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removing leftover Docker entities for label: fc-controller-label","time":"2023-06-28T08:47:33Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover containers","time":"2023-06-28T08:47:33Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover volumes","time":"2023-06-28T08:47:33Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 1 of 1 leftover networks","time":"2023-06-28T08:47:33Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9151","time":"2023-06-28T08:47:33Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9150","time":"2023-06-28T08:47:33Z"}
+{"component":"TESTBED","instance":"","level":"info","msg":"Create new test","time":"2023-06-28T08:47:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Create volumes and containers...","time":"2023-06-28T08:47:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_input_0_1687942060","time":"2023-06-28T08:47:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_output_0_1687942060","time":"2023-06-28T08:47:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move data to workspace from /mnt/c/dev/multiplefactoranalysis/data/h1","time":"2023-06-28T08:47:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:47:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:47:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:47:43Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:47:44Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move generic data to input volume from /mnt/c/dev/multiplefactoranalysis/data/generic","time":"2023-06-28T08:47:44Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:47:44Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:47:44Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:47:46Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:47:47Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start application","time":"2023-06-28T08:47:47Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:47:47Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Append app to list","time":"2023-06-28T08:47:48Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_input_1_1687942068","time":"2023-06-28T08:47:48Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_output_1_1687942068","time":"2023-06-28T08:47:48Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move data to workspace from /mnt/c/dev/multiplefactoranalysis/data/h2","time":"2023-06-28T08:47:48Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:47:48Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:47:49Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:47:51Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:47:52Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move generic data to input volume from /mnt/c/dev/multiplefactoranalysis/data/generic","time":"2023-06-28T08:47:52Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:47:52Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:47:52Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:47:54Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:47:55Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start application","time":"2023-06-28T08:47:55Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:47:55Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Append app to list","time":"2023-06-28T08:47:56Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link fc_featurecloudaifcmultiplefactoranalysis_192357467 with global socket server","time":"2023-06-28T08:47:56Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link fc_featurecloudaifcmultiplefactoranalysis_342819187 with global socket server","time":"2023-06-28T08:47:56Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start local socket server","time":"2023-06-28T08:47:56Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start local socket server","time":"2023-06-28T08:47:56Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link to global address","time":"2023-06-28T08:47:56Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link to global address","time":"2023-06-28T08:47:56Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Registered new coordinator controller","time":"2023-06-28T08:47:56Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Registered new participant controller","time":"2023-06-28T08:47:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Received setup trigger","time":"2023-06-28T08:47:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Received setup trigger","time":"2023-06-28T08:47:56Z"}
+{"component":"LOCAL","instance":"","level":"error","msg":"Got error during setup to http://172.20.0.4:9000: Post \"http://172.20.0.4:9000/setup\": dial tcp 172.20.0.4:9000: connect: connection refused","time":"2023-06-28T08:47:56Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Setup cfd6f262cb1a10462c5dba9a8acd5bd459b4bbec6483acc477bcb3b2006802b8","time":"2023-06-28T08:47:57Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Setup triggered","time":"2023-06-28T08:47:57Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"2 apps and server created and running","time":"2023-06-28T08:47:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.20.0.4:9000/status: New data available","time":"2023-06-28T08:48:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:48:02Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.20.0.4:9000/data: Fetched 7241 bytes","time":"2023-06-28T08:48:02Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: 488e8313cbfb71af) sending 7241 bytes to Coordinator","time":"2023-06-28T08:48:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 7241 bytes from Client 488e8313cbfb71af","time":"2023-06-28T08:48:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.20.0.3:9000/data?client=488e8313cbfb71af [Try 1/3]","time":"2023-06-28T08:48:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.20.0.3:9000/status: Finished","time":"2023-06-28T08:48:03Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: 7d8f9d847d124a78) finished the current step","time":"2023-06-28T08:48:03Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Shutdown","time":"2023-06-28T08:48:04Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Shutdown","time":"2023-06-28T08:48:04Z"}
+{"component":"GLOBAL","instance":"","level":"error","msg":"Participant (ID: 488e8313cbfb71af): relaying stopped due to: EOF","time":"2023-06-28T08:48:04Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping test id: 1","time":"2023-06-28T08:48:04Z"}
+{"component":"GLOBAL","instance":"","level":"error","msg":"Participant (ID: 7d8f9d847d124a78): relaying stopped due to: EOF","time":"2023-06-28T08:48:04Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping container fc_featurecloudaifcmultiplefactoranalysis_192357467","time":"2023-06-28T08:48:04Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to host","time":"2023-06-28T08:48:05Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:48:05Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:48:07Z"}
+{"component":"DOCKER","instance":"","level":"debug","msg":"Intermediary container used for moving data from volume to host has been removed","time":"2023-06-28T08:48:08Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Saved output volume content to /data/tests/results_test_1_client_0_fc_featurecloudaifcmultiplefactoranalysis_192357467.zip","time":"2023-06-28T08:48:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_output_0_1687942060","time":"2023-06-28T08:48:08Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_0_1687942060","time":"2023-06-28T08:48:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_0_1687942060","time":"2023-06-28T08:48:08Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_0_1687942060","time":"2023-06-28T08:48:08Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping container fc_featurecloudaifcmultiplefactoranalysis_342819187","time":"2023-06-28T08:48:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to host","time":"2023-06-28T08:48:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:48:09Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:48:10Z"}
+{"component":"DOCKER","instance":"","level":"debug","msg":"Intermediary container used for moving data from volume to host has been removed","time":"2023-06-28T08:48:11Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Saved output volume content to /data/tests/results_test_1_client_1_fc_featurecloudaifcmultiplefactoranalysis_342819187.zip","time":"2023-06-28T08:48:11Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_output_1_1687942068","time":"2023-06-28T08:48:11Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_1_1687942068","time":"2023-06-28T08:48:11Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_1_1687942068","time":"2023-06-28T08:48:11Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_1_1687942068","time":"2023-06-28T08:48:11Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:03Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:06Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:09Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:12Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:16Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:19Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:22Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:25Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:28Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:31Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:34Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:37Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T08:52:40Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:21:55Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:21:58Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:01Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:04Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:07Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:10Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:13Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:16Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:19Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:22Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:25Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:28Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:31Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:34Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:37Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:40Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:43Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:46Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:49Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:52Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:55Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:22:58Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-06-28T09:23:01Z"}

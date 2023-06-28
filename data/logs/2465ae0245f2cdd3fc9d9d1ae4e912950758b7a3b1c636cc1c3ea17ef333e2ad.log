@@ -1,0 +1,65 @@
+2023-06-28 08:15:13,879 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 08:15:13,881 INFO supervisord started with pid 7
+2023-06-28 08:15:14,885 INFO spawned: 'nginx' with pid 10
+2023-06-28 08:15:14,889 INFO spawned: 'app' with pid 11
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:15,708 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:16,710 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 08:15:16,711 INFO spawned: 'app' with pid 47
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:17,368 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:19,373 INFO spawned: 'app' with pid 71
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:19,847 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:22,853 INFO spawned: 'app' with pid 95
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:23,305 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:24,306 INFO gave up: app entered FATAL state, too many start retries too quickly

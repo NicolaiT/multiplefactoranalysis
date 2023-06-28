@@ -51,6 +51,8 @@ class InitialState(AppState):
         # READ INPUT DATA
         self.load('mfa').read_input_files() # [o1, o2, ... , on]
         outs = self.load('mfa').outs # [out1, out2, ... , outn]
+        print("outs")
+        print(outs)
 
 
         self.send_data_to_coordinator(outs) # send outs
@@ -73,10 +75,14 @@ class CheckRowNames(AppState):
 
     def run(self):
         print('gathering')
-        incoming = self.gather_data()# recieve outs
+        incoming = self.gather_data()# recieve outs [c1(o1,o2,o3), c2(o1,o2,o3)]
+        print("INCOMING")
+        print(incoming)
         print('unifying row names')
         self.load('mfa').unify_row_names(incoming)
         outs = self.load('mfa').outs 
+        print("OUTS")
+        print(outs)
         self.broadcast_data(outs)
         return 'wait_for_params'
 
@@ -120,7 +126,7 @@ class AggregateSummaryStatsState(AppState):
         self.register_transition('compute_std', Role.COORDINATOR)
 
     def run(self):
-        incoming = self.gather_data() # recieves outs
+        incoming = self.gather_data() # recieves outs [c1(o1,o2,o3), c2(o1,o2,o3)]
         print('setting parameters')
         self.load('mfa').compute_means(incoming)
         outs = self.load('mfa').outs 
@@ -150,7 +156,7 @@ class AggregateStdState(AppState):
         self.register_transition('apply_scaling', Role.COORDINATOR)
 
     def run(self):
-        incoming = self.gather_data() # recieves outs
+        incoming = self.gather_data() # recieves outs [c1(o1,o2,o3), c2(o1,o2,o3)]
         print('setting parameters')
         self.load('mfa').compute_std(incoming) 
         outs = self.load('mfa').outs
@@ -166,8 +172,8 @@ class ScaleDataState(AppState):
 
     def run(self):
         config = self.load('configuration')
-        incoming = self.await_data() # outs
-        self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable) # mfa
+        incoming = self.await_data() # recieve outs
+        self.load('mfa').apply_scaling(incoming, highly_variable=config.highly_variable) 
 
         return 'mfa_prerequisites'
 
@@ -216,8 +222,10 @@ class InitPCA(AppState):
         config = self.load('mfa').get_configuration()
         self.load('svd').set_configuration(config)
         data = self.load('data')
-        self.load('svd')
+        self.load('svd').set_data(data)
         return 'start_power_iteration'
+    
+### we are here ###
     
 @app_state('start_power_iteration', Role.BOTH)
 class PowerIterationStartState(AppState):

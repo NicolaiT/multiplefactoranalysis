@@ -1,0 +1,113 @@
+2023-06-28 08:15:05,593 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 08:15:05,596 INFO supervisord started with pid 7
+2023-06-28 08:15:06,599 INFO spawned: 'nginx' with pid 10
+2023-06-28 08:15:06,601 INFO spawned: 'app' with pid 11
+2023-06-28 08:15:07,637 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 08:15:07,637 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:08,331 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:09,335 INFO spawned: 'app' with pid 47
+2023-06-28 08:15:10,336 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:10,663 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:11,666 INFO spawned: 'app' with pid 71
+2023-06-28 08:15:12,667 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:12,834 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:13,837 INFO spawned: 'app' with pid 95
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:14,664 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:15,667 INFO spawned: 'app' with pid 119
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:16,441 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:18,445 INFO spawned: 'app' with pid 143
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:19,078 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:22,084 INFO spawned: 'app' with pid 167
+Traceback (most recent call last):
+  File "/app/main.py", line 6, in <module>
+    import apps.svd.app
+  File "/app/apps/svd/__init__.py", line 1, in <module>
+    from .app import *
+  File "/app/apps/svd/app.py", line 7, in <module>
+    from apps.svd.Aggregator_FC_Federated_MFA import AggregatorFCFederatedMFA
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 1, in <module>
+    from apps.svd.FC_Federated_MFA import FCFederatedMFA
+  File "/app/apps/svd/FC_Federated_MFA.py", line 197
+    self.std[idx] = incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1))
+    ^
+SyntaxError: invalid syntax
+2023-06-28 08:15:22,562 INFO exited: app (exit status 1; not expected)
+2023-06-28 08:15:23,562 INFO gave up: app entered FATAL state, too many start retries too quickly

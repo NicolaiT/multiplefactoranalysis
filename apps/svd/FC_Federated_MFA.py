@@ -69,7 +69,12 @@ class FCFederatedMFA:
         omics_data = {
             'k': self.k[idx],
             'k2': self.k2[idx],
-            'tabdata': self.tabdatas[idx]
+            'tabdata': self.tabdatas[idx],
+            'means': self.means[idx],
+            'std': self.std[idx],
+            'sos': self.sos[idx],
+            'variances': self.variances[idx],
+            'total_sampels': self.total_sampels[idx]
         }
         return omics_data
     
@@ -77,7 +82,6 @@ class FCFederatedMFA:
         print('[STARTUP] Copy configuration and create dir')
         self.config_available = config.config_available        
         self.input_files = [op.join(INPUT_DIR, file) for file in os.listdir(INPUT_DIR) if file.startswith(config.input_files) and file.endswith(config.extension)]
-        print(f'TEST: {self.input_files}')
         
         os.makedirs(op.join(OUTPUT_DIR, config.output_dir), exist_ok=True)
         self.left_eigenvector_file = op.join(OUTPUT_DIR,config.output_dir,  config.left_eigenvector_file)
@@ -92,6 +96,7 @@ class FCFederatedMFA:
         self.output_delimiter = config.output_delimiter
         
         self.k = [config.k] * len(self.input_files)
+
         # self.k = config.k
 
         self.exponent = config.exponent
@@ -117,7 +122,9 @@ class FCFederatedMFA:
 
         if self.log_transform:
             print('Log Transform performed')
+            print(tabdata.scaled)
             tabdata.scaled = np.log2(tabdata.scaled+1)
+            print(tabdata.scaled)
 
         nans = np.sum(np.isnan(tabdata.scaled), axis=1)
         infs = np.sum(np.isinf(tabdata.scaled), axis=1)
@@ -134,18 +141,25 @@ class FCFederatedMFA:
             self.outs.append(out)
             
     def set_parameters(self, incomings):
-        print('[API] Setting parameters')
         self.k2 = [0] * len(self.input_files)
+        print("INCOMINGS")
+        print(incomings)
         for idx, incoming in enumerate(incomings):
+            print("INCOMING")
+            print(incoming)
+            print("K")
+            print(self.k)
+            print("incoming[COParams.PCS.n]")
+            print(incoming[COParams.PCS.n]) 
             self.k[idx] = incoming[COParams.PCS.n]
             self.k2[idx] = incoming[COParams.PCS.n]*2
 
-
+    
     def select_rows(self, incomings):
         for idx, incoming in enumerate(incomings):
             subset = incoming[COParams.ROW_NAMES.n]
             print(subset)
-            d = {k: v for v, k in enumerate(self.tabdata.rows)}
+            d = {k: v for v, k in enumerate(self.tabdatas[idx].rows)}
             index = []
             for elem in subset:
                 if elem in d:
@@ -172,11 +186,13 @@ class FCFederatedMFA:
      
     def apply_scaling(self, incomings, highly_variable=True):
         output = []
+        print("TEST")
         for idx, incoming in enumerate(incomings):
-            self.std[idx] = incoming[COParams.STDS.n].reshape((len(incoming[COParams.STDS.n]),1))
-            self.variances.append(incoming[COParams.VARIANCES.n])
+            self.std.append(incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1)))
+            self.variances.append(incoming[COParams.VARIANCES.n][idx])
             remove = incoming[COParams.REMOVE.n] # remove due to 0
             select = incoming[COParams.SELECT.n] # select due to highly var
+
             # for row in range(self.tabdata.scaled.shape[0]):
             #     self.tabdata.scaled[row, :]= self.tabdata.scaled[row, :]- self.means[row,0]
             if self.center:
@@ -185,6 +201,10 @@ class FCFederatedMFA:
 
             # self.tabdata.scaled = np.delete(self.tabdata.scaled, remove)
             # self.tabdata.rows = np.delete(self.tabdata.rows, remove)
+            print("self.tabdatas[idx].scaled")
+            print(self.tabdatas[idx].scaled)
+            print("self.std[idx]")
+            print(self.std[idx])
             if self.unit_variance:
                 self.tabdatas[idx].scaled = self.tabdatas[idx].scaled/self.std[idx]
 

@@ -1,0 +1,41 @@
+{"component":"MAIN","instance":"","level":"info","msg":"Controller start","time":"2023-06-28T11:24:55Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Mode: Dockerized (isolated)","time":"2023-06-28T11:24:55Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Configuration value 'HasGPU': false","time":"2023-06-28T11:24:55Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removing leftover Docker entities for label: fc-controller-label","time":"2023-06-28T11:24:55Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover containers","time":"2023-06-28T11:24:55Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover volumes","time":"2023-06-28T11:24:55Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 1 of 1 leftover networks","time":"2023-06-28T11:24:55Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9150","time":"2023-06-28T11:24:55Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9151","time":"2023-06-28T11:24:55Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:24:56Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:24:59Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:02Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:05Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:08Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:11Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:14Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:17Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:20Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:23Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:27Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:30Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:33Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:36Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:39Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:42Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:45Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:48Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:51Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:54Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:25:57Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:00Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:03Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:07Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:10Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:13Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:16Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:19Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:22Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:25Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:28Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: getting project states for siteId 12639 failed with HTTP status 401, details: ","time":"2023-06-28T11:26:31Z"}

@@ -1,0 +1,346 @@
+2023-06-28 08:44:28,072 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 08:44:28,073 INFO supervisord started with pid 7
+2023-06-28 08:44:29,077 INFO spawned: 'nginx' with pid 10
+2023-06-28 08:44:29,080 INFO spawned: 'app' with pid 11
+2023-06-28 08:44:30,109 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 08:44:30,109 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 28.06.23 08:44:37] [Level: info] id: f955cdc971e77eb7
+[Time: 28.06.23 08:44:37] [Level: info] coordinator: True
+[Time: 28.06.23 08:44:37] [Level: info] clients: ['e63ecae6b4e9e787', 'f955cdc971e77eb7']
+[Time: 28.06.23 08:44:37] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+[STARTUP] Configuration copied
+Log Transform performed
+[[ 0.2305604   0.71134801  0.358525   ... -0.418475    0.02686903
+   0.43296748]
+ [ 0.7685604   0.49434801  0.623525   ...  0.158525    0.30886903
+   0.68796748]
+ [ 0.2005604   0.18034801  0.617525   ... -0.303475    0.14986903
+   0.50396748]
+ ...
+ [ 0.33603731  1.17897856  1.95058322 ...  1.26352924  1.74509741
+   0.99718212]
+ [ 0.13803731 -1.54702144 -0.67241678 ... -1.63047076 -4.82490259
+  -0.95181788]
+ [ 0.76753731  2.08097856 -0.60541678 ...  2.45852924  1.20309741
+   2.93318212]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 0.29931547  0.77513317  0.44204111 ... -0.78208688  0.03825218
+   0.51900587]
+ [ 0.82257549  0.57951617  0.6991296  ...  0.21228918  0.38832074
+   0.75528711]
+ [ 0.26370798  0.23921228  0.69378801 ... -0.52175296  0.20146954
+   0.58877337]
+ ...
+ [ 0.41796029  1.123652    1.56100015 ...  1.17857395  1.45685734
+   0.99796589]
+ [ 0.18654785         nan -1.61006665 ...         nan         nan
+  -4.37535846]
+ [ 0.82174067  1.62338864 -1.3415985  ...  1.79015866  1.13953329
+   1.97569699]]
+outs
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}]
+[Time: 28.06.23 08:44:37] [Level: info] transition: check_row_names
+[Time: 28.06.23 08:44:38] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}]
+['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6', 'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8', 'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3', 'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1', 'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1', 'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1', 'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160', 'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R', 'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2', 'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1', 'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2', 'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560', 'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN', 'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52', 'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF', 'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1', 'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3', 'IGFBP3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A', 'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT', 'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2', 'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3', 'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2', 'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1', 'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1', 'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432', 'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1', 'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629', 'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1', 'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682', 'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ', 'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1', 'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B', 'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5', 'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7', 'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217', 'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30', 'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1', 'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7', 'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1', 'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN', 'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2', 'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963', 'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS', 'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A', 'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT', 'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1', 'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2', 'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3', 'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1', 'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1', 'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1', 'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK', 'ANK3', 'AI002301', 'NCF1', 'NY.SAR.48', 'AA598555', 'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187', 'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1', 'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19', 'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A', 'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20', 'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC', 'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC', 'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2', 'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG', 'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1', 'MGP']
+idx 0
+incomings len 2
+self.k len 1
+['TSPYL1', 'CAMKK2', 'MSN', 'NLGN1', 'GAS1', 'H41096', 'LUM', 'TBC1D7', 'CD44', 'DCLRE1B', 'AI357047', 'SNCG', 'COL1A2', 'RAB11FIP4', 'TTC23', 'CBLN2', 'UGCG', 'MICAL2', 'ITGA3', 'NLK', 'LYN', 'ZNF160', 'H78560', 'FLJ38984', 'AA424849', 'HLA.G', 'BNIP2', 'SPARC', 'LSP1', 'MGC42367', 'AA906888', 'PEG3', 'ADM', 'T62491', 'PRKCB1', 'AI002301', 'ITPKA', 'GYPA', 'MB', 'DIP2C', 'TLL2', 'HBXIP', 'MTHFD2', 'EDNRB', 'COL6A2', 'CACNB2', 'GADD45B', 'SLC16A3', 'NEFH', 'COL3A1', 'ANXA1', 'HPRT1', 'SRPX', 'RAB30', 'PRSS1', 'NCF2', 'SLC35A2', 'ADAM19', 'L3MBTL4', 'PYHIN1', 'HLA.F', 'MDFI', 'ANK3', 'C1orf63', 'AA281932', 'DSCR1L1', 'USP6NL', 'ARPP.19', 'ZNF233', 'ADFP', 'MAPKBP1', 'MOAP1', 'TCTEX1D1', 'AA598631', 'LY96', 'HPCA', 'KIAA1543', 'ANXA5', 'AKR1C1', 'FABP3', 'FAS', 'N98591', 'ESM1', 'COL4A2', 'AA398420', 'C1orf187', 'RALY', 'PYCR1', 'H20822', 'POSTN', 'H08563', 'GPNMB', 'FBXW7', 'TncRNA', 'URP2', 'MYC', 'IFI30', 'COL1A1', 'TNC', 'PALLD', 'CYR61', 'RBP7', 'CDKN1A', 'LOC146795', 'IGF1R', 'AI350724', 'RGS16', 'FAM84B', 'RBP4', 'CD47', 'RND3', 'COL9A2', 'SCN2B', 'ATP6V1C1', 'GPSM2', 'AA131320', 'APOC2', 'EPB49', 'OSBPL1A', 'C16orf5', 'NY.SAR.48', 'SERPINI1', 'LHFPL2', 'DDEF1', 'ABCC3', 'RFXAP', 'VSNL1', 'CA11', 'TIMP3', 'SPINT2', 'SETD5', 'LOC388610', 'ID4', 'FCGR2B', 'MASP1', 'NPTX1', 'CDKN2D', 'SERPING1', 'FBXO32', 'TSPAN6', 'PYGL', 'NOTCH1', 'CYBA', 'NDST1', 'IL32', 'ITGA5', 'LOC613212', 'HCLS1', 'S100A11', 'FCGRT', 'VAMP2', 'PARD3', 'KLRC1', 'IGF2BP3', 'X38595', 'KIAA1644', 'KLRC2', 'MGC26694', 'DECR2', 'AI822135', 'DNASE1L1', 'CHI3L2', 'PPP1R14A', 'F13A1', 'SOCS3', 'KNS2', 'H10054', 'KLRC3', 'CACNB3', 'NMNAT2', 'FLJ35740', 'SBP1', 'C1R', 'VASP', 'PSD3', 'R70506', 'CAPG', 'GABBR1', 'GBP1', 'C4A', 'C8orf4', 'CALM1', 'NR4A1', 'PPP3CB', 'SYT7', 'DES', 'HLA.DRB1', 'MDK', 'AA598555', 'RUNX1', 'MGC39606', 'MRC2', 'CLCA3', 'WDR7', 'PDLIM7', 'HNRNPG.T', 'ZNF329', 'PDXP', 'KCNJ1', 'ZNF419B', 'HEY1', 'NDUFB11', 'IMAGE.33267', 'ID3', 'HK2', 'AIF1', 'TNFRSF12A', 'PRSS3', 'PNCK', 'SPAG6', 'DYNLT1', 'HSPG2', 'CD53', 'TSPAN4', 'PSG5', 'FGF13', 'EMP3', 'MST1', 'EGLN2', 'TIMP1', 'FAM84A', 'UBA52', 'TXNDC', 'NNMT', 'EXT1', 'HBA1', 'STK17A', 'APOC1', 'TAP1', 'IGHG1', 'BCL2A1', 'PRKCZ', 'EFHB', 'INPP5F', 'AI005038', 'TNFAIP3', 'MVP', 'FAM46A', 'PDPN', 'PRG1', 'IGSF3', 'PCDHGC3', 'WASF1', 'DMN', 'RAB20', 'TMEM146', 'SCAMP5', 'CAV1', 'CEAL1', 'ZNF226', 'PHLDA1', 'TCF7L1', 'NCF1', 'S100A1', 'PARP14', 'ADCY1', 'LRBA', 'FREQ', 'ASPA', 'ACAD8', 'C9orf48', 'T97457', 'DPYD', 'STXBP1', 'C6orf12', 'PDE2A', 'AA029415', 'GBP2', 'T51726', 'RPS19BP1', 'CKMT1A', 'CLTB', 'COX6A2', 'FZD7', 'LOC389831', 'PLP2', 'SOX4', 'USP3', 'LMO7', 'HAMP', 'MGC18216', 'H24428', 'PRKCG', 'ABCA5', 'APCS', 'KCNK6', 'LAMB1', 'GOT1', 'AI335002', 'SORT1', 'CLSTN3', 'VEGF', 'AI871056', 'X37864', 'CA12', 'MSTP9', 'CCR1', 'DDN', 'ZNF549', 'CASP1', 'IGFBP3', 'PLAUR', 'AA669383', 'SUV39H1', 'STMN1', 'BCAM', 'CCDC3', 'NUAK1', 'SYNGR3', 'CTHRC1', 'CAP2', 'PSG1', 'DUS3L', 'DKFZp313A2432', 'CSPG2', 'STEAP3', 'YWHAG', 'PLOD2', 'NPL', 'MED11', 'IQSEC1', 'COX7A1', 'H91845', 'NPC2', 'SAA2', 'AEBP1', 'HMOX1', 'W93688', 'CD58', 'RTN3', 'SNRPN', 'AP4B1', 'MYCBP2', 'PLAU', 'SVIL', 'WWTR1', 'TMEM49', 'AI262682', 'GYPC', 'H86813', 'TGFBI', 'LGALS3', 'CCL2', 'CBX6', 'MYBPC2', 'RAB27B', 'AA975768', 'R70684', 'EDG3', 'HLA.A', 'ADARB2', 'PRKAR1B', 'DDIT4', 'MST150', 'A2BP1', 'S100A10', 'IGFBP5', 'SERPINH1', 'LOC541471', 'SERPINA3', 'AA401952', 'UBE4B', 'YWHAH', 'AI263051', 'R61377', 'FBXL16', 'FBL', 'NSF', 'IL1RAP', 'PLTP', 'FBXO2', 'LAMA4', 'LOC283070', 'KIAA0963', 'LILRA1', 'CLIC1', 'AA181288', 'PRRX1', 'AKR1C2', 'EDG1', 'AA490257', 'CHN1', 'ITGA9', 'RPS3A', 'PDE4DIP', 'LTF', 'PTPRZ1', 'BGN', 'SP100', 'TOMM40', 'STC1', 'LAPTM5', 'CAMK2A', 'DEF6', 'KCNMA1', 'IL21R', 'PPP3CA', 'TFDP2', 'MGP', 'OSR1', 'LOC400451', 'SLC15A2', 'AA489629', 'ZFHX1B', 'AA479357', 'MMP2', 'MAL2', 'EID.3', 'L1CAM', 'KCNQ2', 'BLVRB', 'DLL3', 'ZNF217', 'LOC283130', 'PCP4', 'EPHB1', 'PLA2G2A', 'R52960', 'FN1', 'D21S2089E', 'LOC57228', 'CDC20B']
+[13, 16, 11, 17, 16, 17, 1, 17, 8, 17, 9, 12, 8, 15, 16, 16, 7, 11, 17, 17, 16, 17, 9, 17, 10, 16, 17, 17, 9, 16, 10, 12, 5, 12, 17, 17, 12, 16, 16, 17, 11, 16, 7, 16, 5, 17, 17, 4, 13, 17, 9, 3, 14, 6, 0, 17, 16, 17, 6, 17, 16, 14, 13, 16, 15, 15, 17, 17, 17, 6, 17, 17, 16, 17, 17, 14, 17, 15, 17, 17, 16, 17, 11, 15, 17, 10, 17, 5, 17, 16, 6, 10, 17, 8, 17, 6, 12, 13, 13, 17, 10, 12, 17, 16, 17, 15, 16, 12, 0, 17, 9, 17, 16, 17, 17, 17, 14, 11, 16, 17, 14, 16, 17, 17, 12, 17, 15, 16, 16, 3, 11, 10, 17, 17, 14, 9, 14, 17, 17, 17, 10, 17, 5, 17, 1, 4, 17, 17, 7, 17, 17, 17, 9, 2, 15, 11, 9, 17, 11, 9, 17, 15, 17, 17, 16, 17, 16, 10, 13, 17, 17, 17, 16, 17, 8, 14, 15, 17, 17, 17, 13, 17, 10, 16, 16, 17, 17, 5, 2, 11, 16, 15, 17, 17, 9, 14, 16, 12, 17, 17, 14, 16, 9, 16, 5, 17, 5, 0, 17, 15, 17, 11, 17, 13, 17, 11, 5, 8, 16, 11, 17, 13, 17, 4, 17, 17, 12, 16, 16, 16, 11, 15, 11, 17, 13, 12, 17, 12, 15, 17, 17, 16, 16, 17, 14, 17, 17, 1, 17, 17, 15, 16, 15, 15, 17, 10, 16, 17, 17, 17, 16, 6, 16, 13, 17, 14, 10, 17, 11, 15, 13, 16, 17, 11, 11, 1, 10, 5, 7, 11, 16, 17, 16, 11, 16, 17, 8, 12, 15, 16, 17, 10, 0, 17, 12, 17, 14, 16, 16, 15, 2, 6, 10, 17, 12, 17, 17, 17, 5, 8, 14, 17, 14, 14, 17, 13, 17, 5, 17, 17, 17, 16, 9, 17, 17, 13, 17, 16, 8, 16, 16, 15, 17, 11, 17, 16, 7, 9, 4, 11, 6, 6, 16, 17, 16, 9, 17, 17, 17, 17, 15, 13, 8, 14, 17, 9, 16, 4, 8, 17, 17, 16, 17, 17, 11, 16, 14, 17, 17, 17, 17, 17, 16, 17, 16, 4, 12, 17, 17, 17, 17, 17, 17, 14, 14, 17, 17, 16, 14, 17, 2, 17, 17, 16, 16, 9, 16, 17, 17, 17, 10, 17, 17, 5, 16, 4, 4, 17, 8, 15, 14, 12, 1, 12, 15, 17, 11, 8, 8, 17, 17, 0]
+[API] [COORDINATOR] row names identified!
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}]
+['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6', 'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8', 'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3', 'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1', 'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1', 'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1', 'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160', 'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R', 'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2', 'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1', 'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2', 'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560', 'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN', 'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52', 'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF', 'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1', 'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3', 'IGFBP3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A', 'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT', 'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2', 'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3', 'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2', 'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1', 'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1', 'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432', 'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1', 'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629', 'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1', 'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682', 'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ', 'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1', 'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B', 'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5', 'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7', 'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217', 'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30', 'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1', 'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7', 'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1', 'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN', 'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2', 'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963', 'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS', 'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A', 'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT', 'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1', 'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2', 'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3', 'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1', 'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1', 'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1', 'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK', 'ANK3', 'AI002301', 'NCF1', 'NY.SAR.48', 'AA598555', 'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187', 'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1', 'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19', 'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A', 'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20', 'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC', 'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC', 'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2', 'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG', 'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1', 'MGP']
+idx 1
+incomings len 2
+self.k len 1
+[Time: 28.06.23 08:44:42] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 80, in run
+    self.load('mfa').unify_row_names(incoming)
+  File "/app/apps/svd/Aggregator_FC_Federated_MFA.py", line 61, in unify_row_names
+    self.outs[idx] = {COParams.PCS.n: self.k[idx], COParams.SEND_PROJ: self.send_projections}
+IndexError: list index out of range
+

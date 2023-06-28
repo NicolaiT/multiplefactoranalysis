@@ -1,0 +1,120 @@
+{"component":"MAIN","instance":"","level":"info","msg":"Controller start","time":"2023-06-28T08:11:53Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Mode: Dockerized (isolated)","time":"2023-06-28T08:11:53Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Configuration value 'HasGPU': false","time":"2023-06-28T08:11:53Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removing leftover Docker entities for label: fc-controller-label","time":"2023-06-28T08:11:53Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover containers","time":"2023-06-28T08:11:53Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover volumes","time":"2023-06-28T08:11:53Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 1 of 1 leftover networks","time":"2023-06-28T08:11:54Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9151","time":"2023-06-28T08:11:54Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9150","time":"2023-06-28T08:11:54Z"}
+{"component":"HTTP","instance":"","level":"debug","msg":"Set site received","time":"2023-06-28T08:11:59Z"}
+{"component":"TESTBED","instance":"","level":"info","msg":"Create new test","time":"2023-06-28T08:12:04Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Create volumes and containers...","time":"2023-06-28T08:12:04Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_input_0_1687939924","time":"2023-06-28T08:12:04Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_output_0_1687939924","time":"2023-06-28T08:12:04Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move data to workspace from /mnt/c/dev/multiplefactoranalysis/data/h1","time":"2023-06-28T08:12:04Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:12:04Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:05Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:12:06Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:12:08Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move generic data to input volume from /mnt/c/dev/multiplefactoranalysis/data/generic","time":"2023-06-28T08:12:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:12:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:08Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:12:10Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:12:11Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start application","time":"2023-06-28T08:12:11Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:11Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Append app to list","time":"2023-06-28T08:12:13Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_input_1_1687939933","time":"2023-06-28T08:12:13Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_output_1_1687939933","time":"2023-06-28T08:12:13Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move data to workspace from /mnt/c/dev/multiplefactoranalysis/data/h2","time":"2023-06-28T08:12:13Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:12:13Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:13Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:12:15Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:12:16Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move generic data to input volume from /mnt/c/dev/multiplefactoranalysis/data/generic","time":"2023-06-28T08:12:16Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-06-28T08:12:16Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:16Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:12:18Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-06-28T08:12:19Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start application","time":"2023-06-28T08:12:19Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:19Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Append app to list","time":"2023-06-28T08:12:20Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link fc_featurecloudaifcmultiplefactoranalysis_290057742 with global socket server","time":"2023-06-28T08:12:20Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link fc_featurecloudaifcmultiplefactoranalysis_257568861 with global socket server","time":"2023-06-28T08:12:20Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start local socket server","time":"2023-06-28T08:12:20Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start local socket server","time":"2023-06-28T08:12:20Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link to global address","time":"2023-06-28T08:12:20Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link to global address","time":"2023-06-28T08:12:20Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Registered new participant controller","time":"2023-06-28T08:12:20Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Registered new coordinator controller","time":"2023-06-28T08:12:20Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Received setup trigger","time":"2023-06-28T08:12:20Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Received setup trigger","time":"2023-06-28T08:12:20Z"}
+{"component":"LOCAL","instance":"","level":"error","msg":"Got error during setup to http://192.168.160.4:9000: Post \"http://192.168.160.4:9000/setup\": dial tcp 192.168.160.4:9000: connect: connection refused","time":"2023-06-28T08:12:20Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Setup 2891c3a6c30cf128d1ddfba2b61bdaad1e3f1ad74371b6c957329bf1f4ae2e0f","time":"2023-06-28T08:12:21Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Setup triggered","time":"2023-06-28T08:12:21Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"2 apps and server created and running","time":"2023-06-28T08:12:21Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.4:9000/status: New data available","time":"2023-06-28T08:12:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:12:26Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://192.168.160.4:9000/data: Fetched 14314 bytes","time":"2023-06-28T08:12:26Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: c2071dfa902de6a1) sending 14314 bytes to Coordinator","time":"2023-06-28T08:12:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 14314 bytes from Client c2071dfa902de6a1","time":"2023-06-28T08:12:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://192.168.160.3:9000/data?client=c2071dfa902de6a1 [Try 1/3]","time":"2023-06-28T08:12:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.3:9000/status: New data available","time":"2023-06-28T08:12:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:12:27Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://192.168.160.3:9000/data: Fetched 7287 bytes","time":"2023-06-28T08:12:27Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: 95454a48bbd2ec96) broadcasting 7287 bytes","time":"2023-06-28T08:12:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 7287 bytes from Client 95454a48bbd2ec96","time":"2023-06-28T08:12:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://192.168.160.4:9000/data?client=95454a48bbd2ec96 [Try 1/3]","time":"2023-06-28T08:12:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.4:9000/status: New data available","time":"2023-06-28T08:12:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:12:29Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://192.168.160.4:9000/data: Fetched 6979 bytes","time":"2023-06-28T08:12:29Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: c2071dfa902de6a1) sending 6979 bytes to Coordinator","time":"2023-06-28T08:12:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 6979 bytes from Client c2071dfa902de6a1","time":"2023-06-28T08:12:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://192.168.160.3:9000/data?client=c2071dfa902de6a1 [Try 1/3]","time":"2023-06-28T08:12:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.3:9000/status: New data available","time":"2023-06-28T08:12:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:12:30Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://192.168.160.3:9000/data: Fetched 6991 bytes","time":"2023-06-28T08:12:30Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: 95454a48bbd2ec96) broadcasting 6991 bytes","time":"2023-06-28T08:12:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 6991 bytes from Client 95454a48bbd2ec96","time":"2023-06-28T08:12:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://192.168.160.4:9000/data?client=95454a48bbd2ec96 [Try 1/3]","time":"2023-06-28T08:12:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.4:9000/status: New data available","time":"2023-06-28T08:12:32Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:12:32Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://192.168.160.4:9000/data: Fetched 6966 bytes","time":"2023-06-28T08:12:32Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: c2071dfa902de6a1) sending 6966 bytes to Coordinator","time":"2023-06-28T08:12:32Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 6966 bytes from Client c2071dfa902de6a1","time":"2023-06-28T08:12:32Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://192.168.160.3:9000/data?client=c2071dfa902de6a1 [Try 1/3]","time":"2023-06-28T08:12:32Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.3:9000/status: New data available","time":"2023-06-28T08:12:33Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-06-28T08:12:33Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://192.168.160.3:9000/data: Fetched 20165 bytes","time":"2023-06-28T08:12:33Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: 95454a48bbd2ec96) broadcasting 20165 bytes","time":"2023-06-28T08:12:33Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 20165 bytes from Client 95454a48bbd2ec96","time":"2023-06-28T08:12:33Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://192.168.160.4:9000/data?client=95454a48bbd2ec96 [Try 1/3]","time":"2023-06-28T08:12:33Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://192.168.160.4:9000/status: Finished","time":"2023-06-28T08:12:35Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: c2071dfa902de6a1) finished the current step","time":"2023-06-28T08:12:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Shutdown","time":"2023-06-28T08:12:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Shutdown","time":"2023-06-28T08:12:36Z"}
+{"component":"GLOBAL","instance":"","level":"error","msg":"Participant (ID: c2071dfa902de6a1): relaying stopped due to: EOF","time":"2023-06-28T08:12:36Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping test id: 1","time":"2023-06-28T08:12:36Z"}
+{"component":"GLOBAL","instance":"","level":"error","msg":"Participant (ID: 95454a48bbd2ec96): relaying stopped due to: EOF","time":"2023-06-28T08:12:36Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping container fc_featurecloudaifcmultiplefactoranalysis_290057742","time":"2023-06-28T08:12:36Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to host","time":"2023-06-28T08:12:37Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:37Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:12:39Z"}
+{"component":"DOCKER","instance":"","level":"debug","msg":"Intermediary container used for moving data from volume to host has been removed","time":"2023-06-28T08:12:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Saved output volume content to /data/tests/results_test_1_client_0_fc_featurecloudaifcmultiplefactoranalysis_290057742.zip","time":"2023-06-28T08:12:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_output_0_1687939924","time":"2023-06-28T08:12:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_0_1687939924","time":"2023-06-28T08:12:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_0_1687939924","time":"2023-06-28T08:12:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_0_1687939924","time":"2023-06-28T08:12:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping container fc_featurecloudaifcmultiplefactoranalysis_257568861","time":"2023-06-28T08:12:40Z"}
+{"component":"DOCKER","instance":"","level":"error","msg":"Error: No such container: e8d1a7d86ec29086615ca445c9069f35fa5cef79606c99dc55c58c34b1bfc4be","time":"2023-06-28T08:12:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to host","time":"2023-06-28T08:12:41Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-06-28T08:12:41Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-06-28T08:12:43Z"}
+{"component":"DOCKER","instance":"","level":"debug","msg":"Intermediary container used for moving data from volume to host has been removed","time":"2023-06-28T08:12:44Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Saved output volume content to /data/tests/results_test_1_client_1_fc_featurecloudaifcmultiplefactoranalysis_257568861.zip","time":"2023-06-28T08:12:44Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_output_1_1687939933","time":"2023-06-28T08:12:44Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_1_1687939933","time":"2023-06-28T08:12:44Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_1_1687939933","time":"2023-06-28T08:12:44Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_1_1687939933","time":"2023-06-28T08:12:44Z"}

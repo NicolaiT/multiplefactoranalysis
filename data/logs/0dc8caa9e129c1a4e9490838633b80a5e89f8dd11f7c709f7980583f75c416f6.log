@@ -1,0 +1,252 @@
+2023-06-28 06:44:37,096 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-28 06:44:37,098 INFO supervisord started with pid 7
+2023-06-28 06:44:38,100 INFO spawned: 'nginx' with pid 10
+2023-06-28 06:44:38,105 INFO spawned: 'app' with pid 11
+2023-06-28 06:44:39,128 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-28 06:44:39,128 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 28.06.23 06:44:41] [Level: info] id: d32d8725d926d89d
+[Time: 28.06.23 06:44:41] [Level: info] coordinator: False
+[Time: 28.06.23 06:44:41] [Level: info] clients: ['5529c168f41d0995', 'd32d8725d926d89d']
+[Time: 28.06.23 06:44:41] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+TEST
+1
+[STARTUP] Configuration copied
+Log Transform performed
+[[ 6.74542027e-02  1.81002875e-01  1.61967477e-01 ...  5.41621673e-02
+   2.44542698e-01 -2.60220260e-01]
+ [-4.61545797e-01 -1.99712471e-03  2.53967477e-01 ...  8.65162167e-01
+  -9.04573017e-02  1.22779740e-01]
+ [ 1.17454203e-01  1.64002875e-01 -1.81032523e-01 ...  1.16216733e-03
+   2.59542698e-01 -1.47220260e-01]
+ ...
+ [ 6.77109851e-01  5.27812409e-01  8.69196496e-01 ...  1.60968399e+00
+   4.71524132e-01  6.26844003e-01]
+ [-2.01389015e+00  7.88124088e-02  9.97196496e-01 ...  5.29683994e-01
+   6.37524132e-01  1.15884400e+00]
+ [-9.82890149e-01  4.64312409e-01  1.32619650e+00 ...  1.64683994e-01
+   2.29524132e-01  5.23344003e-01]]
+/app/apps/svd/FC_Federated_MFA.py:127: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 9.41741748e-02  2.40012477e-01  2.16569689e-01 ...  7.60968214e-02
+   3.15615728e-01 -4.34832304e-01]
+ [-8.93104451e-01 -2.88412285e-03  3.26499931e-01 ...  8.99301072e-01
+  -1.36786728e-01  1.67074937e-01]
+ [ 1.60215706e-01  2.19094622e-01 -2.88121934e-01 ...  1.67567952e-03
+   3.32900030e-01 -2.29754931e-01]
+ ...
+ [ 7.45977189e-01  6.11467414e-01  9.02418238e-01 ...  1.38387512e+00
+   5.57311202e-01  7.02075918e-01]
+ [            nan  1.09444021e-01  9.97976281e-01 ...  6.13233648e-01
+   7.11516168e-01  1.11025900e+00]
+ [-5.86902895e+00  5.50223383e-01  1.21797297e+00 ...  2.19938570e-01
+   2.98100052e-01  6.07241769e-01]]
+[<apps.svd.TabData.TabData object at 0x7fea99a18610>]
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}]
+[Time: 28.06.23 06:44:41] [Level: info] transition: wait_for_params
+[Time: 28.06.23 06:44:42] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+TEST
+3
+[{'PCs': [43, 43, 43], <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['SCN2B', 'C8orf4', 'BCAM', 'H86813', 'A2BP1', 'PLOD2', 'LAMA4', 'EDG3', 'RPS3A', 'NPC2', 'PRSS3', 'AA489629', 'SP100', 'TSPYL1', 'PRSS1', 'CAMKK2', 'LOC146795', 'AKR1C2', 'HNRNPG.T', 'UGCG', 'LY96', 'HMOX1', 'GYPC', 'TCTEX1D1', 'PPP3CB', 'AI335002', 'LAMB1', 'AA131320', 'MGC26694', 'ZNF226', 'DMN', 'AA490257', 'SPINT2', 'PRG1', 'FLJ38984', 'RAB30', 'NPL', 'AI263051', 'SPARC', 'CBLN2', 'PARP14', 'USP3', 'ANXA1', 'PRKCG', 'CD47', 'HBXIP', 'SUV39H1', 'RBP4', 'ESM1', 'NSF', 'FLJ35740', 'INPP5F', 'N98591', 'MTHFD2', 'C1R', 'S100A10', 'AA598555', 'NEFH', 'TncRNA', 'TFDP2', 'YWHAH', 'PYHIN1', 'SNCG', 'IMAGE.33267', 'MAPKBP1', 'CACNB3', 'PDE4DIP', 'BGN', 'HSPG2', 'ITGA9', 'HLA.G', 'CCDC3', 'APOC2', 'MDFI', 'STXBP1', 'LOC541471', 'ITPKA', 'CYBA', 'IL21R', 'ANXA5', 'GOT1', 'CHI3L2', 'IFI30', 'GBP2', 'LHFPL2', 'MYBPC2', 'TBC1D7', 'PLP2', 'TCF7L1', 'ADM', 'C16orf5', 'FABP3', 'KLRC2', 'TSPAN4', 'PYCR1', 'PRKCZ', 'SLC15A2', 'H91845', 'ZNF329', 'COL4A2', 'FBXO2', 'GPSM2', 'PLA2G2A', 'SAA2', 'MGP', 'DYNLT1', 'MICAL2', 'R52960', 'NR4A1', 'SERPINI1', 'KIAA0963', 'ITGA5', 'IL1RAP', 'RAB11FIP4', 'DPYD', 'PSG5', 'IGF1R', 'RAB27B', 'WDR7', 'AEBP1', 'CCL2', 'RTN3', 'AI350724', 'CEAL1', 'IGFBP5', 'GABBR1', 'TMEM146', 'SERPING1', 'AI005038', 'DCLRE1B', 'URP2', 'TGFBI', 'ZNF160', 'ANK3', 'CACNB2', 'AA281932', 'DDEF1', 'AA424849', 'CSPG2', 'NMNAT2', 'SNRPN', 'SYNGR3', 'ABCC3', 'AA598631', 'AA479357', 'SRPX', 'ADAM19', 'SLC16A3', 'EMP3', 'CLSTN3', 'NDST1', 'RAB20', 'RALY', 'COL1A1', 'PLAUR', 'FCGR2B', 'DEF6', 'F13A1', 'EID.3', 'HLA.F', 'IGFBP3', 'CAMK2A', 'MST1', 'TNFRSF12A', 'KIAA1644', 'IQSEC1', 'MOAP1', 'COL1A2', 'EDNRB', 'ZFHX1B', 'COL6A2', 'PNCK', 'STMN1', 'STEAP3', 'ACAD8', 'KCNJ1', 'H20822', 'H24428', 'CDKN2D', 'PCP4', 'BCL2A1', 'PPP1R14A', 'FN1', 'KNS2', 'S100A11', 'ZNF217', 'CAV1', 'LTF', 'C4A', 'LUM', 'W93688', 'GYPA', 'USP6NL', 'MRC2', 'LOC57228', 'HAMP', 'HLA.DRB1', 'SOCS3', 'NUAK1', 'GAS1', 'STK17A', 'NPTX1', 'L3MBTL4', 'NLGN1', 'CA12', 'UBA52', 'LOC283130', 'FCGRT', 'ARPP.19', 'RFXAP', 'C1orf187', 'HCLS1', 'PARD3', 'MSN', 'CHN1', 'MB', 'PDPN', 'MMP2', 'PPP3CA', 'FBL', 'H41096', 'VEGF', 'CASP1', 'TXNDC', 'EFHB', 'LOC400451', 'STC1', 'FBXW7', 'BLVRB', 'CAP2', 'HK2', 'FREQ', 'R70506', 'IL32', 'H08563', 'DKFZp313A2432', 'APOC1', 'APCS', 'ADCY1', 'DECR2', 'ITGA3', 'PLAU', 'EXT1', 'POSTN', 'PRKCB1', 'SPAG6', 'LAPTM5', 'LSP1', 'NCF1', 'L1CAM', 'AA669383', 'FBXL16', 'TIMP3', 'NLK', 'HBA1', 'AA401952', 'H10054', 'FBXO32', 'CD53', 'MGC42367', 'CD44', 'RBP7', 'PLTP', 'AP4B1', 'RND3', 'SLC35A2', 'SETD5', 'LOC389831', 'MYC', 'UBE4B', 'WASF1', 'PTPRZ1', 'NOTCH1', 'DDIT4', 'ID3', 'IGHG1', 'MVP', 'LGALS3', 'AI357047', 'CDC20B', 'T62491', 'AIF1', 'PDXP', 'HPRT1', 'ABCA5', 'NDUFB11', 'RUNX1', 'LYN', 'HEY1', 'C1orf63', 'FAM46A', 'ADFP', 'DIP2C', 'CCR1', 'AA906888', 'AA029415', 'ADARB2', 'CLIC1', 'X37864', 'GADD45B', 'OSR1', 'CKMT1A', 'ATP6V1C1', 'EDG1', 'AKR1C1', 'BNIP2', 'D21S2089E', 'IGSF3', 'HLA.A', 'TMEM49', 'PSD3', 'TIMP1', 'KCNQ2', 'PALLD', 'MED11', 'CLTB', 'PYGL', 'MGC18216', 'R70684', 'CBX6', 'R61377', 'CA11', 'KCNMA1', 'C9orf48', 'KLRC1', 'COL3A1', 'IGF2BP3', 'LRBA', 'ID4', 'PDE2A', 'SERPINH1', 'LOC388610', 'DLL3', 'MGC39606', 'RPS19BP1', 'AA975768', 'SYT7', 'MSTP9', 'H78560', 'RGS16', 'AA181288', 'SERPINA3', 'LOC283070', 'AI262682', 'T97457', 'CD58', 'OSBPL1A', 'FAS', 'MYCBP2', 'KCNK6', 'PSG1', 'TNFAIP3', 'NCF2', 'TSPAN6', 'COX7A1', 'AI002301', 'DSCR1L1', 'YWHAG', 'ZNF549', 'C6orf12', 'KLRC3', 'DES', 'DUS3L', 'PRKAR1B', 'DNASE1L1', 'FZD7', 'FGF13', 'VASP', 'FAM84A', 'NNMT', 'GPNMB', 'WWTR1', 'MDK', 'ASPA', 'CAPG', 'VSNL1', 'MST150', 'NY.SAR.48', 'TNC', 'LOC613212', 'HPCA', 'TLL2', 'COL9A2', 'SCAMP5', 'LILRA1', 'SOX4', 'DDN', 'PDLIM7', 'TOMM40', 'VAMP2', 'MAL2', 'CALM1', 'EPB49', 'LMO7', 'SBP1', 'PCDHGC3', 'T51726', 'CTHRC1', 'S100A1', 'X38595', 'PHLDA1', 'MASP1', 'COX6A2', 'SORT1', 'ZNF233', 'CDKN1A', 'KIAA1543', 'PRRX1', 'AI871056', 'TTC23', 'SVIL', 'PEG3', 'GBP1', 'EGLN2', 'EPHB1', 'TAP1', 'AI822135', 'FAM84B', 'ZNF419B', 'CLCA3', 'AA398420', 'CYR61']}, {'PCs': [43, 43, 43], <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['SCN2B', 'C8orf4', 'BCAM', 'H86813', 'A2BP1', 'PLOD2', 'LAMA4', 'EDG3', 'RPS3A', 'NPC2', 'PRSS3', 'AA489629', 'SP100', 'TSPYL1', 'PRSS1', 'CAMKK2', 'LOC146795', 'AKR1C2', 'HNRNPG.T', 'UGCG', 'LY96', 'HMOX1', 'GYPC', 'TCTEX1D1', 'PPP3CB', 'AI335002', 'LAMB1', 'AA131320', 'MGC26694', 'ZNF226', 'DMN', 'AA490257', 'SPINT2', 'PRG1', 'FLJ38984', 'RAB30', 'NPL', 'AI263051', 'SPARC', 'CBLN2', 'PARP14', 'USP3', 'ANXA1', 'PRKCG', 'CD47', 'HBXIP', 'SUV39H1', 'RBP4', 'ESM1', 'NSF', 'FLJ35740', 'INPP5F', 'N98591', 'MTHFD2', 'C1R', 'S100A10', 'AA598555', 'NEFH', 'TncRNA', 'TFDP2', 'YWHAH', 'PYHIN1', 'SNCG', 'IMAGE.33267', 'MAPKBP1', 'CACNB3', 'PDE4DIP', 'BGN', 'HSPG2', 'ITGA9', 'HLA.G', 'CCDC3', 'APOC2', 'MDFI', 'STXBP1', 'LOC541471', 'ITPKA', 'CYBA', 'IL21R', 'ANXA5', 'GOT1', 'CHI3L2', 'IFI30', 'GBP2', 'LHFPL2', 'MYBPC2', 'TBC1D7', 'PLP2', 'TCF7L1', 'ADM', 'C16orf5', 'FABP3', 'KLRC2', 'TSPAN4', 'PYCR1', 'PRKCZ', 'SLC15A2', 'H91845', 'ZNF329', 'COL4A2', 'FBXO2', 'GPSM2', 'PLA2G2A', 'SAA2', 'MGP', 'DYNLT1', 'MICAL2', 'R52960', 'NR4A1', 'SERPINI1', 'KIAA0963', 'ITGA5', 'IL1RAP', 'RAB11FIP4', 'DPYD', 'PSG5', 'IGF1R', 'RAB27B', 'WDR7', 'AEBP1', 'CCL2', 'RTN3', 'AI350724', 'CEAL1', 'IGFBP5', 'GABBR1', 'TMEM146', 'SERPING1', 'AI005038', 'DCLRE1B', 'URP2', 'TGFBI', 'ZNF160', 'ANK3', 'CACNB2', 'AA281932', 'DDEF1', 'AA424849', 'CSPG2', 'NMNAT2', 'SNRPN', 'SYNGR3', 'ABCC3', 'AA598631', 'AA479357', 'SRPX', 'ADAM19', 'SLC16A3', 'EMP3', 'CLSTN3', 'NDST1', 'RAB20', 'RALY', 'COL1A1', 'PLAUR', 'FCGR2B', 'DEF6', 'F13A1', 'EID.3', 'HLA.F', 'IGFBP3', 'CAMK2A', 'MST1', 'TNFRSF12A', 'KIAA1644', 'IQSEC1', 'MOAP1', 'COL1A2', 'EDNRB', 'ZFHX1B', 'COL6A2', 'PNCK', 'STMN1', 'STEAP3', 'ACAD8', 'KCNJ1', 'H20822', 'H24428', 'CDKN2D', 'PCP4', 'BCL2A1', 'PPP1R14A', 'FN1', 'KNS2', 'S100A11', 'ZNF217', 'CAV1', 'LTF', 'C4A', 'LUM', 'W93688', 'GYPA', 'USP6NL', 'MRC2', 'LOC57228', 'HAMP', 'HLA.DRB1', 'SOCS3', 'NUAK1', 'GAS1', 'STK17A', 'NPTX1', 'L3MBTL4', 'NLGN1', 'CA12', 'UBA52', 'LOC283130', 'FCGRT', 'ARPP.19', 'RFXAP', 'C1orf187', 'HCLS1', 'PARD3', 'MSN', 'CHN1', 'MB', 'PDPN', 'MMP2', 'PPP3CA', 'FBL', 'H41096', 'VEGF', 'CASP1', 'TXNDC', 'EFHB', 'LOC400451', 'STC1', 'FBXW7', 'BLVRB', 'CAP2', 'HK2', 'FREQ', 'R70506', 'IL32', 'H08563', 'DKFZp313A2432', 'APOC1', 'APCS', 'ADCY1', 'DECR2', 'ITGA3', 'PLAU', 'EXT1', 'POSTN', 'PRKCB1', 'SPAG6', 'LAPTM5', 'LSP1', 'NCF1', 'L1CAM', 'AA669383', 'FBXL16', 'TIMP3', 'NLK', 'HBA1', 'AA401952', 'H10054', 'FBXO32', 'CD53', 'MGC42367', 'CD44', 'RBP7', 'PLTP', 'AP4B1', 'RND3', 'SLC35A2', 'SETD5', 'LOC389831', 'MYC', 'UBE4B', 'WASF1', 'PTPRZ1', 'NOTCH1', 'DDIT4', 'ID3', 'IGHG1', 'MVP', 'LGALS3', 'AI357047', 'CDC20B', 'T62491', 'AIF1', 'PDXP', 'HPRT1', 'ABCA5', 'NDUFB11', 'RUNX1', 'LYN', 'HEY1', 'C1orf63', 'FAM46A', 'ADFP', 'DIP2C', 'CCR1', 'AA906888', 'AA029415', 'ADARB2', 'CLIC1', 'X37864', 'GADD45B', 'OSR1', 'CKMT1A', 'ATP6V1C1', 'EDG1', 'AKR1C1', 'BNIP2', 'D21S2089E', 'IGSF3', 'HLA.A', 'TMEM49', 'PSD3', 'TIMP1', 'KCNQ2', 'PALLD', 'MED11', 'CLTB', 'PYGL', 'MGC18216', 'R70684', 'CBX6', 'R61377', 'CA11', 'KCNMA1', 'C9orf48', 'KLRC1', 'COL3A1', 'IGF2BP3', 'LRBA', 'ID4', 'PDE2A', 'SERPINH1', 'LOC388610', 'DLL3', 'MGC39606', 'RPS19BP1', 'AA975768', 'SYT7', 'MSTP9', 'H78560', 'RGS16', 'AA181288', 'SERPINA3', 'LOC283070', 'AI262682', 'T97457', 'CD58', 'OSBPL1A', 'FAS', 'MYCBP2', 'KCNK6', 'PSG1', 'TNFAIP3', 'NCF2', 'TSPAN6', 'COX7A1', 'AI002301', 'DSCR1L1', 'YWHAG', 'ZNF549', 'C6orf12', 'KLRC3', 'DES', 'DUS3L', 'PRKAR1B', 'DNASE1L1', 'FZD7', 'FGF13', 'VASP', 'FAM84A', 'NNMT', 'GPNMB', 'WWTR1', 'MDK', 'ASPA', 'CAPG', 'VSNL1', 'MST150', 'NY.SAR.48', 'TNC', 'LOC613212', 'HPCA', 'TLL2', 'COL9A2', 'SCAMP5', 'LILRA1', 'SOX4', 'DDN', 'PDLIM7', 'TOMM40', 'VAMP2', 'MAL2', 'CALM1', 'EPB49', 'LMO7', 'SBP1', 'PCDHGC3', 'T51726', 'CTHRC1', 'S100A1', 'X38595', 'PHLDA1', 'MASP1', 'COX6A2', 'SORT1', 'ZNF233', 'CDKN1A', 'KIAA1543', 'PRRX1', 'AI871056', 'TTC23', 'SVIL', 'PEG3', 'GBP1', 'EGLN2', 'EPHB1', 'TAP1', 'AI822135', 'FAM84B', 'ZNF419B', 'CLCA3', 'AA398420', 'CYR61']}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}]
+[Time: 28.06.23 06:44:45] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 100, in run
+    self.load('mfa').set_parameters(incoming)
+  File "/app/apps/svd/FC_Federated_MFA.py", line 153, in set_parameters
+    self.k[idx] = incoming[COParams.PCS.n]
+IndexError: list assignment index out of range
+
