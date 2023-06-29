@@ -1,0 +1,4348 @@
+2023-06-29 10:41:21,646 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 10:41:21,647 INFO supervisord started with pid 7
+2023-06-29 10:41:22,649 INFO spawned: 'nginx' with pid 10
+2023-06-29 10:41:22,651 INFO spawned: 'app' with pid 11
+2023-06-29 10:41:23,664 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 10:41:23,665 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 10:41:25] [Level: info] id: cc4840422b88d74b
+[Time: 29.06.23 10:41:25] [Level: info] coordinator: False
+[Time: 29.06.23 10:41:25] [Level: info] clients: ['cc4840422b88d74b', '222666fc2fac8195']
+[Time: 29.06.23 10:41:25] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+[STARTUP] Configuration copied
+Log Transform performed
+[[ 6.74542027e-02  1.81002875e-01  1.61967477e-01 ...  5.41621673e-02
+   2.44542698e-01 -2.60220260e-01]
+ [-4.61545797e-01 -1.99712471e-03  2.53967477e-01 ...  8.65162167e-01
+  -9.04573017e-02  1.22779740e-01]
+ [ 1.17454203e-01  1.64002875e-01 -1.81032523e-01 ...  1.16216733e-03
+   2.59542698e-01 -1.47220260e-01]
+ ...
+ [ 6.77109851e-01  5.27812409e-01  8.69196496e-01 ...  1.60968399e+00
+   4.71524132e-01  6.26844003e-01]
+ [-2.01389015e+00  7.88124088e-02  9.97196496e-01 ...  5.29683994e-01
+   6.37524132e-01  1.15884400e+00]
+ [-9.82890149e-01  4.64312409e-01  1.32619650e+00 ...  1.64683994e-01
+   2.29524132e-01  5.23344003e-01]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 9.41741748e-02  2.40012477e-01  2.16569689e-01 ...  7.60968214e-02
+   3.15615728e-01 -4.34832304e-01]
+ [-8.93104451e-01 -2.88412285e-03  3.26499931e-01 ...  8.99301072e-01
+  -1.36786728e-01  1.67074937e-01]
+ [ 1.60215706e-01  2.19094622e-01 -2.88121934e-01 ...  1.67567952e-03
+   3.32900030e-01 -2.29754931e-01]
+ ...
+ [ 7.45977189e-01  6.11467414e-01  9.02418238e-01 ...  1.38387512e+00
+   5.57311202e-01  7.02075918e-01]
+ [            nan  1.09444021e-01  9.97976281e-01 ...  6.13233648e-01
+   7.11516168e-01  1.11025900e+00]
+ [-5.86902895e+00  5.50223383e-01  1.21797297e+00 ...  2.19938570e-01
+   2.98100052e-01  6.07241769e-01]]
+Log Transform performed
+[[ 6.74542027e-02  1.81002875e-01  1.61967477e-01 ...  5.41621673e-02
+   2.44542698e-01 -2.60220260e-01]
+ [-4.61545797e-01 -1.99712471e-03  2.53967477e-01 ...  8.65162167e-01
+  -9.04573017e-02  1.22779740e-01]
+ [ 1.17454203e-01  1.64002875e-01 -1.81032523e-01 ...  1.16216733e-03
+   2.59542698e-01 -1.47220260e-01]
+ ...
+ [ 6.77109851e-01  5.27812409e-01  8.69196496e-01 ...  1.60968399e+00
+   4.71524132e-01  6.26844003e-01]
+ [-2.01389015e+00  7.88124088e-02  9.97196496e-01 ...  5.29683994e-01
+   6.37524132e-01  1.15884400e+00]
+ [-9.82890149e-01  4.64312409e-01  1.32619650e+00 ...  1.64683994e-01
+   2.29524132e-01  5.23344003e-01]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 9.41741748e-02  2.40012477e-01  2.16569689e-01 ...  7.60968214e-02
+   3.15615728e-01 -4.34832304e-01]
+ [-8.93104451e-01 -2.88412285e-03  3.26499931e-01 ...  8.99301072e-01
+  -1.36786728e-01  1.67074937e-01]
+ [ 1.60215706e-01  2.19094622e-01 -2.88121934e-01 ...  1.67567952e-03
+   3.32900030e-01 -2.29754931e-01]
+ ...
+ [ 7.45977189e-01  6.11467414e-01  9.02418238e-01 ...  1.38387512e+00
+   5.57311202e-01  7.02075918e-01]
+ [            nan  1.09444021e-01  9.97976281e-01 ...  6.13233648e-01
+   7.11516168e-01  1.11025900e+00]
+ [-5.86902895e+00  5.50223383e-01  1.21797297e+00 ...  2.19938570e-01
+   2.98100052e-01  6.07241769e-01]]
+Log Transform performed
+[[ 6.74542027e-02  1.81002875e-01  1.61967477e-01 ...  5.41621673e-02
+   2.44542698e-01 -2.60220260e-01]
+ [-4.61545797e-01 -1.99712471e-03  2.53967477e-01 ...  8.65162167e-01
+  -9.04573017e-02  1.22779740e-01]
+ [ 1.17454203e-01  1.64002875e-01 -1.81032523e-01 ...  1.16216733e-03
+   2.59542698e-01 -1.47220260e-01]
+ ...
+ [ 6.77109851e-01  5.27812409e-01  8.69196496e-01 ...  1.60968399e+00
+   4.71524132e-01  6.26844003e-01]
+ [-2.01389015e+00  7.88124088e-02  9.97196496e-01 ...  5.29683994e-01
+   6.37524132e-01  1.15884400e+00]
+ [-9.82890149e-01  4.64312409e-01  1.32619650e+00 ...  1.64683994e-01
+   2.29524132e-01  5.23344003e-01]]
+/app/apps/svd/FC_Federated_MFA.py:126: RuntimeWarning: invalid value encountered in log2
+  tabdata.scaled = np.log2(tabdata.scaled+1)
+[[ 9.41741748e-02  2.40012477e-01  2.16569689e-01 ...  7.60968214e-02
+   3.15615728e-01 -4.34832304e-01]
+ [-8.93104451e-01 -2.88412285e-03  3.26499931e-01 ...  8.99301072e-01
+  -1.36786728e-01  1.67074937e-01]
+ [ 1.60215706e-01  2.19094622e-01 -2.88121934e-01 ...  1.67567952e-03
+   3.32900030e-01 -2.29754931e-01]
+ ...
+ [ 7.45977189e-01  6.11467414e-01  9.02418238e-01 ...  1.38387512e+00
+   5.57311202e-01  7.02075918e-01]
+ [            nan  1.09444021e-01  9.97976281e-01 ...  6.13233648e-01
+   7.11516168e-01  1.11025900e+00]
+ [-5.86902895e+00  5.50223383e-01  1.21797297e+00 ...  2.19938570e-01
+   2.98100052e-01  6.07241769e-01]]
+outs
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}]
+[Time: 29.06.23 10:41:25] [Level: info] transition: wait_for_params
+[Time: 29.06.23 10:41:26] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+INCOMINGS
+[{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']}, {'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']}, {'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']}]
+INCOMING
+{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']}
+K
+[43, 43, 43]
+incoming[COParams.PCS.n]
+43
+INCOMING
+{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']}
+K
+[43, 43, 43]
+incoming[COParams.PCS.n]
+43
+INCOMING
+{'PCs': 43, <COParams.SEND_PROJ: ('Send projections', False)>: False, 'Row names': ['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']}
+K
+[43, 43, 43]
+incoming[COParams.PCS.n]
+43
+['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']
+INDEX
+[348, 338, 217, 246, 202, 376, 238, 14, 145, 288, 185, 231, 106, 23, 354, 184, 158, 297, 235, 353, 406, 178, 181, 140, 342, 107, 375, 9, 309, 379, 243, 413, 130, 223, 335, 60, 28, 32, 219, 370, 300, 218, 65, 351, 58, 272, 323, 83, 193, 36, 320, 72, 282, 209, 160, 25, 410, 286, 11, 108, 343, 164, 374, 258, 43, 7, 423, 377, 393, 174, 149, 163, 215, 367, 385, 403, 316, 249, 380, 349, 225, 200, 256, 298, 129, 276, 161, 168, 399, 395, 358, 100, 265, 34, 16, 5, 148, 8, 232, 114, 188, 254, 371, 306, 109, 324, 341, 176, 281, 27, 304, 127, 15, 292, 206, 76, 321, 196, 368, 190, 92, 264, 291, 125, 152, 381, 251, 87, 69, 327, 24, 136, 378, 41, 56, 384, 242, 284, 287, 113, 237, 170, 0, 201, 26, 51, 117, 133, 203, 12, 387, 314, 234, 417, 156, 74, 401, 70, 366, 250, 132, 63, 259, 330, 139, 383, 260, 77, 82, 179, 340, 293, 328, 382, 419, 257, 391, 197, 269, 89, 357, 274, 308, 80, 116, 319, 295, 20, 214, 128, 50, 228, 404, 66, 154, 318, 62, 171, 187, 233, 222, 400, 115, 199, 146, 350, 266, 405, 49, 4, 208, 273, 97, 121, 101, 394, 313, 411, 261, 365, 360, 241, 10, 78, 397, 211, 17, 143, 352, 18, 315, 271, 22, 236, 386, 42, 278, 134, 124, 255, 155, 290, 94, 90, 369, 311, 412, 126, 207, 57, 192, 150, 421, 239, 414, 279, 79, 230, 262, 299, 167, 105, 162, 3, 120, 173, 46, 333, 396, 229, 317, 104, 118, 48, 39, 68, 248, 137, 61, 212, 1, 112, 88, 40, 182, 305, 84, 6, 372, 312, 55, 37, 220, 31, 29, 169, 415, 172, 205, 227, 245, 416, 119, 19, 345, 86, 21, 159, 270, 141, 294, 339, 356, 325, 123, 322, 362, 267, 166, 180, 364, 302, 373, 301, 361, 224, 111, 216, 420, 247, 13, 307, 81, 95, 213, 67, 110, 177, 280, 344, 157, 310, 359, 221, 329, 268, 303, 402, 332, 47, 38, 195, 99, 52, 91, 102, 392, 388, 240, 336, 147, 263, 96, 204, 198, 244, 93, 2, 355, 407, 175, 122, 183, 131, 135, 33, 35, 59, 210, 186, 275, 103, 289, 189, 390, 194, 347, 226, 85, 64, 98, 53, 71, 165, 252, 75, 331, 44, 337, 334, 277, 285, 138, 363, 408, 144, 422, 296, 191, 153, 151, 398, 346, 253, 326, 73, 409, 389, 45, 283, 142, 418]
+['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']
+INDEX
+[348, 338, 217, 246, 202, 376, 238, 14, 145, 288, 185, 231, 106, 23, 354, 184, 158, 297, 235, 353, 406, 178, 181, 140, 342, 107, 375, 9, 309, 379, 243, 413, 130, 223, 335, 60, 28, 32, 219, 370, 300, 218, 65, 351, 58, 272, 323, 83, 193, 36, 320, 72, 282, 209, 160, 25, 410, 286, 11, 108, 343, 164, 374, 258, 43, 7, 423, 377, 393, 174, 149, 163, 215, 367, 385, 403, 316, 249, 380, 349, 225, 200, 256, 298, 129, 276, 161, 168, 399, 395, 358, 100, 265, 34, 16, 5, 148, 8, 232, 114, 188, 254, 371, 306, 109, 324, 341, 176, 281, 27, 304, 127, 15, 292, 206, 76, 321, 196, 368, 190, 92, 264, 291, 125, 152, 381, 251, 87, 69, 327, 24, 136, 378, 41, 56, 384, 242, 284, 287, 113, 237, 170, 0, 201, 26, 51, 117, 133, 203, 12, 387, 314, 234, 417, 156, 74, 401, 70, 366, 250, 132, 63, 259, 330, 139, 383, 260, 77, 82, 179, 340, 293, 328, 382, 419, 257, 391, 197, 269, 89, 357, 274, 308, 80, 116, 319, 295, 20, 214, 128, 50, 228, 404, 66, 154, 318, 62, 171, 187, 233, 222, 400, 115, 199, 146, 350, 266, 405, 49, 4, 208, 273, 97, 121, 101, 394, 313, 411, 261, 365, 360, 241, 10, 78, 397, 211, 17, 143, 352, 18, 315, 271, 22, 236, 386, 42, 278, 134, 124, 255, 155, 290, 94, 90, 369, 311, 412, 126, 207, 57, 192, 150, 421, 239, 414, 279, 79, 230, 262, 299, 167, 105, 162, 3, 120, 173, 46, 333, 396, 229, 317, 104, 118, 48, 39, 68, 248, 137, 61, 212, 1, 112, 88, 40, 182, 305, 84, 6, 372, 312, 55, 37, 220, 31, 29, 169, 415, 172, 205, 227, 245, 416, 119, 19, 345, 86, 21, 159, 270, 141, 294, 339, 356, 325, 123, 322, 362, 267, 166, 180, 364, 302, 373, 301, 361, 224, 111, 216, 420, 247, 13, 307, 81, 95, 213, 67, 110, 177, 280, 344, 157, 310, 359, 221, 329, 268, 303, 402, 332, 47, 38, 195, 99, 52, 91, 102, 392, 388, 240, 336, 147, 263, 96, 204, 198, 244, 93, 2, 355, 407, 175, 122, 183, 131, 135, 33, 35, 59, 210, 186, 275, 103, 289, 189, 390, 194, 347, 226, 85, 64, 98, 53, 71, 165, 252, 75, 331, 44, 337, 334, 277, 285, 138, 363, 408, 144, 422, 296, 191, 153, 151, 398, 346, 253, 326, 73, 409, 389, 45, 283, 142, 418]
+['NLK', 'GBP2', 'HLA.A', 'GBP1', 'FN1', 'FBXW7', 'MB', 'C1orf63', 'NMNAT2', 'HPRT1', 'R61377', 'AA479357', 'PSD3', 'HBXIP', 'AA598555', 'PLAU', 'COL1A2', 'PYHIN1', 'LOC389831', 'NY.SAR.48', 'MED11', 'APOC2', 'H86813', 'TMEM49', 'R52960', 'RUNX1', 'ADAM19', 'AKR1C2', 'GPNMB', 'PCP4', 'PYGL', 'FBL', 'MRC2', 'DPYD', 'C6orf12', 'UBE4B', 'DCLRE1B', 'DDEF1', 'IGFBP5', 'CYR61', 'FCGRT', 'SNCG', 'BLVRB', 'NCF1', 'ZNF233', 'MDK', 'PDE4DIP', 'AA398420', 'AA906888', 'PSG5', 'LAMB1', 'CAPG', 'RAB11FIP4', 'HCLS1', 'HEY1', 'EDG1', 'BNIP2', 'CAMK2A', 'GYPA', 'LHFPL2', 'BCL2A1', 'RFXAP', 'CHN1', 'TSPAN6', 'HNRNPG.T', 'AKR1C1', 'MGP', 'AA598631', 'EPB49', 'RND3', 'WASF1', 'SUV39H1', 'AI335002', 'AI350724', 'CTHRC1', 'SPARC', 'NCF2', 'AA181288', 'SRPX', 'ANK3', 'AI822135', 'PRKCZ', 'USP3', 'H91845', 'TBC1D7', 'PLA2G2A', 'HSPG2', 'PDXP', 'CAV1', 'LYN', 'TGFBI', 'VEGF', 'CDC20B', 'KCNJ1', 'CACNB2', 'PARD3', 'CSPG2', 'CCDC3', 'LTF', 'STEAP3', 'FBXL16', 'DEF6', 'T51726', 'FAS', 'C9orf48', 'MMP2', 'S100A1', 'MTHFD2', 'NSF', 'LOC283070', 'HAMP', 'X37864', 'USP6NL', 'RBP4', 'STXBP1', 'RGS16', 'EDG3', 'SOX4', 'PRSS1', 'WWTR1', 'T97457', 'MYC', 'HK2', 'PNCK', 'COL3A1', 'IGHG1', 'CALM1', 'CHI3L2', 'H08563', 'PRRX1', 'ZNF226', 'AA131320', 'LUM', 'OSR1', 'KCNK6', 'HPCA', 'FLJ38984', 'IL21R', 'APCS', 'LGALS3', 'NOTCH1', 'MAPKBP1', 'EXT1', 'FLJ35740', 'SORT1', 'APOC1', 'KLRC2', 'CD58', 'LOC388610', 'VASP', 'DYNLT1', 'SPINT2', 'AA490257', 'HLA.DRB1', 'LOC400451', 'EMP3', 'H10054', 'BGN', 'HLA.F', 'IGF2BP3', 'TCF7L1', 'RBP7', 'CDKN1A', 'TSPAN4', 'PEG3', 'H41096', 'PHLDA1', 'ITGA5', 'TIMP1', 'ANXA1', 'F13A1', 'DDIT4', 'IL1RAP', 'FAM84A', 'N98591', 'X38595', 'AA424849', 'COL9A2', 'CDKN2D', 'PLP2', 'TAP1', 'CCL2', 'DNASE1L1', 'H78560', 'KLRC3', 'CAP2', 'CAMKK2', 'EID.3', 'CLTB', 'NNMT', 'GPSM2', 'KCNMA1', 'SCN2B', 'PSG1', 'NLGN1', 'PLTP', 'TTC23', 'ID4', 'STMN1', 'ZNF217', 'L3MBTL4', 'ZFHX1B', 'IGFBP3', 'AA029415', 'GABBR1', 'AI002301', 'TNFAIP3', 'SYT7', 'BCAM', 'ADARB2', 'SP100', 'MVP', 'RALY', 'PDE2A', 'AA281932', 'MDFI', 'VSNL1', 'FZD7', 'GOT1', 'AIF1', 'TOMM40', 'C4A', 'TCTEX1D1', 'PPP3CB', 'PALLD', 'LSP1', 'CLCA3', 'SERPINH1', 'CA11', 'COX7A1', 'C8orf4', 'CLSTN3', 'KIAA1543', 'AA975768', 'AA401952', 'D21S2089E', 'CKMT1A', 'MST1', 'PLAUR', 'W93688', 'C16orf5', 'ITPKA', 'DLL3', 'S100A11', 'SAA2', 'T62491', 'GADD45B', 'WDR7', 'AI357047', 'TFDP2', 'ANXA5', 'CBX6', 'SLC15A2', 'RAB30', 'LOC283130', 'H24428', 'LOC541471', 'MSTP9', 'EFHB', 'SLC35A2', 'STC1', 'ATP6V1C1', 'RPS19BP1', 'MGC39606', 'ARPP.19', 'SERPING1', 'LRBA', 'MAL2', 'TXNDC', 'PCDHGC3', 'PRSS3', 'IFI30', 'KLRC1', 'EGLN2', 'SBP1', 'MSN', 'LY96', 'LOC57228', 'NDUFB11', 'PRKAR1B', 'DIP2C', 'PPP3CA', 'MASP1', 'MGC42367', 'SCAMP5', 'CD44', 'IMAGE.33267', 'SPAG6', 'SYNGR3', 'FBXO2', 'TMEM146', 'FBXO32', 'PYCR1', 'ZNF419B', 'ZNF549', 'MOAP1', 'STK17A', 'CACNB3', 'FGF13', 'ADFP', 'KNS2', 'PRKCG', 'NPL', 'CEAL1', 'FREQ', 'PDPN', 'DUS3L', 'COL6A2', 'AA669383', 'FABP3', 'OSBPL1A', 'PRKCB1', 'ID3', 'S100A10', 'TIMP3', 'INPP5F', 'IQSEC1', 'POSTN', 'DKFZp313A2432', 'AA489629', 'NPC2', 'PTPRZ1', 'ITGA3', 'AI005038', 'C1orf187', 'H20822', 'EDNRB', 'A2BP1', 'PPP1R14A', 'IL32', 'ACAD8', 'NUAK1', 'ASPA', 'TSPYL1', 'YWHAG', 'MYBPC2', 'CA12', 'R70506', 'KIAA0963', 'YWHAH', 'AEBP1', 'HBA1', 'AI263051', 'ABCC3', 'HLA.G', 'PLOD2', 'ADCY1', 'NDST1', 'CCR1', 'LILRA1', 'ZNF329', 'LOC146795', 'CLIC1', 'IGF1R', 'SETD5', 'COL1A1', 'NR4A1', 'GAS1', 'FCGR2B', 'DDN', 'VAMP2', 'GYPC', 'FAM84B', 'AI871056', 'SERPINA3', 'SNRPN', 'UBA52', 'SVIL', 'CYBA', 'PARP14', 'HMOX1', 'COL4A2', 'RPS3A', 'ABCA5', 'DECR2', 'DMN', 'MGC18216', 'COX6A2', 'MGC26694', 'NEFH', 'FAM46A', 'CD47', 'LAMA4', 'C1R', 'ESM1', 'AI262682', 'SERPINI1', 'LMO7', 'SOCS3', 'IGSF3', 'LOC613212', 'TLL2', 'TNFRSF12A', 'TNC', 'CASP1', 'RTN3', 'ITGA9', 'AP4B1', 'CBLN2', 'DSCR1L1', 'KCNQ2', 'URP2', 'MST150', 'DES', 'MICAL2', 'ADM', 'NPTX1', 'L1CAM', 'EPHB1', 'KIAA1644', 'RAB27B', 'R70684', 'UGCG', 'PDLIM7', 'LAPTM5', 'MYCBP2', 'TncRNA', 'RAB20', 'ZNF160', 'CD53', 'SLC16A3', 'PRG1']
+INDEX
+[348, 338, 217, 246, 202, 376, 238, 14, 145, 288, 185, 231, 106, 23, 354, 184, 158, 297, 235, 353, 406, 178, 181, 140, 342, 107, 375, 9, 309, 379, 243, 413, 130, 223, 335, 60, 28, 32, 219, 370, 300, 218, 65, 351, 58, 272, 323, 83, 193, 36, 320, 72, 282, 209, 160, 25, 410, 286, 11, 108, 343, 164, 374, 258, 43, 7, 423, 377, 393, 174, 149, 163, 215, 367, 385, 403, 316, 249, 380, 349, 225, 200, 256, 298, 129, 276, 161, 168, 399, 395, 358, 100, 265, 34, 16, 5, 148, 8, 232, 114, 188, 254, 371, 306, 109, 324, 341, 176, 281, 27, 304, 127, 15, 292, 206, 76, 321, 196, 368, 190, 92, 264, 291, 125, 152, 381, 251, 87, 69, 327, 24, 136, 378, 41, 56, 384, 242, 284, 287, 113, 237, 170, 0, 201, 26, 51, 117, 133, 203, 12, 387, 314, 234, 417, 156, 74, 401, 70, 366, 250, 132, 63, 259, 330, 139, 383, 260, 77, 82, 179, 340, 293, 328, 382, 419, 257, 391, 197, 269, 89, 357, 274, 308, 80, 116, 319, 295, 20, 214, 128, 50, 228, 404, 66, 154, 318, 62, 171, 187, 233, 222, 400, 115, 199, 146, 350, 266, 405, 49, 4, 208, 273, 97, 121, 101, 394, 313, 411, 261, 365, 360, 241, 10, 78, 397, 211, 17, 143, 352, 18, 315, 271, 22, 236, 386, 42, 278, 134, 124, 255, 155, 290, 94, 90, 369, 311, 412, 126, 207, 57, 192, 150, 421, 239, 414, 279, 79, 230, 262, 299, 167, 105, 162, 3, 120, 173, 46, 333, 396, 229, 317, 104, 118, 48, 39, 68, 248, 137, 61, 212, 1, 112, 88, 40, 182, 305, 84, 6, 372, 312, 55, 37, 220, 31, 29, 169, 415, 172, 205, 227, 245, 416, 119, 19, 345, 86, 21, 159, 270, 141, 294, 339, 356, 325, 123, 322, 362, 267, 166, 180, 364, 302, 373, 301, 361, 224, 111, 216, 420, 247, 13, 307, 81, 95, 213, 67, 110, 177, 280, 344, 157, 310, 359, 221, 329, 268, 303, 402, 332, 47, 38, 195, 99, 52, 91, 102, 392, 388, 240, 336, 147, 263, 96, 204, 198, 244, 93, 2, 355, 407, 175, 122, 183, 131, 135, 33, 35, 59, 210, 186, 275, 103, 289, 189, 390, 194, 347, 226, 85, 64, 98, 53, 71, 165, 252, 75, 331, 44, 337, 334, 277, 285, 138, 363, 408, 144, 422, 296, 191, 153, 151, 398, 346, 253, 326, 73, 409, 389, 45, 283, 142, 418]
+[Time: 29.06.23 10:41:29] [Level: info] transition: compute_std
+[Time: 29.06.23 10:41:30] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(422, 1)
+(422, 1)
+(422, 1)
+[Time: 29.06.23 10:41:32] [Level: info] transition: apply_scaling
+[Time: 29.06.23 10:41:33] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+self.tabdatas[idx].scaled
+[[ 0.18547709  0.34101422  0.5391444  ...  0.29620473  0.26897267
+  -0.05309832]
+ [-2.63309799 -0.03227985  0.27803105 ...  0.05531416 -0.81573579
+  -0.4609201 ]
+ [ 0.24449466 -0.95595964 -0.11003318 ... -0.49970045 -0.0800019
+   0.49481622]
+ ...
+ [-0.39733509  0.09256017  0.48049478 ...  0.21278088 -1.05500065
+  -0.22510235]
+ [        nan         nan         nan ...         nan         nan
+          nan]
+ [-0.72454828 -0.11545465  0.09254176 ...  0.28352042 -0.74270392
+   0.48346987]]
+self.std[idx]
+[[ 0.54983484]
+ [ 0.8876738 ]
+ [ 1.01393671]
+ [ 0.65394789]
+ [ 1.28623048]
+ [ 1.33168263]
+ [ 0.57237947]
+ [ 1.11559783]
+ [ 1.01682142]
+ [ 1.44136397]
+ [ 1.02043929]
+ [ 0.95074162]
+ [ 1.72118411]
+ [ 1.08487258]
+ [ 1.31794765]
+ [ 1.70240037]
+ [ 1.60458415]
+ [ 0.97056062]
+ [ 2.1251673 ]
+ [ 1.52634966]
+ [ 0.35407237]
+ [ 0.97963818]
+ [ 1.6134607 ]
+ [ 1.36946058]
+ [ 1.32708485]
+ [ 1.23338285]
+ [ 0.65272372]
+ [ 1.13120426]
+ [ 1.43499432]
+ [ 1.21816359]
+ [ 1.50882414]
+ [ 1.98036989]
+ [ 0.90956781]
+ [ 1.12032301]
+ [ 0.7275343 ]
+ [ 1.48462495]
+ [ 0.47609356]
+ [ 0.57129815]
+ [ 1.01544646]
+ [ 1.97586203]
+ [ 0.33950912]
+ [ 1.68374978]
+ [ 0.90135332]
+ [ 1.34246958]
+ [ 0.37992025]
+ [ 2.21784337]
+ [ 0.71436102]
+ [ 0.92543078]
+ [ 1.83434023]
+ [ 0.61248697]
+ [ 1.84797578]
+ [ 1.0149542 ]
+ [ 1.18300299]
+ [ 0.67586787]
+ [ 1.01020771]
+ [ 0.55315689]
+ [ 0.85912487]
+ [ 1.12666916]
+ [ 0.45549684]
+ [ 0.63866743]
+ [ 1.55346018]
+ [ 0.76221475]
+ [ 0.5214816 ]
+ [ 1.56259827]
+ [ 0.4912932 ]
+ [ 0.62528353]
+ [ 1.49057432]
+ [ 0.48962956]
+ [ 0.97337073]
+ [ 1.35224404]
+ [ 1.35327602]
+ [ 1.18051954]
+ [ 1.58708778]
+ [ 1.27449613]
+ [ 1.2170976 ]
+ [ 0.5658582 ]
+ [ 0.46998609]
+ [ 1.03413851]
+ [ 1.29900906]
+ [ 1.76280912]
+ [ 1.99463302]
+ [ 0.82356979]
+ [ 1.98330703]
+ [ 2.42365906]
+ [ 0.62183489]
+ [ 1.43331604]
+ [ 1.41124628]
+ [ 0.84202923]
+ [ 1.65726872]
+ [ 0.84102353]
+ [ 2.33904006]
+ [ 1.42314499]
+ [ 1.24393071]
+ [ 1.228858  ]
+ [ 0.75511403]
+ [ 0.59062762]
+ [ 0.59581055]
+ [ 0.63980531]
+ [ 0.92965107]
+ [ 1.51813137]
+ [ 1.38243122]
+ [ 1.22703576]
+ [ 1.46789585]
+ [ 0.90796349]
+ [ 1.45582593]
+ [ 1.68431306]
+ [ 1.05445534]
+ [ 1.56489351]
+ [ 1.01300072]
+ [ 1.55976832]
+ [ 1.23086035]
+ [ 0.85676052]
+ [ 1.20252997]
+ [        nan]
+ [ 0.95446789]
+ [ 0.74957981]
+ [ 0.80050099]
+ [ 1.98595104]
+ [-0.        ]
+ [ 0.65256781]
+ [ 1.57716177]
+ [ 1.85922177]
+ [ 1.71733933]
+ [ 0.66381109]
+ [ 1.18319111]
+ [ 0.70117618]
+ [ 0.49952063]
+ [ 1.0325435 ]
+ [ 0.92787925]
+ [ 0.45115346]
+ [ 0.52231332]
+ [ 0.46981305]
+ [ 0.10085126]
+ [ 0.58865672]
+ [ 0.62115924]
+ [ 2.06455025]
+ [ 1.2541482 ]
+ [ 2.01292712]
+ [ 0.72696503]
+ [ 1.51125534]
+ [ 0.80288055]
+ [ 0.85866506]
+ [ 0.43820814]
+ [ 0.48970932]
+ [ 0.43029362]
+ [ 1.01002316]
+ [ 1.57124753]
+ [ 1.77807028]
+ [ 1.64837307]
+ [ 0.87913927]
+ [ 0.84176319]
+ [ 1.62224435]
+ [ 1.00990902]
+ [ 0.28512236]
+ [ 1.57011001]
+ [ 0.99194825]
+ [ 1.5555344 ]
+ [ 1.46173709]
+ [ 1.68101226]
+ [ 0.79901296]
+ [ 2.20768024]
+ [ 1.58696298]
+ [ 1.38963301]
+ [ 1.21753721]
+ [ 1.95691948]
+ [ 0.99532499]
+ [ 2.42197625]
+ [ 2.37891982]
+ [ 1.07805402]
+ [ 0.96842639]
+ [ 0.61905372]
+ [ 1.47673196]
+ [ 1.02286813]
+ [ 0.61936149]
+ [ 0.55936634]
+ [ 1.585683  ]
+ [ 1.10646387]
+ [ 0.56944922]
+ [ 0.80962166]
+ [ 2.54104791]
+ [ 0.55775269]
+ [ 1.02381826]
+ [ 0.55491857]
+ [ 1.54503914]
+ [ 1.58463953]
+ [ 0.90294458]
+ [ 0.93642742]
+ [ 0.46787333]
+ [ 1.94203693]
+ [ 1.00624536]
+ [ 0.33339787]
+ [ 1.69340175]
+ [ 1.54731824]
+ [ 0.37182372]
+ [ 1.00525247]
+ [ 0.34049255]
+ [ 0.95774044]
+ [ 0.46320007]
+ [ 1.54754677]
+ [ 0.58956803]
+ [ 1.08152431]
+ [ 1.89483584]
+ [ 1.862021  ]
+ [ 0.86796548]
+ [ 0.70234069]
+ [ 0.80067526]
+ [ 1.7016285 ]
+ [ 1.35864842]
+ [ 0.6183464 ]
+ [ 1.07795199]
+ [ 1.30408998]
+ [ 0.81113088]
+ [ 0.78684541]
+ [ 1.99500034]
+ [ 1.48609215]
+ [ 2.10314191]
+ [ 1.5024897 ]
+ [ 1.03178648]
+ [ 1.12913302]
+ [ 0.50206719]
+ [ 0.47173813]
+ [ 0.6882616 ]
+ [ 0.38503899]
+ [ 0.90878041]
+ [ 0.37051024]
+ [ 1.95054686]
+ [ 0.24626548]
+ [ 1.55892053]
+ [ 0.76566037]
+ [ 1.41730511]
+ [ 1.05991172]
+ [ 1.14415131]
+ [ 0.60689158]
+ [ 1.32454124]
+ [ 0.34246945]
+ [ 0.76956334]
+ [ 1.20918776]
+ [ 3.2269833 ]
+ [ 1.40693541]
+ [ 0.97638867]
+ [ 1.0678853 ]
+ [ 1.33820846]
+ [ 1.81019313]
+ [ 0.96968567]
+ [ 0.76588522]
+ [ 1.07898862]
+ [ 0.78662962]
+ [ 0.56312507]
+ [ 1.79665611]
+ [ 0.50331639]
+ [ 1.57424214]
+ [ 0.84155083]
+ [ 0.60104983]
+ [ 1.40577407]
+ [ 1.15050407]
+ [ 0.80916852]
+ [ 1.65121533]
+ [ 0.60358934]
+ [ 1.61540686]
+ [ 0.92745118]
+ [ 0.98204893]
+ [ 0.62145015]
+ [ 1.43100092]
+ [ 0.40964897]
+ [ 0.80293674]
+ [ 0.55572429]
+ [ 1.18225611]
+ [ 2.42344056]
+ [ 1.19163425]
+ [ 0.76218242]
+ [-0.        ]
+ [ 1.05786758]
+ [ 2.19288706]
+ [ 0.47065674]
+ [ 0.43853726]
+ [ 0.8914054 ]
+ [ 1.63975542]
+ [ 1.04439318]
+ [ 0.59836411]
+ [ 0.94095069]
+ [ 0.55282001]
+ [ 1.57340728]
+ [ 1.25241092]
+ [ 0.90026216]
+ [ 0.58854939]
+ [ 2.16583957]
+ [ 1.15077612]
+ [ 0.96200474]
+ [ 1.53464934]
+ [ 1.42014179]
+ [ 0.5210095 ]
+ [ 0.56286719]
+ [ 1.38408968]
+ [ 0.82561593]
+ [ 0.83147239]
+ [ 0.89771953]
+ [ 1.19958284]
+ [ 1.28287171]
+ [ 0.83345575]
+ [ 0.91577738]
+ [ 0.80183701]
+ [ 1.22915117]
+ [ 0.5232334 ]
+ [ 0.37985352]
+ [ 0.77207965]
+ [ 1.307705  ]
+ [ 1.03438219]
+ [ 1.21250326]
+ [ 1.28409285]
+ [ 0.74616326]
+ [ 0.64812361]
+ [ 1.36929299]
+ [ 1.50252486]
+ [ 1.14056114]
+ [ 1.2287535 ]
+ [ 1.25509244]
+ [ 0.68081004]
+ [ 1.9728026 ]
+ [ 1.44146937]
+ [ 0.81861827]
+ [ 0.74767941]
+ [ 0.89726167]
+ [ 0.77479501]
+ [ 1.71228404]
+ [ 1.22169601]
+ [ 0.70874885]
+ [ 1.03099649]
+ [ 0.66068433]
+ [ 0.89632089]
+ [ 1.6082826 ]
+ [ 0.69449172]
+ [ 0.69550568]
+ [ 0.68804493]
+ [ 1.81075306]
+ [ 0.77946209]
+ [ 1.0182749 ]
+ [ 1.63671103]
+ [ 0.88275554]
+ [ 1.8503201 ]
+ [ 0.62696299]
+ [ 1.22831596]
+ [ 0.7758824 ]
+ [ 1.42920471]
+ [ 1.47710661]
+ [ 0.61037588]
+ [ 1.47023101]
+ [ 1.14097644]
+ [ 0.77820364]
+ [ 1.67514218]
+ [ 0.81005024]
+ [ 2.12831149]
+ [ 0.98516092]
+ [ 1.08395039]
+ [ 0.48461002]
+ [ 1.5573897 ]
+ [ 1.67372713]
+ [ 1.54996959]
+ [ 1.63732783]
+ [ 0.47571767]
+ [ 0.95552196]
+ [ 0.51366061]
+ [ 1.23773315]
+ [ 2.169636  ]
+ [        nan]
+ [ 1.02564961]
+ [ 1.27105734]
+ [ 1.06518074]
+ [ 0.71681791]
+ [ 0.73045861]
+ [ 0.50320611]
+ [ 0.92616517]
+ [ 1.25157157]
+ [ 0.77455379]
+ [ 1.25131077]
+ [ 1.65079797]
+ [ 0.65249953]
+ [ 1.40100934]
+ [ 0.55086763]
+ [ 1.16368076]
+ [ 2.23514286]
+ [ 1.17488198]
+ [ 1.38142337]
+ [ 1.01652636]
+ [ 1.01589648]
+ [ 1.17960602]
+ [ 2.06235282]
+ [ 1.05969063]
+ [ 1.54623337]
+ [ 1.19816536]
+ [ 0.44982953]
+ [ 1.9640587 ]
+ [ 1.73508899]
+ [ 1.18162977]
+ [ 1.6823212 ]
+ [ 1.12060465]
+ [ 0.99083846]
+ [ 1.22929524]
+ [ 0.97130492]
+ [ 0.94732176]
+ [ 1.25170736]
+ [ 1.10144512]
+ [ 0.64446459]
+ [ 1.40128966]
+ [ 1.3826206 ]
+ [ 1.49168399]
+ [ 1.14870846]
+ [ 1.65837332]
+ [ 1.52467696]
+ [ 1.03709582]
+ [ 1.26566168]
+ [ 0.76624741]
+ [ 0.94443457]
+ [ 1.76019024]
+ [ 1.93131028]
+ [ 0.58267762]
+ [ 1.42966735]
+ [ 1.66674214]
+ [ 0.8877105 ]
+ [ 0.33198242]
+ [ 0.77710005]
+ [ 1.29327634]
+ [ 0.47714045]]
+self.std
+[array([[ 0.54983484],
+       [ 0.8876738 ],
+       [ 1.01393671],
+       [ 0.65394789],
+       [ 1.28623048],
+       [ 1.33168263],
+       [ 0.57237947],
+       [ 1.11559783],
+       [ 1.01682142],
+       [ 1.44136397],
+       [ 1.02043929],
+       [ 0.95074162],
+       [ 1.72118411],
+       [ 1.08487258],
+       [ 1.31794765],
+       [ 1.70240037],
+       [ 1.60458415],
+       [ 0.97056062],
+       [ 2.1251673 ],
+       [ 1.52634966],
+       [ 0.35407237],
+       [ 0.97963818],
+       [ 1.6134607 ],
+       [ 1.36946058],
+       [ 1.32708485],
+       [ 1.23338285],
+       [ 0.65272372],
+       [ 1.13120426],
+       [ 1.43499432],
+       [ 1.21816359],
+       [ 1.50882414],
+       [ 1.98036989],
+       [ 0.90956781],
+       [ 1.12032301],
+       [ 0.7275343 ],
+       [ 1.48462495],
+       [ 0.47609356],
+       [ 0.57129815],
+       [ 1.01544646],
+       [ 1.97586203],
+       [ 0.33950912],
+       [ 1.68374978],
+       [ 0.90135332],
+       [ 1.34246958],
+       [ 0.37992025],
+       [ 2.21784337],
+       [ 0.71436102],
+       [ 0.92543078],
+       [ 1.83434023],
+       [ 0.61248697],
+       [ 1.84797578],
+       [ 1.0149542 ],
+       [ 1.18300299],
+       [ 0.67586787],
+       [ 1.01020771],
+       [ 0.55315689],
+       [ 0.85912487],
+       [ 1.12666916],
+       [ 0.45549684],
+       [ 0.63866743],
+       [ 1.55346018],
+       [ 0.76221475],
+       [ 0.5214816 ],
+       [ 1.56259827],
+       [ 0.4912932 ],
+       [ 0.62528353],
+       [ 1.49057432],
+       [ 0.48962956],
+       [ 0.97337073],
+       [ 1.35224404],
+       [ 1.35327602],
+       [ 1.18051954],
+       [ 1.58708778],
+       [ 1.27449613],
+       [ 1.2170976 ],
+       [ 0.5658582 ],
+       [ 0.46998609],
+       [ 1.03413851],
+       [ 1.29900906],
+       [ 1.76280912],
+       [ 1.99463302],
+       [ 0.82356979],
+       [ 1.98330703],
+       [ 2.42365906],
+       [ 0.62183489],
+       [ 1.43331604],
+       [ 1.41124628],
+       [ 0.84202923],
+       [ 1.65726872],
+       [ 0.84102353],
+       [ 2.33904006],
+       [ 1.42314499],
+       [ 1.24393071],
+       [ 1.228858  ],
+       [ 0.75511403],
+       [ 0.59062762],
+       [ 0.59581055],
+       [ 0.63980531],
+       [ 0.92965107],
+       [ 1.51813137],
+       [ 1.38243122],
+       [ 1.22703576],
+       [ 1.46789585],
+       [ 0.90796349],
+       [ 1.45582593],
+       [ 1.68431306],
+       [ 1.05445534],
+       [ 1.56489351],
+       [ 1.01300072],
+       [ 1.55976832],
+       [ 1.23086035],
+       [ 0.85676052],
+       [ 1.20252997],
+       [        nan],
+       [ 0.95446789],
+       [ 0.74957981],
+       [ 0.80050099],
+       [ 1.98595104],
+       [-0.        ],
+       [ 0.65256781],
+       [ 1.57716177],
+       [ 1.85922177],
+       [ 1.71733933],
+       [ 0.66381109],
+       [ 1.18319111],
+       [ 0.70117618],
+       [ 0.49952063],
+       [ 1.0325435 ],
+       [ 0.92787925],
+       [ 0.45115346],
+       [ 0.52231332],
+       [ 0.46981305],
+       [ 0.10085126],
+       [ 0.58865672],
+       [ 0.62115924],
+       [ 2.06455025],
+       [ 1.2541482 ],
+       [ 2.01292712],
+       [ 0.72696503],
+       [ 1.51125534],
+       [ 0.80288055],
+       [ 0.85866506],
+       [ 0.43820814],
+       [ 0.48970932],
+       [ 0.43029362],
+       [ 1.01002316],
+       [ 1.57124753],
+       [ 1.77807028],
+       [ 1.64837307],
+       [ 0.87913927],
+       [ 0.84176319],
+       [ 1.62224435],
+       [ 1.00990902],
+       [ 0.28512236],
+       [ 1.57011001],
+       [ 0.99194825],
+       [ 1.5555344 ],
+       [ 1.46173709],
+       [ 1.68101226],
+       [ 0.79901296],
+       [ 2.20768024],
+       [ 1.58696298],
+       [ 1.38963301],
+       [ 1.21753721],
+       [ 1.95691948],
+       [ 0.99532499],
+       [ 2.42197625],
+       [ 2.37891982],
+       [ 1.07805402],
+       [ 0.96842639],
+       [ 0.61905372],
+       [ 1.47673196],
+       [ 1.02286813],
+       [ 0.61936149],
+       [ 0.55936634],
+       [ 1.585683  ],
+       [ 1.10646387],
+       [ 0.56944922],
+       [ 0.80962166],
+       [ 2.54104791],
+       [ 0.55775269],
+       [ 1.02381826],
+       [ 0.55491857],
+       [ 1.54503914],
+       [ 1.58463953],
+       [ 0.90294458],
+       [ 0.93642742],
+       [ 0.46787333],
+       [ 1.94203693],
+       [ 1.00624536],
+       [ 0.33339787],
+       [ 1.69340175],
+       [ 1.54731824],
+       [ 0.37182372],
+       [ 1.00525247],
+       [ 0.34049255],
+       [ 0.95774044],
+       [ 0.46320007],
+       [ 1.54754677],
+       [ 0.58956803],
+       [ 1.08152431],
+       [ 1.89483584],
+       [ 1.862021  ],
+       [ 0.86796548],
+       [ 0.70234069],
+       [ 0.80067526],
+       [ 1.7016285 ],
+       [ 1.35864842],
+       [ 0.6183464 ],
+       [ 1.07795199],
+       [ 1.30408998],
+       [ 0.81113088],
+       [ 0.78684541],
+       [ 1.99500034],
+       [ 1.48609215],
+       [ 2.10314191],
+       [ 1.5024897 ],
+       [ 1.03178648],
+       [ 1.12913302],
+       [ 0.50206719],
+       [ 0.47173813],
+       [ 0.6882616 ],
+       [ 0.38503899],
+       [ 0.90878041],
+       [ 0.37051024],
+       [ 1.95054686],
+       [ 0.24626548],
+       [ 1.55892053],
+       [ 0.76566037],
+       [ 1.41730511],
+       [ 1.05991172],
+       [ 1.14415131],
+       [ 0.60689158],
+       [ 1.32454124],
+       [ 0.34246945],
+       [ 0.76956334],
+       [ 1.20918776],
+       [ 3.2269833 ],
+       [ 1.40693541],
+       [ 0.97638867],
+       [ 1.0678853 ],
+       [ 1.33820846],
+       [ 1.81019313],
+       [ 0.96968567],
+       [ 0.76588522],
+       [ 1.07898862],
+       [ 0.78662962],
+       [ 0.56312507],
+       [ 1.79665611],
+       [ 0.50331639],
+       [ 1.57424214],
+       [ 0.84155083],
+       [ 0.60104983],
+       [ 1.40577407],
+       [ 1.15050407],
+       [ 0.80916852],
+       [ 1.65121533],
+       [ 0.60358934],
+       [ 1.61540686],
+       [ 0.92745118],
+       [ 0.98204893],
+       [ 0.62145015],
+       [ 1.43100092],
+       [ 0.40964897],
+       [ 0.80293674],
+       [ 0.55572429],
+       [ 1.18225611],
+       [ 2.42344056],
+       [ 1.19163425],
+       [ 0.76218242],
+       [-0.        ],
+       [ 1.05786758],
+       [ 2.19288706],
+       [ 0.47065674],
+       [ 0.43853726],
+       [ 0.8914054 ],
+       [ 1.63975542],
+       [ 1.04439318],
+       [ 0.59836411],
+       [ 0.94095069],
+       [ 0.55282001],
+       [ 1.57340728],
+       [ 1.25241092],
+       [ 0.90026216],
+       [ 0.58854939],
+       [ 2.16583957],
+       [ 1.15077612],
+       [ 0.96200474],
+       [ 1.53464934],
+       [ 1.42014179],
+       [ 0.5210095 ],
+       [ 0.56286719],
+       [ 1.38408968],
+       [ 0.82561593],
+       [ 0.83147239],
+       [ 0.89771953],
+       [ 1.19958284],
+       [ 1.28287171],
+       [ 0.83345575],
+       [ 0.91577738],
+       [ 0.80183701],
+       [ 1.22915117],
+       [ 0.5232334 ],
+       [ 0.37985352],
+       [ 0.77207965],
+       [ 1.307705  ],
+       [ 1.03438219],
+       [ 1.21250326],
+       [ 1.28409285],
+       [ 0.74616326],
+       [ 0.64812361],
+       [ 1.36929299],
+       [ 1.50252486],
+       [ 1.14056114],
+       [ 1.2287535 ],
+       [ 1.25509244],
+       [ 0.68081004],
+       [ 1.9728026 ],
+       [ 1.44146937],
+       [ 0.81861827],
+       [ 0.74767941],
+       [ 0.89726167],
+       [ 0.77479501],
+       [ 1.71228404],
+       [ 1.22169601],
+       [ 0.70874885],
+       [ 1.03099649],
+       [ 0.66068433],
+       [ 0.89632089],
+       [ 1.6082826 ],
+       [ 0.69449172],
+       [ 0.69550568],
+       [ 0.68804493],
+       [ 1.81075306],
+       [ 0.77946209],
+       [ 1.0182749 ],
+       [ 1.63671103],
+       [ 0.88275554],
+       [ 1.8503201 ],
+       [ 0.62696299],
+       [ 1.22831596],
+       [ 0.7758824 ],
+       [ 1.42920471],
+       [ 1.47710661],
+       [ 0.61037588],
+       [ 1.47023101],
+       [ 1.14097644],
+       [ 0.77820364],
+       [ 1.67514218],
+       [ 0.81005024],
+       [ 2.12831149],
+       [ 0.98516092],
+       [ 1.08395039],
+       [ 0.48461002],
+       [ 1.5573897 ],
+       [ 1.67372713],
+       [ 1.54996959],
+       [ 1.63732783],
+       [ 0.47571767],
+       [ 0.95552196],
+       [ 0.51366061],
+       [ 1.23773315],
+       [ 2.169636  ],
+       [        nan],
+       [ 1.02564961],
+       [ 1.27105734],
+       [ 1.06518074],
+       [ 0.71681791],
+       [ 0.73045861],
+       [ 0.50320611],
+       [ 0.92616517],
+       [ 1.25157157],
+       [ 0.77455379],
+       [ 1.25131077],
+       [ 1.65079797],
+       [ 0.65249953],
+       [ 1.40100934],
+       [ 0.55086763],
+       [ 1.16368076],
+       [ 2.23514286],
+       [ 1.17488198],
+       [ 1.38142337],
+       [ 1.01652636],
+       [ 1.01589648],
+       [ 1.17960602],
+       [ 2.06235282],
+       [ 1.05969063],
+       [ 1.54623337],
+       [ 1.19816536],
+       [ 0.44982953],
+       [ 1.9640587 ],
+       [ 1.73508899],
+       [ 1.18162977],
+       [ 1.6823212 ],
+       [ 1.12060465],
+       [ 0.99083846],
+       [ 1.22929524],
+       [ 0.97130492],
+       [ 0.94732176],
+       [ 1.25170736],
+       [ 1.10144512],
+       [ 0.64446459],
+       [ 1.40128966],
+       [ 1.3826206 ],
+       [ 1.49168399],
+       [ 1.14870846],
+       [ 1.65837332],
+       [ 1.52467696],
+       [ 1.03709582],
+       [ 1.26566168],
+       [ 0.76624741],
+       [ 0.94443457],
+       [ 1.76019024],
+       [ 1.93131028],
+       [ 0.58267762],
+       [ 1.42966735],
+       [ 1.66674214],
+       [ 0.8877105 ],
+       [ 0.33198242],
+       [ 0.77710005],
+       [ 1.29327634],
+       [ 0.47714045]])]
+[118 270 132 226 153 418 190  40 195 234  20 224 193 303  44 222 263 144
+ 142 274 389 129  58 197 187 131  76 273 220 358  36 421 353  67 143  64
+ 126 219 369 249 360 290  62 130 302   0 377 280  55 182 265 180 174 291
+ 247  75 177  37   6 414 284 133 199  95  96 278 252 257 232 344  49 208
+ 170 173 134 261  84  65 339  59  97 401 310 375 119  26   3 327 123  53
+ 316 332 221 330 331 125 204 325  46 367 138  34 368 309 320 115  94 269
+  61 228 244 410 235 304 372 322 341 419 347 334 246 212 159 116 205 300
+ 140 264 255 178 349 211 319  81 293 294 298  89 251 150  87 111 141  56
+ 203 149 337   1 417 275 328 321 295 283  42 185 103 223  32 299  47 370
+ 259 128  98 186 279 411 398  11 114 359 196 287 169 243  17 397  68 239
+  21 260 351 395 155 165 194 189 152 145  54 108   2  51  38 383 382   8
+ 335  10 172 181 364 326 217 127  77 306 408 277 106 271 386 230 366 240
+ 209 168 245 200 352  13 400 176   7  33 394  57 218  27 313 346 231 405
+ 254 286 378 380 384  71 392 266  52 124 268 388 296 112 236 307  74 163
+  29 324 101 340 314  93 301 396 110  25 361  92 373 371 399 282 136 315
+ 409 365  73 297 308   4 420  78 210 305  14 233  24   5 241  43  69  70
+ 207 311  23 381 100 403 292 162 376 402 253 238  86 229 289  91 342 415
+ 262  85  28   9 318 104 157 102 345 171 343  35 214  66 404 216 312  30
+ 139  99 407  19 288 183 387 192 198 356  60 156 354 227 109  63 107 154
+ 146 281 250 120 184 175 161  72  16 329  22 258 151 336 357 276 148 374
+ 256  88 406 416 355 348 158 393  41 105 191 206  15 323 122  12 391 412
+  79]
+(array([118, 270]),)
+self.tabdatas[idx].scaled
+[[ 0.18547709  0.34101422  0.5391444  ...  0.29620473  0.26897267
+  -0.05309832]
+ [-2.63309799 -0.03227985  0.27803105 ...  0.05531416 -0.81573579
+  -0.4609201 ]
+ [ 0.24449466 -0.95595964 -0.11003318 ... -0.49970045 -0.0800019
+   0.49481622]
+ ...
+ [-0.39733509  0.09256017  0.48049478 ...  0.21278088 -1.05500065
+  -0.22510235]
+ [        nan         nan         nan ...         nan         nan
+          nan]
+ [-0.72454828 -0.11545465  0.09254176 ...  0.28352042 -0.74270392
+   0.48346987]]
+self.std[idx]
+[[ 0.54983484]
+ [ 0.8876738 ]
+ [ 1.01393671]
+ [ 0.65394789]
+ [ 1.28623048]
+ [ 1.33168263]
+ [ 0.57237947]
+ [ 1.11559783]
+ [ 1.01682142]
+ [ 1.44136397]
+ [ 1.02043929]
+ [ 0.95074162]
+ [ 1.72118411]
+ [ 1.08487258]
+ [ 1.31794765]
+ [ 1.70240037]
+ [ 1.60458415]
+ [ 0.97056062]
+ [ 2.1251673 ]
+ [ 1.52634966]
+ [ 0.35407237]
+ [ 0.97963818]
+ [ 1.6134607 ]
+ [ 1.36946058]
+ [ 1.32708485]
+ [ 1.23338285]
+ [ 0.65272372]
+ [ 1.13120426]
+ [ 1.43499432]
+ [ 1.21816359]
+ [ 1.50882414]
+ [ 1.98036989]
+ [ 0.90956781]
+ [ 1.12032301]
+ [ 0.7275343 ]
+ [ 1.48462495]
+ [ 0.47609356]
+ [ 0.57129815]
+ [ 1.01544646]
+ [ 1.97586203]
+ [ 0.33950912]
+ [ 1.68374978]
+ [ 0.90135332]
+ [ 1.34246958]
+ [ 0.37992025]
+ [ 2.21784337]
+ [ 0.71436102]
+ [ 0.92543078]
+ [ 1.83434023]
+ [ 0.61248697]
+ [ 1.84797578]
+ [ 1.0149542 ]
+ [ 1.18300299]
+ [ 0.67586787]
+ [ 1.01020771]
+ [ 0.55315689]
+ [ 0.85912487]
+ [ 1.12666916]
+ [ 0.45549684]
+ [ 0.63866743]
+ [ 1.55346018]
+ [ 0.76221475]
+ [ 0.5214816 ]
+ [ 1.56259827]
+ [ 0.4912932 ]
+ [ 0.62528353]
+ [ 1.49057432]
+ [ 0.48962956]
+ [ 0.97337073]
+ [ 1.35224404]
+ [ 1.35327602]
+ [ 1.18051954]
+ [ 1.58708778]
+ [ 1.27449613]
+ [ 1.2170976 ]
+ [ 0.5658582 ]
+ [ 0.46998609]
+ [ 1.03413851]
+ [ 1.29900906]
+ [ 1.76280912]
+ [ 1.99463302]
+ [ 0.82356979]
+ [ 1.98330703]
+ [ 2.42365906]
+ [ 0.62183489]
+ [ 1.43331604]
+ [ 1.41124628]
+ [ 0.84202923]
+ [ 1.65726872]
+ [ 0.84102353]
+ [ 2.33904006]
+ [ 1.42314499]
+ [ 1.24393071]
+ [ 1.228858  ]
+ [ 0.75511403]
+ [ 0.59062762]
+ [ 0.59581055]
+ [ 0.63980531]
+ [ 0.92965107]
+ [ 1.51813137]
+ [ 1.38243122]
+ [ 1.22703576]
+ [ 1.46789585]
+ [ 0.90796349]
+ [ 1.45582593]
+ [ 1.68431306]
+ [ 1.05445534]
+ [ 1.56489351]
+ [ 1.01300072]
+ [ 1.55976832]
+ [ 1.23086035]
+ [ 0.85676052]
+ [ 1.20252997]
+ [        nan]
+ [ 0.95446789]
+ [ 0.74957981]
+ [ 0.80050099]
+ [ 1.98595104]
+ [-0.        ]
+ [ 0.65256781]
+ [ 1.57716177]
+ [ 1.85922177]
+ [ 1.71733933]
+ [ 0.66381109]
+ [ 1.18319111]
+ [ 0.70117618]
+ [ 0.49952063]
+ [ 1.0325435 ]
+ [ 0.92787925]
+ [ 0.45115346]
+ [ 0.52231332]
+ [ 0.46981305]
+ [ 0.10085126]
+ [ 0.58865672]
+ [ 0.62115924]
+ [ 2.06455025]
+ [ 1.2541482 ]
+ [ 2.01292712]
+ [ 0.72696503]
+ [ 1.51125534]
+ [ 0.80288055]
+ [ 0.85866506]
+ [ 0.43820814]
+ [ 0.48970932]
+ [ 0.43029362]
+ [ 1.01002316]
+ [ 1.57124753]
+ [ 1.77807028]
+ [ 1.64837307]
+ [ 0.87913927]
+ [ 0.84176319]
+ [ 1.62224435]
+ [ 1.00990902]
+ [ 0.28512236]
+ [ 1.57011001]
+ [ 0.99194825]
+ [ 1.5555344 ]
+ [ 1.46173709]
+ [ 1.68101226]
+ [ 0.79901296]
+ [ 2.20768024]
+ [ 1.58696298]
+ [ 1.38963301]
+ [ 1.21753721]
+ [ 1.95691948]
+ [ 0.99532499]
+ [ 2.42197625]
+ [ 2.37891982]
+ [ 1.07805402]
+ [ 0.96842639]
+ [ 0.61905372]
+ [ 1.47673196]
+ [ 1.02286813]
+ [ 0.61936149]
+ [ 0.55936634]
+ [ 1.585683  ]
+ [ 1.10646387]
+ [ 0.56944922]
+ [ 0.80962166]
+ [ 2.54104791]
+ [ 0.55775269]
+ [ 1.02381826]
+ [ 0.55491857]
+ [ 1.54503914]
+ [ 1.58463953]
+ [ 0.90294458]
+ [ 0.93642742]
+ [ 0.46787333]
+ [ 1.94203693]
+ [ 1.00624536]
+ [ 0.33339787]
+ [ 1.69340175]
+ [ 1.54731824]
+ [ 0.37182372]
+ [ 1.00525247]
+ [ 0.34049255]
+ [ 0.95774044]
+ [ 0.46320007]
+ [ 1.54754677]
+ [ 0.58956803]
+ [ 1.08152431]
+ [ 1.89483584]
+ [ 1.862021  ]
+ [ 0.86796548]
+ [ 0.70234069]
+ [ 0.80067526]
+ [ 1.7016285 ]
+ [ 1.35864842]
+ [ 0.6183464 ]
+ [ 1.07795199]
+ [ 1.30408998]
+ [ 0.81113088]
+ [ 0.78684541]
+ [ 1.99500034]
+ [ 1.48609215]
+ [ 2.10314191]
+ [ 1.5024897 ]
+ [ 1.03178648]
+ [ 1.12913302]
+ [ 0.50206719]
+ [ 0.47173813]
+ [ 0.6882616 ]
+ [ 0.38503899]
+ [ 0.90878041]
+ [ 0.37051024]
+ [ 1.95054686]
+ [ 0.24626548]
+ [ 1.55892053]
+ [ 0.76566037]
+ [ 1.41730511]
+ [ 1.05991172]
+ [ 1.14415131]
+ [ 0.60689158]
+ [ 1.32454124]
+ [ 0.34246945]
+ [ 0.76956334]
+ [ 1.20918776]
+ [ 3.2269833 ]
+ [ 1.40693541]
+ [ 0.97638867]
+ [ 1.0678853 ]
+ [ 1.33820846]
+ [ 1.81019313]
+ [ 0.96968567]
+ [ 0.76588522]
+ [ 1.07898862]
+ [ 0.78662962]
+ [ 0.56312507]
+ [ 1.79665611]
+ [ 0.50331639]
+ [ 1.57424214]
+ [ 0.84155083]
+ [ 0.60104983]
+ [ 1.40577407]
+ [ 1.15050407]
+ [ 0.80916852]
+ [ 1.65121533]
+ [ 0.60358934]
+ [ 1.61540686]
+ [ 0.92745118]
+ [ 0.98204893]
+ [ 0.62145015]
+ [ 1.43100092]
+ [ 0.40964897]
+ [ 0.80293674]
+ [ 0.55572429]
+ [ 1.18225611]
+ [ 2.42344056]
+ [ 1.19163425]
+ [ 0.76218242]
+ [-0.        ]
+ [ 1.05786758]
+ [ 2.19288706]
+ [ 0.47065674]
+ [ 0.43853726]
+ [ 0.8914054 ]
+ [ 1.63975542]
+ [ 1.04439318]
+ [ 0.59836411]
+ [ 0.94095069]
+ [ 0.55282001]
+ [ 1.57340728]
+ [ 1.25241092]
+ [ 0.90026216]
+ [ 0.58854939]
+ [ 2.16583957]
+ [ 1.15077612]
+ [ 0.96200474]
+ [ 1.53464934]
+ [ 1.42014179]
+ [ 0.5210095 ]
+ [ 0.56286719]
+ [ 1.38408968]
+ [ 0.82561593]
+ [ 0.83147239]
+ [ 0.89771953]
+ [ 1.19958284]
+ [ 1.28287171]
+ [ 0.83345575]
+ [ 0.91577738]
+ [ 0.80183701]
+ [ 1.22915117]
+ [ 0.5232334 ]
+ [ 0.37985352]
+ [ 0.77207965]
+ [ 1.307705  ]
+ [ 1.03438219]
+ [ 1.21250326]
+ [ 1.28409285]
+ [ 0.74616326]
+ [ 0.64812361]
+ [ 1.36929299]
+ [ 1.50252486]
+ [ 1.14056114]
+ [ 1.2287535 ]
+ [ 1.25509244]
+ [ 0.68081004]
+ [ 1.9728026 ]
+ [ 1.44146937]
+ [ 0.81861827]
+ [ 0.74767941]
+ [ 0.89726167]
+ [ 0.77479501]
+ [ 1.71228404]
+ [ 1.22169601]
+ [ 0.70874885]
+ [ 1.03099649]
+ [ 0.66068433]
+ [ 0.89632089]
+ [ 1.6082826 ]
+ [ 0.69449172]
+ [ 0.69550568]
+ [ 0.68804493]
+ [ 1.81075306]
+ [ 0.77946209]
+ [ 1.0182749 ]
+ [ 1.63671103]
+ [ 0.88275554]
+ [ 1.8503201 ]
+ [ 0.62696299]
+ [ 1.22831596]
+ [ 0.7758824 ]
+ [ 1.42920471]
+ [ 1.47710661]
+ [ 0.61037588]
+ [ 1.47023101]
+ [ 1.14097644]
+ [ 0.77820364]
+ [ 1.67514218]
+ [ 0.81005024]
+ [ 2.12831149]
+ [ 0.98516092]
+ [ 1.08395039]
+ [ 0.48461002]
+ [ 1.5573897 ]
+ [ 1.67372713]
+ [ 1.54996959]
+ [ 1.63732783]
+ [ 0.47571767]
+ [ 0.95552196]
+ [ 0.51366061]
+ [ 1.23773315]
+ [ 2.169636  ]
+ [        nan]
+ [ 1.02564961]
+ [ 1.27105734]
+ [ 1.06518074]
+ [ 0.71681791]
+ [ 0.73045861]
+ [ 0.50320611]
+ [ 0.92616517]
+ [ 1.25157157]
+ [ 0.77455379]
+ [ 1.25131077]
+ [ 1.65079797]
+ [ 0.65249953]
+ [ 1.40100934]
+ [ 0.55086763]
+ [ 1.16368076]
+ [ 2.23514286]
+ [ 1.17488198]
+ [ 1.38142337]
+ [ 1.01652636]
+ [ 1.01589648]
+ [ 1.17960602]
+ [ 2.06235282]
+ [ 1.05969063]
+ [ 1.54623337]
+ [ 1.19816536]
+ [ 0.44982953]
+ [ 1.9640587 ]
+ [ 1.73508899]
+ [ 1.18162977]
+ [ 1.6823212 ]
+ [ 1.12060465]
+ [ 0.99083846]
+ [ 1.22929524]
+ [ 0.97130492]
+ [ 0.94732176]
+ [ 1.25170736]
+ [ 1.10144512]
+ [ 0.64446459]
+ [ 1.40128966]
+ [ 1.3826206 ]
+ [ 1.49168399]
+ [ 1.14870846]
+ [ 1.65837332]
+ [ 1.52467696]
+ [ 1.03709582]
+ [ 1.26566168]
+ [ 0.76624741]
+ [ 0.94443457]
+ [ 1.76019024]
+ [ 1.93131028]
+ [ 0.58267762]
+ [ 1.42966735]
+ [ 1.66674214]
+ [ 0.8877105 ]
+ [ 0.33198242]
+ [ 0.77710005]
+ [ 1.29327634]
+ [ 0.47714045]]
+self.std
+[array([[ 0.54983484],
+       [ 0.8876738 ],
+       [ 1.01393671],
+       [ 0.65394789],
+       [ 1.28623048],
+       [ 1.33168263],
+       [ 0.57237947],
+       [ 1.11559783],
+       [ 1.01682142],
+       [ 1.44136397],
+       [ 1.02043929],
+       [ 0.95074162],
+       [ 1.72118411],
+       [ 1.08487258],
+       [ 1.31794765],
+       [ 1.70240037],
+       [ 1.60458415],
+       [ 0.97056062],
+       [ 2.1251673 ],
+       [ 1.52634966],
+       [ 0.35407237],
+       [ 0.97963818],
+       [ 1.6134607 ],
+       [ 1.36946058],
+       [ 1.32708485],
+       [ 1.23338285],
+       [ 0.65272372],
+       [ 1.13120426],
+       [ 1.43499432],
+       [ 1.21816359],
+       [ 1.50882414],
+       [ 1.98036989],
+       [ 0.90956781],
+       [ 1.12032301],
+       [ 0.7275343 ],
+       [ 1.48462495],
+       [ 0.47609356],
+       [ 0.57129815],
+       [ 1.01544646],
+       [ 1.97586203],
+       [ 0.33950912],
+       [ 1.68374978],
+       [ 0.90135332],
+       [ 1.34246958],
+       [ 0.37992025],
+       [ 2.21784337],
+       [ 0.71436102],
+       [ 0.92543078],
+       [ 1.83434023],
+       [ 0.61248697],
+       [ 1.84797578],
+       [ 1.0149542 ],
+       [ 1.18300299],
+       [ 0.67586787],
+       [ 1.01020771],
+       [ 0.55315689],
+       [ 0.85912487],
+       [ 1.12666916],
+       [ 0.45549684],
+       [ 0.63866743],
+       [ 1.55346018],
+       [ 0.76221475],
+       [ 0.5214816 ],
+       [ 1.56259827],
+       [ 0.4912932 ],
+       [ 0.62528353],
+       [ 1.49057432],
+       [ 0.48962956],
+       [ 0.97337073],
+       [ 1.35224404],
+       [ 1.35327602],
+       [ 1.18051954],
+       [ 1.58708778],
+       [ 1.27449613],
+       [ 1.2170976 ],
+       [ 0.5658582 ],
+       [ 0.46998609],
+       [ 1.03413851],
+       [ 1.29900906],
+       [ 1.76280912],
+       [ 1.99463302],
+       [ 0.82356979],
+       [ 1.98330703],
+       [ 2.42365906],
+       [ 0.62183489],
+       [ 1.43331604],
+       [ 1.41124628],
+       [ 0.84202923],
+       [ 1.65726872],
+       [ 0.84102353],
+       [ 2.33904006],
+       [ 1.42314499],
+       [ 1.24393071],
+       [ 1.228858  ],
+       [ 0.75511403],
+       [ 0.59062762],
+       [ 0.59581055],
+       [ 0.63980531],
+       [ 0.92965107],
+       [ 1.51813137],
+       [ 1.38243122],
+       [ 1.22703576],
+       [ 1.46789585],
+       [ 0.90796349],
+       [ 1.45582593],
+       [ 1.68431306],
+       [ 1.05445534],
+       [ 1.56489351],
+       [ 1.01300072],
+       [ 1.55976832],
+       [ 1.23086035],
+       [ 0.85676052],
+       [ 1.20252997],
+       [        nan],
+       [ 0.95446789],
+       [ 0.74957981],
+       [ 0.80050099],
+       [ 1.98595104],
+       [-0.        ],
+       [ 0.65256781],
+       [ 1.57716177],
+       [ 1.85922177],
+       [ 1.71733933],
+       [ 0.66381109],
+       [ 1.18319111],
+       [ 0.70117618],
+       [ 0.49952063],
+       [ 1.0325435 ],
+       [ 0.92787925],
+       [ 0.45115346],
+       [ 0.52231332],
+       [ 0.46981305],
+       [ 0.10085126],
+       [ 0.58865672],
+       [ 0.62115924],
+       [ 2.06455025],
+       [ 1.2541482 ],
+       [ 2.01292712],
+       [ 0.72696503],
+       [ 1.51125534],
+       [ 0.80288055],
+       [ 0.85866506],
+       [ 0.43820814],
+       [ 0.48970932],
+       [ 0.43029362],
+       [ 1.01002316],
+       [ 1.57124753],
+       [ 1.77807028],
+       [ 1.64837307],
+       [ 0.87913927],
+       [ 0.84176319],
+       [ 1.62224435],
+       [ 1.00990902],
+       [ 0.28512236],
+       [ 1.57011001],
+       [ 0.99194825],
+       [ 1.5555344 ],
+       [ 1.46173709],
+       [ 1.68101226],
+       [ 0.79901296],
+       [ 2.20768024],
+       [ 1.58696298],
+       [ 1.38963301],
+       [ 1.21753721],
+       [ 1.95691948],
+       [ 0.99532499],
+       [ 2.42197625],
+       [ 2.37891982],
+       [ 1.07805402],
+       [ 0.96842639],
+       [ 0.61905372],
+       [ 1.47673196],
+       [ 1.02286813],
+       [ 0.61936149],
+       [ 0.55936634],
+       [ 1.585683  ],
+       [ 1.10646387],
+       [ 0.56944922],
+       [ 0.80962166],
+       [ 2.54104791],
+       [ 0.55775269],
+       [ 1.02381826],
+       [ 0.55491857],
+       [ 1.54503914],
+       [ 1.58463953],
+       [ 0.90294458],
+       [ 0.93642742],
+       [ 0.46787333],
+       [ 1.94203693],
+       [ 1.00624536],
+       [ 0.33339787],
+       [ 1.69340175],
+       [ 1.54731824],
+       [ 0.37182372],
+       [ 1.00525247],
+       [ 0.34049255],
+       [ 0.95774044],
+       [ 0.46320007],
+       [ 1.54754677],
+       [ 0.58956803],
+       [ 1.08152431],
+       [ 1.89483584],
+       [ 1.862021  ],
+       [ 0.86796548],
+       [ 0.70234069],
+       [ 0.80067526],
+       [ 1.7016285 ],
+       [ 1.35864842],
+       [ 0.6183464 ],
+       [ 1.07795199],
+       [ 1.30408998],
+       [ 0.81113088],
+       [ 0.78684541],
+       [ 1.99500034],
+       [ 1.48609215],
+       [ 2.10314191],
+       [ 1.5024897 ],
+       [ 1.03178648],
+       [ 1.12913302],
+       [ 0.50206719],
+       [ 0.47173813],
+       [ 0.6882616 ],
+       [ 0.38503899],
+       [ 0.90878041],
+       [ 0.37051024],
+       [ 1.95054686],
+       [ 0.24626548],
+       [ 1.55892053],
+       [ 0.76566037],
+       [ 1.41730511],
+       [ 1.05991172],
+       [ 1.14415131],
+       [ 0.60689158],
+       [ 1.32454124],
+       [ 0.34246945],
+       [ 0.76956334],
+       [ 1.20918776],
+       [ 3.2269833 ],
+       [ 1.40693541],
+       [ 0.97638867],
+       [ 1.0678853 ],
+       [ 1.33820846],
+       [ 1.81019313],
+       [ 0.96968567],
+       [ 0.76588522],
+       [ 1.07898862],
+       [ 0.78662962],
+       [ 0.56312507],
+       [ 1.79665611],
+       [ 0.50331639],
+       [ 1.57424214],
+       [ 0.84155083],
+       [ 0.60104983],
+       [ 1.40577407],
+       [ 1.15050407],
+       [ 0.80916852],
+       [ 1.65121533],
+       [ 0.60358934],
+       [ 1.61540686],
+       [ 0.92745118],
+       [ 0.98204893],
+       [ 0.62145015],
+       [ 1.43100092],
+       [ 0.40964897],
+       [ 0.80293674],
+       [ 0.55572429],
+       [ 1.18225611],
+       [ 2.42344056],
+       [ 1.19163425],
+       [ 0.76218242],
+       [-0.        ],
+       [ 1.05786758],
+       [ 2.19288706],
+       [ 0.47065674],
+       [ 0.43853726],
+       [ 0.8914054 ],
+       [ 1.63975542],
+       [ 1.04439318],
+       [ 0.59836411],
+       [ 0.94095069],
+       [ 0.55282001],
+       [ 1.57340728],
+       [ 1.25241092],
+       [ 0.90026216],
+       [ 0.58854939],
+       [ 2.16583957],
+       [ 1.15077612],
+       [ 0.96200474],
+       [ 1.53464934],
+       [ 1.42014179],
+       [ 0.5210095 ],
+       [ 0.56286719],
+       [ 1.38408968],
+       [ 0.82561593],
+       [ 0.83147239],
+       [ 0.89771953],
+       [ 1.19958284],
+       [ 1.28287171],
+       [ 0.83345575],
+       [ 0.91577738],
+       [ 0.80183701],
+       [ 1.22915117],
+       [ 0.5232334 ],
+       [ 0.37985352],
+       [ 0.77207965],
+       [ 1.307705  ],
+       [ 1.03438219],
+       [ 1.21250326],
+       [ 1.28409285],
+       [ 0.74616326],
+       [ 0.64812361],
+       [ 1.36929299],
+       [ 1.50252486],
+       [ 1.14056114],
+       [ 1.2287535 ],
+       [ 1.25509244],
+       [ 0.68081004],
+       [ 1.9728026 ],
+       [ 1.44146937],
+       [ 0.81861827],
+       [ 0.74767941],
+       [ 0.89726167],
+       [ 0.77479501],
+       [ 1.71228404],
+       [ 1.22169601],
+       [ 0.70874885],
+       [ 1.03099649],
+       [ 0.66068433],
+       [ 0.89632089],
+       [ 1.6082826 ],
+       [ 0.69449172],
+       [ 0.69550568],
+       [ 0.68804493],
+       [ 1.81075306],
+       [ 0.77946209],
+       [ 1.0182749 ],
+       [ 1.63671103],
+       [ 0.88275554],
+       [ 1.8503201 ],
+       [ 0.62696299],
+       [ 1.22831596],
+       [ 0.7758824 ],
+       [ 1.42920471],
+       [ 1.47710661],
+       [ 0.61037588],
+       [ 1.47023101],
+       [ 1.14097644],
+       [ 0.77820364],
+       [ 1.67514218],
+       [ 0.81005024],
+       [ 2.12831149],
+       [ 0.98516092],
+       [ 1.08395039],
+       [ 0.48461002],
+       [ 1.5573897 ],
+       [ 1.67372713],
+       [ 1.54996959],
+       [ 1.63732783],
+       [ 0.47571767],
+       [ 0.95552196],
+       [ 0.51366061],
+       [ 1.23773315],
+       [ 2.169636  ],
+       [        nan],
+       [ 1.02564961],
+       [ 1.27105734],
+       [ 1.06518074],
+       [ 0.71681791],
+       [ 0.73045861],
+       [ 0.50320611],
+       [ 0.92616517],
+       [ 1.25157157],
+       [ 0.77455379],
+       [ 1.25131077],
+       [ 1.65079797],
+       [ 0.65249953],
+       [ 1.40100934],
+       [ 0.55086763],
+       [ 1.16368076],
+       [ 2.23514286],
+       [ 1.17488198],
+       [ 1.38142337],
+       [ 1.01652636],
+       [ 1.01589648],
+       [ 1.17960602],
+       [ 2.06235282],
+       [ 1.05969063],
+       [ 1.54623337],
+       [ 1.19816536],
+       [ 0.44982953],
+       [ 1.9640587 ],
+       [ 1.73508899],
+       [ 1.18162977],
+       [ 1.6823212 ],
+       [ 1.12060465],
+       [ 0.99083846],
+       [ 1.22929524],
+       [ 0.97130492],
+       [ 0.94732176],
+       [ 1.25170736],
+       [ 1.10144512],
+       [ 0.64446459],
+       [ 1.40128966],
+       [ 1.3826206 ],
+       [ 1.49168399],
+       [ 1.14870846],
+       [ 1.65837332],
+       [ 1.52467696],
+       [ 1.03709582],
+       [ 1.26566168],
+       [ 0.76624741],
+       [ 0.94443457],
+       [ 1.76019024],
+       [ 1.93131028],
+       [ 0.58267762],
+       [ 1.42966735],
+       [ 1.66674214],
+       [ 0.8877105 ],
+       [ 0.33198242],
+       [ 0.77710005],
+       [ 1.29327634],
+       [ 0.47714045]]), array([[ 0.54983484],
+       [ 0.8876738 ],
+       [ 1.01393671],
+       [ 0.65394789],
+       [ 1.28623048],
+       [ 1.33168263],
+       [ 0.57237947],
+       [ 1.11559783],
+       [ 1.01682142],
+       [ 1.44136397],
+       [ 1.02043929],
+       [ 0.95074162],
+       [ 1.72118411],
+       [ 1.08487258],
+       [ 1.31794765],
+       [ 1.70240037],
+       [ 1.60458415],
+       [ 0.97056062],
+       [ 2.1251673 ],
+       [ 1.52634966],
+       [ 0.35407237],
+       [ 0.97963818],
+       [ 1.6134607 ],
+       [ 1.36946058],
+       [ 1.32708485],
+       [ 1.23338285],
+       [ 0.65272372],
+       [ 1.13120426],
+       [ 1.43499432],
+       [ 1.21816359],
+       [ 1.50882414],
+       [ 1.98036989],
+       [ 0.90956781],
+       [ 1.12032301],
+       [ 0.7275343 ],
+       [ 1.48462495],
+       [ 0.47609356],
+       [ 0.57129815],
+       [ 1.01544646],
+       [ 1.97586203],
+       [ 0.33950912],
+       [ 1.68374978],
+       [ 0.90135332],
+       [ 1.34246958],
+       [ 0.37992025],
+       [ 2.21784337],
+       [ 0.71436102],
+       [ 0.92543078],
+       [ 1.83434023],
+       [ 0.61248697],
+       [ 1.84797578],
+       [ 1.0149542 ],
+       [ 1.18300299],
+       [ 0.67586787],
+       [ 1.01020771],
+       [ 0.55315689],
+       [ 0.85912487],
+       [ 1.12666916],
+       [ 0.45549684],
+       [ 0.63866743],
+       [ 1.55346018],
+       [ 0.76221475],
+       [ 0.5214816 ],
+       [ 1.56259827],
+       [ 0.4912932 ],
+       [ 0.62528353],
+       [ 1.49057432],
+       [ 0.48962956],
+       [ 0.97337073],
+       [ 1.35224404],
+       [ 1.35327602],
+       [ 1.18051954],
+       [ 1.58708778],
+       [ 1.27449613],
+       [ 1.2170976 ],
+       [ 0.5658582 ],
+       [ 0.46998609],
+       [ 1.03413851],
+       [ 1.29900906],
+       [ 1.76280912],
+       [ 1.99463302],
+       [ 0.82356979],
+       [ 1.98330703],
+       [ 2.42365906],
+       [ 0.62183489],
+       [ 1.43331604],
+       [ 1.41124628],
+       [ 0.84202923],
+       [ 1.65726872],
+       [ 0.84102353],
+       [ 2.33904006],
+       [ 1.42314499],
+       [ 1.24393071],
+       [ 1.228858  ],
+       [ 0.75511403],
+       [ 0.59062762],
+       [ 0.59581055],
+       [ 0.63980531],
+       [ 0.92965107],
+       [ 1.51813137],
+       [ 1.38243122],
+       [ 1.22703576],
+       [ 1.46789585],
+       [ 0.90796349],
+       [ 1.45582593],
+       [ 1.68431306],
+       [ 1.05445534],
+       [ 1.56489351],
+       [ 1.01300072],
+       [ 1.55976832],
+       [ 1.23086035],
+       [ 0.85676052],
+       [ 1.20252997],
+       [        nan],
+       [ 0.95446789],
+       [ 0.74957981],
+       [ 0.80050099],
+       [ 1.98595104],
+       [-0.        ],
+       [ 0.65256781],
+       [ 1.57716177],
+       [ 1.85922177],
+       [ 1.71733933],
+       [ 0.66381109],
+       [ 1.18319111],
+       [ 0.70117618],
+       [ 0.49952063],
+       [ 1.0325435 ],
+       [ 0.92787925],
+       [ 0.45115346],
+       [ 0.52231332],
+       [ 0.46981305],
+       [ 0.10085126],
+       [ 0.58865672],
+       [ 0.62115924],
+       [ 2.06455025],
+       [ 1.2541482 ],
+       [ 2.01292712],
+       [ 0.72696503],
+       [ 1.51125534],
+       [ 0.80288055],
+       [ 0.85866506],
+       [ 0.43820814],
+       [ 0.48970932],
+       [ 0.43029362],
+       [ 1.01002316],
+       [ 1.57124753],
+       [ 1.77807028],
+       [ 1.64837307],
+       [ 0.87913927],
+       [ 0.84176319],
+       [ 1.62224435],
+       [ 1.00990902],
+       [ 0.28512236],
+       [ 1.57011001],
+       [ 0.99194825],
+       [ 1.5555344 ],
+       [ 1.46173709],
+       [ 1.68101226],
+       [ 0.79901296],
+       [ 2.20768024],
+       [ 1.58696298],
+       [ 1.38963301],
+       [ 1.21753721],
+       [ 1.95691948],
+       [ 0.99532499],
+       [ 2.42197625],
+       [ 2.37891982],
+       [ 1.07805402],
+       [ 0.96842639],
+       [ 0.61905372],
+       [ 1.47673196],
+       [ 1.02286813],
+       [ 0.61936149],
+       [ 0.55936634],
+       [ 1.585683  ],
+       [ 1.10646387],
+       [ 0.56944922],
+       [ 0.80962166],
+       [ 2.54104791],
+       [ 0.55775269],
+       [ 1.02381826],
+       [ 0.55491857],
+       [ 1.54503914],
+       [ 1.58463953],
+       [ 0.90294458],
+       [ 0.93642742],
+       [ 0.46787333],
+       [ 1.94203693],
+       [ 1.00624536],
+       [ 0.33339787],
+       [ 1.69340175],
+       [ 1.54731824],
+       [ 0.37182372],
+       [ 1.00525247],
+       [ 0.34049255],
+       [ 0.95774044],
+       [ 0.46320007],
+       [ 1.54754677],
+       [ 0.58956803],
+       [ 1.08152431],
+       [ 1.89483584],
+       [ 1.862021  ],
+       [ 0.86796548],
+       [ 0.70234069],
+       [ 0.80067526],
+       [ 1.7016285 ],
+       [ 1.35864842],
+       [ 0.6183464 ],
+       [ 1.07795199],
+       [ 1.30408998],
+       [ 0.81113088],
+       [ 0.78684541],
+       [ 1.99500034],
+       [ 1.48609215],
+       [ 2.10314191],
+       [ 1.5024897 ],
+       [ 1.03178648],
+       [ 1.12913302],
+       [ 0.50206719],
+       [ 0.47173813],
+       [ 0.6882616 ],
+       [ 0.38503899],
+       [ 0.90878041],
+       [ 0.37051024],
+       [ 1.95054686],
+       [ 0.24626548],
+       [ 1.55892053],
+       [ 0.76566037],
+       [ 1.41730511],
+       [ 1.05991172],
+       [ 1.14415131],
+       [ 0.60689158],
+       [ 1.32454124],
+       [ 0.34246945],
+       [ 0.76956334],
+       [ 1.20918776],
+       [ 3.2269833 ],
+       [ 1.40693541],
+       [ 0.97638867],
+       [ 1.0678853 ],
+       [ 1.33820846],
+       [ 1.81019313],
+       [ 0.96968567],
+       [ 0.76588522],
+       [ 1.07898862],
+       [ 0.78662962],
+       [ 0.56312507],
+       [ 1.79665611],
+       [ 0.50331639],
+       [ 1.57424214],
+       [ 0.84155083],
+       [ 0.60104983],
+       [ 1.40577407],
+       [ 1.15050407],
+       [ 0.80916852],
+       [ 1.65121533],
+       [ 0.60358934],
+       [ 1.61540686],
+       [ 0.92745118],
+       [ 0.98204893],
+       [ 0.62145015],
+       [ 1.43100092],
+       [ 0.40964897],
+       [ 0.80293674],
+       [ 0.55572429],
+       [ 1.18225611],
+       [ 2.42344056],
+       [ 1.19163425],
+       [ 0.76218242],
+       [-0.        ],
+       [ 1.05786758],
+       [ 2.19288706],
+       [ 0.47065674],
+       [ 0.43853726],
+       [ 0.8914054 ],
+       [ 1.63975542],
+       [ 1.04439318],
+       [ 0.59836411],
+       [ 0.94095069],
+       [ 0.55282001],
+       [ 1.57340728],
+       [ 1.25241092],
+       [ 0.90026216],
+       [ 0.58854939],
+       [ 2.16583957],
+       [ 1.15077612],
+       [ 0.96200474],
+       [ 1.53464934],
+       [ 1.42014179],
+       [ 0.5210095 ],
+       [ 0.56286719],
+       [ 1.38408968],
+       [ 0.82561593],
+       [ 0.83147239],
+       [ 0.89771953],
+       [ 1.19958284],
+       [ 1.28287171],
+       [ 0.83345575],
+       [ 0.91577738],
+       [ 0.80183701],
+       [ 1.22915117],
+       [ 0.5232334 ],
+       [ 0.37985352],
+       [ 0.77207965],
+       [ 1.307705  ],
+       [ 1.03438219],
+       [ 1.21250326],
+       [ 1.28409285],
+       [ 0.74616326],
+       [ 0.64812361],
+       [ 1.36929299],
+       [ 1.50252486],
+       [ 1.14056114],
+       [ 1.2287535 ],
+       [ 1.25509244],
+       [ 0.68081004],
+       [ 1.9728026 ],
+       [ 1.44146937],
+       [ 0.81861827],
+       [ 0.74767941],
+       [ 0.89726167],
+       [ 0.77479501],
+       [ 1.71228404],
+       [ 1.22169601],
+       [ 0.70874885],
+       [ 1.03099649],
+       [ 0.66068433],
+       [ 0.89632089],
+       [ 1.6082826 ],
+       [ 0.69449172],
+       [ 0.69550568],
+       [ 0.68804493],
+       [ 1.81075306],
+       [ 0.77946209],
+       [ 1.0182749 ],
+       [ 1.63671103],
+       [ 0.88275554],
+       [ 1.8503201 ],
+       [ 0.62696299],
+       [ 1.22831596],
+       [ 0.7758824 ],
+       [ 1.42920471],
+       [ 1.47710661],
+       [ 0.61037588],
+       [ 1.47023101],
+       [ 1.14097644],
+       [ 0.77820364],
+       [ 1.67514218],
+       [ 0.81005024],
+       [ 2.12831149],
+       [ 0.98516092],
+       [ 1.08395039],
+       [ 0.48461002],
+       [ 1.5573897 ],
+       [ 1.67372713],
+       [ 1.54996959],
+       [ 1.63732783],
+       [ 0.47571767],
+       [ 0.95552196],
+       [ 0.51366061],
+       [ 1.23773315],
+       [ 2.169636  ],
+       [        nan],
+       [ 1.02564961],
+       [ 1.27105734],
+       [ 1.06518074],
+       [ 0.71681791],
+       [ 0.73045861],
+       [ 0.50320611],
+       [ 0.92616517],
+       [ 1.25157157],
+       [ 0.77455379],
+       [ 1.25131077],
+       [ 1.65079797],
+       [ 0.65249953],
+       [ 1.40100934],
+       [ 0.55086763],
+       [ 1.16368076],
+       [ 2.23514286],
+       [ 1.17488198],
+       [ 1.38142337],
+       [ 1.01652636],
+       [ 1.01589648],
+       [ 1.17960602],
+       [ 2.06235282],
+       [ 1.05969063],
+       [ 1.54623337],
+       [ 1.19816536],
+       [ 0.44982953],
+       [ 1.9640587 ],
+       [ 1.73508899],
+       [ 1.18162977],
+       [ 1.6823212 ],
+       [ 1.12060465],
+       [ 0.99083846],
+       [ 1.22929524],
+       [ 0.97130492],
+       [ 0.94732176],
+       [ 1.25170736],
+       [ 1.10144512],
+       [ 0.64446459],
+       [ 1.40128966],
+       [ 1.3826206 ],
+       [ 1.49168399],
+       [ 1.14870846],
+       [ 1.65837332],
+       [ 1.52467696],
+       [ 1.03709582],
+       [ 1.26566168],
+       [ 0.76624741],
+       [ 0.94443457],
+       [ 1.76019024],
+       [ 1.93131028],
+       [ 0.58267762],
+       [ 1.42966735],
+       [ 1.66674214],
+       [ 0.8877105 ],
+       [ 0.33198242],
+       [ 0.77710005],
+       [ 1.29327634],
+       [ 0.47714045]])]
+[118 270 132 226 153 418 190  40 195 234  20 224 193 303  44 222 263 144
+ 142 274 389 129  58 197 187 131  76 273 220 358  36 421 353  67 143  64
+ 126 219 369 249 360 290  62 130 302   0 377 280  55 182 265 180 174 291
+ 247  75 177  37   6 414 284 133 199  95  96 278 252 257 232 344  49 208
+ 170 173 134 261  84  65 339  59  97 401 310 375 119  26   3 327 123  53
+ 316 332 221 330 331 125 204 325  46 367 138  34 368 309 320 115  94 269
+  61 228 244 410 235 304 372 322 341 419 347 334 246 212 159 116 205 300
+ 140 264 255 178 349 211 319  81 293 294 298  89 251 150  87 111 141  56
+ 203 149 337   1 417 275 328 321 295 283  42 185 103 223  32 299  47 370
+ 259 128  98 186 279 411 398  11 114 359 196 287 169 243  17 397  68 239
+  21 260 351 395 155 165 194 189 152 145  54 108   2  51  38 383 382   8
+ 335  10 172 181 364 326 217 127  77 306 408 277 106 271 386 230 366 240
+ 209 168 245 200 352  13 400 176   7  33 394  57 218  27 313 346 231 405
+ 254 286 378 380 384  71 392 266  52 124 268 388 296 112 236 307  74 163
+  29 324 101 340 314  93 301 396 110  25 361  92 373 371 399 282 136 315
+ 409 365  73 297 308   4 420  78 210 305  14 233  24   5 241  43  69  70
+ 207 311  23 381 100 403 292 162 376 402 253 238  86 229 289  91 342 415
+ 262  85  28   9 318 104 157 102 345 171 343  35 214  66 404 216 312  30
+ 139  99 407  19 288 183 387 192 198 356  60 156 354 227 109  63 107 154
+ 146 281 250 120 184 175 161  72  16 329  22 258 151 336 357 276 148 374
+ 256  88 406 416 355 348 158 393  41 105 191 206  15 323 122  12 391 412
+  79]
+(array([118, 270]),)
+self.tabdatas[idx].scaled
+[[ 0.18547709  0.34101422  0.5391444  ...  0.29620473  0.26897267
+  -0.05309832]
+ [-2.63309799 -0.03227985  0.27803105 ...  0.05531416 -0.81573579
+  -0.4609201 ]
+ [ 0.24449466 -0.95595964 -0.11003318 ... -0.49970045 -0.0800019
+   0.49481622]
+ ...
+ [-0.39733509  0.09256017  0.48049478 ...  0.21278088 -1.05500065
+  -0.22510235]
+ [        nan         nan         nan ...         nan         nan
+          nan]
+ [-0.72454828 -0.11545465  0.09254176 ...  0.28352042 -0.74270392
+   0.48346987]]
+self.std[idx]
+[[ 0.54983484]
+ [ 0.8876738 ]
+ [ 1.01393671]
+ [ 0.65394789]
+ [ 1.28623048]
+ [ 1.33168263]
+ [ 0.57237947]
+ [ 1.11559783]
+ [ 1.01682142]
+ [ 1.44136397]
+ [ 1.02043929]
+ [ 0.95074162]
+ [ 1.72118411]
+ [ 1.08487258]
+ [ 1.31794765]
+ [ 1.70240037]
+ [ 1.60458415]
+ [ 0.97056062]
+ [ 2.1251673 ]
+ [ 1.52634966]
+ [ 0.35407237]
+ [ 0.97963818]
+ [ 1.6134607 ]
+ [ 1.36946058]
+ [ 1.32708485]
+ [ 1.23338285]
+ [ 0.65272372]
+ [ 1.13120426]
+ [ 1.43499432]
+ [ 1.21816359]
+ [ 1.50882414]
+ [ 1.98036989]
+ [ 0.90956781]
+ [ 1.12032301]
+ [ 0.7275343 ]
+ [ 1.48462495]
+ [ 0.47609356]
+ [ 0.57129815]
+ [ 1.01544646]
+ [ 1.97586203]
+ [ 0.33950912]
+ [ 1.68374978]
+ [ 0.90135332]
+ [ 1.34246958]
+ [ 0.37992025]
+ [ 2.21784337]
+ [ 0.71436102]
+ [ 0.92543078]
+ [ 1.83434023]
+ [ 0.61248697]
+ [ 1.84797578]
+ [ 1.0149542 ]
+ [ 1.18300299]
+ [ 0.67586787]
+ [ 1.01020771]
+ [ 0.55315689]
+ [ 0.85912487]
+ [ 1.12666916]
+ [ 0.45549684]
+ [ 0.63866743]
+ [ 1.55346018]
+ [ 0.76221475]
+ [ 0.5214816 ]
+ [ 1.56259827]
+ [ 0.4912932 ]
+ [ 0.62528353]
+ [ 1.49057432]
+ [ 0.48962956]
+ [ 0.97337073]
+ [ 1.35224404]
+ [ 1.35327602]
+ [ 1.18051954]
+ [ 1.58708778]
+ [ 1.27449613]
+ [ 1.2170976 ]
+ [ 0.5658582 ]
+ [ 0.46998609]
+ [ 1.03413851]
+ [ 1.29900906]
+ [ 1.76280912]
+ [ 1.99463302]
+ [ 0.82356979]
+ [ 1.98330703]
+ [ 2.42365906]
+ [ 0.62183489]
+ [ 1.43331604]
+ [ 1.41124628]
+ [ 0.84202923]
+ [ 1.65726872]
+ [ 0.84102353]
+ [ 2.33904006]
+ [ 1.42314499]
+ [ 1.24393071]
+ [ 1.228858  ]
+ [ 0.75511403]
+ [ 0.59062762]
+ [ 0.59581055]
+ [ 0.63980531]
+ [ 0.92965107]
+ [ 1.51813137]
+ [ 1.38243122]
+ [ 1.22703576]
+ [ 1.46789585]
+ [ 0.90796349]
+ [ 1.45582593]
+ [ 1.68431306]
+ [ 1.05445534]
+ [ 1.56489351]
+ [ 1.01300072]
+ [ 1.55976832]
+ [ 1.23086035]
+ [ 0.85676052]
+ [ 1.20252997]
+ [        nan]
+ [ 0.95446789]
+ [ 0.74957981]
+ [ 0.80050099]
+ [ 1.98595104]
+ [-0.        ]
+ [ 0.65256781]
+ [ 1.57716177]
+ [ 1.85922177]
+ [ 1.71733933]
+ [ 0.66381109]
+ [ 1.18319111]
+ [ 0.70117618]
+ [ 0.49952063]
+ [ 1.0325435 ]
+ [ 0.92787925]
+ [ 0.45115346]
+ [ 0.52231332]
+ [ 0.46981305]
+ [ 0.10085126]
+ [ 0.58865672]
+ [ 0.62115924]
+ [ 2.06455025]
+ [ 1.2541482 ]
+ [ 2.01292712]
+ [ 0.72696503]
+ [ 1.51125534]
+ [ 0.80288055]
+ [ 0.85866506]
+ [ 0.43820814]
+ [ 0.48970932]
+ [ 0.43029362]
+ [ 1.01002316]
+ [ 1.57124753]
+ [ 1.77807028]
+ [ 1.64837307]
+ [ 0.87913927]
+ [ 0.84176319]
+ [ 1.62224435]
+ [ 1.00990902]
+ [ 0.28512236]
+ [ 1.57011001]
+ [ 0.99194825]
+ [ 1.5555344 ]
+ [ 1.46173709]
+ [ 1.68101226]
+ [ 0.79901296]
+ [ 2.20768024]
+ [ 1.58696298]
+ [ 1.38963301]
+ [ 1.21753721]
+ [ 1.95691948]
+ [ 0.99532499]
+ [ 2.42197625]
+ [ 2.37891982]
+ [ 1.07805402]
+ [ 0.96842639]
+ [ 0.61905372]
+ [ 1.47673196]
+ [ 1.02286813]
+ [ 0.61936149]
+ [ 0.55936634]
+ [ 1.585683  ]
+ [ 1.10646387]
+ [ 0.56944922]
+ [ 0.80962166]
+ [ 2.54104791]
+ [ 0.55775269]
+ [ 1.02381826]
+ [ 0.55491857]
+ [ 1.54503914]
+ [ 1.58463953]
+ [ 0.90294458]
+ [ 0.93642742]
+ [ 0.46787333]
+ [ 1.94203693]
+ [ 1.00624536]
+ [ 0.33339787]
+ [ 1.69340175]
+ [ 1.54731824]
+ [ 0.37182372]
+ [ 1.00525247]
+ [ 0.34049255]
+ [ 0.95774044]
+ [ 0.46320007]
+ [ 1.54754677]
+ [ 0.58956803]
+ [ 1.08152431]
+ [ 1.89483584]
+ [ 1.862021  ]
+ [ 0.86796548]
+ [ 0.70234069]
+ [ 0.80067526]
+ [ 1.7016285 ]
+ [ 1.35864842]
+ [ 0.6183464 ]
+ [ 1.07795199]
+ [ 1.30408998]
+ [ 0.81113088]
+ [ 0.78684541]
+ [ 1.99500034]
+ [ 1.48609215]
+ [ 2.10314191]
+ [ 1.5024897 ]
+ [ 1.03178648]
+ [ 1.12913302]
+ [ 0.50206719]
+ [ 0.47173813]
+ [ 0.6882616 ]
+ [ 0.38503899]
+ [ 0.90878041]
+ [ 0.37051024]
+ [ 1.95054686]
+ [ 0.24626548]
+ [ 1.55892053]
+ [ 0.76566037]
+ [ 1.41730511]
+ [ 1.05991172]
+ [ 1.14415131]
+ [ 0.60689158]
+ [ 1.32454124]
+ [ 0.34246945]
+ [ 0.76956334]
+ [ 1.20918776]
+ [ 3.2269833 ]
+ [ 1.40693541]
+ [ 0.97638867]
+ [ 1.0678853 ]
+ [ 1.33820846]
+ [ 1.81019313]
+ [ 0.96968567]
+ [ 0.76588522]
+ [ 1.07898862]
+ [ 0.78662962]
+ [ 0.56312507]
+ [ 1.79665611]
+ [ 0.50331639]
+ [ 1.57424214]
+ [ 0.84155083]
+ [ 0.60104983]
+ [ 1.40577407]
+ [ 1.15050407]
+ [ 0.80916852]
+ [ 1.65121533]
+ [ 0.60358934]
+ [ 1.61540686]
+ [ 0.92745118]
+ [ 0.98204893]
+ [ 0.62145015]
+ [ 1.43100092]
+ [ 0.40964897]
+ [ 0.80293674]
+ [ 0.55572429]
+ [ 1.18225611]
+ [ 2.42344056]
+ [ 1.19163425]
+ [ 0.76218242]
+ [-0.        ]
+ [ 1.05786758]
+ [ 2.19288706]
+ [ 0.47065674]
+ [ 0.43853726]
+ [ 0.8914054 ]
+ [ 1.63975542]
+ [ 1.04439318]
+ [ 0.59836411]
+ [ 0.94095069]
+ [ 0.55282001]
+ [ 1.57340728]
+ [ 1.25241092]
+ [ 0.90026216]
+ [ 0.58854939]
+ [ 2.16583957]
+ [ 1.15077612]
+ [ 0.96200474]
+ [ 1.53464934]
+ [ 1.42014179]
+ [ 0.5210095 ]
+ [ 0.56286719]
+ [ 1.38408968]
+ [ 0.82561593]
+ [ 0.83147239]
+ [ 0.89771953]
+ [ 1.19958284]
+ [ 1.28287171]
+ [ 0.83345575]
+ [ 0.91577738]
+ [ 0.80183701]
+ [ 1.22915117]
+ [ 0.5232334 ]
+ [ 0.37985352]
+ [ 0.77207965]
+ [ 1.307705  ]
+ [ 1.03438219]
+ [ 1.21250326]
+ [ 1.28409285]
+ [ 0.74616326]
+ [ 0.64812361]
+ [ 1.36929299]
+ [ 1.50252486]
+ [ 1.14056114]
+ [ 1.2287535 ]
+ [ 1.25509244]
+ [ 0.68081004]
+ [ 1.9728026 ]
+ [ 1.44146937]
+ [ 0.81861827]
+ [ 0.74767941]
+ [ 0.89726167]
+ [ 0.77479501]
+ [ 1.71228404]
+ [ 1.22169601]
+ [ 0.70874885]
+ [ 1.03099649]
+ [ 0.66068433]
+ [ 0.89632089]
+ [ 1.6082826 ]
+ [ 0.69449172]
+ [ 0.69550568]
+ [ 0.68804493]
+ [ 1.81075306]
+ [ 0.77946209]
+ [ 1.0182749 ]
+ [ 1.63671103]
+ [ 0.88275554]
+ [ 1.8503201 ]
+ [ 0.62696299]
+ [ 1.22831596]
+ [ 0.7758824 ]
+ [ 1.42920471]
+ [ 1.47710661]
+ [ 0.61037588]
+ [ 1.47023101]
+ [ 1.14097644]
+ [ 0.77820364]
+ [ 1.67514218]
+ [ 0.81005024]
+ [ 2.12831149]
+ [ 0.98516092]
+ [ 1.08395039]
+ [ 0.48461002]
+ [ 1.5573897 ]
+ [ 1.67372713]
+ [ 1.54996959]
+ [ 1.63732783]
+ [ 0.47571767]
+ [ 0.95552196]
+ [ 0.51366061]
+ [ 1.23773315]
+ [ 2.169636  ]
+ [        nan]
+ [ 1.02564961]
+ [ 1.27105734]
+ [ 1.06518074]
+ [ 0.71681791]
+ [ 0.73045861]
+ [ 0.50320611]
+ [ 0.92616517]
+ [ 1.25157157]
+ [ 0.77455379]
+ [ 1.25131077]
+ [ 1.65079797]
+ [ 0.65249953]
+ [ 1.40100934]
+ [ 0.55086763]
+ [ 1.16368076]
+ [ 2.23514286]
+ [ 1.17488198]
+ [ 1.38142337]
+ [ 1.01652636]
+ [ 1.01589648]
+ [ 1.17960602]
+ [ 2.06235282]
+ [ 1.05969063]
+ [ 1.54623337]
+ [ 1.19816536]
+ [ 0.44982953]
+ [ 1.9640587 ]
+ [ 1.73508899]
+ [ 1.18162977]
+ [ 1.6823212 ]
+ [ 1.12060465]
+ [ 0.99083846]
+ [ 1.22929524]
+ [ 0.97130492]
+ [ 0.94732176]
+ [ 1.25170736]
+ [ 1.10144512]
+ [ 0.64446459]
+ [ 1.40128966]
+ [ 1.3826206 ]
+ [ 1.49168399]
+ [ 1.14870846]
+ [ 1.65837332]
+ [ 1.52467696]
+ [ 1.03709582]
+ [ 1.26566168]
+ [ 0.76624741]
+ [ 0.94443457]
+ [ 1.76019024]
+ [ 1.93131028]
+ [ 0.58267762]
+ [ 1.42966735]
+ [ 1.66674214]
+ [ 0.8877105 ]
+ [ 0.33198242]
+ [ 0.77710005]
+ [ 1.29327634]
+ [ 0.47714045]]
+self.std
+[array([[ 0.54983484],
+       [ 0.8876738 ],
+       [ 1.01393671],
+       [ 0.65394789],
+       [ 1.28623048],
+       [ 1.33168263],
+       [ 0.57237947],
+       [ 1.11559783],
+       [ 1.01682142],
+       [ 1.44136397],
+       [ 1.02043929],
+       [ 0.95074162],
+       [ 1.72118411],
+       [ 1.08487258],
+       [ 1.31794765],
+       [ 1.70240037],
+       [ 1.60458415],
+       [ 0.97056062],
+       [ 2.1251673 ],
+       [ 1.52634966],
+       [ 0.35407237],
+       [ 0.97963818],
+       [ 1.6134607 ],
+       [ 1.36946058],
+       [ 1.32708485],
+       [ 1.23338285],
+       [ 0.65272372],
+       [ 1.13120426],
+       [ 1.43499432],
+       [ 1.21816359],
+       [ 1.50882414],
+       [ 1.98036989],
+       [ 0.90956781],
+       [ 1.12032301],
+       [ 0.7275343 ],
+       [ 1.48462495],
+       [ 0.47609356],
+       [ 0.57129815],
+       [ 1.01544646],
+       [ 1.97586203],
+       [ 0.33950912],
+       [ 1.68374978],
+       [ 0.90135332],
+       [ 1.34246958],
+       [ 0.37992025],
+       [ 2.21784337],
+       [ 0.71436102],
+       [ 0.92543078],
+       [ 1.83434023],
+       [ 0.61248697],
+       [ 1.84797578],
+       [ 1.0149542 ],
+       [ 1.18300299],
+       [ 0.67586787],
+       [ 1.01020771],
+       [ 0.55315689],
+       [ 0.85912487],
+       [ 1.12666916],
+       [ 0.45549684],
+       [ 0.63866743],
+       [ 1.55346018],
+       [ 0.76221475],
+       [ 0.5214816 ],
+       [ 1.56259827],
+       [ 0.4912932 ],
+       [ 0.62528353],
+       [ 1.49057432],
+       [ 0.48962956],
+       [ 0.97337073],
+       [ 1.35224404],
+       [ 1.35327602],
+       [ 1.18051954],
+       [ 1.58708778],
+       [ 1.27449613],
+       [ 1.2170976 ],
+       [ 0.5658582 ],
+       [ 0.46998609],
+       [ 1.03413851],
+       [ 1.29900906],
+       [ 1.76280912],
+       [ 1.99463302],
+       [ 0.82356979],
+       [ 1.98330703],
+       [ 2.42365906],
+       [ 0.62183489],
+       [ 1.43331604],
+       [ 1.41124628],
+       [ 0.84202923],
+       [ 1.65726872],
+       [ 0.84102353],
+       [ 2.33904006],
+       [ 1.42314499],
+       [ 1.24393071],
+       [ 1.228858  ],
+       [ 0.75511403],
+       [ 0.59062762],
+       [ 0.59581055],
+       [ 0.63980531],
+       [ 0.92965107],
+       [ 1.51813137],
+       [ 1.38243122],
+       [ 1.22703576],
+       [ 1.46789585],
+       [ 0.90796349],
+       [ 1.45582593],
+       [ 1.68431306],
+       [ 1.05445534],
+       [ 1.56489351],
+       [ 1.01300072],
+       [ 1.55976832],
+       [ 1.23086035],
+       [ 0.85676052],
+       [ 1.20252997],
+       [        nan],
+       [ 0.95446789],
+       [ 0.74957981],
+       [ 0.80050099],
+       [ 1.98595104],
+       [-0.        ],
+       [ 0.65256781],
+       [ 1.57716177],
+       [ 1.85922177],
+       [ 1.71733933],
+       [ 0.66381109],
+       [ 1.18319111],
+       [ 0.70117618],
+       [ 0.49952063],
+       [ 1.0325435 ],
+       [ 0.92787925],
+       [ 0.45115346],
+       [ 0.52231332],
+       [ 0.46981305],
+       [ 0.10085126],
+       [ 0.58865672],
+       [ 0.62115924],
+       [ 2.06455025],
+       [ 1.2541482 ],
+       [ 2.01292712],
+       [ 0.72696503],
+       [ 1.51125534],
+       [ 0.80288055],
+       [ 0.85866506],
+       [ 0.43820814],
+       [ 0.48970932],
+       [ 0.43029362],
+       [ 1.01002316],
+       [ 1.57124753],
+       [ 1.77807028],
+       [ 1.64837307],
+       [ 0.87913927],
+       [ 0.84176319],
+       [ 1.62224435],
+       [ 1.00990902],
+       [ 0.28512236],
+       [ 1.57011001],
+       [ 0.99194825],
+       [ 1.5555344 ],
+       [ 1.46173709],
+       [ 1.68101226],
+       [ 0.79901296],
+       [ 2.20768024],
+       [ 1.58696298],
+       [ 1.38963301],
+       [ 1.21753721],
+       [ 1.95691948],
+       [ 0.99532499],
+       [ 2.42197625],
+       [ 2.37891982],
+       [ 1.07805402],
+       [ 0.96842639],
+       [ 0.61905372],
+       [ 1.47673196],
+       [ 1.02286813],
+       [ 0.61936149],
+       [ 0.55936634],
+       [ 1.585683  ],
+       [ 1.10646387],
+       [ 0.56944922],
+       [ 0.80962166],
+       [ 2.54104791],
+       [ 0.55775269],
+       [ 1.02381826],
+       [ 0.55491857],
+       [ 1.54503914],
+       [ 1.58463953],
+       [ 0.90294458],
+       [ 0.93642742],
+       [ 0.46787333],
+       [ 1.94203693],
+       [ 1.00624536],
+       [ 0.33339787],
+       [ 1.69340175],
+       [ 1.54731824],
+       [ 0.37182372],
+       [ 1.00525247],
+       [ 0.34049255],
+       [ 0.95774044],
+       [ 0.46320007],
+       [ 1.54754677],
+       [ 0.58956803],
+       [ 1.08152431],
+       [ 1.89483584],
+       [ 1.862021  ],
+       [ 0.86796548],
+       [ 0.70234069],
+       [ 0.80067526],
+       [ 1.7016285 ],
+       [ 1.35864842],
+       [ 0.6183464 ],
+       [ 1.07795199],
+       [ 1.30408998],
+       [ 0.81113088],
+       [ 0.78684541],
+       [ 1.99500034],
+       [ 1.48609215],
+       [ 2.10314191],
+       [ 1.5024897 ],
+       [ 1.03178648],
+       [ 1.12913302],
+       [ 0.50206719],
+       [ 0.47173813],
+       [ 0.6882616 ],
+       [ 0.38503899],
+       [ 0.90878041],
+       [ 0.37051024],
+       [ 1.95054686],
+       [ 0.24626548],
+       [ 1.55892053],
+       [ 0.76566037],
+       [ 1.41730511],
+       [ 1.05991172],
+       [ 1.14415131],
+       [ 0.60689158],
+       [ 1.32454124],
+       [ 0.34246945],
+       [ 0.76956334],
+       [ 1.20918776],
+       [ 3.2269833 ],
+       [ 1.40693541],
+       [ 0.97638867],
+       [ 1.0678853 ],
+       [ 1.33820846],
+       [ 1.81019313],
+       [ 0.96968567],
+       [ 0.76588522],
+       [ 1.07898862],
+       [ 0.78662962],
+       [ 0.56312507],
+       [ 1.79665611],
+       [ 0.50331639],
+       [ 1.57424214],
+       [ 0.84155083],
+       [ 0.60104983],
+       [ 1.40577407],
+       [ 1.15050407],
+       [ 0.80916852],
+       [ 1.65121533],
+       [ 0.60358934],
+       [ 1.61540686],
+       [ 0.92745118],
+       [ 0.98204893],
+       [ 0.62145015],
+       [ 1.43100092],
+       [ 0.40964897],
+       [ 0.80293674],
+       [ 0.55572429],
+       [ 1.18225611],
+       [ 2.42344056],
+       [ 1.19163425],
+       [ 0.76218242],
+       [-0.        ],
+       [ 1.05786758],
+       [ 2.19288706],
+       [ 0.47065674],
+       [ 0.43853726],
+       [ 0.8914054 ],
+       [ 1.63975542],
+       [ 1.04439318],
+       [ 0.59836411],
+       [ 0.94095069],
+       [ 0.55282001],
+       [ 1.57340728],
+       [ 1.25241092],
+       [ 0.90026216],
+       [ 0.58854939],
+       [ 2.16583957],
+       [ 1.15077612],
+       [ 0.96200474],
+       [ 1.53464934],
+       [ 1.42014179],
+       [ 0.5210095 ],
+       [ 0.56286719],
+       [ 1.38408968],
+       [ 0.82561593],
+       [ 0.83147239],
+       [ 0.89771953],
+       [ 1.19958284],
+       [ 1.28287171],
+       [ 0.83345575],
+       [ 0.91577738],
+       [ 0.80183701],
+       [ 1.22915117],
+       [ 0.5232334 ],
+       [ 0.37985352],
+       [ 0.77207965],
+       [ 1.307705  ],
+       [ 1.03438219],
+       [ 1.21250326],
+       [ 1.28409285],
+       [ 0.74616326],
+       [ 0.64812361],
+       [ 1.36929299],
+       [ 1.50252486],
+       [ 1.14056114],
+       [ 1.2287535 ],
+       [ 1.25509244],
+       [ 0.68081004],
+       [ 1.9728026 ],
+       [ 1.44146937],
+       [ 0.81861827],
+       [ 0.74767941],
+       [ 0.89726167],
+       [ 0.77479501],
+       [ 1.71228404],
+       [ 1.22169601],
+       [ 0.70874885],
+       [ 1.03099649],
+       [ 0.66068433],
+       [ 0.89632089],
+       [ 1.6082826 ],
+       [ 0.69449172],
+       [ 0.69550568],
+       [ 0.68804493],
+       [ 1.81075306],
+       [ 0.77946209],
+       [ 1.0182749 ],
+       [ 1.63671103],
+       [ 0.88275554],
+       [ 1.8503201 ],
+       [ 0.62696299],
+       [ 1.22831596],
+       [ 0.7758824 ],
+       [ 1.42920471],
+       [ 1.47710661],
+       [ 0.61037588],
+       [ 1.47023101],
+       [ 1.14097644],
+       [ 0.77820364],
+       [ 1.67514218],
+       [ 0.81005024],
+       [ 2.12831149],
+       [ 0.98516092],
+       [ 1.08395039],
+       [ 0.48461002],
+       [ 1.5573897 ],
+       [ 1.67372713],
+       [ 1.54996959],
+       [ 1.63732783],
+       [ 0.47571767],
+       [ 0.95552196],
+       [ 0.51366061],
+       [ 1.23773315],
+       [ 2.169636  ],
+       [        nan],
+       [ 1.02564961],
+       [ 1.27105734],
+       [ 1.06518074],
+       [ 0.71681791],
+       [ 0.73045861],
+       [ 0.50320611],
+       [ 0.92616517],
+       [ 1.25157157],
+       [ 0.77455379],
+       [ 1.25131077],
+       [ 1.65079797],
+       [ 0.65249953],
+       [ 1.40100934],
+       [ 0.55086763],
+       [ 1.16368076],
+       [ 2.23514286],
+       [ 1.17488198],
+       [ 1.38142337],
+       [ 1.01652636],
+       [ 1.01589648],
+       [ 1.17960602],
+       [ 2.06235282],
+       [ 1.05969063],
+       [ 1.54623337],
+       [ 1.19816536],
+       [ 0.44982953],
+       [ 1.9640587 ],
+       [ 1.73508899],
+       [ 1.18162977],
+       [ 1.6823212 ],
+       [ 1.12060465],
+       [ 0.99083846],
+       [ 1.22929524],
+       [ 0.97130492],
+       [ 0.94732176],
+       [ 1.25170736],
+       [ 1.10144512],
+       [ 0.64446459],
+       [ 1.40128966],
+       [ 1.3826206 ],
+       [ 1.49168399],
+       [ 1.14870846],
+       [ 1.65837332],
+       [ 1.52467696],
+       [ 1.03709582],
+       [ 1.26566168],
+       [ 0.76624741],
+       [ 0.94443457],
+       [ 1.76019024],
+       [ 1.93131028],
+       [ 0.58267762],
+       [ 1.42966735],
+       [ 1.66674214],
+       [ 0.8877105 ],
+       [ 0.33198242],
+       [ 0.77710005],
+       [ 1.29327634],
+       [ 0.47714045]]), array([[ 0.54983484],
+       [ 0.8876738 ],
+       [ 1.01393671],
+       [ 0.65394789],
+       [ 1.28623048],
+       [ 1.33168263],
+       [ 0.57237947],
+       [ 1.11559783],
+       [ 1.01682142],
+       [ 1.44136397],
+       [ 1.02043929],
+       [ 0.95074162],
+       [ 1.72118411],
+       [ 1.08487258],
+       [ 1.31794765],
+       [ 1.70240037],
+       [ 1.60458415],
+       [ 0.97056062],
+       [ 2.1251673 ],
+       [ 1.52634966],
+       [ 0.35407237],
+       [ 0.97963818],
+       [ 1.6134607 ],
+       [ 1.36946058],
+       [ 1.32708485],
+       [ 1.23338285],
+       [ 0.65272372],
+       [ 1.13120426],
+       [ 1.43499432],
+       [ 1.21816359],
+       [ 1.50882414],
+       [ 1.98036989],
+       [ 0.90956781],
+       [ 1.12032301],
+       [ 0.7275343 ],
+       [ 1.48462495],
+       [ 0.47609356],
+       [ 0.57129815],
+       [ 1.01544646],
+       [ 1.97586203],
+       [ 0.33950912],
+       [ 1.68374978],
+       [ 0.90135332],
+       [ 1.34246958],
+       [ 0.37992025],
+       [ 2.21784337],
+       [ 0.71436102],
+       [ 0.92543078],
+       [ 1.83434023],
+       [ 0.61248697],
+       [ 1.84797578],
+       [ 1.0149542 ],
+       [ 1.18300299],
+       [ 0.67586787],
+       [ 1.01020771],
+       [ 0.55315689],
+       [ 0.85912487],
+       [ 1.12666916],
+       [ 0.45549684],
+       [ 0.63866743],
+       [ 1.55346018],
+       [ 0.76221475],
+       [ 0.5214816 ],
+       [ 1.56259827],
+       [ 0.4912932 ],
+       [ 0.62528353],
+       [ 1.49057432],
+       [ 0.48962956],
+       [ 0.97337073],
+       [ 1.35224404],
+       [ 1.35327602],
+       [ 1.18051954],
+       [ 1.58708778],
+       [ 1.27449613],
+       [ 1.2170976 ],
+       [ 0.5658582 ],
+       [ 0.46998609],
+       [ 1.03413851],
+       [ 1.29900906],
+       [ 1.76280912],
+       [ 1.99463302],
+       [ 0.82356979],
+       [ 1.98330703],
+       [ 2.42365906],
+       [ 0.62183489],
+       [ 1.43331604],
+       [ 1.41124628],
+       [ 0.84202923],
+       [ 1.65726872],
+       [ 0.84102353],
+       [ 2.33904006],
+       [ 1.42314499],
+       [ 1.24393071],
+       [ 1.228858  ],
+       [ 0.75511403],
+       [ 0.59062762],
+       [ 0.59581055],
+       [ 0.63980531],
+       [ 0.92965107],
+       [ 1.51813137],
+       [ 1.38243122],
+       [ 1.22703576],
+       [ 1.46789585],
+       [ 0.90796349],
+       [ 1.45582593],
+       [ 1.68431306],
+       [ 1.05445534],
+       [ 1.56489351],
+       [ 1.01300072],
+       [ 1.55976832],
+       [ 1.23086035],
+       [ 0.85676052],
+       [ 1.20252997],
+       [        nan],
+       [ 0.95446789],
+       [ 0.74957981],
+       [ 0.80050099],
+       [ 1.98595104],
+       [-0.        ],
+       [ 0.65256781],
+       [ 1.57716177],
+       [ 1.85922177],
+       [ 1.71733933],
+       [ 0.66381109],
+       [ 1.18319111],
+       [ 0.70117618],
+       [ 0.49952063],
+       [ 1.0325435 ],
+       [ 0.92787925],
+       [ 0.45115346],
+       [ 0.52231332],
+       [ 0.46981305],
+       [ 0.10085126],
+       [ 0.58865672],
+       [ 0.62115924],
+       [ 2.06455025],
+       [ 1.2541482 ],
+       [ 2.01292712],
+       [ 0.72696503],
+       [ 1.51125534],
+       [ 0.80288055],
+       [ 0.85866506],
+       [ 0.43820814],
+       [ 0.48970932],
+       [ 0.43029362],
+       [ 1.01002316],
+       [ 1.57124753],
+       [ 1.77807028],
+       [ 1.64837307],
+       [ 0.87913927],
+       [ 0.84176319],
+       [ 1.62224435],
+       [ 1.00990902],
+       [ 0.28512236],
+       [ 1.57011001],
+       [ 0.99194825],
+       [ 1.5555344 ],
+       [ 1.46173709],
+       [ 1.68101226],
+       [ 0.79901296],
+       [ 2.20768024],
+       [ 1.58696298],
+       [ 1.38963301],
+       [ 1.21753721],
+       [ 1.95691948],
+       [ 0.99532499],
+       [ 2.42197625],
+       [ 2.37891982],
+       [ 1.07805402],
+       [ 0.96842639],
+       [ 0.61905372],
+       [ 1.47673196],
+       [ 1.02286813],
+       [ 0.61936149],
+       [ 0.55936634],
+       [ 1.585683  ],
+       [ 1.10646387],
+       [ 0.56944922],
+       [ 0.80962166],
+       [ 2.54104791],
+       [ 0.55775269],
+       [ 1.02381826],
+       [ 0.55491857],
+       [ 1.54503914],
+       [ 1.58463953],
+       [ 0.90294458],
+       [ 0.93642742],
+       [ 0.46787333],
+       [ 1.94203693],
+       [ 1.00624536],
+       [ 0.33339787],
+       [ 1.69340175],
+       [ 1.54731824],
+       [ 0.37182372],
+       [ 1.00525247],
+       [ 0.34049255],
+       [ 0.95774044],
+       [ 0.46320007],
+       [ 1.54754677],
+       [ 0.58956803],
+       [ 1.08152431],
+       [ 1.89483584],
+       [ 1.862021  ],
+       [ 0.86796548],
+       [ 0.70234069],
+       [ 0.80067526],
+       [ 1.7016285 ],
+       [ 1.35864842],
+       [ 0.6183464 ],
+       [ 1.07795199],
+       [ 1.30408998],
+       [ 0.81113088],
+       [ 0.78684541],
+       [ 1.99500034],
+       [ 1.48609215],
+       [ 2.10314191],
+       [ 1.5024897 ],
+       [ 1.03178648],
+       [ 1.12913302],
+       [ 0.50206719],
+       [ 0.47173813],
+       [ 0.6882616 ],
+       [ 0.38503899],
+       [ 0.90878041],
+       [ 0.37051024],
+       [ 1.95054686],
+       [ 0.24626548],
+       [ 1.55892053],
+       [ 0.76566037],
+       [ 1.41730511],
+       [ 1.05991172],
+       [ 1.14415131],
+       [ 0.60689158],
+       [ 1.32454124],
+       [ 0.34246945],
+       [ 0.76956334],
+       [ 1.20918776],
+       [ 3.2269833 ],
+       [ 1.40693541],
+       [ 0.97638867],
+       [ 1.0678853 ],
+       [ 1.33820846],
+       [ 1.81019313],
+       [ 0.96968567],
+       [ 0.76588522],
+       [ 1.07898862],
+       [ 0.78662962],
+       [ 0.56312507],
+       [ 1.79665611],
+       [ 0.50331639],
+       [ 1.57424214],
+       [ 0.84155083],
+       [ 0.60104983],
+       [ 1.40577407],
+       [ 1.15050407],
+       [ 0.80916852],
+       [ 1.65121533],
+       [ 0.60358934],
+       [ 1.61540686],
+       [ 0.92745118],
+       [ 0.98204893],
+       [ 0.62145015],
+       [ 1.43100092],
+       [ 0.40964897],
+       [ 0.80293674],
+       [ 0.55572429],
+       [ 1.18225611],
+       [ 2.42344056],
+       [ 1.19163425],
+       [ 0.76218242],
+       [-0.        ],
+       [ 1.05786758],
+       [ 2.19288706],
+       [ 0.47065674],
+       [ 0.43853726],
+       [ 0.8914054 ],
+       [ 1.63975542],
+       [ 1.04439318],
+       [ 0.59836411],
+       [ 0.94095069],
+       [ 0.55282001],
+       [ 1.57340728],
+       [ 1.25241092],
+       [ 0.90026216],
+       [ 0.58854939],
+       [ 2.16583957],
+       [ 1.15077612],
+       [ 0.96200474],
+       [ 1.53464934],
+       [ 1.42014179],
+       [ 0.5210095 ],
+       [ 0.56286719],
+       [ 1.38408968],
+       [ 0.82561593],
+       [ 0.83147239],
+       [ 0.89771953],
+       [ 1.19958284],
+       [ 1.28287171],
+       [ 0.83345575],
+       [ 0.91577738],
+       [ 0.80183701],
+       [ 1.22915117],
+       [ 0.5232334 ],
+       [ 0.37985352],
+       [ 0.77207965],
+       [ 1.307705  ],
+       [ 1.03438219],
+       [ 1.21250326],
+       [ 1.28409285],
+       [ 0.74616326],
+       [ 0.64812361],
+       [ 1.36929299],
+       [ 1.50252486],
+       [ 1.14056114],
+       [ 1.2287535 ],
+       [ 1.25509244],
+       [ 0.68081004],
+       [ 1.9728026 ],
+       [ 1.44146937],
+       [ 0.81861827],
+       [ 0.74767941],
+       [ 0.89726167],
+       [ 0.77479501],
+       [ 1.71228404],
+       [ 1.22169601],
+       [ 0.70874885],
+       [ 1.03099649],
+       [ 0.66068433],
+       [ 0.89632089],
+       [ 1.6082826 ],
+       [ 0.69449172],
+       [ 0.69550568],
+       [ 0.68804493],
+       [ 1.81075306],
+       [ 0.77946209],
+       [ 1.0182749 ],
+       [ 1.63671103],
+       [ 0.88275554],
+       [ 1.8503201 ],
+       [ 0.62696299],
+       [ 1.22831596],
+       [ 0.7758824 ],
+       [ 1.42920471],
+       [ 1.47710661],
+       [ 0.61037588],
+       [ 1.47023101],
+       [ 1.14097644],
+       [ 0.77820364],
+       [ 1.67514218],
+       [ 0.81005024],
+       [ 2.12831149],
+       [ 0.98516092],
+       [ 1.08395039],
+       [ 0.48461002],
+       [ 1.5573897 ],
+       [ 1.67372713],
+       [ 1.54996959],
+       [ 1.63732783],
+       [ 0.47571767],
+       [ 0.95552196],
+       [ 0.51366061],
+       [ 1.23773315],
+       [ 2.169636  ],
+       [        nan],
+       [ 1.02564961],
+       [ 1.27105734],
+       [ 1.06518074],
+       [ 0.71681791],
+       [ 0.73045861],
+       [ 0.50320611],
+       [ 0.92616517],
+       [ 1.25157157],
+       [ 0.77455379],
+       [ 1.25131077],
+       [ 1.65079797],
+       [ 0.65249953],
+       [ 1.40100934],
+       [ 0.55086763],
+       [ 1.16368076],
+       [ 2.23514286],
+       [ 1.17488198],
+       [ 1.38142337],
+       [ 1.01652636],
+       [ 1.01589648],
+       [ 1.17960602],
+       [ 2.06235282],
+       [ 1.05969063],
+       [ 1.54623337],
+       [ 1.19816536],
+       [ 0.44982953],
+       [ 1.9640587 ],
+       [ 1.73508899],
+       [ 1.18162977],
+       [ 1.6823212 ],
+       [ 1.12060465],
+       [ 0.99083846],
+       [ 1.22929524],
+       [ 0.97130492],
+       [ 0.94732176],
+       [ 1.25170736],
+       [ 1.10144512],
+       [ 0.64446459],
+       [ 1.40128966],
+       [ 1.3826206 ],
+       [ 1.49168399],
+       [ 1.14870846],
+       [ 1.65837332],
+       [ 1.52467696],
+       [ 1.03709582],
+       [ 1.26566168],
+       [ 0.76624741],
+       [ 0.94443457],
+       [ 1.76019024],
+       [ 1.93131028],
+       [ 0.58267762],
+       [ 1.42966735],
+       [ 1.66674214],
+       [ 0.8877105 ],
+       [ 0.33198242],
+       [ 0.77710005],
+       [ 1.29327634],
+       [ 0.47714045]]), array([[ 0.54983484],
+       [ 0.8876738 ],
+       [ 1.01393671],
+       [ 0.65394789],
+       [ 1.28623048],
+       [ 1.33168263],
+       [ 0.57237947],
+       [ 1.11559783],
+       [ 1.01682142],
+       [ 1.44136397],
+       [ 1.02043929],
+       [ 0.95074162],
+       [ 1.72118411],
+       [ 1.08487258],
+       [ 1.31794765],
+       [ 1.70240037],
+       [ 1.60458415],
+       [ 0.97056062],
+       [ 2.1251673 ],
+       [ 1.52634966],
+       [ 0.35407237],
+       [ 0.97963818],
+       [ 1.6134607 ],
+       [ 1.36946058],
+       [ 1.32708485],
+       [ 1.23338285],
+       [ 0.65272372],
+       [ 1.13120426],
+       [ 1.43499432],
+       [ 1.21816359],
+       [ 1.50882414],
+       [ 1.98036989],
+       [ 0.90956781],
+       [ 1.12032301],
+       [ 0.7275343 ],
+       [ 1.48462495],
+       [ 0.47609356],
+       [ 0.57129815],
+       [ 1.01544646],
+       [ 1.97586203],
+       [ 0.33950912],
+       [ 1.68374978],
+       [ 0.90135332],
+       [ 1.34246958],
+       [ 0.37992025],
+       [ 2.21784337],
+       [ 0.71436102],
+       [ 0.92543078],
+       [ 1.83434023],
+       [ 0.61248697],
+       [ 1.84797578],
+       [ 1.0149542 ],
+       [ 1.18300299],
+       [ 0.67586787],
+       [ 1.01020771],
+       [ 0.55315689],
+       [ 0.85912487],
+       [ 1.12666916],
+       [ 0.45549684],
+       [ 0.63866743],
+       [ 1.55346018],
+       [ 0.76221475],
+       [ 0.5214816 ],
+       [ 1.56259827],
+       [ 0.4912932 ],
+       [ 0.62528353],
+       [ 1.49057432],
+       [ 0.48962956],
+       [ 0.97337073],
+       [ 1.35224404],
+       [ 1.35327602],
+       [ 1.18051954],
+       [ 1.58708778],
+       [ 1.27449613],
+       [ 1.2170976 ],
+       [ 0.5658582 ],
+       [ 0.46998609],
+       [ 1.03413851],
+       [ 1.29900906],
+       [ 1.76280912],
+       [ 1.99463302],
+       [ 0.82356979],
+       [ 1.98330703],
+       [ 2.42365906],
+       [ 0.62183489],
+       [ 1.43331604],
+       [ 1.41124628],
+       [ 0.84202923],
+       [ 1.65726872],
+       [ 0.84102353],
+       [ 2.33904006],
+       [ 1.42314499],
+       [ 1.24393071],
+       [ 1.228858  ],
+       [ 0.75511403],
+       [ 0.59062762],
+       [ 0.59581055],
+       [ 0.63980531],
+       [ 0.92965107],
+       [ 1.51813137],
+       [ 1.38243122],
+       [ 1.22703576],
+       [ 1.46789585],
+       [ 0.90796349],
+       [ 1.45582593],
+       [ 1.68431306],
+       [ 1.05445534],
+       [ 1.56489351],
+       [ 1.01300072],
+       [ 1.55976832],
+       [ 1.23086035],
+       [ 0.85676052],
+       [ 1.20252997],
+       [        nan],
+       [ 0.95446789],
+       [ 0.74957981],
+       [ 0.80050099],
+       [ 1.98595104],
+       [-0.        ],
+       [ 0.65256781],
+       [ 1.57716177],
+       [ 1.85922177],
+       [ 1.71733933],
+       [ 0.66381109],
+       [ 1.18319111],
+       [ 0.70117618],
+       [ 0.49952063],
+       [ 1.0325435 ],
+       [ 0.92787925],
+       [ 0.45115346],
+       [ 0.52231332],
+       [ 0.46981305],
+       [ 0.10085126],
+       [ 0.58865672],
+       [ 0.62115924],
+       [ 2.06455025],
+       [ 1.2541482 ],
+       [ 2.01292712],
+       [ 0.72696503],
+       [ 1.51125534],
+       [ 0.80288055],
+       [ 0.85866506],
+       [ 0.43820814],
+       [ 0.48970932],
+       [ 0.43029362],
+       [ 1.01002316],
+       [ 1.57124753],
+       [ 1.77807028],
+       [ 1.64837307],
+       [ 0.87913927],
+       [ 0.84176319],
+       [ 1.62224435],
+       [ 1.00990902],
+       [ 0.28512236],
+       [ 1.57011001],
+       [ 0.99194825],
+       [ 1.5555344 ],
+       [ 1.46173709],
+       [ 1.68101226],
+       [ 0.79901296],
+       [ 2.20768024],
+       [ 1.58696298],
+       [ 1.38963301],
+       [ 1.21753721],
+       [ 1.95691948],
+       [ 0.99532499],
+       [ 2.42197625],
+       [ 2.37891982],
+       [ 1.07805402],
+       [ 0.96842639],
+       [ 0.61905372],
+       [ 1.47673196],
+       [ 1.02286813],
+       [ 0.61936149],
+       [ 0.55936634],
+       [ 1.585683  ],
+       [ 1.10646387],
+       [ 0.56944922],
+       [ 0.80962166],
+       [ 2.54104791],
+       [ 0.55775269],
+       [ 1.02381826],
+       [ 0.55491857],
+       [ 1.54503914],
+       [ 1.58463953],
+       [ 0.90294458],
+       [ 0.93642742],
+       [ 0.46787333],
+       [ 1.94203693],
+       [ 1.00624536],
+       [ 0.33339787],
+       [ 1.69340175],
+       [ 1.54731824],
+       [ 0.37182372],
+       [ 1.00525247],
+       [ 0.34049255],
+       [ 0.95774044],
+       [ 0.46320007],
+       [ 1.54754677],
+       [ 0.58956803],
+       [ 1.08152431],
+       [ 1.89483584],
+       [ 1.862021  ],
+       [ 0.86796548],
+       [ 0.70234069],
+       [ 0.80067526],
+       [ 1.7016285 ],
+       [ 1.35864842],
+       [ 0.6183464 ],
+       [ 1.07795199],
+       [ 1.30408998],
+       [ 0.81113088],
+       [ 0.78684541],
+       [ 1.99500034],
+       [ 1.48609215],
+       [ 2.10314191],
+       [ 1.5024897 ],
+       [ 1.03178648],
+       [ 1.12913302],
+       [ 0.50206719],
+       [ 0.47173813],
+       [ 0.6882616 ],
+       [ 0.38503899],
+       [ 0.90878041],
+       [ 0.37051024],
+       [ 1.95054686],
+       [ 0.24626548],
+       [ 1.55892053],
+       [ 0.76566037],
+       [ 1.41730511],
+       [ 1.05991172],
+       [ 1.14415131],
+       [ 0.60689158],
+       [ 1.32454124],
+       [ 0.34246945],
+       [ 0.76956334],
+       [ 1.20918776],
+       [ 3.2269833 ],
+       [ 1.40693541],
+       [ 0.97638867],
+       [ 1.0678853 ],
+       [ 1.33820846],
+       [ 1.81019313],
+       [ 0.96968567],
+       [ 0.76588522],
+       [ 1.07898862],
+       [ 0.78662962],
+       [ 0.56312507],
+       [ 1.79665611],
+       [ 0.50331639],
+       [ 1.57424214],
+       [ 0.84155083],
+       [ 0.60104983],
+       [ 1.40577407],
+       [ 1.15050407],
+       [ 0.80916852],
+       [ 1.65121533],
+       [ 0.60358934],
+       [ 1.61540686],
+       [ 0.92745118],
+       [ 0.98204893],
+       [ 0.62145015],
+       [ 1.43100092],
+       [ 0.40964897],
+       [ 0.80293674],
+       [ 0.55572429],
+       [ 1.18225611],
+       [ 2.42344056],
+       [ 1.19163425],
+       [ 0.76218242],
+       [-0.        ],
+       [ 1.05786758],
+       [ 2.19288706],
+       [ 0.47065674],
+       [ 0.43853726],
+       [ 0.8914054 ],
+       [ 1.63975542],
+       [ 1.04439318],
+       [ 0.59836411],
+       [ 0.94095069],
+       [ 0.55282001],
+       [ 1.57340728],
+       [ 1.25241092],
+       [ 0.90026216],
+       [ 0.58854939],
+       [ 2.16583957],
+       [ 1.15077612],
+       [ 0.96200474],
+       [ 1.53464934],
+       [ 1.42014179],
+       [ 0.5210095 ],
+       [ 0.56286719],
+       [ 1.38408968],
+       [ 0.82561593],
+       [ 0.83147239],
+       [ 0.89771953],
+       [ 1.19958284],
+       [ 1.28287171],
+       [ 0.83345575],
+       [ 0.91577738],
+       [ 0.80183701],
+       [ 1.22915117],
+       [ 0.5232334 ],
+       [ 0.37985352],
+       [ 0.77207965],
+       [ 1.307705  ],
+       [ 1.03438219],
+       [ 1.21250326],
+       [ 1.28409285],
+       [ 0.74616326],
+       [ 0.64812361],
+       [ 1.36929299],
+       [ 1.50252486],
+       [ 1.14056114],
+       [ 1.2287535 ],
+       [ 1.25509244],
+       [ 0.68081004],
+       [ 1.9728026 ],
+       [ 1.44146937],
+       [ 0.81861827],
+       [ 0.74767941],
+       [ 0.89726167],
+       [ 0.77479501],
+       [ 1.71228404],
+       [ 1.22169601],
+       [ 0.70874885],
+       [ 1.03099649],
+       [ 0.66068433],
+       [ 0.89632089],
+       [ 1.6082826 ],
+       [ 0.69449172],
+       [ 0.69550568],
+       [ 0.68804493],
+       [ 1.81075306],
+       [ 0.77946209],
+       [ 1.0182749 ],
+       [ 1.63671103],
+       [ 0.88275554],
+       [ 1.8503201 ],
+       [ 0.62696299],
+       [ 1.22831596],
+       [ 0.7758824 ],
+       [ 1.42920471],
+       [ 1.47710661],
+       [ 0.61037588],
+       [ 1.47023101],
+       [ 1.14097644],
+       [ 0.77820364],
+       [ 1.67514218],
+       [ 0.81005024],
+       [ 2.12831149],
+       [ 0.98516092],
+       [ 1.08395039],
+       [ 0.48461002],
+       [ 1.5573897 ],
+       [ 1.67372713],
+       [ 1.54996959],
+       [ 1.63732783],
+       [ 0.47571767],
+       [ 0.95552196],
+       [ 0.51366061],
+       [ 1.23773315],
+       [ 2.169636  ],
+       [        nan],
+       [ 1.02564961],
+       [ 1.27105734],
+       [ 1.06518074],
+       [ 0.71681791],
+       [ 0.73045861],
+       [ 0.50320611],
+       [ 0.92616517],
+       [ 1.25157157],
+       [ 0.77455379],
+       [ 1.25131077],
+       [ 1.65079797],
+       [ 0.65249953],
+       [ 1.40100934],
+       [ 0.55086763],
+       [ 1.16368076],
+       [ 2.23514286],
+       [ 1.17488198],
+       [ 1.38142337],
+       [ 1.01652636],
+       [ 1.01589648],
+       [ 1.17960602],
+       [ 2.06235282],
+       [ 1.05969063],
+       [ 1.54623337],
+       [ 1.19816536],
+       [ 0.44982953],
+       [ 1.9640587 ],
+       [ 1.73508899],
+       [ 1.18162977],
+       [ 1.6823212 ],
+       [ 1.12060465],
+       [ 0.99083846],
+       [ 1.22929524],
+       [ 0.97130492],
+       [ 0.94732176],
+       [ 1.25170736],
+       [ 1.10144512],
+       [ 0.64446459],
+       [ 1.40128966],
+       [ 1.3826206 ],
+       [ 1.49168399],
+       [ 1.14870846],
+       [ 1.65837332],
+       [ 1.52467696],
+       [ 1.03709582],
+       [ 1.26566168],
+       [ 0.76624741],
+       [ 0.94443457],
+       [ 1.76019024],
+       [ 1.93131028],
+       [ 0.58267762],
+       [ 1.42966735],
+       [ 1.66674214],
+       [ 0.8877105 ],
+       [ 0.33198242],
+       [ 0.77710005],
+       [ 1.29327634],
+       [ 0.47714045]])]
+[118 270 132 226 153 418 190  40 195 234  20 224 193 303  44 222 263 144
+ 142 274 389 129  58 197 187 131  76 273 220 358  36 421 353  67 143  64
+ 126 219 369 249 360 290  62 130 302   0 377 280  55 182 265 180 174 291
+ 247  75 177  37   6 414 284 133 199  95  96 278 252 257 232 344  49 208
+ 170 173 134 261  84  65 339  59  97 401 310 375 119  26   3 327 123  53
+ 316 332 221 330 331 125 204 325  46 367 138  34 368 309 320 115  94 269
+  61 228 244 410 235 304 372 322 341 419 347 334 246 212 159 116 205 300
+ 140 264 255 178 349 211 319  81 293 294 298  89 251 150  87 111 141  56
+ 203 149 337   1 417 275 328 321 295 283  42 185 103 223  32 299  47 370
+ 259 128  98 186 279 411 398  11 114 359 196 287 169 243  17 397  68 239
+  21 260 351 395 155 165 194 189 152 145  54 108   2  51  38 383 382   8
+ 335  10 172 181 364 326 217 127  77 306 408 277 106 271 386 230 366 240
+ 209 168 245 200 352  13 400 176   7  33 394  57 218  27 313 346 231 405
+ 254 286 378 380 384  71 392 266  52 124 268 388 296 112 236 307  74 163
+  29 324 101 340 314  93 301 396 110  25 361  92 373 371 399 282 136 315
+ 409 365  73 297 308   4 420  78 210 305  14 233  24   5 241  43  69  70
+ 207 311  23 381 100 403 292 162 376 402 253 238  86 229 289  91 342 415
+ 262  85  28   9 318 104 157 102 345 171 343  35 214  66 404 216 312  30
+ 139  99 407  19 288 183 387 192 198 356  60 156 354 227 109  63 107 154
+ 146 281 250 120 184 175 161  72  16 329  22 258 151 336 357 276 148 374
+ 256  88 406 416 355 348 158 393  41 105 191 206  15 323 122  12 391 412
+  79]
+(array([118, 270]),)
+[Time: 29.06.23 10:41:35] [Level: info] transition: mfa_prerequisites
+[Time: 29.06.23 10:41:36] [Level: info] state: mfa_prerequisites
+Calling prerequisites
+[Time: 29.06.23 10:41:36] [Level: info] transition: seperate_pca
+[Time: 29.06.23 10:41:37] [Level: info] state: seperate_pca
+Init pca
+[Time: 29.06.23 10:41:37] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 205, in run
+    self.store(key='data', value=self.load('mfa').get_omics_data(counter))
+  File "/app/apps/svd/FC_Federated_MFA.py", line 77, in get_omics_data
+    'total_sampels': self.total_sampels[idx]
+IndexError: list index out of range

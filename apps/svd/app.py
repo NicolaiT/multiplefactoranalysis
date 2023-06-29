@@ -53,6 +53,7 @@ class InitialState(AppState):
         outs = self.load('mfa').outs # [out1, out2, ... , outn]
         print("outs")
         print(outs)
+        raise KeyError("TEST")
 
 
         self.send_data_to_coordinator(outs) # send outs
@@ -160,6 +161,7 @@ class AggregateStdState(AppState):
         print('setting parameters')
         self.load('mfa').compute_std(incoming) 
         outs = self.load('mfa').outs
+        print("outs", outs)
         self.broadcast_data(outs) 
         return 'apply_scaling'
 

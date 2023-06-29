@@ -19,51 +19,11 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
         FCFederatedMFA.__init__(self)
         
     def convert_incoming(self, incomings):
-        
-        # how it is:
-        # INCOMINGS
-        # 2 clients, 3 omics
-        # [
-        # c[{o},{o},{o}],
-        # c[{o},{o},{o}],
-        # ]
-
-        # INCOMING OMICS
-        # 2 clients, 3 omics
-        # [
-        # [
-        # {}, {}, {}, {}, {}, {}
-        # ],
-        # [
-        # {}, {}, {}, {}, {}, {}
-        # ],
-        # [
-        # {}, {}, {}, {}, {}, {}
-        # ]
-        # ]
-
-
-        # how it should be
-        # INCOMING OMICS
-        # [[],[],[]] ->
-        # [[c1o1,c2o1],[c1o2,c2o2],[c1o3,c2o3]] ->
-
-        print("-----")
-        print("len(incomings)", len(incomings))
-        print("-----")
-        print("incomings", incomings)
-        incoming_omics = [[]] * len(incomings[0]) # [[],[],[]]
-        for idx in range(len(incoming_omics)): # 3 if 3 omics
-            for incoming in incomings: # 2 if 2 clients
-                incoming_omics[idx].append(incoming[idx])
-        print("-----")
-        print("len(incoming_omics)", len(incoming_omics))
-        print("-----")
-        print("incoming_omics", incoming_omics)
-        print("-----")
-        print("len(incoming_omics)", len(incoming_omics))
-        print("len(incoming_omics[0])", len(incoming_omics[0]))
-        return 1
+        incoming_omics = [[] for _ in range(len(incomings[0]))]  # Create an empty list for each "omics" category
+        for idx in range(len(incoming_omics)):  # Iterate over the number of "omics" categories
+            for incoming in incomings:  # Iterate over the clients
+                data2add = incoming[idx]  # Get the data corresponding to the current "omics" category
+                incoming_omics[idx].append(data2add)  # Append the data to the appropriate "omics" category
         return incoming_omics
         
     def unify_row_names(self, incomings):
@@ -80,9 +40,11 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
 
         '''
         incoming_omics = self.convert_incoming(incomings)
+        print("TEST", incoming_omics)
+        
         self.outs = []
         for idx, incoming in enumerate(incoming_omics):
-            print(incoming)
+            print("TEST2", incoming)
             mysample_count = 0
             myintersect = set(incoming[0][COParams.ROW_NAMES.n])
 
@@ -108,7 +70,7 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             print("idx", idx)
             print("incoming len", len(incoming))
             print("self.k len", len(self.k))
-            self.outs[idx] = {COParams.PCS.n: self.k[idx], COParams.SEND_PROJ: self.send_projections}
+            self.outs.append({COParams.PCS.n: self.k[idx], COParams.SEND_PROJ: self.send_projections})
             newrownames = list(myintersect)
             self.outs[idx][COParams.ROW_NAMES.n] = newrownames
 
@@ -139,7 +101,7 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
             print('SUMS')
             print(my_sums)
 
-            self.outs[idx] = {COParams.MEANS.n : my_sums }
+            self.outs.append({COParams.MEANS.n : my_sums })
             self.number_of_samples.append(my_samples)
     
     def compute_std(self, incomings):
@@ -152,14 +114,15 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
                 my_ssq.append(s[COParams.SUM_OF_SQUARES.n])
             my_ssq = np.stack(my_ssq)
             my_ssq = np.nansum(my_ssq, axis=0)
-            print('COMPUTE STD')
+            print('COMPUTE STD ',idx)
             print(my_ssq)
             val_per_row = [v-1 for v in self.values_per_row[idx]]
             variances = my_ssq/(val_per_row)
             my_ssq = np.sqrt(variances)
             self.std.append(my_ssq)
-            print('STD')
+            print('STD', idx)
             print(self.std[idx])
+            print("std shape", len(self.std))
 
             if self.perc_highly_var is not None:
                 hv = int(np.floor(self.tabdatas[idx].scaled.shape[0] * self.perc_highly_var))
@@ -174,8 +137,6 @@ class AggregatorFCFederatedMFA(FCFederatedMFA):
 
             REM = self.tabdatas[idx].rows[remove]
             SEL = self.tabdatas[idx].rows[select]
-            print(select)
-            print(SEL)
-            print(remove)
-            print(REM)
-            self.outs[idx] = {COParams.STDS.n : self.std, COParams.SELECT.n: select, COParams.REMOVE.n: remove, COParams.VARIANCES.n: variances}
+            
+            print("std", self.std)
+            self.outs.append({COParams.STDS.n : self.std, COParams.SELECT.n: select, COParams.REMOVE.n: remove, COParams.VARIANCES.n: variances})

@@ -122,9 +122,8 @@ class FCFederatedMFA:
 
         if self.log_transform:
             print('Log Transform performed')
-            print(tabdata.scaled)
             tabdata.scaled = np.log2(tabdata.scaled+1)
-            print(tabdata.scaled)
+            print('tabdata.scaled', tabdata.scaled)
 
         nans = np.sum(np.isnan(tabdata.scaled), axis=1)
         infs = np.sum(np.isinf(tabdata.scaled), axis=1)
@@ -186,7 +185,6 @@ class FCFederatedMFA:
      
     def apply_scaling(self, incomings, highly_variable=True):
         output = []
-        print("TEST")
         for idx, incoming in enumerate(incomings):
             self.std.append(incoming[COParams.STDS.n][idx].reshape((len(incoming[COParams.STDS.n][idx]),1)))
             self.variances.append(incoming[COParams.VARIANCES.n][idx])
@@ -205,6 +203,8 @@ class FCFederatedMFA:
             print(self.tabdatas[idx].scaled)
             print("self.std[idx]")
             print(self.std[idx])
+            print("self.std")
+            print(self.std)
             if self.unit_variance:
                 self.tabdatas[idx].scaled = self.tabdatas[idx].scaled/self.std[idx]
 
