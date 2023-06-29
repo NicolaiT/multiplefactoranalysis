@@ -1,0 +1,37 @@
+2023-06-29 14:00:22,188 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 14:00:22,190 INFO supervisord started with pid 7
+2023-06-29 14:00:23,192 INFO spawned: 'nginx' with pid 10
+2023-06-29 14:00:23,194 INFO spawned: 'app' with pid 11
+2023-06-29 14:00:24,223 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 14:00:24,224 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 14:00:26] [Level: info] id: 42da3402dd2c604b
+[Time: 29.06.23 14:00:26] [Level: info] coordinator: False
+[Time: 29.06.23 14:00:26] [Level: info] clients: ['42da3402dd2c604b', 'f3e3bbb9f256fb9b']
+[Time: 29.06.23 14:00:26] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 29.06.23 14:00:26] [Level: info] transition: init_pca
+[Time: 29.06.23 14:00:27] [Level: info] state: init_pca
+Starting PCA
+[Time: 29.06.23 14:00:27] [Level: info] transition: start_power_iteration
+[Time: 29.06.23 14:00:28] [Level: info] state: start_power_iteration
+[Time: 29.06.23 14:00:28] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 193, in run
+    number_features = self.load('svd').tabdata.scaled.shape[0]
+AttributeError: 'NoneType' object has no attribute 'tabdata'
+

@@ -50,8 +50,9 @@ class FCFederatedPCA:
         print('[STARTUP] Copy configuration and create dir')
         self.config_available = config.config_available
         self.input_file = op.join(INPUT_DIR, config.input_dir, config.input_file)
+        print(self.input_file)
         
-        self.input_files = [op.join(INPUT_DIR, file) for file in os.listdir(INPUT_DIR) if file.startswith(config.input_files) and file.endswith(config.extension)]
+        self.input_files = sorted([op.join(INPUT_DIR, file) for file in os.listdir(INPUT_DIR) if file.startswith(config.input_files) and file.endswith(config.extension)])
         print(f'TEST: {self.input_files}')
 
         
@@ -83,6 +84,8 @@ class FCFederatedPCA:
         self.log_transform = config.log_transform
         self.max_nan_fraction = config.max_nan_fraction
 
+    def set_input_file(self, path):
+        self.input_file = path
 
     def read_input_files(self):
         self.progress = 0.1

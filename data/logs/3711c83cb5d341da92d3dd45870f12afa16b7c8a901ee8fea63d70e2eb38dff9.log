@@ -1,0 +1,37 @@
+2023-06-29 13:13:34,912 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 13:13:34,913 INFO supervisord started with pid 7
+2023-06-29 13:13:35,916 INFO spawned: 'nginx' with pid 10
+2023-06-29 13:13:35,920 INFO spawned: 'app' with pid 11
+2023-06-29 13:13:36,958 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 13:13:36,958 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 13:13:38] [Level: info] id: e10823a53b3b265a
+[Time: 29.06.23 13:13:38] [Level: info] coordinator: False
+[Time: 29.06.23 13:13:38] [Level: info] clients: ['e10823a53b3b265a', 'b41ae3bb541daf98']
+[Time: 29.06.23 13:13:38] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/hospital_data_bredel_1.csv']
+number of omics:  1
+[STARTUP] Configuration copied
+[Time: 29.06.23 13:13:38] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 53, in run
+    raise KeyError("TEST")
+KeyError: 'TEST'
+

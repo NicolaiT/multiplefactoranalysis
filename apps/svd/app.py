@@ -5,6 +5,7 @@ from engine.app import AppState, app_state, Role
 from apps.svd.config import FCConfig
 from apps.svd.Aggregator_FC_Federated_PCA import AggregatorFCFederatedPCA
 from apps.svd.Client_FC_FederatedPCA import ClientFCFederatedPCA
+from apps.svd.FC_Federated_MFA import FCFederatedMFA
 from apps.svd.Steps import Step
 from apps.svd.COParams import COParams
 
@@ -14,6 +15,8 @@ from apps.svd.COParams import COParams
 
 # This is the first (initial) state all app instances are in at the beginning
 # By calling it 'initial' the FeatureCloud template engine knows that this state is the first one to go into automatically at the beginning
+
+
 @app_state('initial')  # The first argument is the name of the state ('initial'), the second specifies which roles are allowed to have this state (here BOTH)
 class InitialState(AppState):
 
@@ -27,36 +30,58 @@ class InitialState(AppState):
             print("[CLIENT] finished parsing parameter file.", flush=True)
 
     def register(self):
-        self.register_transition('check_row_names', Role.COORDINATOR)
-        self.register_transition('wait_for_params', Role.PARTICIPANT)
+        self.register_transition('init_pca', Role.BOTH)
         self.register_transition('terminal', Role.BOTH)
 
     def run(self):
+        self.store('idx_omics', 0)
         self.configure()
         print('[STARTUP] Instantiate SVD')
         self.progress_increment = 1/(20+self.config.k*2)
+        
+        if not self.config.config_available:
+            return 'terminal'
+        else:
+            return 'init_pca'
+        
+        
+
+@app_state('init_pca', Role.BOTH)
+class InitPCA(AppState):
+    def register(self):
+        self.register_transition('check_row_names', Role.COORDINATOR)
+        self.register_transition('wait_for_params', Role.PARTICIPANT)
+        self.register_transition('terminal', Role.BOTH)
+    
+    def run(self):
         if self.is_coordinator:
             self.store('svd' ,AggregatorFCFederatedPCA())
         else:
             self.store('svd', ClientFCFederatedPCA())
         self.load('svd').step = Step.LOAD_CONFIG
-        self.load('svd').copy_configuration(self.config)
+        self.load('svd').copy_configuration(self.load('configuration'))
+        number_of_omics = len(self.load('svd').input_files)
+        self.store('n_omics', number_of_omics)
+        # if not isinstance(self.load('idx_omics'), int):
+            
+        input_files = self.load('svd').input_files
+        print("RUNNING ON: ", input_files[self.load('idx_omics')])
+        self.load('svd').set_input_file(input_files[self.load('idx_omics')])
+        print("number of omics: ", number_of_omics)
         print('[STARTUP] Configuration copied')
-
-        if not self.config.config_available:
-            return 'terminal'
-
+        
         # READ INPUT DATA
         self.load('svd').read_input_files()
         out = self.load('svd').out
 
 
         self.send_data_to_coordinator(out)
-
+        
         if self.is_coordinator:
             return 'check_row_names'
         else:
             return 'wait_for_params'
+
 
 @app_state('check_row_names', Role.COORDINATOR)
 class CheckRowNames(AppState):
@@ -208,58 +233,11 @@ class ScaleDataState(AppState):
 @app_state('mfa_prerequisites', Role.BOTH)
 class MFAPrerequisites(AppState):
     def register(self):
-        self.register_transition('seperate_pca', Role.BOTH)
-    
-    def run(self):
-        self.store(key='seperate_pca_counter', value=0)
-        print('Calling prerequisites')
-        return 'seperate_pca'
-    
-@app_state('seperate_pca', Role.BOTH)
-class SeperatePCA(AppState):
-    def register(self):
-        self.register_transition('init_pca', Role.BOTH)
-        self.register_transition('concat', Role.BOTH)
-    
-    def run(self):
-        counter = self.load(key='seperate_pca_counter')
-        if counter == 0: # remember to check for number of omics here
-            print('Starting concat')
-            return 'concat'
-        else:
-            print('Init pca')
-            self.store(key='pca_flag', value='s_flag')
-            counter += 1
-            self.store(key='seperate_pca_counter', value=counter)
-            return 'init_pca' 
-        
-@app_state('init_pca', Role.BOTH)
-class InitPCA(AppState):
-    def register(self):
         self.register_transition('start_power_iteration', Role.BOTH)
     
     def run(self):
-        print('Starting PCA')
+        print('Calling start_power_iteration')
         return 'start_power_iteration'
-
-@app_state('concat', Role.BOTH)
-class Concat(AppState):
-    def register(self):
-        self.register_transition('global_pca', Role.BOTH)
-    
-    def run(self):
-        print('Starting global PCA')
-        return 'global_pca'
-    
-@app_state('global_pca', Role.BOTH)
-class GlobalPCA(AppState):
-    def register(self):
-        self.register_transition('init_pca', Role.BOTH)
-    
-    def run(self):
-        print('init PCA')
-        self.store(key='pca_flag', value='g_flag')
-        return 'init_pca'
 
 @app_state('aggregate_h', Role.COORDINATOR)
 class AggregateHState(AppState):
@@ -534,7 +512,7 @@ class NormalizeGState(AppState):
 @app_state('normalize_g', Role.BOTH)
 class NormalizeGState(AppState):
     def register(self):
-        self.register_transition('mfa_final', Role.BOTH) # save_results
+        self.register_transition('seperate_pca', Role.BOTH) # save_results
         self.register_transition('share_projections', Role.COORDINATOR)
 
     def run(self):
@@ -550,13 +528,13 @@ class NormalizeGState(AppState):
         if config.send_projections and self.is_coordinator:
             return 'share_projections'
         else:
-            return 'mfa_final' # save_results
+            return 'seperate_pca' # save_results
 
 
 @app_state('share_projections', Role.COORDINATOR)
 class ShareProjectionsState(AppState):
     def register(self):
-        self.register_transition('factor_analysis', Role.COORDINATOR) # save_results
+        self.register_transition('seperate_pca', Role.COORDINATOR) # save_results
 
 
     def run(self):
@@ -564,8 +542,22 @@ class ShareProjectionsState(AppState):
         self.load('svd').redistribute_projections(incoming)
         out = self.load('svd').out
         self.broadcast_data(out)
+        print('Starting seperate pca')
+        return 'seperate_pca' # original: save_results
+
+@app_state('seperate_pca', Role.BOTH)
+class SeperatePCA(AppState):
+    def register(self):
+        self.register_transition('init_pca', Role.BOTH)
+        self.register_transition('factor_analysis', Role.BOTH)
+    
+    def run(self) -> str:
+        if self.load('idx_omics') != self.load('n_omics'):
+            new_idx_omics = self.load('idx_omics') + 1
+            self.store('idx_omics', new_idx_omics)
+            return 'init_pca'
         print('Starting factor analysis')
-        return 'factor_analysis' # original: save_results
+        return 'factor_analysis'
 
 @app_state('factor_analysis', Role.BOTH)
 class FactorAnalysis(AppState):

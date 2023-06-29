@@ -1,0 +1,36 @@
+2023-06-29 12:47:10,066 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 12:47:10,069 INFO supervisord started with pid 7
+2023-06-29 12:47:11,072 INFO spawned: 'nginx' with pid 10
+2023-06-29 12:47:11,075 INFO spawned: 'app' with pid 11
+2023-06-29 12:47:12,101 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 12:47:12,102 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 12:47:14] [Level: info] id: 996a258977f34f3d
+[Time: 29.06.23 12:47:14] [Level: info] coordinator: False
+[Time: 29.06.23 12:47:14] [Level: info] clients: ['996a258977f34f3d', '3faf0db21cda8a9a']
+[Time: 29.06.23 12:47:14] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+TEST: ['/mnt/input/hospital_data_bredel_1.csv']
+number of omics:  1
+[STARTUP] Configuration copied
+[Time: 29.06.23 12:47:14] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 49, in run
+    raise KeyError("TEST")
+KeyError: 'TEST'
+

@@ -1,0 +1,2512 @@
+2023-06-29 14:15:15,552 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 14:15:15,556 INFO supervisord started with pid 7
+2023-06-29 14:15:16,558 INFO spawned: 'nginx' with pid 10
+2023-06-29 14:15:16,562 INFO spawned: 'app' with pid 11
+2023-06-29 14:15:17,609 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 14:15:17,610 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 14:15:27] [Level: info] id: 350955672a08206e
+[Time: 29.06.23 14:15:27] [Level: info] coordinator: True
+[Time: 29.06.23 14:15:27] [Level: info] clients: ['350955672a08206e', '8d8d848111ace187']
+[Time: 29.06.23 14:15:27] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 29.06.23 14:15:27] [Level: info] transition: init_pca
+[Time: 29.06.23 14:15:28] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/hospital_data_bredel_1 - Copy.csv', '/mnt/input/hospital_data_bredel_1.csv']
+RUNNING ON:  /mnt/input/hospital_data_bredel_1 - Copy.csv
+number of omics:  2
+[STARTUP] Configuration copied
+Log Transform performed
+/app/apps/svd/FC_Federated_PCA.py:97: RuntimeWarning: invalid value encountered in log2
+  self.tabdata.scaled = np.log2(self.tabdata.scaled+1)
+[Time: 29.06.23 14:15:28] [Level: info] transition: check_row_names
+[Time: 29.06.23 14:15:29] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}]
+['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6', 'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8', 'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3', 'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1', 'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1', 'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1', 'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160', 'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R', 'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2', 'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1', 'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2', 'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560', 'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN', 'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52', 'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF', 'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1', 'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3', 'IGFBP3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A', 'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT', 'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2', 'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3', 'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2', 'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1', 'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1', 'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432', 'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1', 'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629', 'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1', 'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682', 'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ', 'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1', 'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B', 'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5', 'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7', 'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217', 'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30', 'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1', 'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7', 'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1', 'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN', 'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2', 'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963', 'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS', 'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A', 'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT', 'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1', 'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2', 'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3', 'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1', 'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1', 'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1', 'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK', 'ANK3', 'AI002301', 'NCF1', 'NY.SAR.48', 'AA598555', 'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187', 'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1', 'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19', 'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A', 'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20', 'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC', 'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC', 'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2', 'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG', 'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1', 'MGP']
+['GABBR1', 'CD58', 'LOC400451', 'IGF1R', 'PDPN', 'LILRA1', 'KLRC1', 'PLP2', 'AKR1C2', 'MYBPC2', 'CLTB', 'L1CAM', 'ZNF549', 'TncRNA', 'LYN', 'CTHRC1', 'PDE4DIP', 'WASF1', 'FBXO2', 'NEFH', 'CD47', 'PRG1', 'PDLIM7', 'COL9A2', 'RAB27B', 'KCNJ1', 'FCGRT', 'PRKAR1B', 'LMO7', 'ACAD8', 'VAMP2', 'CCL2', 'HPCA', 'RBP4', 'CDKN2D', 'C1orf187', 'DDEF1', 'OSBPL1A', 'TSPAN6', 'BCAM', 'AA181288', 'PLA2G2A', 'C8orf4', 'SPARC', 'MGC26694', 'ZNF419B', 'SETD5', 'NCF2', 'CCDC3', 'SCN2B', 'IL32', 'PSD3', 'PARP14', 'MED11', 'C16orf5', 'AI335002', 'NUAK1', 'UGCG', 'KIAA1543', 'IGFBP3', 'T51726', 'DIP2C', 'NLGN1', 'PNCK', 'VASP', 'C9orf48', 'SP100', 'MGC18216', 'FAM84A', 'LAMA4', 'EMP3', 'PYHIN1', 'TMEM146', 'CBX6', 'NMNAT2', 'CLCA3', 'AA906888', 'POSTN', 'TCF7L1', 'MYC', 'KLRC2', 'PPP1R14A', 'HBXIP', 'T62491', 'CBLN2', 'DYNLT1', 'ANK3', 'EXT1', 'IGF2BP3', 'NPTX1', 'CAP2', 'HBA1', 'MVP', 'ADFP', 'DECR2', 'CAMKK2', 'NDST1', 'NOTCH1', 'SOX4', 'MST150', 'HPRT1', 'F13A1', 'H10054', 'DKFZp313A2432', 'CEAL1', 'C1R', 'TOMM40', 'INPP5F', 'AA398420', 'CACNB3', 'PRRX1', 'MAPKBP1', 'EDG3', 'R70684', 'TFDP2', 'KCNMA1', 'ITGA3', 'LOC57228', 'NDUFB11', 'BNIP2', 'ANXA5', 'AI357047', 'RAB30', 'T97457', 'LOC389831', 'PTPRZ1', 'HLA.DRB1', 'EPB49', 'COL6A2', 'CASP1', 'AI005038', 'W93688', 'FLJ35740', 'IGHG1', 'WDR7', 'CYBA', 'GOT1', 'CLIC1', 'CDC20B', 'HMOX1', 'EFHB', 'R52960', 'STK17A', 'MRC2', 'ADM', 'PRKCB1', 'DNASE1L1', 'IL1RAP', 'APCS', 'KIAA1644', 'MST1', 'SERPING1', 'GPSM2', 'IFI30', 'TGFBI', 'IQSEC1', 'HLA.F', 'COX7A1', 'HK2', 'IGSF3', 'MGC39606', 'CHN1', 'MSTP9', 'STXBP1', 'PDXP', 'CAMK2A', 'TAP1', 'PLTP', 'ABCA5', 'R61377', 'COX6A2', 'L3MBTL4', 'AA401952', 'AI822135', 'AA490257', 'GAS1', 'MGP', 'CACNB2', 'PYCR1', 'LY96', 'CD53', 'LUM', 'DCLRE1B', 'RPS3A', 'PARD3', 'H20822', 'HEY1', 'BGN', 'AA424849', 'NLK', 'STEAP3', 'COL3A1', 'KLRC3', 'DLL3', 'R70506', 'HAMP', 'TSPAN4', 'VSNL1', 'AA489629', 'BLVRB', 'NPL', 'RND3', 'TBC1D7', 'USP6NL', 'S100A1', 'H41096', 'PHLDA1', 'DSCR1L1', 'LOC541471', 'PEG3', 'ABCC3', 'LOC283130', 'AI871056', 'CKMT1A', 'RPS19BP1', 'WWTR1', 'MMP2', 'ADCY1', 'SLC15A2', 'VEGF', 'LGALS3', 'AA975768', 'FZD7', 'X38595', 'CAPG', 'TIMP3', 'ZNF160', 'NPC2', 'CYR61', 'MICAL2', 'FN1', 'AI350724', 'GPNMB', 'D21S2089E', 'RUNX1', 'SBP1', 'TTC23', 'H91845', 'NSF', 'PSG5', 'FBXW7', 'MDK', 'DES', 'AA598631', 'CHI3L2', 'ZNF233', 'LRBA', 'TNFAIP3', 'LOC146795', 'GADD45B', 'EDG1', 'FBXO32', 'AA281932', 'LOC283070', 'ARPP.19', 'EDNRB', 'STMN1', 'FBL', 'LOC388610', 'DPYD', 'GYPA', 'OSR1', 'AP4B1', 'N98591', 'RALY', 'HCLS1', 'CLSTN3', 'DEF6', 'TNFRSF12A', 'AA131320', 'LAMB1', 'COL4A2', 'AI263051', 'S100A10', 'FAM46A', 'LOC613212', 'RAB20', 'AI262682', 'URP2', 'SUV39H1', 'DDN', 'RAB11FIP4', 'APOC1', 'NNMT', 'C4A', 'KCNQ2', 'SYNGR3', 'FBXL16', 'CA12', 'SERPINI1', 'IGFBP5', 'H86813', 'PLOD2', 'ATP6V1C1', 'MOAP1', 'SAA2', 'SRPX', 'USP3', 'ITGA9', 'MAL2', 'STC1', 'GBP1', 'ID4', 'ADARB2', 'ZFHX1B', 'LTF', 'PRKCG', 'RGS16', 'CALM1', 'AA479357', 'RBP7', 'APOC2', 'SVIL', 'DMN', 'H08563', 'SLC16A3', 'TNC', 'SNRPN', 'AA029415', 'GYPC', 'MB', 'AKR1C1', 'H78560', 'HNRNPG.T', 'HSPG2', 'PPP3CA', 'MGC42367', 'HLA.G', 'PSG1', 'RFXAP', 'FABP3', 'EGLN2', 'IMAGE.33267', 'PDE2A', 'PLAU', 'SNCG', 'ITPKA', 'SPINT2', 'UBA52', 'TCTEX1D1', 'MTHFD2', 'SCAMP5', 'SPAG6', 'FLJ38984', 'PRSS1', 'MDFI', 'PCDHGC3', 'AA598555', 'CCR1', 'ID3', 'SORT1', 'C6orf12', 'SERPINH1', 'FAM84B', 'EPHB1', 'HLA.A', 'FAS', 'YWHAG', 'TXNDC', 'DUS3L', 'IL21R', 'TLL2', 'ZNF329', 'PPP3CB', 'TSPYL1', 'LAPTM5', 'LSP1', 'CD44', 'TMEM49', 'BCL2A1', 'YWHAH', 'FCGR2B', 'SERPINA3', 'ADAM19', 'RTN3', 'FREQ', 'PCP4', 'NY.SAR.48', 'H24428', 'PRKCZ', 'COL1A1', 'PALLD', 'MYCBP2', 'CA11', 'ITGA5', 'AEBP1', 'C1orf63', 'EID.3', 'ANXA1', 'GBP2', 'ZNF226', 'AIF1', 'SLC35A2', 'NR4A1', 'CDKN1A', 'SOCS3', 'AI002301', 'PYGL', 'CSPG2', 'NCF1', 'LHFPL2', 'SYT7', 'ESM1', 'CAV1', 'UBE4B', 'AA669383', 'X37864', 'COL1A2', 'DDIT4', 'PLAUR', 'ZNF217', 'PRSS3', 'S100A11', 'A2BP1', 'ASPA', 'MSN', 'MASP1', 'KNS2', 'TIMP1', 'KCNK6', 'FGF13', 'KIAA0963']
+[43, 27, 24, 43, 35, 39, 19, 5, 40, 39, 38, 26, 41, 17, 42, 23, 34, 40, 40, 34, 43, 43, 17, 43, 19, 39, 43, 38, 21, 43, 43, 41, 37, 1, 36, 26, 42, 42, 39, 43, 27, 23, 36, 43, 42, 43, 32, 43, 43, 41, 5, 19, 43, 43, 42, 36, 43, 16, 43, 9, 25, 43, 42, 43, 43, 37, 37, 40, 43, 40, 13, 41, 43, 43, 43, 43, 20, 38, 35, 9, 18, 43, 42, 35, 41, 43, 37, 43, 3, 27, 38, 43, 43, 15, 26, 40, 43, 43, 20, 38, 10, 43, 42, 35, 43, 42, 43, 43, 43, 35, 43, 43, 43, 43, 42, 42, 43, 42, 42, 41, 37, 25, 18, 18, 23, 43, 43, 35, 16, 37, 32, 39, 43, 42, 43, 10, 38, 8, 2, 43, 27, 18, 31, 40, 19, 40, 43, 43, 42, 27, 17, 43, 43, 32, 17, 43, 42, 41, 15, 43, 42, 43, 43, 33, 31, 43, 42, 43, 27, 28, 43, 17, 43, 22, 43, 39, 41, 43, 7, 41, 43, 2, 43, 37, 43, 43, 40, 40, 29, 43, 30, 43, 20, 31, 39, 29, 28, 40, 43, 38, 43, 27, 43, 39, 37, 41, 38, 39, 20, 34, 33, 35, 1, 35, 41, 42, 13, 31, 43, 26, 20, 42, 29, 38, 40, 42, 43, 43, 25, 31, 19, 37, 28, 43, 31, 43, 42, 15, 42, 43, 42, 18, 42, 43, 39, 43, 39, 28, 42, 43, 42, 43, 34, 38, 43, 42, 29, 33, 30, 41, 42, 43, 40, 43, 43, 43, 43, 39, 15, 43, 17, 38, 39, 25, 31, 43, 38, 20, 43, 41, 40, 37, 41, 12, 43, 41, 22, 41, 29, 41, 42, 24, 19, 43, 43, 43, 37, 8, 41, 15, 11, 43, 43, 39, 16, 43, 42, 42, 43, 42, 30, 39, 43, 43, 20, 6, 32, 40, 19, 8, 42, 43, 23, 38, 26, 42, 42, 42, 43, 42, 42, 42, 23, 39, 26, 32, 35, 10, 32, 39, 15, 43, 38, 43, 0, 34, 42, 8, 39, 36, 42, 43, 12, 33, 43, 43, 42, 43, 39, 38, 23, 28, 37, 42, 29, 43, 23, 20, 18, 26, 43, 43, 42, 43, 42, 43, 39, 32, 43, 41, 29, 43, 42, 42, 10, 38, 42, 43, 25, 43, 42, 43, 42, 30, 42, 36, 41, 26, 43, 39, 43, 35, 22, 8, 41, 25, 43, 19, 19, 21, 2, 0, 16, 43, 43, 29, 36, 43, 26, 43, 30, 39]
+[API] [COORDINATOR] row names identified!
+[Time: 29.06.23 14:15:32] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 29.06.23 14:15:33] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['GABBR1', 'CD58', 'LOC400451', 'IGF1R', 'PDPN', 'LILRA1', 'KLRC1', 'PLP2', 'AKR1C2', 'MYBPC2', 'CLTB', 'L1CAM', 'ZNF549', 'TncRNA', 'LYN', 'CTHRC1', 'PDE4DIP', 'WASF1', 'FBXO2', 'NEFH', 'CD47', 'PRG1', 'PDLIM7', 'COL9A2', 'RAB27B', 'KCNJ1', 'FCGRT', 'PRKAR1B', 'LMO7', 'ACAD8', 'VAMP2', 'CCL2', 'HPCA', 'RBP4', 'CDKN2D', 'C1orf187', 'DDEF1', 'OSBPL1A', 'TSPAN6', 'BCAM', 'AA181288', 'PLA2G2A', 'C8orf4', 'SPARC', 'MGC26694', 'ZNF419B', 'SETD5', 'NCF2', 'CCDC3', 'SCN2B', 'IL32', 'PSD3', 'PARP14', 'MED11', 'C16orf5', 'AI335002', 'NUAK1', 'UGCG', 'KIAA1543', 'IGFBP3', 'T51726', 'DIP2C', 'NLGN1', 'PNCK', 'VASP', 'C9orf48', 'SP100', 'MGC18216', 'FAM84A', 'LAMA4', 'EMP3', 'PYHIN1', 'TMEM146', 'CBX6', 'NMNAT2', 'CLCA3', 'AA906888', 'POSTN', 'TCF7L1', 'MYC', 'KLRC2', 'PPP1R14A', 'HBXIP', 'T62491', 'CBLN2', 'DYNLT1', 'ANK3', 'EXT1', 'IGF2BP3', 'NPTX1', 'CAP2', 'HBA1', 'MVP', 'ADFP', 'DECR2', 'CAMKK2', 'NDST1', 'NOTCH1', 'SOX4', 'MST150', 'HPRT1', 'F13A1', 'H10054', 'DKFZp313A2432', 'CEAL1', 'C1R', 'TOMM40', 'INPP5F', 'AA398420', 'CACNB3', 'PRRX1', 'MAPKBP1', 'EDG3', 'R70684', 'TFDP2', 'KCNMA1', 'ITGA3', 'LOC57228', 'NDUFB11', 'BNIP2', 'ANXA5', 'AI357047', 'RAB30', 'T97457', 'LOC389831', 'PTPRZ1', 'HLA.DRB1', 'EPB49', 'COL6A2', 'CASP1', 'AI005038', 'W93688', 'FLJ35740', 'IGHG1', 'WDR7', 'CYBA', 'GOT1', 'CLIC1', 'CDC20B', 'HMOX1', 'EFHB', 'R52960', 'STK17A', 'MRC2', 'ADM', 'PRKCB1', 'DNASE1L1', 'IL1RAP', 'APCS', 'KIAA1644', 'MST1', 'SERPING1', 'GPSM2', 'IFI30', 'TGFBI', 'IQSEC1', 'HLA.F', 'COX7A1', 'HK2', 'IGSF3', 'MGC39606', 'CHN1', 'MSTP9', 'STXBP1', 'PDXP', 'CAMK2A', 'TAP1', 'PLTP', 'ABCA5', 'R61377', 'COX6A2', 'L3MBTL4', 'AA401952', 'AI822135', 'AA490257', 'GAS1', 'MGP', 'CACNB2', 'PYCR1', 'LY96', 'CD53', 'LUM', 'DCLRE1B', 'RPS3A', 'PARD3', 'H20822', 'HEY1', 'BGN', 'AA424849', 'NLK', 'STEAP3', 'COL3A1', 'KLRC3', 'DLL3', 'R70506', 'HAMP', 'TSPAN4', 'VSNL1', 'AA489629', 'BLVRB', 'NPL', 'RND3', 'TBC1D7', 'USP6NL', 'S100A1', 'H41096', 'PHLDA1', 'DSCR1L1', 'LOC541471', 'PEG3', 'ABCC3', 'LOC283130', 'AI871056', 'CKMT1A', 'RPS19BP1', 'WWTR1', 'MMP2', 'ADCY1', 'SLC15A2', 'VEGF', 'LGALS3', 'AA975768', 'FZD7', 'X38595', 'CAPG', 'TIMP3', 'ZNF160', 'NPC2', 'CYR61', 'MICAL2', 'FN1', 'AI350724', 'GPNMB', 'D21S2089E', 'RUNX1', 'SBP1', 'TTC23', 'H91845', 'NSF', 'PSG5', 'FBXW7', 'MDK', 'DES', 'AA598631', 'CHI3L2', 'ZNF233', 'LRBA', 'TNFAIP3', 'LOC146795', 'GADD45B', 'EDG1', 'FBXO32', 'AA281932', 'LOC283070', 'ARPP.19', 'EDNRB', 'STMN1', 'FBL', 'LOC388610', 'DPYD', 'GYPA', 'OSR1', 'AP4B1', 'N98591', 'RALY', 'HCLS1', 'CLSTN3', 'DEF6', 'TNFRSF12A', 'AA131320', 'LAMB1', 'COL4A2', 'AI263051', 'S100A10', 'FAM46A', 'LOC613212', 'RAB20', 'AI262682', 'URP2', 'SUV39H1', 'DDN', 'RAB11FIP4', 'APOC1', 'NNMT', 'C4A', 'KCNQ2', 'SYNGR3', 'FBXL16', 'CA12', 'SERPINI1', 'IGFBP5', 'H86813', 'PLOD2', 'ATP6V1C1', 'MOAP1', 'SAA2', 'SRPX', 'USP3', 'ITGA9', 'MAL2', 'STC1', 'GBP1', 'ID4', 'ADARB2', 'ZFHX1B', 'LTF', 'PRKCG', 'RGS16', 'CALM1', 'AA479357', 'RBP7', 'APOC2', 'SVIL', 'DMN', 'H08563', 'SLC16A3', 'TNC', 'SNRPN', 'AA029415', 'GYPC', 'MB', 'AKR1C1', 'H78560', 'HNRNPG.T', 'HSPG2', 'PPP3CA', 'MGC42367', 'HLA.G', 'PSG1', 'RFXAP', 'FABP3', 'EGLN2', 'IMAGE.33267', 'PDE2A', 'PLAU', 'SNCG', 'ITPKA', 'SPINT2', 'UBA52', 'TCTEX1D1', 'MTHFD2', 'SCAMP5', 'SPAG6', 'FLJ38984', 'PRSS1', 'MDFI', 'PCDHGC3', 'AA598555', 'CCR1', 'ID3', 'SORT1', 'C6orf12', 'SERPINH1', 'FAM84B', 'EPHB1', 'HLA.A', 'FAS', 'YWHAG', 'TXNDC', 'DUS3L', 'IL21R', 'TLL2', 'ZNF329', 'PPP3CB', 'TSPYL1', 'LAPTM5', 'LSP1', 'CD44', 'TMEM49', 'BCL2A1', 'YWHAH', 'FCGR2B', 'SERPINA3', 'ADAM19', 'RTN3', 'FREQ', 'PCP4', 'NY.SAR.48', 'H24428', 'PRKCZ', 'COL1A1', 'PALLD', 'MYCBP2', 'CA11', 'ITGA5', 'AEBP1', 'C1orf63', 'EID.3', 'ANXA1', 'GBP2', 'ZNF226', 'AIF1', 'SLC35A2', 'NR4A1', 'CDKN1A', 'SOCS3', 'AI002301', 'PYGL', 'CSPG2', 'NCF1', 'LHFPL2', 'SYT7', 'ESM1', 'CAV1', 'UBE4B', 'AA669383', 'X37864', 'COL1A2', 'DDIT4', 'PLAUR', 'ZNF217', 'PRSS3', 'S100A11', 'A2BP1', 'ASPA', 'MSN', 'MASP1', 'KNS2', 'TIMP1', 'KCNK6', 'FGF13', 'KIAA0963']
+INDEX
+[146, 133, 156, 52, 86, 47, 118, 89, 9, 67, 214, 296, 29, 409, 395, 385, 323, 149, 312, 186, 103, 418, 253, 197, 151, 34, 300, 212, 226, 13, 147, 274, 384, 292, 269, 361, 32, 294, 258, 49, 249, 276, 315, 403, 210, 31, 91, 316, 8, 404, 247, 106, 407, 406, 155, 215, 307, 346, 22, 115, 371, 1, 154, 125, 12, 109, 208, 35, 382, 289, 74, 297, 55, 150, 145, 17, 193, 267, 132, 264, 117, 420, 23, 311, 337, 387, 349, 0, 250, 422, 319, 310, 273, 227, 135, 295, 402, 237, 196, 138, 288, 340, 401, 166, 19, 189, 360, 322, 83, 172, 327, 170, 321, 398, 57, 228, 373, 137, 61, 410, 192, 207, 239, 92, 235, 302, 417, 393, 159, 252, 301, 255, 201, 381, 126, 355, 261, 99, 265, 175, 262, 342, 415, 130, 144, 339, 308, 328, 287, 153, 134, 173, 50, 104, 358, 362, 366, 18, 291, 64, 3, 374, 230, 206, 168, 286, 357, 318, 131, 185, 59, 222, 386, 225, 234, 388, 423, 16, 220, 248, 283, 378, 28, 183, 5, 224, 160, 70, 391, 348, 114, 152, 116, 94, 177, 304, 330, 313, 180, 65, 119, 174, 129, 15, 341, 383, 260, 334, 79, 139, 221, 414, 204, 278, 162, 190, 324, 303, 421, 100, 113, 236, 411, 257, 72, 123, 45, 364, 370, 408, 202, 367, 309, 42, 107, 39, 62, 298, 281, 36, 376, 272, 363, 377, 87, 58, 46, 266, 195, 412, 25, 37, 101, 27, 120, 111, 187, 413, 203, 223, 11, 41, 44, 419, 97, 209, 271, 254, 71, 136, 320, 122, 359, 325, 275, 98, 389, 194, 285, 163, 336, 282, 51, 128, 241, 277, 372, 188, 110, 347, 219, 181, 268, 105, 169, 369, 380, 256, 331, 333, 167, 246, 171, 4, 400, 232, 416, 76, 251, 231, 63, 178, 2, 33, 69, 142, 165, 244, 199, 263, 238, 7, 80, 43, 161, 112, 40, 329, 66, 164, 141, 48, 84, 121, 184, 218, 290, 314, 93, 10, 176, 182, 6, 242, 368, 394, 229, 354, 332, 356, 26, 335, 143, 96, 191, 217, 306, 213, 396, 21, 284, 53, 38, 78, 95, 326, 211, 305, 140, 343, 344, 240, 198, 375, 75, 345, 379, 353, 279, 200, 102, 397, 73, 352, 77, 157, 14, 20, 179, 338, 24, 365, 299, 392, 259, 85, 350, 243, 148, 351, 108, 405, 390, 399, 60, 270, 127, 158, 293, 124, 233, 317, 90, 216, 81, 68, 88, 245, 82, 56, 205, 280]
+[Time: 29.06.23 14:15:33] [Level: info] transition: aggregate_sums
+[Time: 29.06.23 14:15:34] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([ 2.67130585e+01, -1.00420303e+01, -1.64430565e+01,  6.49325678e+00,
+        6.87962055e+00, -1.40902940e+01,  5.30062822e+00, -5.83191264e+00,
+       -1.25626687e+01, -1.36664674e+01, -1.47956377e+01,  8.32996456e-01,
+       -8.14057291e+00, -1.76344424e+01,  5.63282002e+00, -2.28854843e+00,
+        6.67694411e+00,  1.02966779e+01,  1.16766510e+01, -1.74026030e+01,
+        1.20771070e+00,  2.46941688e+01, -2.17327634e+01,  1.88371504e+01,
+       -4.81000580e-01, -8.62027236e+00,  2.48621287e+01, -3.01416998e+00,
+       -1.31564294e+01,  2.09074573e+00,  2.64001401e+01,  1.70879054e+01,
+       -1.44749471e+01,  0.00000000e+00, -2.76955855e-01, -6.97452694e+00,
+        2.20434898e+00,  1.40459932e+01, -9.67456657e+00, -1.57704477e+00,
+       -1.60351829e+01,  3.02676078e+00,  6.19787985e+00,  2.24953873e+01,
+        1.43327385e+01, -9.13082763e+00,  7.21750338e+00,  2.56142674e+01,
+        8.07813231e-01,  1.99260032e+00,  8.74475356e-01, -1.12170557e+01,
+        1.26131684e+01,  2.40556474e+01,  4.43228835e+00, -7.03746757e-01,
+        1.81849175e+01, -1.23814411e+01, -2.93690919e+00,  5.12875466e-01,
+       -2.16549564e+01,  3.36090277e+00,  1.35744163e+01,  1.22160394e+01,
+       -1.70564149e+01, -4.93820406e+00, -4.10809130e+00, -1.62364545e+01,
+/app/apps/svd/Aggregator_FC_Federated_PCA.py:78: RuntimeWarning: invalid value encountered in true_divide
+  my_sums = my_sums/self.values_per_row
+        1.92193495e+01,  5.95671265e+00, -8.31504113e+00, -2.36829259e+00,
+       -1.99612928e+00,  1.36456121e+01,  1.20669064e+01,  6.19501218e+00,
+        4.77401219e+00, -6.23517778e+00, -2.30628777e+00, -7.69257349e+00,
+        7.94689273e+00,  2.95455319e+01, -2.35861508e+01,  3.52701950e+00,
+        1.08905928e+01,  9.81084079e+00,  7.35816132e-01,  3.09295976e+00,
+       -5.57795870e+00, -8.53910070e+00,  4.34694791e+00,  1.59202656e+01,
+        2.04295656e+01, -5.75373829e-01, -7.68818904e+00,  3.38902893e-01,
+        1.51042791e+01,  1.91315220e+01,  1.08081414e+01, -5.80318895e+00,
+       -8.27073635e+00,  2.11685373e+01, -9.53518856e+00, -8.06667482e+00,
+       -3.06316284e+00,  1.91987116e+01,  1.41956421e+01,  7.58750103e+00,
+        1.43427087e+01, -4.14844387e+00,  2.14928439e+01,  1.43047410e+01,
+        1.59838276e+01,  1.24449930e+01, -7.76653465e+00,  9.73879963e+00,
+        6.37989830e+00,  9.94069114e+00, -3.45735822e+00, -7.41860354e+00,
+       -1.03882010e+01, -1.19123455e+01, -3.27831636e+00, -1.15253417e+01,
+       -9.94007719e+00,  3.13793316e+01,  4.17653457e+01,  1.06061548e+01,
+       -1.42838830e+00, -3.32564810e+00,  3.40951780e+00,  1.00368609e+01,
+        2.30045974e+01,  1.78626761e+01,  1.75711514e+01, -5.46702654e+00,
+        2.24584513e+00, -9.31728990e+00,  0.00000000e+00,  1.87850513e+01,
+       -1.36095066e+01, -8.44514671e+00, -9.16472814e+00,  8.09337799e+00,
+        1.56986279e+00, -2.88218617e+00,  6.84830154e+00,  1.27464809e+01,
+        8.45718782e+00, -8.52338135e+00, -9.52124887e+00,  2.92950740e+01,
+        3.85734086e+00,  4.95650576e+00,  1.00964274e+00,  1.39062544e+01,
+        2.92179226e+00, -1.13336325e+01, -8.52504804e+00, -1.90270894e+00,
+        2.23534367e+00,  2.64738310e+01,  1.09119562e+01,  6.09510392e+00,
+        4.23145182e+00,  6.84721165e+00,  1.56643887e+01,  2.71799752e+01,
+        1.93083583e+00, -5.93545794e+00, -3.55813983e+00,  6.04630729e-01,
+        2.61773044e+01, -2.33705745e+00,  1.60328394e+01, -3.97323928e+00,
+        1.20551139e+00, -3.77086352e+00, -2.08637508e+00, -5.65188827e+00,
+        1.58877253e+01, -5.32137831e-01, -2.80829518e+00,  1.17395423e+01,
+       -6.64062157e-01,  2.26617745e+01,  1.64299153e+01,  1.09754109e+01,
+       -6.71201533e+00,  1.37091307e+01, -1.17915245e+01,  2.79852393e+01,
+        5.37689073e+00,  1.99752204e+01,  8.91013077e+00,  1.70569283e+00,
+       -1.36397624e+01,  6.99624507e+00,  1.82030787e+01, -1.07188286e+01,
+        2.48433092e+01,  8.68438034e-01,  1.94977252e+01, -1.25962192e+01,
+        1.11025626e+00,  1.31130194e+01,  4.71971355e+00,  4.56701297e+00,
+       -1.20733940e+01,  3.22804726e+00,  8.57398390e+00,  6.89182401e+00,
+        0.00000000e+00,  1.10360436e+01,  1.34442073e+01,  1.12735937e+01,
+       -9.67518547e+00, -9.96070846e+00,  2.12914734e+01, -2.82601717e+00,
+        3.30310090e-03,  7.62966637e+00,  2.70855945e+00,  6.36863443e-01,
+        6.49871226e+00,  1.02694247e+01,  2.47175546e+00,  7.62005318e+00,
+       -1.01747156e+01, -2.90769493e+00, -8.89208134e+00,  1.40108105e+01,
+       -6.03136501e-01, -1.01750957e+01, -9.06918730e+00, -9.76242891e+00,
+       -2.16557725e+00, -1.01134825e+01,  7.83935651e+00, -6.89235464e+00,
+        3.77751890e+00, -7.85045484e+00, -1.00717879e+01,  2.02847498e+01,
+        2.45589993e+01, -6.12676808e-01, -1.66676862e+01, -2.05342146e+01,
+        1.25694259e+01,  1.82094892e+01, -3.43131044e+00,  2.69304647e+00,
+        3.50255500e+00, -1.05357271e+01,  1.14293441e+01,  1.74399008e+01,
+       -4.06748899e+00, -9.05826053e+00, -9.38105694e+00,  6.96714562e+00,
+        3.78493522e+00, -5.11336935e+00, -1.13314815e+01,  1.32861986e+01,
+        1.81256004e+01,  1.55942883e+01,  4.89007079e+00,  4.12439114e+00,
+       -6.79530165e+00,  3.23357056e+01, -8.61615300e+00,  1.12779525e+01,
+       -3.78656079e+00, -4.34140113e+00, -5.90503149e+00, -1.33205610e+01,
+       -2.30274990e+00, -1.35966070e+01,  1.09810668e+01,  2.71418697e+00,
+        1.25253150e+01,  2.70979753e+00, -1.04088225e+01,  4.89879253e+00,
+        1.66170144e+01,  2.75800009e+01, -5.40679488e+00,  1.25470119e+01,
+        6.07746270e+00,  2.04265717e+01,  2.79606440e+00, -1.81941299e+01,
+       -3.43288170e+00,  1.44295773e+01,  1.44492514e+01,  1.58639788e+01,
+        5.44373271e+00, -1.07908835e+01, -8.94540727e+00, -1.06628190e+01,
+       -1.16854446e+00,  1.76823194e+01,  3.13848549e+01, -5.27592027e+00,
+       -4.18700817e+00,  1.85697683e+01, -1.97944457e+00,  1.47094980e+01,
+        2.79231767e+01,  7.36140552e+00, -1.16633312e+01,  9.57493436e+00,
+        3.16675385e-01,  1.49003815e-01, -1.15225868e+01, -2.64641573e+00,
+       -1.58089748e+00,  1.21405782e+01,  1.04305840e+01, -7.13435256e+00,
+        1.21901548e+01,  4.11139982e+00, -3.90439660e+00, -2.75736249e+00,
+        8.37858497e-01, -7.33930397e+00,  7.79103543e+00,  8.19007006e+00,
+        2.80641034e+00,  1.76454502e+01,  5.82899453e+00, -7.48102545e-01,
+       -1.70925707e+00,  5.63142364e+00, -1.53288822e+01,  5.21165949e+00,
+       -8.08202103e+00, -5.53381529e+00,  1.93861561e+00,  1.90939086e+00,
+        2.40142139e+00,  2.95345989e+01, -5.42270855e+00,  5.82405207e+00,
+        0.00000000e+00, -3.44637744e+00,  2.74498578e+01, -6.96874216e-01,
+        8.01297606e+00,  5.83213798e+00, -4.66745713e-01,  7.80665986e+00,
+       -6.09098224e+00,  1.21819368e+01,  2.62903595e+01,  6.74912428e+00,
+       -3.38994067e-01,  1.00758527e+00, -1.37068703e+01, -1.19317616e+01,
+       -8.85361642e+00, -1.17363054e+01, -2.52277296e+01,  3.49814391e+00,
+       -1.40101462e+01,  2.30061614e+01, -9.40706773e+00, -1.56414686e+01,
+       -6.83070841e+00, -9.72844595e+00,  1.33174949e+01,  2.24787583e+01,
+        1.75529595e+01,  1.72111512e+01,  9.53222092e+00,  1.30454265e+01,
+        4.45874417e+00, -1.49871955e+01,  1.40606228e+01,  8.90242715e+00,
+        7.99058590e-01,  2.13474739e+01,  1.04613217e+01,  2.09196056e+01,
+       -2.10905577e+00,  1.01825481e+01, -1.77845884e+01, -4.69559948e+00,
+        1.48713766e+00,  2.01225446e+01, -1.53422939e+00,  2.17205952e+01,
+       -2.42450719e+00, -2.13798399e+00, -1.40113462e+00,  2.27745375e+00,
+        1.22513758e+00, -7.86219644e+00,  2.62480073e+01,  9.88046312e-02,
+        1.65896852e+01,  7.69287175e-01, -1.22819004e+00,  4.71852411e-01,
+       -1.82516261e+01, -7.54018882e+00,  2.87522538e+01,  9.88201619e-02,
+       -6.50308609e+00, -1.24558061e+00, -1.53720645e+00,  0.00000000e+00,
+       -7.00084716e+00,  1.86155911e+01,  2.45605448e+01, -3.11274906e+00,
+        1.35887448e+01,  1.33417018e+01,  5.18974446e+00, -1.09938301e+01,
+        8.06840242e+00, -7.17559865e+00]), 'Sample count': 17}, {'Sums': array([ 42.9007207 , -30.31692131, -16.97367267,   1.11478367,
+        16.96181647, -16.34002406,   1.64771677, -10.62831186,
+       -21.01975103, -32.03531927, -13.15755623,  -6.60654788,
+       -11.37475874,  -5.56366943,   5.65769687,  -4.85565206,
+        10.77751924,  28.47402742,  22.05449925, -16.05143545,
+         8.44970426,  37.38101361,  -8.86726943,  35.29995995,
+         1.62504329, -18.89264026,  33.02847201,   2.86749745,
+       -23.66581255,   3.50992463,  43.23166043,  18.09212694,
+         3.81812303,  -4.29094284,   6.19183046,  -2.91761008,
+         6.23707483,  20.0235761 , -11.26674302,   1.63773068,
+       -12.00473787,   9.30246134,  13.43556457,  33.58978347,
+        34.12160421, -13.79142535,  -6.96638785,  38.63954234,
+        -3.62180058,  -2.60969211,  -3.6573616 ,  -8.38096741,
+        22.69370681,  32.68377127,  22.97912874, -14.95447486,
+        28.78508495, -24.17960341,   1.36577922,  -9.801032  ,
+       -11.86061483,   0.73381816,  16.07387562,  24.10658501,
+       -22.73140106,  -2.49812998, -10.69871515, -28.36457456,
+        38.93893123,   6.8436352 ,  -7.88465987,  -5.26845117,
+        -7.40997458,  16.77921043,  19.01943819,  10.69261504,
+        -1.32475845,   0.719246  ,  -9.25164412,  -7.30500914,
+         5.6754734 ,  32.60760926, -26.61158225,  -0.91016139,
+        26.110256  ,   4.46528206,   2.0551514 ,   2.50479606,
+        -3.29660982,   1.99972477,  12.53702641,  19.80619136,
+        39.3785139 ,  -4.20235084, -17.81835168,  11.73791461,
+        18.17226258,  25.13147477,  -2.2212053 ,   6.58457684,
+       -10.35051749,  30.85367289,   8.97075319, -12.13577948,
+        -7.16767318,  19.89728366,  18.7022459 ,  17.28575396,
+        22.74171752,  -5.62252869,  31.79706215,  31.161377  ,
+        14.61856994,  12.39690262,  -9.86549591,   7.95027644,
+         0.36566987,  11.44941833,  -3.85432233, -19.48902088,
+       -25.65956312, -23.5226948 ,  -4.06805688,  -3.52591034,
+        -2.71830458,  54.99704955,  62.51287135,  21.56111361,
+       -12.45257416,   2.25030342,  -8.32059639,  18.26477853,
+        40.82423952,  26.72346351,  26.26737668,  -7.20591104,
+        -1.12024693,  -8.54949151,  -2.90792428,  29.45282245,
+       -19.57560906, -15.52565803,  -7.20280186,   8.25195328,
+         2.22537021,  18.43613191,   6.81729545,  23.93703121,
+        11.44553137,   0.22601668, -23.34971654,  46.84241612,
+         6.16527189,   6.01029438, -15.27165411,  31.11314393,
+         7.55732557, -14.87620045, -19.36450023,   0.83584491,
+         5.44156491,  44.89808921,  16.4331743 ,  19.71538396,
+         7.77675264,  13.08384824,  17.62619576,  40.70549511,
+         7.17423233,  -5.51676749,  -2.44186566,  -7.51716209,
+        39.46076628,  -9.37414136,  17.80468877,   5.73254392,
+        -1.39459144, -12.17424688,  -5.68376764,  -8.69982496,
+        23.86643678,  -0.38951261,  -7.13138958,   8.40915285,
+        -4.47519585,  29.09232155,  17.52207812,  17.99648404,
+        -0.13864725,  23.98985169,   2.95214255,  34.04270792,
+         9.02919613,   8.20368519,   1.82021034,   0.48077122,
+        -4.5118644 ,  19.86225691,  22.75899648, -21.93867978,
+        39.54552619, -13.38712287,  27.06151218, -28.31312097,
+        13.46970573,  27.16574567, -18.7368356 ,  10.15013336,
+        -1.1457943 , -13.1417503 ,   1.87570403,  13.68732911,
+        -1.3306854 ,  21.44265088,  21.97033376,  21.36220119,
+       -21.56934899,   2.85795905,  33.52150117,   9.24182681,
+        -8.6626107 ,   9.04275858,   0.91955455,  14.6788572 ,
+        17.63313686,  17.56435916,   4.63699579,   3.58458661,
+        -4.80148692,  10.43267484, -12.10942639,   5.41872022,
+        -7.30715946,  -9.6958913 ,  -3.70192217,  -8.80830603,
+        -7.87264398, -10.75697063,  18.97193163,  -4.31984143,
+        11.70991654, -24.51384317,   0.13043288,  24.19201158,
+        31.19544825,   1.00881746, -27.99751981,  -8.51951502,
+        20.57644675,  26.15474913,  -4.48772041,   1.98259288,
+         2.72368287, -17.29019558,  22.0647516 ,  22.69103084,
+        -9.06424059, -26.25179469, -10.01414529,  12.13315983,
+         5.28357117,  -9.34379824, -12.12891866,  12.40416129,
+        27.31601709,  20.82262154,  20.78779685,  -3.11275646,
+        -5.50808618,  43.85396129, -18.56264955,  12.49183057,
+       -18.11824572, -18.10656222,  -3.45332715,  -9.80780705,
+        -8.86907449, -20.31570443,  12.42787688,  -1.83722968,
+        20.04304855,  10.46102006, -23.49520722,   2.66034442,
+        29.86881658,  26.19318571, -20.07465566,  27.87830433,
+         7.31940292,  30.33888293,  14.79753612, -17.95758935,
+       -19.91073882,  24.09180801,  27.55542502,  11.01756797,
+        -0.15040851,  -4.96774359, -17.97679401,  -6.14798938,
+       -10.19706172,  27.9692238 ,  45.97798314, -20.89204073,
+        -3.53019231,  23.91328861,  10.36417734,  23.33128318,
+        48.61101754,  11.07383128, -31.28590186,   8.18372317,
+        -9.10027471,  -2.6843699 , -18.07635069,  -4.69091697,
+         1.89007035,  18.29421298,   6.42128328,  -1.67082379,
+        14.63879136,   1.91189131,   1.87357823,  -3.3441711 ,
+        -3.55982684, -11.32760444,   9.07423645,  13.49287603,
+        13.77063635,  29.33294942,  12.09067896,  -1.04085441,
+         3.60519057,   6.54661122,  -6.27624583,  11.16029977,
+         0.8045894 ,  -5.70053174,   1.13879269,   0.21463231,
+       -10.00858166,  46.75150616, -16.85027158,  20.66120721,
+         0.        ,   5.45338896,  41.79583218,  -8.17783735,
+        -3.10597653,  -1.74105524,   0.93607767,   9.75255053,
+       -21.8239408 ,  -6.14840663,  37.46381066,  14.2199471 ,
+        -1.04576483,  10.6360229 ,  -6.98931445, -26.1756699 ,
+       -16.4616533 , -37.99057551, -42.05969413,  11.51791585,
+       -10.03817539,  37.68884501, -19.839297  ,  -4.83647867,
+        -8.32692281, -14.1987079 ,  23.11244177,  33.60910259,
+        26.50308559,  19.65579353,  17.51303628,  24.85795693,
+         9.46249282,  -1.40409555,  28.71997988,  18.3039158 ,
+        14.62317947,  26.86580367,  10.92183477,  40.24926761,
+       -22.46916445,  13.86093466, -21.01399139,   0.33908147,
+         0.13326408,  25.0916295 ,   1.40674833,  31.2369353 ,
+         8.5549901 , -29.62761045,   0.74194322,  10.72678737,
+        -5.29577789, -17.33638031,  31.17661953,   8.69366812,
+        22.95621672,  16.84658348,   8.14415673,  -9.30329039,
+       -17.43852374, -12.85332809,  49.30995472,  -4.78230685,
+       -13.59383695,  -3.46526368,  -0.70343135,   0.        ,
+       -10.38412708,  33.63947076,  38.51969158,  -2.92627835,
+         9.22566187,  28.01595643,   9.6970924 , -10.9167252 ,
+        17.41221984, -24.80046659]), 'Sample count': 26}]
+SUMS
+[ 1.61892510e+00 -1.49477599e+00 -1.39236372e+00  1.76931173e-01
+  6.81183915e-01 -7.80264566e-01  3.65702368e-01 -3.29204490e+00
+ -8.39560493e-01 -1.17184068e+00 -7.35610365e-01 -2.22059670e-01
+ -4.75983699e-01 -1.36459482e+00  2.68821831e-01 -3.10617413e-01
+  5.13366569e-01  9.69267634e-01  8.43278757e-01 -9.83942308e-01
+  2.24591045e-01  1.44360889e+00 -1.80000193e+00  1.25900257e+00
+  6.02127742e-02 -7.05459298e-01  1.34629304e+00 -3.85980329e-03
+ -1.75344009e+00  1.30248148e-01  1.61934420e+00  8.58049569e-01
+ -2.88022273e-01 -4.29094284e+00  1.64302072e-01 -3.80466808e-01
+  2.00986281e-01  8.11180221e-01 -5.36956656e-01  1.41130010e-03
+ -1.03851558e+00  5.36053136e-01  5.45373456e-01  1.30430630e+00
+  1.15367483e+00 -5.33075651e-01  7.84736025e-03  1.49427465e+00
+ -6.54415663e-02 -1.50510194e-02 -5.56577249e-01 -1.03147490e+00
+  8.21090121e-01  1.31952136e+00  6.52652788e-01 -4.34950600e-01
+  1.09232564e+00 -2.28506528e+00 -3.65379061e-02 -1.03201739e+00
+ -1.34062285e+00  9.52260682e-02  7.05911711e-01  8.44712196e-01
+ -9.25298045e-01 -2.00982001e-01 -4.00183958e-01 -1.11502573e+00
+  1.35251816e+00  3.20008696e-01 -1.24613085e+00 -1.86262043e-01
+ -2.18746601e-01  7.07554012e-01  7.22938247e-01  3.92735517e-01
+  1.72462687e-01 -1.45156100e-01 -3.30226625e-01 -1.66639807e+00
+  7.56798118e-01  1.44542189e+00 -1.19518412e+00  7.47673746e-02
+  9.02459726e-01  3.32002857e-01  7.54315550e-02  1.30180368e-01
+ -2.95818951e+00 -2.42199109e-01  4.44315114e-01  8.30847837e-01
+  1.39088557e+00 -3.18514978e-01 -9.81020797e-01  3.01920438e-01
+  7.73873062e-01  1.02937202e+00  4.29346804e-01  2.05628391e-02
+ -1.86212538e+00  1.20981884e+00 -1.34389374e-02 -5.77212980e-01
+ -2.37926419e-01  9.30857029e-01  7.65067163e-01  5.78447790e-01
+  8.62428516e-01 -2.79170645e-01  1.23930014e+00  1.05735158e+00
+  7.11683664e-01  5.77718504e-01 -4.19810251e-01  4.21168478e-01
+  1.56873678e-01  5.09288321e-01 -1.74087632e-01 -6.56283522e-01
+ -9.74263896e-01 -1.41740161e+00 -4.08131847e-01 -8.36180671e-01
+ -5.50364425e-01  2.00875305e+00  2.42507481e+00  9.19064813e-01
+ -8.67560154e-01 -2.90633698e-02 -1.53471206e-01  7.25683061e-01
+  1.48439156e+00  1.06157475e+00  1.01950065e+00 -1.26729376e+00
+  2.96210052e-02 -2.23334768e+00 -1.45396214e+00  1.12181102e+00
+ -1.22907836e+00 -1.33171137e+00 -5.27984839e-01  4.08633282e-01
+  1.99749105e-01  3.88848643e-01  3.17804581e-01  8.53104932e-01
+  4.73874266e-01 -3.07309803e-01 -1.93358620e+00  1.77063930e+00
+  2.33084017e-01  3.42712504e-01 -8.38941845e-01  1.04696275e+00
+  2.49502806e-01 -6.39264219e-01 -1.85930322e+00 -2.48107914e-02
+  1.82783538e-01  1.65981210e+00  6.35933267e-01  7.82135996e-01
+  3.87361434e-01  4.63513021e-01  7.92632963e-01  1.57873187e+00
+  3.37224747e-01 -4.09008051e-01 -1.39535011e-01 -4.06619492e-01
+  1.52646676e+00 -5.32327218e-01  7.86919260e-01  4.51103754e-02
+ -4.61170846e-03 -3.70816521e-01 -1.11002039e+00 -3.50041786e-01
+  9.24515398e-01 -4.60825220e-01 -2.31155460e-01  5.44559327e-01
+ -1.19517628e-01  1.20358363e+00  8.48799834e-01  7.24297372e-01
+ -2.36229744e-01  8.76720520e-01 -2.94646065e-01  1.44251040e+00
+  7.20304343e-01  9.08996955e-01  2.75136952e-01  7.53953120e-02
+ -6.48272385e-01  6.71462550e-01  9.52606399e-01 -8.59408114e-01
+  1.49741478e+00 -4.63654994e-01  1.08277296e+00 -1.04895744e+00
+  3.94053027e-01  9.82408905e-01 -3.68871633e-01  3.77362727e-01
+ -6.60959414e-01 -2.91579501e-01  3.16657210e-01  5.87975804e-01
+ -1.33068540e+00  9.27962699e-01  8.63769295e-01  7.77042735e-01
+ -2.40342573e+00 -2.29120949e-01  1.27472034e+00  2.46761909e-01
+ -4.32965380e-01  3.96962499e-01  1.25107379e-01  4.03045280e-01
+  6.03296228e-01  6.62709139e-01  1.65319796e-01  2.60573019e-01
+ -5.99048100e-01  2.42741287e-01 -1.10534251e+00  5.25122451e-01
+ -2.82510570e-01 -4.62115976e-01 -4.11971273e-01 -4.31877557e-01
+ -2.39005267e-01 -1.39136354e+00  6.38364003e-01 -2.60748746e-01
+  3.68748463e-01 -1.79801656e+00 -2.36698929e-01  1.03434329e+00
+  1.42960122e+00  9.21257335e-03 -1.14526169e+00 -1.03763320e+00
+  7.89187444e-01  1.03172647e+00 -1.88548354e-01  1.08735799e-01
+  1.83124643e-01 -7.32261122e-01  7.78932457e-01  9.55498372e-01
+ -4.52818261e-01 -1.07000167e+00 -6.46506741e-01  4.65861109e-01
+  2.15916819e-01 -3.36213200e-01 -5.86510004e-01  5.97450230e-01
+  1.05678180e+00  8.46904879e-01  5.97159713e-01  2.59393507e-02
+ -8.20225855e-01  1.77185272e+00 -1.59875309e+00  6.25520607e-01
+ -5.61661705e-01 -8.97918534e-01 -3.01882537e-01 -5.37869024e-01
+ -2.93995379e-01 -1.69561557e+00  5.44394039e-01  2.13892023e-02
+  8.14209090e-01  3.55968043e-01 -8.26927554e-01  6.29928079e-01
+  1.08106584e+00  1.31154114e+00 -1.15824775e+00  9.85983324e-01
+  4.61960884e-01  1.23818182e+00  4.18895251e-01 -1.50632164e+00
+ -1.22861161e+00  8.95846170e-01  9.76852940e-01  6.25152251e-01
+  1.43062816e-01 -1.96982839e+00 -6.56639055e-01 -1.12072056e+00
+ -1.03323693e+00  1.06166380e+00  1.79913577e+00 -6.70973359e-01
+ -4.82325030e-01  9.87978069e-01  1.99636495e-01  9.05732884e-01
+  1.77986498e+00  4.38934209e-01 -1.43164110e+00  4.55350193e-01
+ -2.04269752e-01 -5.89620020e-02 -1.47994687e+00 -1.22288878e+00
+  9.66165222e-03  7.60869780e-01  8.86940381e-01 -1.10064704e+00
+  6.38784432e-01  1.40076538e-01 -8.82964510e-02 -1.60566673e-01
+ -1.04691090e-01 -4.44450200e-01  4.01554092e-01  5.16260621e-01
+  3.85512714e-01  1.11853332e+00  4.26658893e-01 -4.25942133e-02
+  8.24318914e-02  3.12257304e-01 -8.30966464e-01  5.11623727e-01
+ -2.07926618e-01 -1.12343470e+00  9.61690094e-02  5.44621328e-02
+ -5.07144018e-01  1.77409547e+00 -5.86131056e-01  6.15936262e-01
+             nan  5.90297506e-02  1.64870690e+00 -1.10933895e+00
+  1.25820501e-01  1.13641187e-01  1.11745705e-02  4.08353730e-01
+ -2.32624359e+00  1.82834249e-01  1.48265512e+00  4.87652823e-01
+ -3.29704500e-02  2.70781586e-01 -5.30671403e-01 -1.00282715e+00
+ -1.10066390e+00 -1.77596003e+00 -1.81857902e+00  3.57525232e-01
+ -8.29252469e-01  1.41151178e+00 -1.27158108e+00 -1.02389736e+00
+ -8.42090623e-01 -9.20275148e-01  8.47207831e-01  1.30436886e+00
+  1.04895345e+00  8.57370807e-01  6.43934695e-01  8.81474033e-01
+  3.56954795e-01 -5.12227845e-01  9.94897736e-01  6.63569340e-01
+  5.31801312e-01  1.12123901e+00  5.09122773e-01  1.45640174e+00
+ -2.45782202e+00  6.32723230e-01 -9.23775710e-01 -1.01314372e-01
+  6.48160695e-02  1.05149242e+00 -3.03526342e-03  1.23157048e+00
+  1.45963879e-01 -1.05885315e+00 -1.56950333e-02  3.61228920e-01
+ -9.92839101e-02 -9.69176029e-01  1.33545644e+00  2.25448019e-01
+  9.19672137e-01  5.03310590e-01  3.14362122e-01 -1.10392975e+00
+ -8.70491459e-01 -8.15740676e-01  1.81540020e+00 -2.46499299e-01
+ -1.05773279e+00 -2.24325919e-01 -1.12031890e+00             nan
+ -1.08656089e+00  1.21523400e+00  1.46698224e+00 -2.08242325e-01
+  6.33733519e-01  9.61806005e-01  5.72570649e-01 -5.09547798e-01
+  8.49354076e-01 -8.19899109e-01]
+[Time: 29.06.23 14:15:35] [Level: info] transition: compute_std
+[CTRL] GET /data
+[Time: 29.06.23 14:15:36] [Level: info] state: compute_std
+(422, 1)
+[Time: 29.06.23 14:15:36] [Level: info] transition: aggregate_stds
+[Time: 29.06.23 14:15:37] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[1.14450417e+01 1.77355813e+01 3.03423334e+01 6.89257631e+00
+ 3.10851514e+01 1.07568925e+01 1.20694556e+01 6.45092814e+00
+ 2.11503225e+01 1.86177082e+01 3.26881604e+01 1.72074960e+01
+ 6.97412505e+00 2.65722090e+01 1.00374505e+01 3.48674506e+00
+ 8.30728719e+00 6.05605991e+01 1.70433422e+01 7.25482079e+01
+ 5.07227166e+01 5.27346397e+00 4.43861554e+01 6.67280655e+00
+ 1.84956376e+00 1.54496861e+01 2.15262111e+00 8.39543154e+00
+ 1.01720546e+01 1.46858001e+01 4.07391871e+00 8.19069123e+00
+ 7.24017508e+01 0.00000000e+00 5.03154783e+00 1.30765513e+01
+ 6.70886487e+00 2.26743816e+00 4.92226024e+01 5.26755280e+00
+ 1.76313032e+01 2.14943850e+01 1.51001094e+01 3.94423213e+00
+ 3.64870692e+01 4.67527196e+00 9.98969693e+00 4.83042184e+00
+ 5.93063065e+00 5.10875154e+01 2.04791156e+00 3.56705482e+01
+ 6.38533621e+00 1.95445054e+00 3.25842925e+01 1.70530031e+01
+ 1.78558611e+00 1.22074649e+01 1.08562032e+01 3.68785231e+00
+ 2.62564511e+01 3.89337875e+00 2.07352874e+01 8.53091943e+00
+ 1.49549602e+01 2.43150249e+01 3.43591118e+01 4.08693816e+01
+ 1.13341130e+01 1.13838047e+01 3.96171464e+00 1.82967130e+01
+ 3.95196856e+00 5.69379549e+00 1.23298793e+01 8.12709641e-01
+ 3.35386596e+01 3.50591984e+01 5.29947854e+01 1.70028229e+01
+ 8.21606701e+00 5.89957142e+00 3.59532162e+01 1.73871727e+01
+ 1.09288914e+01 8.42648955e+00 2.21456520e+01 4.69576720e+00
+ 1.16231511e+00 3.49822369e+01 5.34425574e+00 1.33400842e+01
+ 1.97586388e+01 5.72332683e+00 4.37534821e+01 1.59481940e+01
+ 1.50455222e+01 1.39198735e+01 7.16102408e+00 3.60219478e+01
+ 4.87156410e+00 8.05400430e+00 6.66039454e+01 2.55146275e+01
+ 2.50985720e+00 1.09830871e+01 4.63379631e+00 3.44190599e+01
+ 1.29554537e+01 1.77460602e+01 3.92333090e+00 2.14303121e+01
+ 7.39315960e+00 6.12694157e+00 4.91672023e+00 9.63015373e+00
+ 1.11570885e+01 1.74668754e+01 7.98432812e+00 8.83427203e+00
+ 1.57137244e+01 2.71764828e+01 2.41290133e+01 3.01597183e+01
+ 8.36419107e+01 3.09085244e+01 1.60841097e+00 4.44139642e+00
+ 8.83024730e+00 2.63428208e+01 1.12311031e+01 1.27186192e+01
+ 4.55364482e+00 8.26076383e+00 5.71694165e+00 2.59548076e+00
+ 9.46270082e+00 4.43114896e-01 0.00000000e+00 1.76342720e+01
+ 3.43911546e+01 6.89994393e+00 2.28387912e+01 5.13012448e+00
+ 2.07715537e+00 4.66256161e+01 6.90774490e+00 1.49509389e+01
+ 8.67816860e+00 2.06466785e+01 9.29241793e+01 6.59562221e+00
+ 1.84833484e+00 1.68547618e+01 9.17603760e+00 1.32745040e+01
+ 6.21181668e+01 2.78254854e+01 1.84485904e+01 2.92853365e+00
+ 3.39867490e+00 2.29416752e+00 8.53947814e+00 1.55270245e+01
+ 6.49928301e+00 1.77715455e+01 2.72953329e+00 2.53247166e+00
+ 2.74135602e+01 5.18180018e+00 8.16557843e+00 6.17659022e+00
+ 2.48478647e+00 2.66171852e+01 9.80263400e+00 5.74640918e+01
+ 2.81632510e+01 5.98167441e+00 4.12158439e+00 4.93737618e+01
+ 8.31513312e+00 5.08548845e-03 4.09089512e+00 3.82680725e+00
+ 6.14533062e+00 6.22511675e+00 9.50595647e+00 4.17632618e+01
+ 1.65272802e+01 4.82468278e+00 4.69875927e+01 1.00595306e+01
+ 2.87316093e+01 2.17809410e+01 8.16477531e+00 1.26522247e+01
+ 2.21779054e+01 2.66676015e+01 7.54379123e+00 1.15291354e+01
+ 6.57998579e+00 5.07184437e+00 5.34015204e+00 2.23562435e+01
+ 2.71591749e+01 1.25443336e+01 2.98540224e+01 9.19255499e+00
+ 4.21315792e+01 1.17151105e+01 1.72665019e+01 2.06254815e+01
+ 0.00000000e+00 9.97548240e+00 5.25492334e+01 3.81094494e+00
+ 1.09789710e+01 2.12467380e+01 8.00653421e+00 1.78620810e+01
+ 6.26850112e+00 2.79476370e+01 4.23807531e+00 5.17331031e+01
+ 2.99040705e+01 3.84294152e+01 2.00343615e+00 8.69175601e+00
+ 3.70831365e+01 2.02157193e+01 1.96178432e+01 1.59724210e+01
+ 1.51340492e+01 1.46888513e+01 2.03573358e+01 3.85167733e+00
+ 2.63750555e+01 2.42820772e+01 1.48734566e+01 3.63241132e+00
+ 1.67982226e+01 3.58673886e+01 5.96190010e+01 4.25907229e+00
+ 8.83259696e+00 1.78688759e+00 1.92470035e+01 5.72407142e+01
+ 2.27811434e+01 3.92166397e+00 3.85910870e+00 8.02480606e+00
+ 2.32597084e+01 3.60696176e+01 1.42076141e+01 1.14588841e+01
+ 1.36480846e+01 6.33923215e+01 4.35895485e+01 2.50304763e+01
+ 3.62964849e+00 4.04707480e+00 1.89953972e+01 4.63363804e+00
+ 9.67523696e+00 1.18280881e+01 3.26071987e+01 1.63740205e+01
+ 1.38650517e+01 3.79966530e+00 1.31850156e+01 1.48332897e+01
+ 3.96454933e+01 8.06342537e+00 2.35671117e+01 8.73640835e+01
+ 1.37419216e+01 3.27733160e+01 6.17678553e+00 8.39287873e+00
+ 6.08090558e+00 1.88617751e+01 1.11939517e+01 2.18636444e+00
+ 1.26812861e+01 8.30897497e+00 1.08757287e+00 4.34069466e+01
+ 1.44868021e+01 7.69231730e+00 1.77637477e+01 2.82907338e+01
+ 4.38599741e+00 7.66485281e+00 1.22137562e+01 8.76519751e+00
+ 1.55810923e+01 1.78342653e+01 1.63214962e+01 6.28756156e+01
+ 1.41446086e+00 6.94267496e+00 3.57631847e+00 8.08079176e+00
+ 3.92658319e+01 2.02396339e+01 2.94324036e+01 9.97170785e+00
+ 5.53304059e+00 1.72571795e+01 1.08468130e+01 1.43646123e+01
+ 6.96296070e+00 1.23290140e+01 4.87386811e+00 2.52303373e+00
+ 3.69896359e+01 1.80734075e+01 6.10719443e+00 8.28778172e+00
+ 6.37080997e+00 6.56527450e+00 3.33742104e+01 4.55371547e+00
+ 8.26537424e+00 4.91093380e+01 6.16199099e+00 6.85791404e+00
+ 3.89419813e+00 7.28426173e+00 8.67671540e+00 3.48377859e+00
+ 1.63069007e+01 4.14148908e+01 4.79055627e+01 2.18547324e+01
+ 3.74912630e+01 1.83765574e+01 8.88689431e+00 1.65473738e+00
+ 6.48613133e+00 5.42902923e+00 6.61745741e+00 5.47497010e+01
+ 0.00000000e+00 9.56498867e+01 8.08934175e+00 2.44750418e+00
+ 1.13967030e+01 3.12034120e+01 3.40391520e+00 1.21336612e+01
+ 5.35393069e+00 2.59407055e+01 2.53649624e+01 3.70721492e+01
+ 9.60545158e+00 1.30032578e+01 4.46762102e+01 1.23958765e+01
+ 3.72813452e+01 1.48466530e+01 2.18964477e+01 1.39392476e+01
+ 6.83734216e+01 9.31570592e+00 2.92083775e+01 6.58372145e+01
+ 1.38825049e+01 2.90334235e+01 2.07017055e+00 4.82867323e+00
+ 2.31780248e+01 5.63735011e+00 2.15863337e+01 9.58613259e+00
+ 2.08936023e+01 4.82255098e+01 1.49835429e+01 9.94497196e+00
+ 5.21878935e+01 1.46431825e+00 1.08702878e+01 1.16589620e+01
+ 1.89235446e+01 9.30360798e+00 3.99313147e+01 4.08527148e+00
+ 8.22247193e+00 6.89881385e+00 5.05742184e+00 4.32609889e+00
+ 1.85116802e+01 1.82435639e+01 3.58264477e+01 2.79904462e+01
+ 8.40912929e+00 1.28908714e+01 4.24964441e+00 2.13873217e+01
+ 7.32553920e+00 3.80880921e+01 2.15757285e+01 2.48308941e+00
+ 5.92460452e+01 1.92767942e+01 2.16399930e+01 2.05853031e+01
+ 1.40316861e+01 2.85081689e+01 1.73795230e-01 0.00000000e+00
+ 5.90009632e+00 7.02132925e+00 8.03096731e+00 1.03995251e+01
+ 2.33350370e+01 1.38705425e+01 1.24378450e+01 5.88962200e+00
+ 9.00914123e+00 1.94126094e+01]
+[9.27282121e+00 6.44643010e+01 2.63583116e+01 2.97099221e+00
+ 2.70579892e+01 1.41780005e+01 7.44881101e+01 1.93767698e+01
+ 2.87549772e+01 2.07838751e+01 1.06857615e+02 4.09084999e+01
+ 2.06797281e+01 1.78762606e+01 1.89626931e+01 2.91024396e+01
+ 8.53299781e+00 1.08622844e+01 6.16119629e+01 9.23152909e+01
+ 2.94271652e+01 4.28838260e+00 1.52931950e+01 6.94663486e+00
+ 8.71886791e+00 4.19338093e+01 2.68856942e+00 2.43639320e+01
+ 3.76446980e+01 5.57158756e+00 7.00766459e+00 3.37374623e+01
+ 8.10434883e+01 0.00000000e+00 1.79105056e+01 2.42369770e+01
+ 6.67277955e+00 1.49551944e+01 4.35625051e+01 1.07912427e+01
+ 1.01742007e+01 2.37023020e+01 2.42193406e+01 9.50397893e+00
+ 1.90332005e+01 2.39536782e+01 6.51996460e+01 4.44682892e+00
+ 1.12621042e+01 4.46802345e+01 8.29838016e+00 1.76539972e+01
+ 4.24975220e+00 3.31097374e+00 1.41712472e+01 7.11066636e+01
+ 1.85309961e+01 3.42665806e+01 4.61312742e+00 2.40491253e+01
+ 2.54567866e+01 8.94223973e+00 2.06965461e+01 9.97617745e+00
+ 1.75062461e+01 5.19844241e+01 2.68643129e+01 3.56808779e+01
+ 4.77745040e+00 2.89159033e+01 7.84582141e+00 1.93828036e+01
+ 7.44896935e+00 2.40509320e+01 3.10950046e+01 1.73445122e+00
+ 3.03926179e+01 1.08942956e+02 1.12716184e+02 1.06508219e+01
+ 3.37538528e+01 2.78428561e+01 1.23016728e+01 2.21961864e+01
+ 2.49678494e+01 2.13332514e+01 8.97242044e+01 3.36934054e+00
+ 1.14528310e-01 3.65230170e+01 2.48221741e+01 1.19436429e+01
+ 7.87456021e+00 6.01774821e+00 2.43748663e+01 1.82507623e+01
+ 1.03897159e+01 1.31540478e+01 6.77750048e+01 3.66317223e+01
+ 1.38262067e+01 8.04155108e+00 3.26032329e+01 4.51317264e+01
+ 3.55026807e+00 3.13307848e+01 4.71275181e+00 3.17417359e+01
+ 2.30142753e+01 3.82097740e+01 4.62532575e+00 9.53652673e+00
+ 1.95205176e+01 3.13352379e+01 5.46970267e+00 1.07941835e+02
+ 1.40558187e+01 2.72541665e+01 6.69529574e+00 2.06895498e+01
+ 7.35028550e+01 5.02948735e+01 9.46639906e+00 1.21267487e+01
+ 1.57174822e+01 2.90477278e+00 1.80596889e+00 2.77719231e+01
+ 1.32222149e+01 1.88643509e+01 7.96583123e+01 2.35081042e+01
+ 5.51859430e+00 1.18968058e+01 7.60167204e+00 2.20664725e+00
+ 3.77101303e+01 7.78152418e+00 1.54736361e+00 1.83925688e+01
+ 3.34568676e+01 2.30396774e+01 2.03311785e+01 2.71351060e+01
+ 2.16744048e+01 2.64979519e+01 6.02550900e+00 2.89919481e+01
+ 1.29894355e+01 2.10027083e+01 7.36905606e+01 6.37521602e+00
+ 2.82013898e+00 1.78368362e+01 7.83616970e+01 6.19259301e+00
+ 5.37397234e+01 5.25246653e+01 2.28409707e+01 5.57002379e+00
+ 3.48162867e+00 9.12744085e+00 6.76196546e+00 1.36252623e+01
+ 1.47711137e+01 3.55425571e+01 1.00250775e+01 2.33680574e+00
+ 1.32966844e+01 2.29332012e+01 4.57953772e+00 1.25385270e+01
+ 2.44119727e+00 5.69325935e+01 3.30338478e+01 4.44079198e+01
+ 6.07092208e+01 1.79666082e+01 7.37264103e+00 5.81781518e+01
+ 1.70480151e+01 5.08548845e-03 5.42903820e+00 1.77708014e+01
+ 8.50599096e+00 1.48725301e+01 3.02943083e+01 4.15670754e+01
+ 1.77520643e+01 7.87268786e+00 1.98493700e+01 4.87380000e+01
+ 1.89789568e+01 7.65230336e+01 2.14470037e+01 2.97682572e+01
+ 1.78468097e+01 6.13739354e+01 2.06019153e+01 1.85310634e+01
+ 4.91848803e+00 4.24708180e+01 1.09003502e+01 3.25947330e+01
+ 1.28683633e+01 2.70825398e+01 1.87186829e+02 5.03447547e+01
+ 9.67215010e+00 1.14659507e+02 5.25525036e+01 2.43789454e+01
+ 0.00000000e+00 3.97371091e+01 2.93613116e+01 1.36486894e+01
+ 2.30639547e+01 1.78080794e+01 7.16642360e+00 3.27714605e+01
+ 3.71254603e+01 4.39831522e+01 2.55702580e+01 4.12993478e+01
+ 1.02710788e+01 2.34738268e+01 2.62548172e+00 1.47872728e+01
+ 5.66136022e+01 4.65379141e+01 1.01611560e+01 4.25038326e+01
+ 4.04645855e+01 1.01847138e+01 2.52796621e+01 4.22554977e+00
+ 1.12328815e+01 5.79556483e+01 2.71995322e+01 1.21234810e+01
+ 5.59103016e+01 4.77527084e+01 1.87582272e+01 5.80988603e+00
+ 3.16809540e+01 4.27536712e+00 3.38667179e+01 2.09388534e+01
+ 1.70110801e+01 2.20673548e+01 8.68617553e+00 5.28161160e+00
+ 4.96197976e+01 5.39468398e+01 1.28700974e+01 3.21222205e+01
+ 5.34091439e+01 6.21073552e+01 3.52073315e+01 2.51744699e+01
+ 4.87692390e+00 1.05066278e+01 1.77984996e+01 8.50777131e+00
+ 1.63280421e+01 7.35740173e+00 2.23742545e+01 4.08394166e+01
+ 5.68243308e+00 5.47075555e+00 4.14552161e+01 4.31246717e+01
+ 3.79742986e+01 2.31576879e+01 1.78433186e+01 7.46520327e+01
+ 1.54151859e+01 4.80393680e+01 1.12672681e+01 4.73521764e+01
+ 2.95269609e+01 3.15200837e+01 2.96119193e+01 8.95146242e+00
+ 7.21428316e+00 4.02182794e+01 4.83705474e+01 3.30376961e+01
+ 6.05202420e+01 3.72254516e+01 2.45126444e+01 3.15841413e+01
+ 3.45224288e+01 8.55555933e+00 2.16340586e+01 1.58711696e+01
+ 4.51661915e+01 9.70028221e+00 4.41251750e+01 1.93472824e+01
+ 8.22974024e+00 1.10185345e+01 5.43496221e+00 3.60744668e+01
+ 1.45902108e+01 1.60589130e+01 3.25109134e+01 1.30649575e+01
+ 4.94683546e+00 1.98031152e+01 6.21882809e+01 2.21036441e+01
+ 1.46178116e+01 5.55272294e+00 1.14843699e+01 5.83978472e+00
+ 5.07467078e+01 4.49344766e+01 7.45335896e+00 2.43610175e+00
+ 7.06153855e+00 9.85586411e+00 1.91430003e+01 4.37693797e+00
+ 4.15250275e+01 5.23906911e+01 2.70673595e+01 8.41699315e+00
+ 1.91242293e+00 1.65355628e+01 1.41504287e+01 5.59844980e+00
+ 1.28273841e+01 1.09826111e+02 2.45486125e+01 6.60306809e+01
+ 2.33960012e+01 5.30853304e+00 2.62860158e+01 3.97895364e+00
+ 2.77983523e+01 9.11936708e+00 2.76243082e+01 1.13115829e+01
+ 0.00000000e+00 5.03159071e+01 1.57284621e+01 9.71139794e+00
+ 9.52351474e+01 4.78119215e+01 4.18734149e+00 1.00971977e+01
+ 2.13786346e+01 1.24693547e+02 1.98088825e+01 6.10669234e+00
+ 2.41948541e+01 1.25143106e+01 9.28349262e+00 2.71921447e+01
+ 5.18599181e+01 6.64377598e+01 1.41173105e+02 1.99219077e+01
+ 2.34337249e+01 4.94384901e+00 5.44935497e+01 2.32891451e+01
+ 1.79996739e+01 3.12975396e+01 1.44392985e+01 4.67623346e+00
+ 1.99522172e+01 1.22566767e+01 1.86658617e+01 1.54503610e+01
+ 3.54954540e+01 2.39965316e+01 1.25161124e+01 1.71857163e+01
+ 2.62502572e+01 4.30135103e+00 7.29316099e+01 1.23767061e+01
+ 3.20097909e+01 4.65205161e+01 1.10955850e+01 5.10875764e+00
+ 1.42859202e+01 2.61957069e+01 6.12783762e+00 6.26090255e+00
+ 1.67551128e+01 5.14262020e+01 4.33478287e+01 2.22555617e+01
+ 1.72341054e+01 4.40228855e+01 1.06599444e+01 4.70972123e+01
+ 9.80609643e+00 2.46733757e+01 7.64514923e+00 1.67426880e+01
+ 2.89184041e+01 2.02966724e+01 9.18962765e+00 2.57591221e+01
+ 2.52215848e+01 1.10811763e+01 1.73795230e-01 0.00000000e+00
+ 8.20425827e+00 1.13118298e+01 1.18520773e+01 1.18493753e+01
+ 3.15636219e+01 1.31330464e+01 1.66171665e+01 1.03156074e+01
+ 1.11356648e+01 1.10687400e+02]
+COMPUTE STD
+[2.07178629e+01 8.21998823e+01 5.67006450e+01 9.86356852e+00
+ 5.81431406e+01 2.49348930e+01 8.65575656e+01 2.58276980e+01
+ 4.99052998e+01 3.94015833e+01 1.39545775e+02 5.81159959e+01
+ 2.76538532e+01 4.44484696e+01 2.90001436e+01 3.25891847e+01
+ 1.68402850e+01 7.14228836e+01 7.86553051e+01 1.64863499e+02
+ 8.01498818e+01 9.56184657e+00 5.96793504e+01 1.36194414e+01
+ 1.05684317e+01 5.73834954e+01 4.84119053e+00 3.27593636e+01
+/app/apps/svd/Aggregator_FC_Federated_PCA.py:95: RuntimeWarning: invalid value encountered in true_divide
+  variances = my_ssq/(val_per_row)
+ 4.78167526e+01 2.02573877e+01 1.10815833e+01 4.19281536e+01
+ 1.53445239e+02 0.00000000e+00 2.29420534e+01 3.73135283e+01
+ 1.33816444e+01 1.72226326e+01 9.27851074e+01 1.60587955e+01
+ 2.78055039e+01 4.51966869e+01 3.93194500e+01 1.34482111e+01
+ 5.55202697e+01 2.86289501e+01 7.51893429e+01 9.27725076e+00
+ 1.71927348e+01 9.57677500e+01 1.03462917e+01 5.33245454e+01
+ 1.06350884e+01 5.26542428e+00 4.67555397e+01 8.81596667e+01
+ 2.03165822e+01 4.64740455e+01 1.54693306e+01 2.77369776e+01
+ 5.17132377e+01 1.28356185e+01 4.14318335e+01 1.85070969e+01
+ 3.24612063e+01 7.62994489e+01 6.12234247e+01 7.65502595e+01
+ 1.61115634e+01 4.02997079e+01 1.18075361e+01 3.76795166e+01
+ 1.14009379e+01 2.97447275e+01 4.34248839e+01 2.54716086e+00
+ 6.39312775e+01 1.44002154e+02 1.65710970e+02 2.76536448e+01
+ 4.19699199e+01 3.37424276e+01 4.82548890e+01 3.95833591e+01
+ 3.58967408e+01 2.97597410e+01 1.11869856e+02 8.06510774e+00
+ 1.27684342e+00 7.15052538e+01 3.01664298e+01 2.52837270e+01
+ 2.76331990e+01 1.17410750e+01 6.81283484e+01 3.41989562e+01
+ 2.54352380e+01 2.70739213e+01 7.49360288e+01 7.26536701e+01
+ 1.86977708e+01 1.60955554e+01 9.92071783e+01 7.06463539e+01
+ 6.06012527e+00 4.23138719e+01 9.34654812e+00 6.61607957e+01
+ 3.59697290e+01 5.59558342e+01 8.54865665e+00 3.09668388e+01
+ 2.69136772e+01 3.74621795e+01 1.03864229e+01 1.17571989e+02
+ 2.52129072e+01 4.47210419e+01 1.46796239e+01 2.95238218e+01
+ 8.92165794e+01 7.74713563e+01 3.35954123e+01 4.22864670e+01
+ 9.93593929e+01 3.38132972e+01 3.41437986e+00 3.22133195e+01
+ 2.20524622e+01 4.52071717e+01 9.08894155e+01 3.62267234e+01
+ 1.00722391e+01 2.01575697e+01 1.33186137e+01 4.80212801e+00
+ 4.71728311e+01 8.22463908e+00 1.54736361e+00 3.60268408e+01
+ 6.78480222e+01 2.99396213e+01 4.31699698e+01 3.22652305e+01
+ 2.37515602e+01 7.31235680e+01 1.29332539e+01 4.39428870e+01
+ 2.16676041e+01 4.16493868e+01 1.66614740e+02 1.29708382e+01
+ 4.66847382e+00 3.46915980e+01 8.75377346e+01 1.94670971e+01
+ 1.15857890e+02 8.03501507e+01 4.12895611e+01 8.49855744e+00
+ 6.88030357e+00 1.14216084e+01 1.53014436e+01 2.91522868e+01
+ 2.12703967e+01 5.33141026e+01 1.27546108e+01 4.86927740e+00
+ 4.07102446e+01 2.81150014e+01 1.27451162e+01 1.87151172e+01
+ 4.92598374e+00 8.35497786e+01 4.28364818e+01 1.01872012e+02
+ 8.88724718e+01 2.39482826e+01 1.14942254e+01 1.07551914e+02
+ 2.53631482e+01 1.01709769e-02 9.51993332e+00 2.15976086e+01
+ 1.46513216e+01 2.10976469e+01 3.98002648e+01 8.33303372e+01
+ 3.42793445e+01 1.26973706e+01 6.68369626e+01 5.87975306e+01
+ 4.77105661e+01 9.83039746e+01 2.96117790e+01 4.24204819e+01
+ 4.00247152e+01 8.80415369e+01 2.81457066e+01 3.00601988e+01
+ 1.14984738e+01 4.75426624e+01 1.62405023e+01 5.49509765e+01
+ 4.00275382e+01 3.96268733e+01 2.17040851e+02 5.95373097e+01
+ 5.18037293e+01 1.26374618e+02 6.98190055e+01 4.50044268e+01
+ 0.00000000e+00 4.97125915e+01 8.19105449e+01 1.74596344e+01
+ 3.40429257e+01 3.90548174e+01 1.51729578e+01 5.06335414e+01
+ 4.33939615e+01 7.19307892e+01 2.98083333e+01 9.30324509e+01
+ 4.01751494e+01 6.19032420e+01 4.62891787e+00 2.34790288e+01
+ 9.36967387e+01 6.67536334e+01 2.97789992e+01 5.84762536e+01
+ 5.55986347e+01 2.48735652e+01 4.56369979e+01 8.07722710e+00
+ 3.76079370e+01 8.22377255e+01 4.20729889e+01 1.57558923e+01
+ 7.27085242e+01 8.36200970e+01 7.83772281e+01 1.00689583e+01
+ 4.05135509e+01 6.06225470e+00 5.31137214e+01 7.81795676e+01
+ 3.97922235e+01 2.59890187e+01 1.25452842e+01 1.33064177e+01
+ 7.28795060e+01 9.00164574e+01 2.70777115e+01 4.35811046e+01
+ 6.70572284e+01 1.25499677e+02 7.87968800e+01 5.02049462e+01
+ 8.50657239e+00 1.45537026e+01 3.67938969e+01 1.31414093e+01
+ 2.60032791e+01 1.91854898e+01 5.49814533e+01 5.72134370e+01
+ 1.95474848e+01 9.27042085e+00 5.46402317e+01 5.79579614e+01
+ 7.76197919e+01 3.12211133e+01 4.14104303e+01 1.62016116e+02
+ 2.91571075e+01 8.08126841e+01 1.74440536e+01 5.57450551e+01
+ 3.56078665e+01 5.03818589e+01 4.08058710e+01 1.11378269e+01
+ 1.98955693e+01 4.85272543e+01 4.94581202e+01 7.64446427e+01
+ 7.50070441e+01 4.49177689e+01 4.22763921e+01 5.98748751e+01
+ 3.89084262e+01 1.62204121e+01 3.38478148e+01 2.46363671e+01
+ 6.07472838e+01 2.75345475e+01 6.04466713e+01 8.22228980e+01
+ 9.64420110e+00 1.79612095e+01 9.01128067e+00 4.41552586e+01
+ 5.38560426e+01 3.62985468e+01 6.19433170e+01 2.30366653e+01
+ 1.04798760e+01 3.70602947e+01 7.30350939e+01 3.64682565e+01
+ 2.15807723e+01 1.78817370e+01 1.63582381e+01 8.36281844e+00
+ 8.77363436e+01 6.30078841e+01 1.35605534e+01 1.07238835e+01
+ 1.34323485e+01 1.64211386e+01 5.25172106e+01 8.93065344e+00
+ 4.97904017e+01 1.01500029e+02 3.32293505e+01 1.52749072e+01
+ 5.80662106e+00 2.38198245e+01 2.28271441e+01 9.08222839e+00
+ 2.91342848e+01 1.51241002e+02 7.24541752e+01 8.78854133e+01
+ 6.08872642e+01 2.36850905e+01 3.51729101e+01 5.63369103e+00
+ 3.42844836e+01 1.45483963e+01 3.42417656e+01 6.60612839e+01
+ 0.00000000e+00 1.45965794e+02 2.38178039e+01 1.21589021e+01
+ 1.06631850e+02 7.90153335e+01 7.59125668e+00 2.22308589e+01
+ 2.67325653e+01 1.50634252e+02 4.51738450e+01 4.31788415e+01
+ 3.38003057e+01 2.55175684e+01 5.39597029e+01 3.95880212e+01
+ 8.91412633e+01 8.12844128e+01 1.63069552e+02 3.38611553e+01
+ 9.18071465e+01 1.42595549e+01 8.37019271e+01 8.91263596e+01
+ 3.18821788e+01 6.03309631e+01 1.65094691e+01 9.50490670e+00
+ 4.31302420e+01 1.78940268e+01 4.02521954e+01 2.50364936e+01
+ 5.63890563e+01 7.22220414e+01 2.74996553e+01 2.71306883e+01
+ 7.84381506e+01 5.76566928e+00 8.38018976e+01 2.40356681e+01
+ 5.09333354e+01 5.58241240e+01 5.10268997e+01 9.19402912e+00
+ 2.25083922e+01 3.30945207e+01 1.11852595e+01 1.05870014e+01
+ 3.52667930e+01 6.96697659e+01 7.91742764e+01 5.02460079e+01
+ 2.56432347e+01 5.69137569e+01 1.49095888e+01 6.84845340e+01
+ 1.71316356e+01 6.27614678e+01 2.92208777e+01 1.92257774e+01
+ 8.81644493e+01 3.95734666e+01 3.08296207e+01 4.63444252e+01
+ 3.92532709e+01 3.95893452e+01 3.47590460e-01 0.00000000e+00
+ 1.41043546e+01 1.83331590e+01 1.98830446e+01 2.22489004e+01
+ 5.48986589e+01 2.70035890e+01 2.90550116e+01 1.62052294e+01
+ 2.01448060e+01 1.30100010e+02]
+STD
+[ 0.70234069  1.77807028  1.57011001  0.48461002  1.307705    0.81005024
+  2.19288706  2.54104791  1.13120426  1.0182749   1.94203693  1.52467696
+  0.83147239  1.66674214  0.84102353  1.2170976   0.71436102  1.35327602
+  1.42014179  2.23514286  1.38142337  0.47714045  1.93131028  0.56944922
+  0.76624741  1.228858    0.33950912  0.94095069  1.54623337  0.69449172
+  0.51366061  1.02381826  2.06455025         nan  0.80962166  1.22169601
+  0.57129815  0.64812361  1.56259827  0.6183464   1.03413851  1.43331604
+  1.05991172  0.5658582   1.16368076  0.82561593  1.5573897   0.46998609
+  0.63980531  1.54731824  1.6082826   1.72118411  0.50320611  0.35407237
+  1.0678853   1.58708778  0.69550568  1.76019024  0.60689158  1.862021
+  1.46789585  0.55282001  1.00525247  0.66381109  0.87913927  1.45582593
+  1.30408998  1.40100934  0.61936149  1.01652636  0.99194825  0.97056062
+  0.5210095   0.84155083  1.01682142  0.24626548  1.83434023  1.9728026
+  2.20768024  1.85922177  1.57124753  0.89632089  1.08487258  1.07898862
+  0.94732176  0.84176319  1.76280912  0.43820814  0.79901296  1.65837332
+  0.90294458  0.7758824   0.81113088  0.91577738  1.65079797  0.93642742
+  0.77820364  0.80288055  1.98595104  1.40128966  1.44136397  0.61905372
+  1.5555344   1.44146937  0.37985352  1.01589648  0.47173813  1.25509244
+  0.92543078  1.28287171  0.45115346  0.85866506  0.80050099  0.94443457
+  0.50331639  1.69340175  0.77479501  1.04439318  0.59836411  0.85912487
+  1.57424214  1.79665611  1.40577407  1.57716177  2.1251673   0.89726167
+  0.28512236  0.97337073  1.21250326  1.12060465  1.71228404  0.97638867
+  0.48970932  0.70117618  0.56312507  0.73045861  1.12913302  1.08395039
+  1.24393071  0.92616517  1.61540686  1.32708485  1.19958284  0.90956781
+  1.14870846  1.36929299  0.55491857  1.02286813  0.72696503  1.26566168
+  3.2269833   0.55572429  0.33339787  1.05786758  2.33904006  0.68081004
+  1.68101226  1.41730511  1.71733933  0.44982953  0.40964897  0.5214816
+  0.60358934  0.95446789  0.84202923  1.12666916  0.55775269  0.34049255
+  1.25131077  1.02043929  0.55086763  1.08152431  0.34246945  1.99463302
+  1.00990902  1.63732783  1.49057432  0.75511403  1.38408968  1.63975542
+  0.77710005  0.10085126  0.47609356  0.77455379  0.59062762  0.70874885
+  1.01020771  1.46173709  1.10646387  0.54983484  1.51813137  1.18319111
+  1.58463953  1.81019313  0.88275554  1.23086035  1.21753721  1.5024897
+  0.81861827  0.90135332  0.5232334   1.35224404  0.62183489  1.20252997
+  1.05445534  0.99532499  2.42197625  1.25170736  1.65121533  1.95691948
+  1.47710661  1.15050407         nan  1.20918776  1.43100092  0.65256781
+  1.68431306  1.14097644  0.60104983  1.42314499  1.51125534  1.32454124
+  1.03178648  1.585683    1.0149542   1.2287535   0.33198242  0.74767941
+  1.97586203  1.49168399  1.28623048  1.27449613  1.43499432  0.76956334
+  1.23338285  0.43853726  0.95774044  2.42365906  1.01300072  0.61248697
+  1.33168263  2.21784337  1.3826206   0.48962956  1.0325435   0.37992025
+  1.18225611  1.7016285   0.98516092  0.78662962  0.55315689  0.56286719
+  1.48609215  1.55976832  0.80293674  1.03099649  1.54754677  1.98036989
+  1.64837307  1.12032301  0.45549684  0.58865672  0.97130492  0.55936634
+  0.78684541  0.67586787  1.14415131  1.22703576  1.18162977  0.46981305
+  1.84797578  1.25157157  1.42920471  1.14056114  1.17488198  1.9640587
+  0.8877105   2.06235282  0.64446459  1.18051954  0.95552196  1.18300299
+  1.01002316  1.00624536  0.6882616   1.10144512  1.53464934  1.38243122
+  1.63671103  1.05969063  1.01544646  1.6134607   1.47023101  0.62145015
+  0.89771953  0.76588522  1.29900906  1.98330703  1.22929524  2.42344056
+  0.98204893  0.65394789  0.46320007  1.07795199  1.89483584  0.92965107
+  1.22915117  0.74957981  0.49952063  0.95074162  1.58696298  0.97963818
+  0.71681791  0.65249953  0.92787925  1.29327634  1.6823212   1.27105734
+  0.86796548  1.23773315  0.57237947  0.62528353  1.54503914  0.4912932
+  1.41124628  1.57340728  0.90026216  0.61037588  0.37182372  0.76221475
+  0.74616326  0.47065674  1.15077612  1.99500034  1.70240037  1.68374978
+  1.33820846  1.62224435  1.06518074  0.38503899  1.56489351  0.58854939
+  0.96200474  1.2541482  -0.          2.10314191  0.76218242  1.31794765
+  1.67514218  1.50252486  0.43029362  0.7275343   1.55892053  2.169636
+  1.03709582  1.01393671  0.90796349  0.77946209  1.19163425  1.03438219
+  2.01292712  1.73508899  2.12831149  0.90878041  1.81075306  0.58267762
+  1.95054686  2.16583957  1.36946058  1.55346018  0.62696299  0.47571767
+  1.02564961  0.65272372  0.99083846  0.77207965  1.21816359  1.52634966
+  0.80916852  0.82356979  1.67372713  0.37051024  1.42966735  0.76566037
+  2.37891982  1.22831596  1.11559783  0.46787333  0.96842639  0.8876738
+  0.52231332  0.50206719  0.92745118  1.54996959  1.38963301  1.19816536
+  0.80067526  1.50882414  0.59581055  1.34246958  0.63866743  1.35864842
+  1.17960602  1.65726872  1.48462495  1.28409285  0.85676052  1.60458415
+  1.47673196  1.40693541  0.58956803 -0.          0.96968567  0.66068433
+  0.68804493  0.8914054   1.25241092  0.80183701  1.07805402  0.62115924
+  0.83345575  1.8503201 ]
+[411 344 181  75 126 226 152  26 167 172  53 381 328 104 245 339 160 350
+  87 235 159 110 260 302 387 269  47 331 106 371 182  21   3 243 132 323
+ 308 391  52 114  30  72 161 390 200 189 170  61 250 146 151 166 263 251
+ 134  43  23  36 320 365 341 261 410 184 398 118 218 162  58 327 239  39
+ 101  68 419 293 202 321 370 400  48 278  37 313 215 373 301 413  63 265
+ 155 414 284  29  56 133   0 185  16 312 148 351 135 330 227 307 177 346
+ 329 383 295  24 233 375 183 116  91 180  96 357 249 264  88 112 396 417
+  97 254 378  34   5  92 198 379  45  12 420  14  73  85 164 406 111 119
+ 318  64 194 389 276 415  81 125 294 326 199  90 356 363 143  93 108 139
+ 392 314 305  95  27 113  84 309 163 280 236 342 388 412  71 262 127 131
+ 311 300 248 374  70 205  62 283 174 282 186 238 355 224 290 105  69  74
+   9 169 147  31 372 255 222 244  40 359 354 117 204 153 289  42 338  54
+ 303 418  83 171 137  82 285 188 386 259 129 165 136   8 273 217 266 144
+ 211 332  44 274 402 279 268 246 281 191 358 395 142 203 213 128  15 196
+ 376  35 267 385 225  25 306 298 195 234 319 138 168 271 207 416 343 107
+ 149 317 231 109 405 230 315 296  66   4 347 221 141 240 336 399 201  17
+ 401 145 368  20 287 242 178 394  67  99 122 409 324 157  18 219 272 382
+ 214  41 232 100 103  65 187  60 292 408 210 404 252 176 229 197 349 397
+ 220 190  11 377 286 322  28  49 256 393 369 102  46 352 253  38 340   2
+  80 325 120 123 192 223 310  55 407  50 291 140 337 288 175 179 258  94
+ 208 403  89  13 380 348 156 316 335 216 115 247 334 130 158  51 361  57
+  86]
+['PRSS3' 'PRSS1' 'LUM' 'CLCA3' 'HLA.DRB1' 'ZNF160' 'GPSM2' 'FCGRT' 'PLTP'
+ 'AA401952' 'MED11' 'PALLD' 'PSG1' 'CEAL1' 'ZNF233' 'TCTEX1D1' 'MGC39606'
+ 'SORT1' 'EXT1' 'SBP1' 'IGSF3' 'PRRX1' 'GYPA' 'ID4' 'EID.3' 'AA131320'
+ 'NCF2' 'EGLN2' 'TOMM40' 'FCGR2B' 'DCLRE1B' 'PRG1' 'IGF1R' 'AA598631'
+ 'FLJ35740' 'HNRNPG.T' 'CALM1' 'AIF1' 'PARP14' 'TFDP2' 'VAMP2' 'TMEM146'
+ 'CHN1' 'ZNF226' 'NPL' 'NLK' 'COX6A2' 'DIP2C' 'EDG1' 'DNASE1L1' 'SERPING1'
+ 'TAP1' 'N98591' 'FBXO32' 'WDR7' 'SPARC' 'COL9A2' 'DDEF1' 'MB' 'LAPTM5'
+ 'SCAMP5' 'OSR1' 'ZNF217' 'PARD3' 'CSPG2' 'NDUFB11' 'SLC15A2' 'MSTP9'
+ 'KIAA1543' 'HLA.G' 'PSG5' 'BCAM' 'F13A1' 'FAM84A' 'KCNK6' 'ATP6V1C1'
+ 'TBC1D7' 'AKR1C1' 'YWHAH' 'LHFPL2' 'CCDC3' 'URP2' 'OSBPL1A' 'DMN' 'WWTR1'
+ 'ADAM19' 'GBP1' 'A2BP1' 'PNCK' 'HCLS1' 'IQSEC1' 'ASPA' 'C4A' 'ACAD8'
+ 'NUAK1' 'IGHG1' 'GABBR1' 'H20822' 'PDE4DIP' 'SVIL' 'APCS' 'C6orf12'
+ 'CYBA' 'FABP3' 'NPC2' 'RGS16' 'CACNB2' 'PCDHGC3' 'RFXAP' 'CA11' 'SAA2'
+ 'RAB27B' 'D21S2089E' 'FREQ' 'RPS3A' 'ITGA3' 'HBA1' 'CD53' 'NDST1' 'YWHAG'
+ 'GADD45B' 'RALY' 'IGF2BP3' 'EDG3' 'AI002301' 'KNS2' 'NOTCH1' 'ARPP.19'
+ 'H24428' 'CDKN2D' 'LILRA1' 'MVP' 'AA489629' 'PRKCZ' 'ZNF419B' 'ZNF549'
+ 'FGF13' 'LYN' 'CBX6' 'DYNLT1' 'PDXP' 'X37864' 'MAPKBP1' 'BNIP2'
+ 'AA029415' 'VASP' 'R70506' 'GBP2' 'RAB20' 'MSN' 'PPP1R14A' 'PTPRZ1'
+ 'MOAP1' 'MGC42367' 'BLVRB' 'CAP2' 'FAS' 'PPP3CB' 'MRC2' 'ADFP' 'AA398420'
+ 'HMOX1' 'SLC35A2' 'H08563' 'LTF' 'CAMKK2' 'PRKAR1B' 'R70684' 'CBLN2'
+ 'AA479357' 'STXBP1' 'DDN' 'TTC23' 'SPAG6' 'ANXA1' 'S100A11' 'PYHIN1'
+ 'AP4B1' 'EPB49' 'W93688' 'APOC2' 'STC1' 'LOC146795' 'RTN3' 'EMP3'
+ 'H41096' 'NLGN1' 'NNMT' 'AA490257' 'APOC1' 'HEY1' 'NSF' 'HLA.A' 'CAPG'
+ 'IGFBP5' 'C1R' 'LAMA4' 'NMNAT2' 'MYBPC2' 'R61377' 'IL1RAP' 'CCL2'
+ 'SERPINA3' 'EDNRB' 'FZD7' 'CHI3L2' 'AA181288' 'DUS3L' 'EPHB1' 'LOC57228'
+ 'S100A1' 'IFI30' 'SERPINI1' 'C8orf4' 'UBA52' 'C16orf5' 'ADARB2' 'TIMP1'
+ 'T62491' 'L3MBTL4' 'CLIC1' 'HBXIP' 'KCNQ2' 'AA424849' 'C1orf63' 'DPYD'
+ 'CASP1' 'CAMK2A' 'GOT1' 'AKR1C2' 'S100A10' 'ADCY1' 'CLSTN3' 'ADM'
+ 'LOC283130' 'IMAGE.33267' 'MGC26694' 'FAM46A' 'ESM1' 'SUV39H1'
+ 'TNFRSF12A' 'LRBA' 'RAB11FIP4' 'COL3A1' 'TXNDC' 'SOCS3' 'STK17A' 'USP6NL'
+ 'CKMT1A' 'COL6A2' 'CTHRC1' 'TSPAN4' 'PCP4' 'C1orf187' 'DEF6' 'AEBP1'
+ 'TIMP3' 'KCNJ1' 'PRKCG' 'ITGA9' 'HAMP' 'RUNX1' 'GYPC' 'CDC20B' 'ABCA5'
+ 'COL4A2' 'DSCR1L1' 'MASP1' 'FLJ38984' 'INPP5F' 'KIAA1644' 'SNRPN'
+ 'AI350724' 'CACNB3' 'AA669383' 'FN1' 'SLC16A3' 'SRPX' 'SP100' 'PDPN'
+ 'AA598555' 'AA975768' 'R52960' 'FBXW7' 'ITPKA' 'NCF1' 'RND3' 'WASF1'
+ 'SYT7' 'PRKCB1' 'TMEM49' 'CD47' 'FBXL16' 'DES' 'PYCR1' 'CDKN1A'
+ 'MGC18216' 'MST150' 'RAB30' 'PLAUR' 'HSPG2' 'COX7A1' 'FBXO2' 'VEGF'
+ 'AI263051' 'MYCBP2' 'RPS19BP1' 'PLA2G2A' 'GPNMB' 'HPRT1' 'DKFZp313A2432'
+ 'C9orf48' 'BGN' 'T51726' 'PLOD2' 'DDIT4' 'ABCC3' 'UBE4B' 'AA281932' 'MGP'
+ 'MICAL2' 'VSNL1' 'ID3' 'PYGL' 'LGALS3' 'STEAP3' 'L1CAM' 'NY.SAR.48'
+ 'SYNGR3' 'H78560' 'LMO7' 'SCN2B' 'STMN1' 'NR4A1' 'BCL2A1' 'H10054'
+ 'SETD5' 'SERPINH1' 'LOC283070' 'TSPAN6' 'MTHFD2' 'LOC400451' 'KLRC2'
+ 'PPP3CA' 'ANXA5' 'T97457' 'KLRC3' 'X38595' 'RBP7' 'AI335002' 'COL1A2'
+ 'IL32' 'H86813' 'EFHB' 'SPINT2' 'CA12' 'GAS1' 'LY96' 'LOC388610' 'DECR2'
+ 'LOC541471' 'CAV1' 'NPTX1' 'TncRNA' 'COL1A1' 'CCR1' 'HLA.F' 'TNC' 'SNCG'
+ 'MMP2' 'KCNMA1' 'TNFAIP3' 'PLAU' 'AI005038' 'HK2' 'PSD3' 'TLL2' 'UGCG'
+ 'ANK3']
+(array([344, 411]),)
+['PRSS1' 'PRSS3']
+[Time: 29.06.23 14:15:38] [Level: info] transition: apply_scaling
+[CTRL] GET /data
+[Time: 29.06.23 14:15:39] [Level: info] state: apply_scaling
+[411 344 181  75 126 226 152  26 167 172  53 381 328 104 245 339 160 350
+  87 235 159 110 260 302 387 269  47 331 106 371 182  21   3 243 132 323
+ 308 391  52 114  30  72 161 390 200 189 170  61 250 146 151 166 263 251
+ 134  43  23  36 320 365 341 261 410 184 398 118 218 162  58 327 239  39
+ 101  68 419 293 202 321 370 400  48 278  37 313 215 373 301 413  63 265
+ 155 414 284  29  56 133   0 185  16 312 148 351 135 330 227 307 177 346
+ 329 383 295  24 233 375 183 116  91 180  96 357 249 264  88 112 396 417
+  97 254 378  34   5  92 198 379  45  12 420  14  73  85 164 406 111 119
+ 318  64 194 389 276 415  81 125 294 326 199  90 356 363 143  93 108 139
+ 392 314 305  95  27 113  84 309 163 280 236 342 388 412  71 262 127 131
+ 311 300 248 374  70 205  62 283 174 282 186 238 355 224 290 105  69  74
+   9 169 147  31 372 255 222 244  40 359 354 117 204 153 289  42 338  54
+ 303 418  83 171 137  82 285 188 386 259 129 165 136   8 273 217 266 144
+ 211 332  44 274 402 279 268 246 281 191 358 395 142 203 213 128  15 196
+ 376  35 267 385 225  25 306 298 195 234 319 138 168 271 207 416 343 107
+ 149 317 231 109 405 230 315 296  66   4 347 221 141 240 336 399 201  17
+ 401 145 368  20 287 242 178 394  67  99 122 409 324 157  18 219 272 382
+ 214  41 232 100 103  65 187  60 292 408 210 404 252 176 229 197 349 397
+ 220 190  11 377 286 322  28  49 256 393 369 102  46 352 253  38 340   2
+  80 325 120 123 192 223 310  55 407  50 291 140 337 288 175 179 258  94
+ 208 403  89  13 380 348 156 316 335 216 115 247 334 130 158  51 361  57
+  86]
+(array([344, 411]),)
+[Time: 29.06.23 14:15:39] [Level: info] transition: mfa_prerequisites
+[Time: 29.06.23 14:15:40] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 29.06.23 14:15:40] [Level: info] transition: start_power_iteration
+[Time: 29.06.23 14:15:41] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 0.71631516  0.37519388  1.24053938 ... -1.40676238  0.31247077
+   1.50968682]
+ [ 0.          0.          0.         ...  0.63858614  1.2341549
+   0.        ]
+ [-0.00218031 -1.20196695  0.         ...  0.         -1.31461006
+   1.42339436]
+ ...
+ [-1.93335727  1.25602891  0.31803289 ...  0.19061834 -0.33585557
+  -1.2964494 ]
+ [ 0.40530509 -0.48430895  0.23492254 ... -1.47030296  0.
+   1.26755622]
+ [-0.30918798 -0.77010057  0.23738252 ... -0.13318771  0.39120738
+   0.05023698]]
+[Time: 29.06.23 14:15:41] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 29.06.23 14:15:42] [Level: info] state: aggregate_randomized_projections_cov
+[CTRL] POST /data
+17
+Global cov
+[[ 1.         -0.03030264  0.02921338 ... -0.32549479  0.21254513
+  -0.36106932]
+ [-0.03030264  0.61904762 -0.12705105 ...  0.10477327 -0.14452839
+   0.08997865]
+ [ 0.02921338 -0.12705105  0.54761905 ... -0.0918079   0.11350578
+  -0.11226928]
+ ...
+ [-0.32549479  0.10477327 -0.0918079  ...  1.         -0.20556213
+   0.02612965]
+ [ 0.21254513 -0.14452839  0.11350578 ... -0.20556213  0.69047619
+  -0.12978465]
+ [-0.36106932  0.08997865 -0.11226928 ...  0.02612965 -0.12978465
+   0.9047619 ]]
+[Time: 29.06.23 14:15:44] [Level: info] transition: compute_final_h_cov
+[CTRL] GET /data
+[Time: 29.06.23 14:15:45] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+17
+[Time: 29.06.23 14:15:45] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:15:46] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 1533.6903364824725}, {'Local Eigenvector norm': 2187.573186047369}]
+[Time: 29.06.23 14:15:47] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:15:48] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:15:48] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:15:49] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [4.518337385290713]}, {'Local Conorms': [-4.5183373852907]}]
+[Time: 29.06.23 14:15:50] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:15:51] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:15:51] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:15:52] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 336.38064848534793}, {'Local Eigenvector norm': 574.8609474199754}]
+[Time: 29.06.23 14:15:53] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:15:54] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:15:54] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:15:55] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-3.9401275903335162, 0.02098928065573828]}, {'Local Conorms': [3.9401275903335193, -0.02098928065574016]}]
+[Time: 29.06.23 14:15:56] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:15:57] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:15:57] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:15:58] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 242.10657548693473}, {'Local Eigenvector norm': 379.23735012273113}]
+[Time: 29.06.23 14:15:59] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:00] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:00] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:01] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.9567159809409546, 0.7025231116271647, -1.4380369995224302]}, {'Local Conorms': [0.9567159809409489, -0.7025231116271663, 1.4380369995224347]}]
+[Time: 29.06.23 14:16:02] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:03] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:03] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:04] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 303.8529528874663}, {'Local Eigenvector norm': 296.18798320762477}]
+[Time: 29.06.23 14:16:05] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:06] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:06] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:07] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.8392963874271966, -0.40553094847704624, -1.6067127349852721, 1.63096524687943]}, {'Local Conorms': [-0.8392963874271892, 0.4055309484770395, 1.606712734985271, -1.6309652468794293]}]
+[Time: 29.06.23 14:16:08] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:09] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:09] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:10] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 224.88676110654774}, {'Local Eigenvector norm': 278.87956525344833}]
+[Time: 29.06.23 14:16:11] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:12] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:12] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:13] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.38460208544312713, -0.5706269276507089, -1.8549744221652968, 2.974565824088035, -0.9941163861402561]}, {'Local Conorms': [0.3846020854431246, 0.5706269276507073, 1.854974422165294, -2.974565824088035, 0.9941163861402539]}]
+[Time: 29.06.23 14:16:14] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:15] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:15] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:16] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 201.56008651378707}, {'Local Eigenvector norm': 227.31995451841152}]
+[Time: 29.06.23 14:16:17] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:18] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:18] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:19] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.3431386450114791, 0.8181030733942085, -1.3257959506078132, -0.9941461009742181, -1.008562047231858, 2.413699681490319]}, {'Local Conorms': [0.34313864501147623, -0.8181030733942067, 1.3257959506078127, 0.9941461009742157, 1.0085620472318573, -2.4136996814903195]}]
+[Time: 29.06.23 14:16:20] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:21] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:21] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:22] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 240.90725019116053}, {'Local Eigenvector norm': 160.73966579158}]
+[Time: 29.06.23 14:16:23] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:24] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:24] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:25] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-2.5096489813606633, 2.0919558084207783, -0.015940983619822043, -1.5112885538196783, -1.2518224032087115, -1.9668055284269117, 1.9294976511459756]}, {'Local Conorms': [2.509648981360664, -2.0919558084207828, 0.015940983619822185, 1.511288553819679, 1.2518224032087102, 1.966805528426905, -1.929497651145974]}]
+[Time: 29.06.23 14:16:26] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:27] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:27] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:28] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 176.57404002342213}, {'Local Eigenvector norm': 196.0825898858008}]
+[Time: 29.06.23 14:16:29] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:30] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:30] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:31] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.7778091001025328, 2.991576783358725, 1.7170053486980235, 0.3453229185798314, -0.4880630164803288, -0.2282346310274704, -0.07662861056939271, 0.5353243585353388]}, {'Local Conorms': [-0.7778091001025339, -2.991576783358728, -1.7170053486980243, -0.3453229185798315, 0.48806301648032785, 0.2282346310274704, 0.07662861056938482, -0.5353243585353433]}]
+[Time: 29.06.23 14:16:32] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:33] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:33] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:34] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 197.72795756873793}, {'Local Eigenvector norm': 147.7531601784782}]
+[Time: 29.06.23 14:16:35] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:36] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:36] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:37] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.5557922713376928, -0.6650069988401262, 0.3846163103449833, 0.6279011966973324, -1.679531311978158, -0.15269449998951204, 1.875044125057248, -1.3981625469273655, 1.2112300950053096]}, {'Local Conorms': [0.5557922713376892, 0.6650069988401323, -0.38461631034498145, -0.6279011966973286, 1.679531311978159, 0.15269449998951024, -1.8750441250572505, 1.3981625469273686, -1.2112300950053048]}]
+[Time: 29.06.23 14:16:38] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:39] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:39] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:40] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 129.62833382262448}, {'Local Eigenvector norm': 193.96246735706848}]
+[Time: 29.06.23 14:16:41] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:42] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:42] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:43] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-1.5180305583532694, -1.4214822662017141, 0.5864953084156382, -1.0608061969433666, -1.7105160631761689, 0.5692495363198001, 0.3779884636308055, 2.0449363081901226, -0.6565818004782991, -1.5591725404072878]}, {'Local Conorms': [1.5180305583532663, 1.4214822662017121, -0.5864953084156405, 1.0608061969433649, 1.7105160631761724, -0.5692495363197991, -0.37798846363080435, -2.04493630819012, 0.6565818004782957, 1.55917254040728]}]
+[Time: 29.06.23 14:16:44] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:45] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:45] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:46] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 156.89351773570925}, {'Local Eigenvector norm': 160.32481798837267}]
+[Time: 29.06.23 14:16:47] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:48] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:48] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:49] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.5104843318332914, -1.109329137321761, 1.3543152456307097, -0.9775716079608999, -0.36430421431415233, -0.9015435174278031, -0.07128233338359387, -2.2415018227541577, 1.6578631782560882, 0.38493226810947717, -0.7800991477491499]}, {'Local Conorms': [-0.5104843318332933, 1.1093291373217637, -1.354315245630711, 0.9775716079608996, 0.3643042143141515, 0.9015435174277966, 0.0712823333835921, 2.241501822754159, -1.6578631782560873, -0.3849322681094742, 0.78009914774915]}]
+[Time: 29.06.23 14:16:50] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:51] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:51] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:52] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 103.03916514860691}, {'Local Eigenvector norm': 198.73837905126578}]
+[Time: 29.06.23 14:16:53] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:54] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:16:54] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:16:55] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [2.6930120774858564, 0.18173936569528326, -2.9398046818226233, 0.6391121749571266, 2.1182423814146576, -2.43009568270274, 1.3885032002348556, 1.6625178720661518, -0.09473932061211641, 0.03230792906427582, 1.3426875935377454, -1.687625753116226]}, {'Local Conorms': [-2.6930120774858635, -0.18173936569528637, 2.939804681822623, -0.6391121749571254, -2.1182423814146585, 2.4300956827027416, -1.388503200234854, -1.6625178720661535, 0.09473932061211622, -0.032307929064273405, -1.3426875935377474, 1.6876257531162253]}]
+[Time: 29.06.23 14:16:56] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:16:57] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:16:57] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:16:58] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 137.65079766715849}, {'Local Eigenvector norm': 147.9754039942866}]
+[Time: 29.06.23 14:16:59] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:00] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:17:00] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:17:01] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.6052695968097815, -1.3806558565147349, 1.5923250850970196, -0.5634772559175227, 1.9119866426353982, -1.6559299306940467, 0.06238796299028644, 0.12281857441420692, 0.5189982093626859, 1.0718894690385008, -3.151874059317901, -0.11630753477489529, -0.0004988900778074911]}, {'Local Conorms': [0.6052695968097814, 1.3806558565147333, -1.5923250850970156, 0.5634772559175234, -1.911986642635399, 1.6559299306940465, -0.062387962990289855, -0.1228185744142047, -0.5189982093626868, -1.0718894690384986, 3.151874059317895, 0.11630753477489038, 0.0004988900778086999]}]
+[Time: 29.06.23 14:17:02] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:03] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:17:03] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:17:04] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 108.3835509908971}, {'Local Eigenvector norm': 167.75831491532122}]
+[Time: 29.06.23 14:17:05] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:06] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:17:06] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:17:07] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.7807740047032802, -0.22266152543764714, -0.47569921089113026, -0.9251015379268398, 2.310911331184815, 0.17962430901527154, -0.3764513082734562, -0.17903609852662927, 1.6294297964098106, -1.0891947352271754, 0.9331621637350306, -3.267127687252324, 0.2973534645264632, 0.9729992234285889]}, {'Local Conorms': [0.7807740047032836, 0.22266152543764173, 0.47569921089112555, 0.9251015379268431, -2.3109113311848186, -0.17962430901527052, 0.3764513082734551, 0.17903609852662983, -1.6294297964098101, 1.0891947352271751, -0.9331621637350285, 3.267127687252324, -0.29735346452646405, -0.9729992234285908]}]
+[Time: 29.06.23 14:17:08] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:09] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:17:09] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:17:10] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 101.46042828676873}, {'Local Eigenvector norm': 161.33370504345032}]
+[Time: 29.06.23 14:17:11] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:12] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:17:12] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:17:13] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [2.3512206554087283, 1.3441536798991696, 0.8241315193977297, -3.689245159754734, 0.2667052850984178, 0.6403172190248918, 0.9712828197298742, -0.1579867939746287, -1.5535189820012998, 0.7387488656891733, 1.3771797608136271, -0.07023134466835781, -0.4344714365775237, 0.48467675409531935, 0.334036816433964]}, {'Local Conorms': [-2.3512206554087256, -1.34415367989917, -0.8241315193977291, 3.689245159754736, -0.2667052850984178, -0.6403172190248918, -0.9712828197298718, 0.15798679397463114, 1.553518982001302, -0.7387488656891729, -1.3771797608136283, 0.0702313446683576, 0.4344714365775245, -0.4846767540953226, -0.33403681643396443]}]
+[Time: 29.06.23 14:17:14] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:15] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:17:15] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:17:16] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 110.79687430899038}, {'Local Eigenvector norm': 146.13942343233904}]
+[Time: 29.06.23 14:17:17] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:18] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:17:18] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:17:19] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.0756425451271611, 1.4518856781477179, -0.6947642376999481, 0.5030357168776084, -1.094997506566126, 2.108518246665378, -1.1412899014216498, 2.3316420515833194, 1.904476787290869, -1.0249602051406912, 0.1457252778613686, -1.027093344467061, -0.8207377867664771, 2.605734481821521, 0.9813674292014055, 1.476345123112975]}, {'Local Conorms': [-0.07564254512716076, -1.4518856781477212, 0.6947642376999477, -0.5030357168776104, 1.0949975065661235, -2.108518246665377, 1.1412899014216467, -2.3316420515833203, -1.9044767872908703, 1.0249602051406876, -0.14572527786136616, 1.0270933444670591, 0.820737786766477, -2.605734481821519, -0.9813674292013985, -1.4763451231129754]}]
+[Time: 29.06.23 14:17:20] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:21] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:17:21] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:17:22] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 138.85872178745473}, {'Local Eigenvector norm': 105.34091468259857}]
+[Time: 29.06.23 14:17:23] [Level: info] transition: normalize_g
+[CTRL] GET /data
+[Time: 29.06.23 14:17:24] [Level: info] state: normalize_g
+Normalising
+(17, 17)
+17
+End normalising
+(17, 17)
+(17, 17)
+(17,)
+(17, 17)
+[Time: 29.06.23 14:17:24] [Level: info] transition: seperate_pca
+[Time: 29.06.23 14:17:25] [Level: info] state: seperate_pca
+[Time: 29.06.23 14:17:25] [Level: info] transition: init_pca
+[CTRL] POST /data
+[Time: 29.06.23 14:17:26] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/hospital_data_bredel_1 - Copy.csv', '/mnt/input/hospital_data_bredel_1.csv']
+RUNNING ON:  /mnt/input/hospital_data_bredel_1.csv
+number of omics:  2
+[STARTUP] Configuration copied
+/app/apps/svd/FC_Federated_PCA.py:97: RuntimeWarning: invalid value encountered in log2
+  self.tabdata.scaled = np.log2(self.tabdata.scaled+1)
+Log Transform performed
+[Time: 29.06.23 14:17:26] [Level: info] transition: check_row_names
+[Time: 29.06.23 14:17:27] [Level: info] state: check_row_names
+gathering
+unifying row names
+[{'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 26, 'Nans': array([ 0,  0,  0,  0,  2,  0,  3,  0,  0,  3,  3,  0,  0,  0,  0,  4,  0,
+        0,  1,  0,  0,  2,  0,  0,  1,  1,  0,  4,  0,  1,  0,  0,  1,  0,
+        4,  2,  0,  0,  5,  0,  0,  0,  0,  2,  1,  0,  3,  3,  0,  0,  0,
+        1,  0,  9,  0,  0,  0,  1,  0,  0,  1,  0,  0,  8,  0,  2,  0,  3,
+        8, 12,  2, 16,  1,  1, 18,  0,  0, 20,  0, 14, 12,  0, 11,  0, 12,
+        6,  6,  2,  4, 22, 17,  5, 14,  7,  7, 10,  5,  0,  0, 22, 10,  7,
+       10,  0,  6,  0, 15,  6,  0,  5,  9,  0,  0, 12,  9, 19, 16, 17, 16,
+        0,  0,  1,  3,  0, 11,  0,  0,  0, 18,  0,  1, 10,  7,  7, 17, 11,
+        0,  1,  2,  4, 15,  1, 24, 18, 12,  0,  0,  0,  0,  2,  0, 16,  0,
+       10,  1,  1, 12,  1, 15, 15,  0, 11,  0,  2,  1,  7,  5, 17,  7,  0,
+        0,  0,  4,  0,  8,  0, 18,  1,  1, 10,  0, 13,  0,  3, 11,  9,  5,
+        9,  1,  0,  0,  0,  4, 16, 15,  0, 16,  0,  1, 17,  0,  0, 15,  6,
+       25,  7,  6, 10,  3,  0,  1, 12,  1,  0,  4,  5,  0,  0,  6,  0, 24,
+        5, 15,  1,  0, 13, 12, 17,  0,  0,  0,  0,  0, 25,  0, 14,  1,  0,
+        0, 14,  0,  0,  0, 10,  2,  0,  0, 22,  2, 11, 25,  0,  4, 18,  3,
+        3, 23,  3,  4,  1,  3,  0, 10, 22, 23, 24, 10,  4, 12,  4, 11,  0,
+       13,  0,  1,  7, 14,  0,  4,  0,  4,  1,  4,  0, 12,  0,  0,  0, 19,
+        3,  3, 16, 25, 15,  0,  2,  8,  2, 20,  0,  0,  7,  0,  5,  8, 14,
+        0,  0,  0,  8,  0,  3,  3,  1, 19,  3,  0, 26,  0,  2, 17,  0,  0,
+        6, 17, 10,  0,  0,  0,  0, 11,  2,  1, 15,  2,  0,  2,  1,  0,  3,
+        0,  4, 16, 11,  0,  0, 17,  1,  0,  2,  2,  2,  0,  8, 20, 21,  6,
+        0, 15,  4,  0, 10,  0,  1,  0,  0,  0,  4, 26,  0, 11, 12,  9,  0,
+        0,  0,  1,  0, 25,  2,  3,  0,  0,  2,  3, 11,  0,  0,  3,  2, 15,
+        7,  6,  2,  6,  0,  4,  0,  0, 19, 15,  0,  0,  0,  1,  7,  0,  0,
+        6, 17,  2,  8,  0,  7,  3,  7,  0,  0,  0,  0,  0,  0,  8,  2])}, {'Row names': array(['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6',
+       'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8',
+       'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3',
+       'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1',
+       'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1',
+       'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1',
+       'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160',
+       'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R',
+       'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2',
+       'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1',
+       'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2',
+       'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560',
+       'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN',
+       'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52',
+       'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF',
+       'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1',
+       'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3',
+       'IGFBP3', 'KLRC3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A',
+       'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT',
+       'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2',
+       'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3',
+       'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2',
+       'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1',
+       'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1',
+       'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432',
+       'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1',
+       'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629',
+       'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1',
+       'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682',
+       'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ',
+       'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1',
+       'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B',
+       'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5',
+       'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7',
+       'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217',
+       'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30',
+       'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1',
+       'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7',
+       'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1',
+       'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN',
+       'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2',
+       'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963',
+       'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS',
+       'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A',
+       'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT',
+       'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1',
+       'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2',
+       'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3',
+       'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1',
+       'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1',
+       'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1',
+       'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK',
+       'ANK3', 'AI002301', 'NCF1', 'CA11', 'NY.SAR.48', 'AA598555',
+       'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187',
+       'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1',
+       'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19',
+       'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A',
+       'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20',
+       'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC',
+       'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC',
+       'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2',
+       'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG',
+       'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1',
+       'MGP'], dtype=object), 'Sample count': 17, 'Nans': array([ 0,  0,  0,  1,  2,  0,  2,  0,  0,  0,  1,  1,  0,  0,  1,  0,  0,
+        0,  1,  0,  0,  3,  0,  1,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0,
+        0,  1,  0,  0,  1,  0,  1,  0,  0,  3,  2,  0,  1,  1,  1,  0,  0,
+        1,  0,  6,  1,  0,  0,  0,  0,  0,  1,  1,  1,  5,  0,  3,  0,  1,
+        6, 11,  1, 12,  2,  0, 12,  1,  1, 13,  1,  9,  8,  0,  6,  0,  8,
+        1,  2,  2,  3, 16, 10,  6, 11,  4,  5,  4,  5,  0,  0, 13,  7,  2,
+        4,  0,  5,  0,  9,  6,  0,  1,  5,  1,  1, 11,  4, 15,  7,  8,  8,
+        0,  0,  3,  2,  1, 11,  0,  0,  0, 13,  0,  2,  6,  1,  9,  9,  6,
+        0,  0,  3,  5, 10,  0, 13, 13, 12,  0,  0,  0,  0,  1,  0,  8,  0,
+        6,  0,  0,  7,  4,  9, 12,  3,  6,  2,  0,  0,  4,  3, 15,  5,  0,
+        0,  0,  4,  0,  8,  0, 10,  3,  3,  8,  0,  6,  0,  3,  6,  6,  4,
+        5,  1,  1,  1,  0,  2,  7,  8,  1,  7,  0,  0,  7,  2,  0,  9,  7,
+       17,  6,  4,  8,  3,  0,  0,  8,  4,  0,  1,  2,  0,  0,  5,  1, 12,
+        5, 11,  1,  0,  8, 10, 11,  1,  1,  0,  1,  0, 16,  0,  6,  0,  0,
+        1, 11,  0,  0,  0,  7,  1,  0,  0, 16,  0,  5, 15,  0,  2,  8,  1,
+        1, 12,  2,  0,  0,  2,  5,  6, 13, 11, 17,  5,  1, 12,  3,  7,  0,
+       12,  0,  1,  5,  6,  2,  4,  0,  0,  0,  2,  0,  8,  0,  0,  1, 14,
+        0,  5, 12, 17,  9,  1,  1,  9,  0,  8,  1,  0,  4,  0,  7,  6,  9,
+        1,  0,  0,  7,  0,  5,  0,  2, 14,  4,  0, 17,  0,  3,  9,  0,  0,
+        3, 13,  8,  0,  0,  0,  1,  4,  0,  3, 13,  2,  0,  1,  1,  0,  0,
+        0,  2,  9,  6,  0,  0, 10,  1,  0,  4,  0,  2,  0,  3, 15, 12,  1,
+        1, 11,  0,  0,  7,  0,  0,  0,  0,  1,  2, 17,  0,  7,  6, 12,  0,
+        0,  0,  0,  0, 16,  2,  3,  1,  0,  0,  3,  9,  0,  0,  1,  3,  6,
+        7,  7,  6,  3,  1,  0,  0,  0, 16, 12,  1,  0,  0,  1,  1,  0,  0,
+        6,  9,  0,  6,  0,  3,  5,  5,  1,  0,  0,  0,  0,  0,  8,  0])}]
+['EXT1', 'DIP2C', 'SVIL', 'MGC39606', 'ADARB2', 'PARD3', 'SPAG6', 'AKR1C1', 'CCDC3', 'AKR1C2', 'TCTEX1D1', 'GYPA', 'VASP', 'ACAD8', 'C1orf63', 'USP6NL', 'CACNB2', 'CLCA3', 'COX7A1', 'CEAL1', 'EID.3', 'DUS3L', 'KIAA1543', 'HBXIP', 'ZNF226', 'EDG1', 'SORT1', 'LOC283070', 'DCLRE1B', 'ZNF549', 'KLRC3', 'ZNF419B', 'DDEF1', 'DMN', 'KCNJ1', 'MGC18216', 'PSG5', 'FBXO32', 'ZNF329', 'SBP1', 'MGC42367', 'OSR1', 'D21S2089E', 'HNRNPG.T', 'AP4B1', 'ZNF160', 'LRBA', 'LILRA1', 'EGLN2', 'BCAM', 'GPSM2', 'APOC1', 'IGF1R', 'TLL2', 'CA11', 'TMEM146', 'KCNK6', 'TFDP2', 'ZNF233', 'COX6A2', 'UBE4B', 'NDUFB11', 'TTC23', 'RBP7', 'IGSF3', 'BLVRB', 'PSG1', 'MYBPC2', 'MSN', 'H08563', 'BGN', 'TNFRSF12A', 'CAPG', 'MYCBP2', 'EMP3', 'RTN3', 'RGS16', 'ITGA5', 'PPP3CB', 'LOC541471', 'H78560', 'ASPA', 'TIMP1', 'AA398420', 'IMAGE.33267', 'SOCS3', 'PDPN', 'CHI3L2', 'MASP1', 'PLP2', 'S100A11', 'SETD5', 'T97457', 'UBA52', 'DLL3', 'TSPYL1', 'FAM84B', 'RALY', 'LOC613212', 'CLIC1', 'VEGF', 'AA281932', 'COL1A1', 'CD47', 'IFI30', 'ATP6V1C1', 'PSD3', 'RUNX1', 'LHFPL2', 'C9orf48', 'CA12', 'EDNRB', 'PPP3CA', 'LGALS3', 'STEAP3', 'IGFBP3', 'KLRC2', 'KLRC1', 'NPL', 'ARPP.19', 'PDE2A', 'COL4A2', 'TIMP3', 'PLAUR', 'PNCK', 'WDR7', 'X37864', 'NNMT', 'TBC1D7', 'MRC2', 'ABCA5', 'TCF7L1', 'CD58', 'MST1', 'DECR2', 'AA131320', 'LOC57228', 'MST150', 'PEG3', 'TMEM49', 'FABP3', 'SLC16A3', 'SERPINH1', 'ADM', 'NMNAT2', 'GABBR1', 'VAMP2', 'CSPG2', 'WASF1', 'CBX6', 'RAB27B', 'COL3A1', 'KIAA1644', 'NLGN1', 'C16orf5', 'LOC400451', 'AEBP1', 'COL1A2', 'COL6A2', 'HEY1', 'HSPG2', 'RPS19BP1', 'SUV39H1', 'RFXAP', 'TNC', 'DKFZp313A2432', 'STC1', 'PDXP', 'MOAP1', 'MAPKBP1', 'ID4', 'CACNB3', 'SERPING1', 'RND3', 'HMOX1', 'MTHFD2', 'R70506', 'APOC2', 'ANXA1', 'AA489629', 'H86813', 'SCAMP5', 'RPS3A', 'PLAU', 'R61377', 'NEFH', 'STMN1', 'FBXL16', 'C1R', 'WWTR1', 'EPHB1', 'ANXA5', 'AA906888', 'AI262682', 'LOC146795', 'SOX4', 'COL9A2', 'SERPINA3', 'AA029415', 'PRKCZ', 'FLJ35740', 'FN1', 'LOC388610', 'AI871056', 'FGF13', 'STXBP1', 'AI357047', 'SP100', 'HCLS1', 'MGC26694', 'LSP1', 'PRKAR1B', 'YWHAG', 'CLTB', 'AI335002', 'A2BP1', 'HLA.A', 'SNCG', 'IGFBP5', 'PYCR1', 'ABCC3', 'L3MBTL4', 'DPYD', 'H20822', 'AI822135', 'LMO7', 'ADFP', 'KCNMA1', 'PCDHGC3', 'MSTP9', 'AA479357', 'LTF', 'ZNF217', 'AA490257', 'LOC389831', 'AA975768', 'NOTCH1', 'MB', 'RAB30', 'FCGR2B', 'C4A', 'FLJ38984', 'PYGL', 'SNRPN', 'KNS2', 'GBP1', 'IL32', 'LY96', 'AA181288', 'IGF2BP3', 'CALM1', 'CASP1', 'PDLIM7', 'DEF6', 'W93688', 'USP3', 'X38595', 'TSPAN6', 'CDKN1A', 'PHLDA1', 'GOT1', 'EFHB', 'GYPC', 'MYC', 'CDC20B', 'TNFAIP3', 'POSTN', 'PLOD2', 'CDKN2D', 'AA669383', 'CLSTN3', 'MDK', 'MVP', 'CCL2', 'FAM46A', 'PLA2G2A', 'KCNQ2', 'CKMT1A', 'H24428', 'KIAA0963', 'NSF', 'RAB11FIP4', 'CD53', 'IL21R', 'URP2', 'CAMK2A', 'APCS', 'HPRT1', 'LAMA4', 'ITPKA', 'HK2', 'RBP4', 'DDIT4', 'OSBPL1A', 'CAMKK2', 'L1CAM', 'PYHIN1', 'H91845', 'SLC35A2', 'FCGRT', 'AI005038', 'PTPRZ1', 'ADCY1', 'HAMP', 'CD44', 'FAS', 'NUAK1', 'DNASE1L1', 'GPNMB', 'HBA1', 'T62491', 'FBXO2', 'VSNL1', 'SPINT2', 'C8orf4', 'NCF2', 'PRSS3', 'PLTP', 'CAP2', 'LAMB1', 'EDG3', 'INPP5F', 'PDE4DIP', 'MMP2', 'S100A10', 'LAPTM5', 'PRRX1', 'IL1RAP', 'HLA.G', 'TSPAN4', 'ITGA9', 'CCR1', 'MAL2', 'DSCR1L1', 'C6orf12', 'DDN', 'CBLN2', 'GBP2', 'PRKCB1', 'F13A1', 'S100A1', 'R52960', 'BCL2A1', 'YWHAH', 'FREQ', 'UGCG', 'SERPINI1', 'NLK', 'ANK3', 'AI002301', 'NCF1', 'NY.SAR.48', 'AA598555', 'CYBA', 'ID3', 'TAP1', 'TGFBI', 'AI263051', 'TOMM40', 'C1orf187', 'IQSEC1', 'DES', 'NPC2', 'AIF1', 'HLA.F', 'AI350724', 'PRSS1', 'SAA2', 'CYR61', 'T51726', 'SYNGR3', 'ITGA3', 'CHN1', 'ADAM19', 'FBXW7', 'AA598631', 'LUM', 'PCP4', 'SRPX', 'IGHG1', 'FAM84A', 'H41096', 'HPCA', 'CTHRC1', 'AA401952', 'DYNLT1', 'GAS1', 'RAB20', 'ESM1', 'AA424849', 'NR4A1', 'EPB49', 'MDFI', 'LYN', 'TXNDC', 'PALLD', 'R70684', 'CAV1', 'ZFHX1B', 'H10054', 'NDST1', 'SPARC', 'SCN2B', 'SYT7', 'MED11', 'PARP14', 'MICAL2', 'TncRNA', 'BNIP2', 'FZD7', 'GADD45B', 'FBL', 'LOC283130', 'STK17A', 'PRKCG', 'HLA.DRB1', 'PRG1', 'N98591', 'PPP1R14A', 'SLC15A2', 'NPTX1', 'MGP']
+['GABBR1', 'CD58', 'LOC400451', 'IGF1R', 'PDPN', 'LILRA1', 'KLRC1', 'PLP2', 'AKR1C2', 'MYBPC2', 'CLTB', 'L1CAM', 'ZNF549', 'TncRNA', 'LYN', 'CTHRC1', 'PDE4DIP', 'WASF1', 'FBXO2', 'NEFH', 'CD47', 'PRG1', 'PDLIM7', 'COL9A2', 'RAB27B', 'KCNJ1', 'FCGRT', 'PRKAR1B', 'LMO7', 'ACAD8', 'VAMP2', 'CCL2', 'HPCA', 'RBP4', 'CDKN2D', 'C1orf187', 'DDEF1', 'OSBPL1A', 'TSPAN6', 'BCAM', 'AA181288', 'PLA2G2A', 'C8orf4', 'SPARC', 'MGC26694', 'ZNF419B', 'SETD5', 'NCF2', 'CCDC3', 'SCN2B', 'IL32', 'PSD3', 'PARP14', 'MED11', 'C16orf5', 'AI335002', 'NUAK1', 'UGCG', 'KIAA1543', 'IGFBP3', 'T51726', 'DIP2C', 'NLGN1', 'PNCK', 'VASP', 'C9orf48', 'SP100', 'MGC18216', 'FAM84A', 'LAMA4', 'EMP3', 'PYHIN1', 'TMEM146', 'CBX6', 'NMNAT2', 'CLCA3', 'AA906888', 'POSTN', 'TCF7L1', 'MYC', 'KLRC2', 'PPP1R14A', 'HBXIP', 'T62491', 'CBLN2', 'DYNLT1', 'ANK3', 'EXT1', 'IGF2BP3', 'NPTX1', 'CAP2', 'HBA1', 'MVP', 'ADFP', 'DECR2', 'CAMKK2', 'NDST1', 'NOTCH1', 'SOX4', 'MST150', 'HPRT1', 'F13A1', 'H10054', 'DKFZp313A2432', 'CEAL1', 'C1R', 'TOMM40', 'INPP5F', 'AA398420', 'CACNB3', 'PRRX1', 'MAPKBP1', 'EDG3', 'R70684', 'TFDP2', 'KCNMA1', 'ITGA3', 'LOC57228', 'NDUFB11', 'BNIP2', 'ANXA5', 'AI357047', 'RAB30', 'T97457', 'LOC389831', 'PTPRZ1', 'HLA.DRB1', 'EPB49', 'COL6A2', 'CASP1', 'AI005038', 'W93688', 'FLJ35740', 'IGHG1', 'WDR7', 'CYBA', 'GOT1', 'CLIC1', 'CDC20B', 'HMOX1', 'EFHB', 'R52960', 'STK17A', 'MRC2', 'ADM', 'PRKCB1', 'DNASE1L1', 'IL1RAP', 'APCS', 'KIAA1644', 'MST1', 'SERPING1', 'GPSM2', 'IFI30', 'TGFBI', 'IQSEC1', 'HLA.F', 'COX7A1', 'HK2', 'IGSF3', 'MGC39606', 'CHN1', 'MSTP9', 'STXBP1', 'PDXP', 'CAMK2A', 'TAP1', 'PLTP', 'ABCA5', 'R61377', 'COX6A2', 'L3MBTL4', 'AA401952', 'AI822135', 'AA490257', 'GAS1', 'MGP', 'CACNB2', 'PYCR1', 'LY96', 'CD53', 'LUM', 'DCLRE1B', 'RPS3A', 'PARD3', 'H20822', 'HEY1', 'BGN', 'AA424849', 'NLK', 'STEAP3', 'COL3A1', 'KLRC3', 'DLL3', 'R70506', 'HAMP', 'TSPAN4', 'VSNL1', 'AA489629', 'BLVRB', 'NPL', 'RND3', 'TBC1D7', 'USP6NL', 'S100A1', 'H41096', 'PHLDA1', 'DSCR1L1', 'LOC541471', 'PEG3', 'ABCC3', 'LOC283130', 'AI871056', 'CKMT1A', 'RPS19BP1', 'WWTR1', 'MMP2', 'ADCY1', 'SLC15A2', 'VEGF', 'LGALS3', 'AA975768', 'FZD7', 'X38595', 'CAPG', 'TIMP3', 'ZNF160', 'NPC2', 'CYR61', 'MICAL2', 'FN1', 'AI350724', 'GPNMB', 'D21S2089E', 'RUNX1', 'SBP1', 'TTC23', 'H91845', 'NSF', 'PSG5', 'FBXW7', 'MDK', 'DES', 'AA598631', 'CHI3L2', 'ZNF233', 'LRBA', 'TNFAIP3', 'LOC146795', 'GADD45B', 'EDG1', 'FBXO32', 'AA281932', 'LOC283070', 'ARPP.19', 'EDNRB', 'STMN1', 'FBL', 'LOC388610', 'DPYD', 'GYPA', 'OSR1', 'AP4B1', 'N98591', 'RALY', 'HCLS1', 'CLSTN3', 'DEF6', 'TNFRSF12A', 'AA131320', 'LAMB1', 'COL4A2', 'AI263051', 'S100A10', 'FAM46A', 'LOC613212', 'RAB20', 'AI262682', 'URP2', 'SUV39H1', 'DDN', 'RAB11FIP4', 'APOC1', 'NNMT', 'C4A', 'KCNQ2', 'SYNGR3', 'FBXL16', 'CA12', 'SERPINI1', 'IGFBP5', 'H86813', 'PLOD2', 'ATP6V1C1', 'MOAP1', 'SAA2', 'SRPX', 'USP3', 'ITGA9', 'MAL2', 'STC1', 'GBP1', 'ID4', 'ADARB2', 'ZFHX1B', 'LTF', 'PRKCG', 'RGS16', 'CALM1', 'AA479357', 'RBP7', 'APOC2', 'SVIL', 'DMN', 'H08563', 'SLC16A3', 'TNC', 'SNRPN', 'AA029415', 'GYPC', 'MB', 'AKR1C1', 'H78560', 'HNRNPG.T', 'HSPG2', 'PPP3CA', 'MGC42367', 'HLA.G', 'PSG1', 'RFXAP', 'FABP3', 'EGLN2', 'IMAGE.33267', 'PDE2A', 'PLAU', 'SNCG', 'ITPKA', 'SPINT2', 'UBA52', 'TCTEX1D1', 'MTHFD2', 'SCAMP5', 'SPAG6', 'FLJ38984', 'PRSS1', 'MDFI', 'PCDHGC3', 'AA598555', 'CCR1', 'ID3', 'SORT1', 'C6orf12', 'SERPINH1', 'FAM84B', 'EPHB1', 'HLA.A', 'FAS', 'YWHAG', 'TXNDC', 'DUS3L', 'IL21R', 'TLL2', 'ZNF329', 'PPP3CB', 'TSPYL1', 'LAPTM5', 'LSP1', 'CD44', 'TMEM49', 'BCL2A1', 'YWHAH', 'FCGR2B', 'SERPINA3', 'ADAM19', 'RTN3', 'FREQ', 'PCP4', 'NY.SAR.48', 'H24428', 'PRKCZ', 'COL1A1', 'PALLD', 'MYCBP2', 'CA11', 'ITGA5', 'AEBP1', 'C1orf63', 'EID.3', 'ANXA1', 'GBP2', 'ZNF226', 'AIF1', 'SLC35A2', 'NR4A1', 'CDKN1A', 'SOCS3', 'AI002301', 'PYGL', 'CSPG2', 'NCF1', 'LHFPL2', 'SYT7', 'ESM1', 'CAV1', 'UBE4B', 'AA669383', 'X37864', 'COL1A2', 'DDIT4', 'PLAUR', 'ZNF217', 'PRSS3', 'S100A11', 'A2BP1', 'ASPA', 'MSN', 'MASP1', 'KNS2', 'TIMP1', 'KCNK6', 'FGF13', 'KIAA0963']
+[43, 27, 24, 43, 35, 39, 19, 5, 40, 39, 38, 26, 41, 17, 42, 23, 34, 40, 40, 34, 43, 43, 17, 43, 19, 39, 43, 38, 21, 43, 43, 41, 37, 1, 36, 26, 42, 42, 39, 43, 27, 23, 36, 43, 42, 43, 32, 43, 43, 41, 5, 19, 43, 43, 42, 36, 43, 16, 43, 9, 25, 43, 42, 43, 43, 37, 37, 40, 43, 40, 13, 41, 43, 43, 43, 43, 20, 38, 35, 9, 18, 43, 42, 35, 41, 43, 37, 43, 3, 27, 38, 43, 43, 15, 26, 40, 43, 43, 20, 38, 10, 43, 42, 35, 43, 42, 43, 43, 43, 35, 43, 43, 43, 43, 42, 42, 43, 42, 42, 41, 37, 25, 18, 18, 23, 43, 43, 35, 16, 37, 32, 39, 43, 42, 43, 10, 38, 8, 2, 43, 27, 18, 31, 40, 19, 40, 43, 43, 42, 27, 17, 43, 43, 32, 17, 43, 42, 41, 15, 43, 42, 43, 43, 33, 31, 43, 42, 43, 27, 28, 43, 17, 43, 22, 43, 39, 41, 43, 7, 41, 43, 2, 43, 37, 43, 43, 40, 40, 29, 43, 30, 43, 20, 31, 39, 29, 28, 40, 43, 38, 43, 27, 43, 39, 37, 41, 38, 39, 20, 34, 33, 35, 1, 35, 41, 42, 13, 31, 43, 26, 20, 42, 29, 38, 40, 42, 43, 43, 25, 31, 19, 37, 28, 43, 31, 43, 42, 15, 42, 43, 42, 18, 42, 43, 39, 43, 39, 28, 42, 43, 42, 43, 34, 38, 43, 42, 29, 33, 30, 41, 42, 43, 40, 43, 43, 43, 43, 39, 15, 43, 17, 38, 39, 25, 31, 43, 38, 20, 43, 41, 40, 37, 41, 12, 43, 41, 22, 41, 29, 41, 42, 24, 19, 43, 43, 43, 37, 8, 41, 15, 11, 43, 43, 39, 16, 43, 42, 42, 43, 42, 30, 39, 43, 43, 20, 6, 32, 40, 19, 8, 42, 43, 23, 38, 26, 42, 42, 42, 43, 42, 42, 42, 23, 39, 26, 32, 35, 10, 32, 39, 15, 43, 38, 43, 0, 34, 42, 8, 39, 36, 42, 43, 12, 33, 43, 43, 42, 43, 39, 38, 23, 28, 37, 42, 29, 43, 23, 20, 18, 26, 43, 43, 42, 43, 42, 43, 39, 32, 43, 41, 29, 43, 42, 42, 10, 38, 42, 43, 25, 43, 42, 43, 42, 30, 42, 36, 41, 26, 43, 39, 43, 35, 22, 8, 41, 25, 43, 19, 19, 21, 2, 0, 16, 43, 43, 29, 36, 43, 26, 43, 30, 39]
+[API] [COORDINATOR] row names identified!
+[Time: 29.06.23 14:17:27] [Level: info] transition: wait_for_params
+[Time: 29.06.23 14:17:28] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['GABBR1', 'CD58', 'LOC400451', 'IGF1R', 'PDPN', 'LILRA1', 'KLRC1', 'PLP2', 'AKR1C2', 'MYBPC2', 'CLTB', 'L1CAM', 'ZNF549', 'TncRNA', 'LYN', 'CTHRC1', 'PDE4DIP', 'WASF1', 'FBXO2', 'NEFH', 'CD47', 'PRG1', 'PDLIM7', 'COL9A2', 'RAB27B', 'KCNJ1', 'FCGRT', 'PRKAR1B', 'LMO7', 'ACAD8', 'VAMP2', 'CCL2', 'HPCA', 'RBP4', 'CDKN2D', 'C1orf187', 'DDEF1', 'OSBPL1A', 'TSPAN6', 'BCAM', 'AA181288', 'PLA2G2A', 'C8orf4', 'SPARC', 'MGC26694', 'ZNF419B', 'SETD5', 'NCF2', 'CCDC3', 'SCN2B', 'IL32', 'PSD3', 'PARP14', 'MED11', 'C16orf5', 'AI335002', 'NUAK1', 'UGCG', 'KIAA1543', 'IGFBP3', 'T51726', 'DIP2C', 'NLGN1', 'PNCK', 'VASP', 'C9orf48', 'SP100', 'MGC18216', 'FAM84A', 'LAMA4', 'EMP3', 'PYHIN1', 'TMEM146', 'CBX6', 'NMNAT2', 'CLCA3', 'AA906888', 'POSTN', 'TCF7L1', 'MYC', 'KLRC2', 'PPP1R14A', 'HBXIP', 'T62491', 'CBLN2', 'DYNLT1', 'ANK3', 'EXT1', 'IGF2BP3', 'NPTX1', 'CAP2', 'HBA1', 'MVP', 'ADFP', 'DECR2', 'CAMKK2', 'NDST1', 'NOTCH1', 'SOX4', 'MST150', 'HPRT1', 'F13A1', 'H10054', 'DKFZp313A2432', 'CEAL1', 'C1R', 'TOMM40', 'INPP5F', 'AA398420', 'CACNB3', 'PRRX1', 'MAPKBP1', 'EDG3', 'R70684', 'TFDP2', 'KCNMA1', 'ITGA3', 'LOC57228', 'NDUFB11', 'BNIP2', 'ANXA5', 'AI357047', 'RAB30', 'T97457', 'LOC389831', 'PTPRZ1', 'HLA.DRB1', 'EPB49', 'COL6A2', 'CASP1', 'AI005038', 'W93688', 'FLJ35740', 'IGHG1', 'WDR7', 'CYBA', 'GOT1', 'CLIC1', 'CDC20B', 'HMOX1', 'EFHB', 'R52960', 'STK17A', 'MRC2', 'ADM', 'PRKCB1', 'DNASE1L1', 'IL1RAP', 'APCS', 'KIAA1644', 'MST1', 'SERPING1', 'GPSM2', 'IFI30', 'TGFBI', 'IQSEC1', 'HLA.F', 'COX7A1', 'HK2', 'IGSF3', 'MGC39606', 'CHN1', 'MSTP9', 'STXBP1', 'PDXP', 'CAMK2A', 'TAP1', 'PLTP', 'ABCA5', 'R61377', 'COX6A2', 'L3MBTL4', 'AA401952', 'AI822135', 'AA490257', 'GAS1', 'MGP', 'CACNB2', 'PYCR1', 'LY96', 'CD53', 'LUM', 'DCLRE1B', 'RPS3A', 'PARD3', 'H20822', 'HEY1', 'BGN', 'AA424849', 'NLK', 'STEAP3', 'COL3A1', 'KLRC3', 'DLL3', 'R70506', 'HAMP', 'TSPAN4', 'VSNL1', 'AA489629', 'BLVRB', 'NPL', 'RND3', 'TBC1D7', 'USP6NL', 'S100A1', 'H41096', 'PHLDA1', 'DSCR1L1', 'LOC541471', 'PEG3', 'ABCC3', 'LOC283130', 'AI871056', 'CKMT1A', 'RPS19BP1', 'WWTR1', 'MMP2', 'ADCY1', 'SLC15A2', 'VEGF', 'LGALS3', 'AA975768', 'FZD7', 'X38595', 'CAPG', 'TIMP3', 'ZNF160', 'NPC2', 'CYR61', 'MICAL2', 'FN1', 'AI350724', 'GPNMB', 'D21S2089E', 'RUNX1', 'SBP1', 'TTC23', 'H91845', 'NSF', 'PSG5', 'FBXW7', 'MDK', 'DES', 'AA598631', 'CHI3L2', 'ZNF233', 'LRBA', 'TNFAIP3', 'LOC146795', 'GADD45B', 'EDG1', 'FBXO32', 'AA281932', 'LOC283070', 'ARPP.19', 'EDNRB', 'STMN1', 'FBL', 'LOC388610', 'DPYD', 'GYPA', 'OSR1', 'AP4B1', 'N98591', 'RALY', 'HCLS1', 'CLSTN3', 'DEF6', 'TNFRSF12A', 'AA131320', 'LAMB1', 'COL4A2', 'AI263051', 'S100A10', 'FAM46A', 'LOC613212', 'RAB20', 'AI262682', 'URP2', 'SUV39H1', 'DDN', 'RAB11FIP4', 'APOC1', 'NNMT', 'C4A', 'KCNQ2', 'SYNGR3', 'FBXL16', 'CA12', 'SERPINI1', 'IGFBP5', 'H86813', 'PLOD2', 'ATP6V1C1', 'MOAP1', 'SAA2', 'SRPX', 'USP3', 'ITGA9', 'MAL2', 'STC1', 'GBP1', 'ID4', 'ADARB2', 'ZFHX1B', 'LTF', 'PRKCG', 'RGS16', 'CALM1', 'AA479357', 'RBP7', 'APOC2', 'SVIL', 'DMN', 'H08563', 'SLC16A3', 'TNC', 'SNRPN', 'AA029415', 'GYPC', 'MB', 'AKR1C1', 'H78560', 'HNRNPG.T', 'HSPG2', 'PPP3CA', 'MGC42367', 'HLA.G', 'PSG1', 'RFXAP', 'FABP3', 'EGLN2', 'IMAGE.33267', 'PDE2A', 'PLAU', 'SNCG', 'ITPKA', 'SPINT2', 'UBA52', 'TCTEX1D1', 'MTHFD2', 'SCAMP5', 'SPAG6', 'FLJ38984', 'PRSS1', 'MDFI', 'PCDHGC3', 'AA598555', 'CCR1', 'ID3', 'SORT1', 'C6orf12', 'SERPINH1', 'FAM84B', 'EPHB1', 'HLA.A', 'FAS', 'YWHAG', 'TXNDC', 'DUS3L', 'IL21R', 'TLL2', 'ZNF329', 'PPP3CB', 'TSPYL1', 'LAPTM5', 'LSP1', 'CD44', 'TMEM49', 'BCL2A1', 'YWHAH', 'FCGR2B', 'SERPINA3', 'ADAM19', 'RTN3', 'FREQ', 'PCP4', 'NY.SAR.48', 'H24428', 'PRKCZ', 'COL1A1', 'PALLD', 'MYCBP2', 'CA11', 'ITGA5', 'AEBP1', 'C1orf63', 'EID.3', 'ANXA1', 'GBP2', 'ZNF226', 'AIF1', 'SLC35A2', 'NR4A1', 'CDKN1A', 'SOCS3', 'AI002301', 'PYGL', 'CSPG2', 'NCF1', 'LHFPL2', 'SYT7', 'ESM1', 'CAV1', 'UBE4B', 'AA669383', 'X37864', 'COL1A2', 'DDIT4', 'PLAUR', 'ZNF217', 'PRSS3', 'S100A11', 'A2BP1', 'ASPA', 'MSN', 'MASP1', 'KNS2', 'TIMP1', 'KCNK6', 'FGF13', 'KIAA0963']
+INDEX
+[146, 133, 156, 52, 86, 47, 118, 89, 9, 67, 214, 296, 29, 409, 395, 385, 323, 149, 312, 186, 103, 418, 253, 197, 151, 34, 300, 212, 226, 13, 147, 274, 384, 292, 269, 361, 32, 294, 258, 49, 249, 276, 315, 403, 210, 31, 91, 316, 8, 404, 247, 106, 407, 406, 155, 215, 307, 346, 22, 115, 371, 1, 154, 125, 12, 109, 208, 35, 382, 289, 74, 297, 55, 150, 145, 17, 193, 267, 132, 264, 117, 420, 23, 311, 337, 387, 349, 0, 250, 422, 319, 310, 273, 227, 135, 295, 402, 237, 196, 138, 288, 340, 401, 166, 19, 189, 360, 322, 83, 172, 327, 170, 321, 398, 57, 228, 373, 137, 61, 410, 192, 207, 239, 92, 235, 302, 417, 393, 159, 252, 301, 255, 201, 381, 126, 355, 261, 99, 265, 175, 262, 342, 415, 130, 144, 339, 308, 328, 287, 153, 134, 173, 50, 104, 358, 362, 366, 18, 291, 64, 3, 374, 230, 206, 168, 286, 357, 318, 131, 185, 59, 222, 386, 225, 234, 388, 423, 16, 220, 248, 283, 378, 28, 183, 5, 224, 160, 70, 391, 348, 114, 152, 116, 94, 177, 304, 330, 313, 180, 65, 119, 174, 129, 15, 341, 383, 260, 334, 79, 139, 221, 414, 204, 278, 162, 190, 324, 303, 421, 100, 113, 236, 411, 257, 72, 123, 45, 364, 370, 408, 202, 367, 309, 42, 107, 39, 62, 298, 281, 36, 376, 272, 363, 377, 87, 58, 46, 266, 195, 412, 25, 37, 101, 27, 120, 111, 187, 413, 203, 223, 11, 41, 44, 419, 97, 209, 271, 254, 71, 136, 320, 122, 359, 325, 275, 98, 389, 194, 285, 163, 336, 282, 51, 128, 241, 277, 372, 188, 110, 347, 219, 181, 268, 105, 169, 369, 380, 256, 331, 333, 167, 246, 171, 4, 400, 232, 416, 76, 251, 231, 63, 178, 2, 33, 69, 142, 165, 244, 199, 263, 238, 7, 80, 43, 161, 112, 40, 329, 66, 164, 141, 48, 84, 121, 184, 218, 290, 314, 93, 10, 176, 182, 6, 242, 368, 394, 229, 354, 332, 356, 26, 335, 143, 96, 191, 217, 306, 213, 396, 21, 284, 53, 38, 78, 95, 326, 211, 305, 140, 343, 344, 240, 198, 375, 75, 345, 379, 353, 279, 200, 102, 397, 73, 352, 77, 157, 14, 20, 179, 338, 24, 365, 299, 392, 259, 85, 350, 243, 148, 351, 108, 405, 390, 399, 60, 270, 127, 158, 293, 124, 233, 317, 90, 216, 81, 68, 88, 245, 82, 56, 205, 280]
+[Time: 29.06.23 14:17:28] [Level: info] transition: aggregate_sums
+[Time: 29.06.23 14:17:29] [Level: info] state: aggregate_sums
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([ 2.67130585e+01, -1.00420303e+01, -1.64430565e+01,  6.49325678e+00,
+        6.87962055e+00, -1.40902940e+01,  5.30062822e+00, -5.83191264e+00,
+       -1.25626687e+01, -1.36664674e+01, -1.47956377e+01,  8.32996456e-01,
+       -8.14057291e+00, -1.76344424e+01,  5.63282002e+00, -2.28854843e+00,
+        6.67694411e+00,  1.02966779e+01,  1.16766510e+01, -1.74026030e+01,
+        1.20771070e+00,  2.46941688e+01, -2.17327634e+01,  1.88371504e+01,
+       -4.81000580e-01, -8.62027236e+00,  2.48621287e+01, -3.01416998e+00,
+       -1.31564294e+01,  2.09074573e+00,  2.64001401e+01,  1.70879054e+01,
+       -1.44749471e+01,  0.00000000e+00, -2.76955855e-01, -6.97452694e+00,
+        2.20434898e+00,  1.40459932e+01, -9.67456657e+00, -1.57704477e+00,
+       -1.60351829e+01,  3.02676078e+00,  6.19787985e+00,  2.24953873e+01,
+/app/apps/svd/Aggregator_FC_Federated_PCA.py:78: RuntimeWarning: invalid value encountered in true_divide
+  my_sums = my_sums/self.values_per_row
+        1.43327385e+01, -9.13082763e+00,  7.21750338e+00,  2.56142674e+01,
+        8.07813231e-01,  1.99260032e+00,  8.74475356e-01, -1.12170557e+01,
+        1.26131684e+01,  2.40556474e+01,  4.43228835e+00, -7.03746757e-01,
+        1.81849175e+01, -1.23814411e+01, -2.93690919e+00,  5.12875466e-01,
+       -2.16549564e+01,  3.36090277e+00,  1.35744163e+01,  1.22160394e+01,
+       -1.70564149e+01, -4.93820406e+00, -4.10809130e+00, -1.62364545e+01,
+        1.92193495e+01,  5.95671265e+00, -8.31504113e+00, -2.36829259e+00,
+       -1.99612928e+00,  1.36456121e+01,  1.20669064e+01,  6.19501218e+00,
+        4.77401219e+00, -6.23517778e+00, -2.30628777e+00, -7.69257349e+00,
+        7.94689273e+00,  2.95455319e+01, -2.35861508e+01,  3.52701950e+00,
+        1.08905928e+01,  9.81084079e+00,  7.35816132e-01,  3.09295976e+00,
+       -5.57795870e+00, -8.53910070e+00,  4.34694791e+00,  1.59202656e+01,
+        2.04295656e+01, -5.75373829e-01, -7.68818904e+00,  3.38902893e-01,
+        1.51042791e+01,  1.91315220e+01,  1.08081414e+01, -5.80318895e+00,
+       -8.27073635e+00,  2.11685373e+01, -9.53518856e+00, -8.06667482e+00,
+       -3.06316284e+00,  1.91987116e+01,  1.41956421e+01,  7.58750103e+00,
+        1.43427087e+01, -4.14844387e+00,  2.14928439e+01,  1.43047410e+01,
+        1.59838276e+01,  1.24449930e+01, -7.76653465e+00,  9.73879963e+00,
+        6.37989830e+00,  9.94069114e+00, -3.45735822e+00, -7.41860354e+00,
+       -1.03882010e+01, -1.19123455e+01, -3.27831636e+00, -1.15253417e+01,
+       -9.94007719e+00,  3.13793316e+01,  4.17653457e+01,  1.06061548e+01,
+       -1.42838830e+00, -3.32564810e+00,  3.40951780e+00,  1.00368609e+01,
+        2.30045974e+01,  1.78626761e+01,  1.75711514e+01, -5.46702654e+00,
+        2.24584513e+00, -9.31728990e+00,  0.00000000e+00,  1.87850513e+01,
+       -1.36095066e+01, -8.44514671e+00, -9.16472814e+00,  8.09337799e+00,
+        1.56986279e+00, -2.88218617e+00,  6.84830154e+00,  1.27464809e+01,
+        8.45718782e+00, -8.52338135e+00, -9.52124887e+00,  2.92950740e+01,
+        3.85734086e+00,  4.95650576e+00,  1.00964274e+00,  1.39062544e+01,
+        2.92179226e+00, -1.13336325e+01, -8.52504804e+00, -1.90270894e+00,
+        2.23534367e+00,  2.64738310e+01,  1.09119562e+01,  6.09510392e+00,
+        4.23145182e+00,  6.84721165e+00,  1.56643887e+01,  2.71799752e+01,
+        1.93083583e+00, -5.93545794e+00, -3.55813983e+00,  6.04630729e-01,
+        2.61773044e+01, -2.33705745e+00,  1.60328394e+01, -3.97323928e+00,
+        1.20551139e+00, -3.77086352e+00, -2.08637508e+00, -5.65188827e+00,
+        1.58877253e+01, -5.32137831e-01, -2.80829518e+00,  1.17395423e+01,
+       -6.64062157e-01,  2.26617745e+01,  1.64299153e+01,  1.09754109e+01,
+       -6.71201533e+00,  1.37091307e+01, -1.17915245e+01,  2.79852393e+01,
+        5.37689073e+00,  1.99752204e+01,  8.91013077e+00,  1.70569283e+00,
+       -1.36397624e+01,  6.99624507e+00,  1.82030787e+01, -1.07188286e+01,
+        2.48433092e+01,  8.68438034e-01,  1.94977252e+01, -1.25962192e+01,
+        1.11025626e+00,  1.31130194e+01,  4.71971355e+00,  4.56701297e+00,
+       -1.20733940e+01,  3.22804726e+00,  8.57398390e+00,  6.89182401e+00,
+        0.00000000e+00,  1.10360436e+01,  1.34442073e+01,  1.12735937e+01,
+       -9.67518547e+00, -9.96070846e+00,  2.12914734e+01, -2.82601717e+00,
+        3.30310090e-03,  7.62966637e+00,  2.70855945e+00,  6.36863443e-01,
+        6.49871226e+00,  1.02694247e+01,  2.47175546e+00,  7.62005318e+00,
+       -1.01747156e+01, -2.90769493e+00, -8.89208134e+00,  1.40108105e+01,
+       -6.03136501e-01, -1.01750957e+01, -9.06918730e+00, -9.76242891e+00,
+       -2.16557725e+00, -1.01134825e+01,  7.83935651e+00, -6.89235464e+00,
+        3.77751890e+00, -7.85045484e+00, -1.00717879e+01,  2.02847498e+01,
+        2.45589993e+01, -6.12676808e-01, -1.66676862e+01, -2.05342146e+01,
+        1.25694259e+01,  1.82094892e+01, -3.43131044e+00,  2.69304647e+00,
+        3.50255500e+00, -1.05357271e+01,  1.14293441e+01,  1.74399008e+01,
+       -4.06748899e+00, -9.05826053e+00, -9.38105694e+00,  6.96714562e+00,
+        3.78493522e+00, -5.11336935e+00, -1.13314815e+01,  1.32861986e+01,
+        1.81256004e+01,  1.55942883e+01,  4.89007079e+00,  4.12439114e+00,
+       -6.79530165e+00,  3.23357056e+01, -8.61615300e+00,  1.12779525e+01,
+       -3.78656079e+00, -4.34140113e+00, -5.90503149e+00, -1.33205610e+01,
+       -2.30274990e+00, -1.35966070e+01,  1.09810668e+01,  2.71418697e+00,
+        1.25253150e+01,  2.70979753e+00, -1.04088225e+01,  4.89879253e+00,
+        1.66170144e+01,  2.75800009e+01, -5.40679488e+00,  1.25470119e+01,
+        6.07746270e+00,  2.04265717e+01,  2.79606440e+00, -1.81941299e+01,
+       -3.43288170e+00,  1.44295773e+01,  1.44492514e+01,  1.58639788e+01,
+        5.44373271e+00, -1.07908835e+01, -8.94540727e+00, -1.06628190e+01,
+       -1.16854446e+00,  1.76823194e+01,  3.13848549e+01, -5.27592027e+00,
+       -4.18700817e+00,  1.85697683e+01, -1.97944457e+00,  1.47094980e+01,
+        2.79231767e+01,  7.36140552e+00, -1.16633312e+01,  9.57493436e+00,
+        3.16675385e-01,  1.49003815e-01, -1.15225868e+01, -2.64641573e+00,
+       -1.58089748e+00,  1.21405782e+01,  1.04305840e+01, -7.13435256e+00,
+        1.21901548e+01,  4.11139982e+00, -3.90439660e+00, -2.75736249e+00,
+        8.37858497e-01, -7.33930397e+00,  7.79103543e+00,  8.19007006e+00,
+        2.80641034e+00,  1.76454502e+01,  5.82899453e+00, -7.48102545e-01,
+       -1.70925707e+00,  5.63142364e+00, -1.53288822e+01,  5.21165949e+00,
+       -8.08202103e+00, -5.53381529e+00,  1.93861561e+00,  1.90939086e+00,
+        2.40142139e+00,  2.95345989e+01, -5.42270855e+00,  5.82405207e+00,
+        0.00000000e+00, -3.44637744e+00,  2.74498578e+01, -6.96874216e-01,
+        8.01297606e+00,  5.83213798e+00, -4.66745713e-01,  7.80665986e+00,
+       -6.09098224e+00,  1.21819368e+01,  2.62903595e+01,  6.74912428e+00,
+       -3.38994067e-01,  1.00758527e+00, -1.37068703e+01, -1.19317616e+01,
+       -8.85361642e+00, -1.17363054e+01, -2.52277296e+01,  3.49814391e+00,
+       -1.40101462e+01,  2.30061614e+01, -9.40706773e+00, -1.56414686e+01,
+       -6.83070841e+00, -9.72844595e+00,  1.33174949e+01,  2.24787583e+01,
+        1.75529595e+01,  1.72111512e+01,  9.53222092e+00,  1.30454265e+01,
+        4.45874417e+00, -1.49871955e+01,  1.40606228e+01,  8.90242715e+00,
+        7.99058590e-01,  2.13474739e+01,  1.04613217e+01,  2.09196056e+01,
+       -2.10905577e+00,  1.01825481e+01, -1.77845884e+01, -4.69559948e+00,
+        1.48713766e+00,  2.01225446e+01, -1.53422939e+00,  2.17205952e+01,
+       -2.42450719e+00, -2.13798399e+00, -1.40113462e+00,  2.27745375e+00,
+        1.22513758e+00, -7.86219644e+00,  2.62480073e+01,  9.88046312e-02,
+        1.65896852e+01,  7.69287175e-01, -1.22819004e+00,  4.71852411e-01,
+       -1.82516261e+01, -7.54018882e+00,  2.87522538e+01,  9.88201619e-02,
+       -6.50308609e+00, -1.24558061e+00, -1.53720645e+00,  0.00000000e+00,
+       -7.00084716e+00,  1.86155911e+01,  2.45605448e+01, -3.11274906e+00,
+        1.35887448e+01,  1.33417018e+01,  5.18974446e+00, -1.09938301e+01,
+        8.06840242e+00, -7.17559865e+00]), 'Sample count': 17}, {'Sums': array([ 42.9007207 , -30.31692131, -16.97367267,   1.11478367,
+        16.96181647, -16.34002406,   1.64771677, -10.62831186,
+       -21.01975103, -32.03531927, -13.15755623,  -6.60654788,
+       -11.37475874,  -5.56366943,   5.65769687,  -4.85565206,
+        10.77751924,  28.47402742,  22.05449925, -16.05143545,
+         8.44970426,  37.38101361,  -8.86726943,  35.29995995,
+         1.62504329, -18.89264026,  33.02847201,   2.86749745,
+       -23.66581255,   3.50992463,  43.23166043,  18.09212694,
+         3.81812303,  -4.29094284,   6.19183046,  -2.91761008,
+         6.23707483,  20.0235761 , -11.26674302,   1.63773068,
+       -12.00473787,   9.30246134,  13.43556457,  33.58978347,
+        34.12160421, -13.79142535,  -6.96638785,  38.63954234,
+        -3.62180058,  -2.60969211,  -3.6573616 ,  -8.38096741,
+        22.69370681,  32.68377127,  22.97912874, -14.95447486,
+        28.78508495, -24.17960341,   1.36577922,  -9.801032  ,
+       -11.86061483,   0.73381816,  16.07387562,  24.10658501,
+       -22.73140106,  -2.49812998, -10.69871515, -28.36457456,
+        38.93893123,   6.8436352 ,  -7.88465987,  -5.26845117,
+        -7.40997458,  16.77921043,  19.01943819,  10.69261504,
+        -1.32475845,   0.719246  ,  -9.25164412,  -7.30500914,
+         5.6754734 ,  32.60760926, -26.61158225,  -0.91016139,
+        26.110256  ,   4.46528206,   2.0551514 ,   2.50479606,
+        -3.29660982,   1.99972477,  12.53702641,  19.80619136,
+        39.3785139 ,  -4.20235084, -17.81835168,  11.73791461,
+        18.17226258,  25.13147477,  -2.2212053 ,   6.58457684,
+       -10.35051749,  30.85367289,   8.97075319, -12.13577948,
+        -7.16767318,  19.89728366,  18.7022459 ,  17.28575396,
+        22.74171752,  -5.62252869,  31.79706215,  31.161377  ,
+        14.61856994,  12.39690262,  -9.86549591,   7.95027644,
+         0.36566987,  11.44941833,  -3.85432233, -19.48902088,
+       -25.65956312, -23.5226948 ,  -4.06805688,  -3.52591034,
+        -2.71830458,  54.99704955,  62.51287135,  21.56111361,
+       -12.45257416,   2.25030342,  -8.32059639,  18.26477853,
+        40.82423952,  26.72346351,  26.26737668,  -7.20591104,
+        -1.12024693,  -8.54949151,  -2.90792428,  29.45282245,
+       -19.57560906, -15.52565803,  -7.20280186,   8.25195328,
+         2.22537021,  18.43613191,   6.81729545,  23.93703121,
+        11.44553137,   0.22601668, -23.34971654,  46.84241612,
+         6.16527189,   6.01029438, -15.27165411,  31.11314393,
+         7.55732557, -14.87620045, -19.36450023,   0.83584491,
+         5.44156491,  44.89808921,  16.4331743 ,  19.71538396,
+         7.77675264,  13.08384824,  17.62619576,  40.70549511,
+         7.17423233,  -5.51676749,  -2.44186566,  -7.51716209,
+        39.46076628,  -9.37414136,  17.80468877,   5.73254392,
+        -1.39459144, -12.17424688,  -5.68376764,  -8.69982496,
+        23.86643678,  -0.38951261,  -7.13138958,   8.40915285,
+        -4.47519585,  29.09232155,  17.52207812,  17.99648404,
+        -0.13864725,  23.98985169,   2.95214255,  34.04270792,
+         9.02919613,   8.20368519,   1.82021034,   0.48077122,
+        -4.5118644 ,  19.86225691,  22.75899648, -21.93867978,
+        39.54552619, -13.38712287,  27.06151218, -28.31312097,
+        13.46970573,  27.16574567, -18.7368356 ,  10.15013336,
+        -1.1457943 , -13.1417503 ,   1.87570403,  13.68732911,
+        -1.3306854 ,  21.44265088,  21.97033376,  21.36220119,
+       -21.56934899,   2.85795905,  33.52150117,   9.24182681,
+        -8.6626107 ,   9.04275858,   0.91955455,  14.6788572 ,
+        17.63313686,  17.56435916,   4.63699579,   3.58458661,
+        -4.80148692,  10.43267484, -12.10942639,   5.41872022,
+        -7.30715946,  -9.6958913 ,  -3.70192217,  -8.80830603,
+        -7.87264398, -10.75697063,  18.97193163,  -4.31984143,
+        11.70991654, -24.51384317,   0.13043288,  24.19201158,
+        31.19544825,   1.00881746, -27.99751981,  -8.51951502,
+        20.57644675,  26.15474913,  -4.48772041,   1.98259288,
+         2.72368287, -17.29019558,  22.0647516 ,  22.69103084,
+        -9.06424059, -26.25179469, -10.01414529,  12.13315983,
+         5.28357117,  -9.34379824, -12.12891866,  12.40416129,
+        27.31601709,  20.82262154,  20.78779685,  -3.11275646,
+        -5.50808618,  43.85396129, -18.56264955,  12.49183057,
+       -18.11824572, -18.10656222,  -3.45332715,  -9.80780705,
+        -8.86907449, -20.31570443,  12.42787688,  -1.83722968,
+        20.04304855,  10.46102006, -23.49520722,   2.66034442,
+        29.86881658,  26.19318571, -20.07465566,  27.87830433,
+         7.31940292,  30.33888293,  14.79753612, -17.95758935,
+       -19.91073882,  24.09180801,  27.55542502,  11.01756797,
+        -0.15040851,  -4.96774359, -17.97679401,  -6.14798938,
+       -10.19706172,  27.9692238 ,  45.97798314, -20.89204073,
+        -3.53019231,  23.91328861,  10.36417734,  23.33128318,
+        48.61101754,  11.07383128, -31.28590186,   8.18372317,
+        -9.10027471,  -2.6843699 , -18.07635069,  -4.69091697,
+         1.89007035,  18.29421298,   6.42128328,  -1.67082379,
+        14.63879136,   1.91189131,   1.87357823,  -3.3441711 ,
+        -3.55982684, -11.32760444,   9.07423645,  13.49287603,
+        13.77063635,  29.33294942,  12.09067896,  -1.04085441,
+         3.60519057,   6.54661122,  -6.27624583,  11.16029977,
+         0.8045894 ,  -5.70053174,   1.13879269,   0.21463231,
+       -10.00858166,  46.75150616, -16.85027158,  20.66120721,
+         0.        ,   5.45338896,  41.79583218,  -8.17783735,
+        -3.10597653,  -1.74105524,   0.93607767,   9.75255053,
+       -21.8239408 ,  -6.14840663,  37.46381066,  14.2199471 ,
+        -1.04576483,  10.6360229 ,  -6.98931445, -26.1756699 ,
+       -16.4616533 , -37.99057551, -42.05969413,  11.51791585,
+       -10.03817539,  37.68884501, -19.839297  ,  -4.83647867,
+        -8.32692281, -14.1987079 ,  23.11244177,  33.60910259,
+        26.50308559,  19.65579353,  17.51303628,  24.85795693,
+         9.46249282,  -1.40409555,  28.71997988,  18.3039158 ,
+        14.62317947,  26.86580367,  10.92183477,  40.24926761,
+       -22.46916445,  13.86093466, -21.01399139,   0.33908147,
+         0.13326408,  25.0916295 ,   1.40674833,  31.2369353 ,
+         8.5549901 , -29.62761045,   0.74194322,  10.72678737,
+        -5.29577789, -17.33638031,  31.17661953,   8.69366812,
+        22.95621672,  16.84658348,   8.14415673,  -9.30329039,
+       -17.43852374, -12.85332809,  49.30995472,  -4.78230685,
+       -13.59383695,  -3.46526368,  -0.70343135,   0.        ,
+       -10.38412708,  33.63947076,  38.51969158,  -2.92627835,
+         9.22566187,  28.01595643,   9.6970924 , -10.9167252 ,
+        17.41221984, -24.80046659]), 'Sample count': 26}]
+SUMS
+[ 1.61892510e+00 -1.49477599e+00 -1.39236372e+00  1.76931173e-01
+  6.81183915e-01 -7.80264566e-01  3.65702368e-01 -3.29204490e+00
+ -8.39560493e-01 -1.17184068e+00 -7.35610365e-01 -2.22059670e-01
+ -4.75983699e-01 -1.36459482e+00  2.68821831e-01 -3.10617413e-01
+  5.13366569e-01  9.69267634e-01  8.43278757e-01 -9.83942308e-01
+  2.24591045e-01  1.44360889e+00 -1.80000193e+00  1.25900257e+00
+  6.02127742e-02 -7.05459298e-01  1.34629304e+00 -3.85980329e-03
+ -1.75344009e+00  1.30248148e-01  1.61934420e+00  8.58049569e-01
+ -2.88022273e-01 -4.29094284e+00  1.64302072e-01 -3.80466808e-01
+  2.00986281e-01  8.11180221e-01 -5.36956656e-01  1.41130010e-03
+ -1.03851558e+00  5.36053136e-01  5.45373456e-01  1.30430630e+00
+  1.15367483e+00 -5.33075651e-01  7.84736025e-03  1.49427465e+00
+ -6.54415663e-02 -1.50510194e-02 -5.56577249e-01 -1.03147490e+00
+  8.21090121e-01  1.31952136e+00  6.52652788e-01 -4.34950600e-01
+  1.09232564e+00 -2.28506528e+00 -3.65379061e-02 -1.03201739e+00
+ -1.34062285e+00  9.52260682e-02  7.05911711e-01  8.44712196e-01
+ -9.25298045e-01 -2.00982001e-01 -4.00183958e-01 -1.11502573e+00
+  1.35251816e+00  3.20008696e-01 -1.24613085e+00 -1.86262043e-01
+ -2.18746601e-01  7.07554012e-01  7.22938247e-01  3.92735517e-01
+  1.72462687e-01 -1.45156100e-01 -3.30226625e-01 -1.66639807e+00
+  7.56798118e-01  1.44542189e+00 -1.19518412e+00  7.47673746e-02
+  9.02459726e-01  3.32002857e-01  7.54315550e-02  1.30180368e-01
+ -2.95818951e+00 -2.42199109e-01  4.44315114e-01  8.30847837e-01
+  1.39088557e+00 -3.18514978e-01 -9.81020797e-01  3.01920438e-01
+  7.73873062e-01  1.02937202e+00  4.29346804e-01  2.05628391e-02
+ -1.86212538e+00  1.20981884e+00 -1.34389374e-02 -5.77212980e-01
+ -2.37926419e-01  9.30857029e-01  7.65067163e-01  5.78447790e-01
+  8.62428516e-01 -2.79170645e-01  1.23930014e+00  1.05735158e+00
+  7.11683664e-01  5.77718504e-01 -4.19810251e-01  4.21168478e-01
+  1.56873678e-01  5.09288321e-01 -1.74087632e-01 -6.56283522e-01
+ -9.74263896e-01 -1.41740161e+00 -4.08131847e-01 -8.36180671e-01
+ -5.50364425e-01  2.00875305e+00  2.42507481e+00  9.19064813e-01
+ -8.67560154e-01 -2.90633698e-02 -1.53471206e-01  7.25683061e-01
+  1.48439156e+00  1.06157475e+00  1.01950065e+00 -1.26729376e+00
+  2.96210052e-02 -2.23334768e+00 -1.45396214e+00  1.12181102e+00
+ -1.22907836e+00 -1.33171137e+00 -5.27984839e-01  4.08633282e-01
+  1.99749105e-01  3.88848643e-01  3.17804581e-01  8.53104932e-01
+  4.73874266e-01 -3.07309803e-01 -1.93358620e+00  1.77063930e+00
+  2.33084017e-01  3.42712504e-01 -8.38941845e-01  1.04696275e+00
+  2.49502806e-01 -6.39264219e-01 -1.85930322e+00 -2.48107914e-02
+  1.82783538e-01  1.65981210e+00  6.35933267e-01  7.82135996e-01
+  3.87361434e-01  4.63513021e-01  7.92632963e-01  1.57873187e+00
+  3.37224747e-01 -4.09008051e-01 -1.39535011e-01 -4.06619492e-01
+  1.52646676e+00 -5.32327218e-01  7.86919260e-01  4.51103754e-02
+ -4.61170846e-03 -3.70816521e-01 -1.11002039e+00 -3.50041786e-01
+  9.24515398e-01 -4.60825220e-01 -2.31155460e-01  5.44559327e-01
+ -1.19517628e-01  1.20358363e+00  8.48799834e-01  7.24297372e-01
+ -2.36229744e-01  8.76720520e-01 -2.94646065e-01  1.44251040e+00
+  7.20304343e-01  9.08996955e-01  2.75136952e-01  7.53953120e-02
+ -6.48272385e-01  6.71462550e-01  9.52606399e-01 -8.59408114e-01
+  1.49741478e+00 -4.63654994e-01  1.08277296e+00 -1.04895744e+00
+  3.94053027e-01  9.82408905e-01 -3.68871633e-01  3.77362727e-01
+ -6.60959414e-01 -2.91579501e-01  3.16657210e-01  5.87975804e-01
+ -1.33068540e+00  9.27962699e-01  8.63769295e-01  7.77042735e-01
+ -2.40342573e+00 -2.29120949e-01  1.27472034e+00  2.46761909e-01
+ -4.32965380e-01  3.96962499e-01  1.25107379e-01  4.03045280e-01
+  6.03296228e-01  6.62709139e-01  1.65319796e-01  2.60573019e-01
+ -5.99048100e-01  2.42741287e-01 -1.10534251e+00  5.25122451e-01
+ -2.82510570e-01 -4.62115976e-01 -4.11971273e-01 -4.31877557e-01
+ -2.39005267e-01 -1.39136354e+00  6.38364003e-01 -2.60748746e-01
+  3.68748463e-01 -1.79801656e+00 -2.36698929e-01  1.03434329e+00
+  1.42960122e+00  9.21257335e-03 -1.14526169e+00 -1.03763320e+00
+  7.89187444e-01  1.03172647e+00 -1.88548354e-01  1.08735799e-01
+  1.83124643e-01 -7.32261122e-01  7.78932457e-01  9.55498372e-01
+ -4.52818261e-01 -1.07000167e+00 -6.46506741e-01  4.65861109e-01
+  2.15916819e-01 -3.36213200e-01 -5.86510004e-01  5.97450230e-01
+  1.05678180e+00  8.46904879e-01  5.97159713e-01  2.59393507e-02
+ -8.20225855e-01  1.77185272e+00 -1.59875309e+00  6.25520607e-01
+ -5.61661705e-01 -8.97918534e-01 -3.01882537e-01 -5.37869024e-01
+ -2.93995379e-01 -1.69561557e+00  5.44394039e-01  2.13892023e-02
+  8.14209090e-01  3.55968043e-01 -8.26927554e-01  6.29928079e-01
+  1.08106584e+00  1.31154114e+00 -1.15824775e+00  9.85983324e-01
+  4.61960884e-01  1.23818182e+00  4.18895251e-01 -1.50632164e+00
+ -1.22861161e+00  8.95846170e-01  9.76852940e-01  6.25152251e-01
+  1.43062816e-01 -1.96982839e+00 -6.56639055e-01 -1.12072056e+00
+ -1.03323693e+00  1.06166380e+00  1.79913577e+00 -6.70973359e-01
+ -4.82325030e-01  9.87978069e-01  1.99636495e-01  9.05732884e-01
+  1.77986498e+00  4.38934209e-01 -1.43164110e+00  4.55350193e-01
+ -2.04269752e-01 -5.89620020e-02 -1.47994687e+00 -1.22288878e+00
+  9.66165222e-03  7.60869780e-01  8.86940381e-01 -1.10064704e+00
+  6.38784432e-01  1.40076538e-01 -8.82964510e-02 -1.60566673e-01
+ -1.04691090e-01 -4.44450200e-01  4.01554092e-01  5.16260621e-01
+  3.85512714e-01  1.11853332e+00  4.26658893e-01 -4.25942133e-02
+  8.24318914e-02  3.12257304e-01 -8.30966464e-01  5.11623727e-01
+ -2.07926618e-01 -1.12343470e+00  9.61690094e-02  5.44621328e-02
+ -5.07144018e-01  1.77409547e+00 -5.86131056e-01  6.15936262e-01
+             nan  5.90297506e-02  1.64870690e+00 -1.10933895e+00
+  1.25820501e-01  1.13641187e-01  1.11745705e-02  4.08353730e-01
+ -2.32624359e+00  1.82834249e-01  1.48265512e+00  4.87652823e-01
+ -3.29704500e-02  2.70781586e-01 -5.30671403e-01 -1.00282715e+00
+ -1.10066390e+00 -1.77596003e+00 -1.81857902e+00  3.57525232e-01
+ -8.29252469e-01  1.41151178e+00 -1.27158108e+00 -1.02389736e+00
+ -8.42090623e-01 -9.20275148e-01  8.47207831e-01  1.30436886e+00
+  1.04895345e+00  8.57370807e-01  6.43934695e-01  8.81474033e-01
+  3.56954795e-01 -5.12227845e-01  9.94897736e-01  6.63569340e-01
+  5.31801312e-01  1.12123901e+00  5.09122773e-01  1.45640174e+00
+ -2.45782202e+00  6.32723230e-01 -9.23775710e-01 -1.01314372e-01
+  6.48160695e-02  1.05149242e+00 -3.03526342e-03  1.23157048e+00
+  1.45963879e-01 -1.05885315e+00 -1.56950333e-02  3.61228920e-01
+ -9.92839101e-02 -9.69176029e-01  1.33545644e+00  2.25448019e-01
+  9.19672137e-01  5.03310590e-01  3.14362122e-01 -1.10392975e+00
+ -8.70491459e-01 -8.15740676e-01  1.81540020e+00 -2.46499299e-01
+ -1.05773279e+00 -2.24325919e-01 -1.12031890e+00             nan
+ -1.08656089e+00  1.21523400e+00  1.46698224e+00 -2.08242325e-01
+  6.33733519e-01  9.61806005e-01  5.72570649e-01 -5.09547798e-01
+  8.49354076e-01 -8.19899109e-01]
+[Time: 29.06.23 14:17:32] [Level: info] transition: compute_std
+[CTRL] GET /data
+[Time: 29.06.23 14:17:33] [Level: info] state: compute_std
+(422, 1)
+[Time: 29.06.23 14:17:33] [Level: info] transition: aggregate_stds
+[Time: 29.06.23 14:17:34] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[1.14450417e+01 1.77355813e+01 3.03423334e+01 6.89257631e+00
+ 3.10851514e+01 1.07568925e+01 1.20694556e+01 6.45092814e+00
+ 2.11503225e+01 1.86177082e+01 3.26881604e+01 1.72074960e+01
+ 6.97412505e+00 2.65722090e+01 1.00374505e+01 3.48674506e+00
+ 8.30728719e+00 6.05605991e+01 1.70433422e+01 7.25482079e+01
+ 5.07227166e+01 5.27346397e+00 4.43861554e+01 6.67280655e+00
+ 1.84956376e+00 1.54496861e+01 2.15262111e+00 8.39543154e+00
+ 1.01720546e+01 1.46858001e+01 4.07391871e+00 8.19069123e+00
+ 7.24017508e+01 0.00000000e+00 5.03154783e+00 1.30765513e+01
+ 6.70886487e+00 2.26743816e+00 4.92226024e+01 5.26755280e+00
+ 1.76313032e+01 2.14943850e+01 1.51001094e+01 3.94423213e+00
+ 3.64870692e+01 4.67527196e+00 9.98969693e+00 4.83042184e+00
+ 5.93063065e+00 5.10875154e+01 2.04791156e+00 3.56705482e+01
+ 6.38533621e+00 1.95445054e+00 3.25842925e+01 1.70530031e+01
+ 1.78558611e+00 1.22074649e+01 1.08562032e+01 3.68785231e+00
+ 2.62564511e+01 3.89337875e+00 2.07352874e+01 8.53091943e+00
+ 1.49549602e+01 2.43150249e+01 3.43591118e+01 4.08693816e+01
+ 1.13341130e+01 1.13838047e+01 3.96171464e+00 1.82967130e+01
+ 3.95196856e+00 5.69379549e+00 1.23298793e+01 8.12709641e-01
+ 3.35386596e+01 3.50591984e+01 5.29947854e+01 1.70028229e+01
+ 8.21606701e+00 5.89957142e+00 3.59532162e+01 1.73871727e+01
+ 1.09288914e+01 8.42648955e+00 2.21456520e+01 4.69576720e+00
+ 1.16231511e+00 3.49822369e+01 5.34425574e+00 1.33400842e+01
+ 1.97586388e+01 5.72332683e+00 4.37534821e+01 1.59481940e+01
+ 1.50455222e+01 1.39198735e+01 7.16102408e+00 3.60219478e+01
+ 4.87156410e+00 8.05400430e+00 6.66039454e+01 2.55146275e+01
+ 2.50985720e+00 1.09830871e+01 4.63379631e+00 3.44190599e+01
+ 1.29554537e+01 1.77460602e+01 3.92333090e+00 2.14303121e+01
+ 7.39315960e+00 6.12694157e+00 4.91672023e+00 9.63015373e+00
+ 1.11570885e+01 1.74668754e+01 7.98432812e+00 8.83427203e+00
+ 1.57137244e+01 2.71764828e+01 2.41290133e+01 3.01597183e+01
+ 8.36419107e+01 3.09085244e+01 1.60841097e+00 4.44139642e+00
+ 8.83024730e+00 2.63428208e+01 1.12311031e+01 1.27186192e+01
+ 4.55364482e+00 8.26076383e+00 5.71694165e+00 2.59548076e+00
+ 9.46270082e+00 4.43114896e-01 0.00000000e+00 1.76342720e+01
+ 3.43911546e+01 6.89994393e+00 2.28387912e+01 5.13012448e+00
+ 2.07715537e+00 4.66256161e+01 6.90774490e+00 1.49509389e+01
+ 8.67816860e+00 2.06466785e+01 9.29241793e+01 6.59562221e+00
+ 1.84833484e+00 1.68547618e+01 9.17603760e+00 1.32745040e+01
+ 6.21181668e+01 2.78254854e+01 1.84485904e+01 2.92853365e+00
+ 3.39867490e+00 2.29416752e+00 8.53947814e+00 1.55270245e+01
+ 6.49928301e+00 1.77715455e+01 2.72953329e+00 2.53247166e+00
+ 2.74135602e+01 5.18180018e+00 8.16557843e+00 6.17659022e+00
+ 2.48478647e+00 2.66171852e+01 9.80263400e+00 5.74640918e+01
+ 2.81632510e+01 5.98167441e+00 4.12158439e+00 4.93737618e+01
+ 8.31513312e+00 5.08548845e-03 4.09089512e+00 3.82680725e+00
+ 6.14533062e+00 6.22511675e+00 9.50595647e+00 4.17632618e+01
+ 1.65272802e+01 4.82468278e+00 4.69875927e+01 1.00595306e+01
+ 2.87316093e+01 2.17809410e+01 8.16477531e+00 1.26522247e+01
+ 2.21779054e+01 2.66676015e+01 7.54379123e+00 1.15291354e+01
+ 6.57998579e+00 5.07184437e+00 5.34015204e+00 2.23562435e+01
+ 2.71591749e+01 1.25443336e+01 2.98540224e+01 9.19255499e+00
+ 4.21315792e+01 1.17151105e+01 1.72665019e+01 2.06254815e+01
+ 0.00000000e+00 9.97548240e+00 5.25492334e+01 3.81094494e+00
+ 1.09789710e+01 2.12467380e+01 8.00653421e+00 1.78620810e+01
+ 6.26850112e+00 2.79476370e+01 4.23807531e+00 5.17331031e+01
+ 2.99040705e+01 3.84294152e+01 2.00343615e+00 8.69175601e+00
+ 3.70831365e+01 2.02157193e+01 1.96178432e+01 1.59724210e+01
+ 1.51340492e+01 1.46888513e+01 2.03573358e+01 3.85167733e+00
+ 2.63750555e+01 2.42820772e+01 1.48734566e+01 3.63241132e+00
+ 1.67982226e+01 3.58673886e+01 5.96190010e+01 4.25907229e+00
+ 8.83259696e+00 1.78688759e+00 1.92470035e+01 5.72407142e+01
+ 2.27811434e+01 3.92166397e+00 3.85910870e+00 8.02480606e+00
+ 2.32597084e+01 3.60696176e+01 1.42076141e+01 1.14588841e+01
+ 1.36480846e+01 6.33923215e+01 4.35895485e+01 2.50304763e+01
+ 3.62964849e+00 4.04707480e+00 1.89953972e+01 4.63363804e+00
+ 9.67523696e+00 1.18280881e+01 3.26071987e+01 1.63740205e+01
+ 1.38650517e+01 3.79966530e+00 1.31850156e+01 1.48332897e+01
+ 3.96454933e+01 8.06342537e+00 2.35671117e+01 8.73640835e+01
+ 1.37419216e+01 3.27733160e+01 6.17678553e+00 8.39287873e+00
+ 6.08090558e+00 1.88617751e+01 1.11939517e+01 2.18636444e+00
+ 1.26812861e+01 8.30897497e+00 1.08757287e+00 4.34069466e+01
+ 1.44868021e+01 7.69231730e+00 1.77637477e+01 2.82907338e+01
+ 4.38599741e+00 7.66485281e+00 1.22137562e+01 8.76519751e+00
+ 1.55810923e+01 1.78342653e+01 1.63214962e+01 6.28756156e+01
+ 1.41446086e+00 6.94267496e+00 3.57631847e+00 8.08079176e+00
+ 3.92658319e+01 2.02396339e+01 2.94324036e+01 9.97170785e+00
+ 5.53304059e+00 1.72571795e+01 1.08468130e+01 1.43646123e+01
+ 6.96296070e+00 1.23290140e+01 4.87386811e+00 2.52303373e+00
+ 3.69896359e+01 1.80734075e+01 6.10719443e+00 8.28778172e+00
+ 6.37080997e+00 6.56527450e+00 3.33742104e+01 4.55371547e+00
+ 8.26537424e+00 4.91093380e+01 6.16199099e+00 6.85791404e+00
+ 3.89419813e+00 7.28426173e+00 8.67671540e+00 3.48377859e+00
+ 1.63069007e+01 4.14148908e+01 4.79055627e+01 2.18547324e+01
+ 3.74912630e+01 1.83765574e+01 8.88689431e+00 1.65473738e+00
+ 6.48613133e+00 5.42902923e+00 6.61745741e+00 5.47497010e+01
+ 0.00000000e+00 9.56498867e+01 8.08934175e+00 2.44750418e+00
+ 1.13967030e+01 3.12034120e+01 3.40391520e+00 1.21336612e+01
+ 5.35393069e+00 2.59407055e+01 2.53649624e+01 3.70721492e+01
+ 9.60545158e+00 1.30032578e+01 4.46762102e+01 1.23958765e+01
+ 3.72813452e+01 1.48466530e+01 2.18964477e+01 1.39392476e+01
+ 6.83734216e+01 9.31570592e+00 2.92083775e+01 6.58372145e+01
+ 1.38825049e+01 2.90334235e+01 2.07017055e+00 4.82867323e+00
+ 2.31780248e+01 5.63735011e+00 2.15863337e+01 9.58613259e+00
+ 2.08936023e+01 4.82255098e+01 1.49835429e+01 9.94497196e+00
+ 5.21878935e+01 1.46431825e+00 1.08702878e+01 1.16589620e+01
+ 1.89235446e+01 9.30360798e+00 3.99313147e+01 4.08527148e+00
+ 8.22247193e+00 6.89881385e+00 5.05742184e+00 4.32609889e+00
+ 1.85116802e+01 1.82435639e+01 3.58264477e+01 2.79904462e+01
+ 8.40912929e+00 1.28908714e+01 4.24964441e+00 2.13873217e+01
+ 7.32553920e+00 3.80880921e+01 2.15757285e+01 2.48308941e+00
+ 5.92460452e+01 1.92767942e+01 2.16399930e+01 2.05853031e+01
+ 1.40316861e+01 2.85081689e+01 1.73795230e-01 0.00000000e+00
+ 5.90009632e+00 7.02132925e+00 8.03096731e+00 1.03995251e+01
+ 2.33350370e+01 1.38705425e+01 1.24378450e+01 5.88962200e+00
+ 9.00914123e+00 1.94126094e+01]
+[9.27282121e+00 6.44643010e+01 2.63583116e+01 2.97099221e+00
+ 2.70579892e+01 1.41780005e+01 7.44881101e+01 1.93767698e+01
+ 2.87549772e+01 2.07838751e+01 1.06857615e+02 4.09084999e+01
+ 2.06797281e+01 1.78762606e+01 1.89626931e+01 2.91024396e+01
+ 8.53299781e+00 1.08622844e+01 6.16119629e+01 9.23152909e+01
+ 2.94271652e+01 4.28838260e+00 1.52931950e+01 6.94663486e+00
+ 8.71886791e+00 4.19338093e+01 2.68856942e+00 2.43639320e+01
+ 3.76446980e+01 5.57158756e+00 7.00766459e+00 3.37374623e+01
+ 8.10434883e+01 0.00000000e+00 1.79105056e+01 2.42369770e+01
+ 6.67277955e+00 1.49551944e+01 4.35625051e+01 1.07912427e+01
+ 1.01742007e+01 2.37023020e+01 2.42193406e+01 9.50397893e+00
+ 1.90332005e+01 2.39536782e+01 6.51996460e+01 4.44682892e+00
+ 1.12621042e+01 4.46802345e+01 8.29838016e+00 1.76539972e+01
+ 4.24975220e+00 3.31097374e+00 1.41712472e+01 7.11066636e+01
+ 1.85309961e+01 3.42665806e+01 4.61312742e+00 2.40491253e+01
+ 2.54567866e+01 8.94223973e+00 2.06965461e+01 9.97617745e+00
+ 1.75062461e+01 5.19844241e+01 2.68643129e+01 3.56808779e+01
+ 4.77745040e+00 2.89159033e+01 7.84582141e+00 1.93828036e+01
+ 7.44896935e+00 2.40509320e+01 3.10950046e+01 1.73445122e+00
+ 3.03926179e+01 1.08942956e+02 1.12716184e+02 1.06508219e+01
+ 3.37538528e+01 2.78428561e+01 1.23016728e+01 2.21961864e+01
+ 2.49678494e+01 2.13332514e+01 8.97242044e+01 3.36934054e+00
+ 1.14528310e-01 3.65230170e+01 2.48221741e+01 1.19436429e+01
+ 7.87456021e+00 6.01774821e+00 2.43748663e+01 1.82507623e+01
+ 1.03897159e+01 1.31540478e+01 6.77750048e+01 3.66317223e+01
+ 1.38262067e+01 8.04155108e+00 3.26032329e+01 4.51317264e+01
+ 3.55026807e+00 3.13307848e+01 4.71275181e+00 3.17417359e+01
+ 2.30142753e+01 3.82097740e+01 4.62532575e+00 9.53652673e+00
+ 1.95205176e+01 3.13352379e+01 5.46970267e+00 1.07941835e+02
+ 1.40558187e+01 2.72541665e+01 6.69529574e+00 2.06895498e+01
+ 7.35028550e+01 5.02948735e+01 9.46639906e+00 1.21267487e+01
+ 1.57174822e+01 2.90477278e+00 1.80596889e+00 2.77719231e+01
+ 1.32222149e+01 1.88643509e+01 7.96583123e+01 2.35081042e+01
+ 5.51859430e+00 1.18968058e+01 7.60167204e+00 2.20664725e+00
+ 3.77101303e+01 7.78152418e+00 1.54736361e+00 1.83925688e+01
+ 3.34568676e+01 2.30396774e+01 2.03311785e+01 2.71351060e+01
+ 2.16744048e+01 2.64979519e+01 6.02550900e+00 2.89919481e+01
+ 1.29894355e+01 2.10027083e+01 7.36905606e+01 6.37521602e+00
+ 2.82013898e+00 1.78368362e+01 7.83616970e+01 6.19259301e+00
+ 5.37397234e+01 5.25246653e+01 2.28409707e+01 5.57002379e+00
+ 3.48162867e+00 9.12744085e+00 6.76196546e+00 1.36252623e+01
+ 1.47711137e+01 3.55425571e+01 1.00250775e+01 2.33680574e+00
+ 1.32966844e+01 2.29332012e+01 4.57953772e+00 1.25385270e+01
+ 2.44119727e+00 5.69325935e+01 3.30338478e+01 4.44079198e+01
+ 6.07092208e+01 1.79666082e+01 7.37264103e+00 5.81781518e+01
+ 1.70480151e+01 5.08548845e-03 5.42903820e+00 1.77708014e+01
+ 8.50599096e+00 1.48725301e+01 3.02943083e+01 4.15670754e+01
+ 1.77520643e+01 7.87268786e+00 1.98493700e+01 4.87380000e+01
+ 1.89789568e+01 7.65230336e+01 2.14470037e+01 2.97682572e+01
+ 1.78468097e+01 6.13739354e+01 2.06019153e+01 1.85310634e+01
+ 4.91848803e+00 4.24708180e+01 1.09003502e+01 3.25947330e+01
+ 1.28683633e+01 2.70825398e+01 1.87186829e+02 5.03447547e+01
+ 9.67215010e+00 1.14659507e+02 5.25525036e+01 2.43789454e+01
+ 0.00000000e+00 3.97371091e+01 2.93613116e+01 1.36486894e+01
+ 2.30639547e+01 1.78080794e+01 7.16642360e+00 3.27714605e+01
+ 3.71254603e+01 4.39831522e+01 2.55702580e+01 4.12993478e+01
+ 1.02710788e+01 2.34738268e+01 2.62548172e+00 1.47872728e+01
+ 5.66136022e+01 4.65379141e+01 1.01611560e+01 4.25038326e+01
+ 4.04645855e+01 1.01847138e+01 2.52796621e+01 4.22554977e+00
+ 1.12328815e+01 5.79556483e+01 2.71995322e+01 1.21234810e+01
+ 5.59103016e+01 4.77527084e+01 1.87582272e+01 5.80988603e+00
+ 3.16809540e+01 4.27536712e+00 3.38667179e+01 2.09388534e+01
+ 1.70110801e+01 2.20673548e+01 8.68617553e+00 5.28161160e+00
+ 4.96197976e+01 5.39468398e+01 1.28700974e+01 3.21222205e+01
+ 5.34091439e+01 6.21073552e+01 3.52073315e+01 2.51744699e+01
+ 4.87692390e+00 1.05066278e+01 1.77984996e+01 8.50777131e+00
+ 1.63280421e+01 7.35740173e+00 2.23742545e+01 4.08394166e+01
+ 5.68243308e+00 5.47075555e+00 4.14552161e+01 4.31246717e+01
+ 3.79742986e+01 2.31576879e+01 1.78433186e+01 7.46520327e+01
+ 1.54151859e+01 4.80393680e+01 1.12672681e+01 4.73521764e+01
+ 2.95269609e+01 3.15200837e+01 2.96119193e+01 8.95146242e+00
+ 7.21428316e+00 4.02182794e+01 4.83705474e+01 3.30376961e+01
+ 6.05202420e+01 3.72254516e+01 2.45126444e+01 3.15841413e+01
+ 3.45224288e+01 8.55555933e+00 2.16340586e+01 1.58711696e+01
+ 4.51661915e+01 9.70028221e+00 4.41251750e+01 1.93472824e+01
+ 8.22974024e+00 1.10185345e+01 5.43496221e+00 3.60744668e+01
+ 1.45902108e+01 1.60589130e+01 3.25109134e+01 1.30649575e+01
+ 4.94683546e+00 1.98031152e+01 6.21882809e+01 2.21036441e+01
+ 1.46178116e+01 5.55272294e+00 1.14843699e+01 5.83978472e+00
+ 5.07467078e+01 4.49344766e+01 7.45335896e+00 2.43610175e+00
+ 7.06153855e+00 9.85586411e+00 1.91430003e+01 4.37693797e+00
+ 4.15250275e+01 5.23906911e+01 2.70673595e+01 8.41699315e+00
+ 1.91242293e+00 1.65355628e+01 1.41504287e+01 5.59844980e+00
+ 1.28273841e+01 1.09826111e+02 2.45486125e+01 6.60306809e+01
+ 2.33960012e+01 5.30853304e+00 2.62860158e+01 3.97895364e+00
+ 2.77983523e+01 9.11936708e+00 2.76243082e+01 1.13115829e+01
+ 0.00000000e+00 5.03159071e+01 1.57284621e+01 9.71139794e+00
+ 9.52351474e+01 4.78119215e+01 4.18734149e+00 1.00971977e+01
+ 2.13786346e+01 1.24693547e+02 1.98088825e+01 6.10669234e+00
+ 2.41948541e+01 1.25143106e+01 9.28349262e+00 2.71921447e+01
+ 5.18599181e+01 6.64377598e+01 1.41173105e+02 1.99219077e+01
+ 2.34337249e+01 4.94384901e+00 5.44935497e+01 2.32891451e+01
+ 1.79996739e+01 3.12975396e+01 1.44392985e+01 4.67623346e+00
+ 1.99522172e+01 1.22566767e+01 1.86658617e+01 1.54503610e+01
+ 3.54954540e+01 2.39965316e+01 1.25161124e+01 1.71857163e+01
+ 2.62502572e+01 4.30135103e+00 7.29316099e+01 1.23767061e+01
+ 3.20097909e+01 4.65205161e+01 1.10955850e+01 5.10875764e+00
+ 1.42859202e+01 2.61957069e+01 6.12783762e+00 6.26090255e+00
+ 1.67551128e+01 5.14262020e+01 4.33478287e+01 2.22555617e+01
+ 1.72341054e+01 4.40228855e+01 1.06599444e+01 4.70972123e+01
+ 9.80609643e+00 2.46733757e+01 7.64514923e+00 1.67426880e+01
+ 2.89184041e+01 2.02966724e+01 9.18962765e+00 2.57591221e+01
+ 2.52215848e+01 1.10811763e+01 1.73795230e-01 0.00000000e+00
+ 8.20425827e+00 1.13118298e+01 1.18520773e+01 1.18493753e+01
+ 3.15636219e+01 1.31330464e+01 1.66171665e+01 1.03156074e+01
+ 1.11356648e+01 1.10687400e+02]
+COMPUTE STD
+[2.07178629e+01 8.21998823e+01 5.67006450e+01 9.86356852e+00
+ 5.81431406e+01 2.49348930e+01 8.65575656e+01 2.58276980e+01
+ 4.99052998e+01 3.94015833e+01 1.39545775e+02 5.81159959e+01
+ 2.76538532e+01 4.44484696e+01 2.90001436e+01 3.25891847e+01
+ 1.68402850e+01 7.14228836e+01 7.86553051e+01 1.64863499e+02
+ 8.01498818e+01 9.56184657e+00 5.96793504e+01 1.36194414e+01
+ 1.05684317e+01 5.73834954e+01 4.84119053e+00 3.27593636e+01
+ 4.78167526e+01 2.02573877e+01 1.10815833e+01 4.19281536e+01
+ 1.53445239e+02 0.00000000e+00 2.29420534e+01 3.73135283e+01
+ 1.33816444e+01 1.72226326e+01 9.27851074e+01 1.60587955e+01
+ 2.78055039e+01 4.51966869e+01 3.93194500e+01 1.34482111e+01
+ 5.55202697e+01 2.86289501e+01 7.51893429e+01 9.27725076e+00
+ 1.71927348e+01 9.57677500e+01 1.03462917e+01 5.33245454e+01
+ 1.06350884e+01 5.26542428e+00 4.67555397e+01 8.81596667e+01
+ 2.03165822e+01 4.64740455e+01 1.54693306e+01 2.77369776e+01
+ 5.17132377e+01 1.28356185e+01 4.14318335e+01 1.85070969e+01
+ 3.24612063e+01 7.62994489e+01 6.12234247e+01 7.65502595e+01
+ 1.61115634e+01 4.02997079e+01 1.18075361e+01 3.76795166e+01
+ 1.14009379e+01 2.97447275e+01 4.34248839e+01 2.54716086e+00
+ 6.39312775e+01 1.44002154e+02 1.65710970e+02 2.76536448e+01
+ 4.19699199e+01 3.37424276e+01 4.82548890e+01 3.95833591e+01
+ 3.58967408e+01 2.97597410e+01 1.11869856e+02 8.06510774e+00
+ 1.27684342e+00 7.15052538e+01 3.01664298e+01 2.52837270e+01
+ 2.76331990e+01 1.17410750e+01 6.81283484e+01 3.41989562e+01
+ 2.54352380e+01 2.70739213e+01 7.49360288e+01 7.26536701e+01
+ 1.86977708e+01 1.60955554e+01 9.92071783e+01 7.06463539e+01
+ 6.06012527e+00 4.23138719e+01 9.34654812e+00 6.61607957e+01
+ 3.59697290e+01 5.59558342e+01 8.54865665e+00 3.09668388e+01
+/app/apps/svd/Aggregator_FC_Federated_PCA.py:95: RuntimeWarning: invalid value encountered in true_divide
+  variances = my_ssq/(val_per_row)
+ 2.69136772e+01 3.74621795e+01 1.03864229e+01 1.17571989e+02
+ 2.52129072e+01 4.47210419e+01 1.46796239e+01 2.95238218e+01
+ 8.92165794e+01 7.74713563e+01 3.35954123e+01 4.22864670e+01
+ 9.93593929e+01 3.38132972e+01 3.41437986e+00 3.22133195e+01
+ 2.20524622e+01 4.52071717e+01 9.08894155e+01 3.62267234e+01
+ 1.00722391e+01 2.01575697e+01 1.33186137e+01 4.80212801e+00
+ 4.71728311e+01 8.22463908e+00 1.54736361e+00 3.60268408e+01
+ 6.78480222e+01 2.99396213e+01 4.31699698e+01 3.22652305e+01
+ 2.37515602e+01 7.31235680e+01 1.29332539e+01 4.39428870e+01
+ 2.16676041e+01 4.16493868e+01 1.66614740e+02 1.29708382e+01
+ 4.66847382e+00 3.46915980e+01 8.75377346e+01 1.94670971e+01
+ 1.15857890e+02 8.03501507e+01 4.12895611e+01 8.49855744e+00
+ 6.88030357e+00 1.14216084e+01 1.53014436e+01 2.91522868e+01
+ 2.12703967e+01 5.33141026e+01 1.27546108e+01 4.86927740e+00
+ 4.07102446e+01 2.81150014e+01 1.27451162e+01 1.87151172e+01
+ 4.92598374e+00 8.35497786e+01 4.28364818e+01 1.01872012e+02
+ 8.88724718e+01 2.39482826e+01 1.14942254e+01 1.07551914e+02
+ 2.53631482e+01 1.01709769e-02 9.51993332e+00 2.15976086e+01
+ 1.46513216e+01 2.10976469e+01 3.98002648e+01 8.33303372e+01
+ 3.42793445e+01 1.26973706e+01 6.68369626e+01 5.87975306e+01
+ 4.77105661e+01 9.83039746e+01 2.96117790e+01 4.24204819e+01
+ 4.00247152e+01 8.80415369e+01 2.81457066e+01 3.00601988e+01
+ 1.14984738e+01 4.75426624e+01 1.62405023e+01 5.49509765e+01
+ 4.00275382e+01 3.96268733e+01 2.17040851e+02 5.95373097e+01
+ 5.18037293e+01 1.26374618e+02 6.98190055e+01 4.50044268e+01
+ 0.00000000e+00 4.97125915e+01 8.19105449e+01 1.74596344e+01
+ 3.40429257e+01 3.90548174e+01 1.51729578e+01 5.06335414e+01
+ 4.33939615e+01 7.19307892e+01 2.98083333e+01 9.30324509e+01
+ 4.01751494e+01 6.19032420e+01 4.62891787e+00 2.34790288e+01
+ 9.36967387e+01 6.67536334e+01 2.97789992e+01 5.84762536e+01
+ 5.55986347e+01 2.48735652e+01 4.56369979e+01 8.07722710e+00
+ 3.76079370e+01 8.22377255e+01 4.20729889e+01 1.57558923e+01
+ 7.27085242e+01 8.36200970e+01 7.83772281e+01 1.00689583e+01
+ 4.05135509e+01 6.06225470e+00 5.31137214e+01 7.81795676e+01
+ 3.97922235e+01 2.59890187e+01 1.25452842e+01 1.33064177e+01
+ 7.28795060e+01 9.00164574e+01 2.70777115e+01 4.35811046e+01
+ 6.70572284e+01 1.25499677e+02 7.87968800e+01 5.02049462e+01
+ 8.50657239e+00 1.45537026e+01 3.67938969e+01 1.31414093e+01
+ 2.60032791e+01 1.91854898e+01 5.49814533e+01 5.72134370e+01
+ 1.95474848e+01 9.27042085e+00 5.46402317e+01 5.79579614e+01
+ 7.76197919e+01 3.12211133e+01 4.14104303e+01 1.62016116e+02
+ 2.91571075e+01 8.08126841e+01 1.74440536e+01 5.57450551e+01
+ 3.56078665e+01 5.03818589e+01 4.08058710e+01 1.11378269e+01
+ 1.98955693e+01 4.85272543e+01 4.94581202e+01 7.64446427e+01
+ 7.50070441e+01 4.49177689e+01 4.22763921e+01 5.98748751e+01
+ 3.89084262e+01 1.62204121e+01 3.38478148e+01 2.46363671e+01
+ 6.07472838e+01 2.75345475e+01 6.04466713e+01 8.22228980e+01
+ 9.64420110e+00 1.79612095e+01 9.01128067e+00 4.41552586e+01
+ 5.38560426e+01 3.62985468e+01 6.19433170e+01 2.30366653e+01
+ 1.04798760e+01 3.70602947e+01 7.30350939e+01 3.64682565e+01
+ 2.15807723e+01 1.78817370e+01 1.63582381e+01 8.36281844e+00
+ 8.77363436e+01 6.30078841e+01 1.35605534e+01 1.07238835e+01
+ 1.34323485e+01 1.64211386e+01 5.25172106e+01 8.93065344e+00
+ 4.97904017e+01 1.01500029e+02 3.32293505e+01 1.52749072e+01
+ 5.80662106e+00 2.38198245e+01 2.28271441e+01 9.08222839e+00
+ 2.91342848e+01 1.51241002e+02 7.24541752e+01 8.78854133e+01
+ 6.08872642e+01 2.36850905e+01 3.51729101e+01 5.63369103e+00
+ 3.42844836e+01 1.45483963e+01 3.42417656e+01 6.60612839e+01
+ 0.00000000e+00 1.45965794e+02 2.38178039e+01 1.21589021e+01
+ 1.06631850e+02 7.90153335e+01 7.59125668e+00 2.22308589e+01
+ 2.67325653e+01 1.50634252e+02 4.51738450e+01 4.31788415e+01
+ 3.38003057e+01 2.55175684e+01 5.39597029e+01 3.95880212e+01
+ 8.91412633e+01 8.12844128e+01 1.63069552e+02 3.38611553e+01
+ 9.18071465e+01 1.42595549e+01 8.37019271e+01 8.91263596e+01
+ 3.18821788e+01 6.03309631e+01 1.65094691e+01 9.50490670e+00
+ 4.31302420e+01 1.78940268e+01 4.02521954e+01 2.50364936e+01
+ 5.63890563e+01 7.22220414e+01 2.74996553e+01 2.71306883e+01
+ 7.84381506e+01 5.76566928e+00 8.38018976e+01 2.40356681e+01
+ 5.09333354e+01 5.58241240e+01 5.10268997e+01 9.19402912e+00
+ 2.25083922e+01 3.30945207e+01 1.11852595e+01 1.05870014e+01
+ 3.52667930e+01 6.96697659e+01 7.91742764e+01 5.02460079e+01
+ 2.56432347e+01 5.69137569e+01 1.49095888e+01 6.84845340e+01
+ 1.71316356e+01 6.27614678e+01 2.92208777e+01 1.92257774e+01
+ 8.81644493e+01 3.95734666e+01 3.08296207e+01 4.63444252e+01
+ 3.92532709e+01 3.95893452e+01 3.47590460e-01 0.00000000e+00
+ 1.41043546e+01 1.83331590e+01 1.98830446e+01 2.22489004e+01
+ 5.48986589e+01 2.70035890e+01 2.90550116e+01 1.62052294e+01
+ 2.01448060e+01 1.30100010e+02]
+STD
+[ 0.70234069  1.77807028  1.57011001  0.48461002  1.307705    0.81005024
+  2.19288706  2.54104791  1.13120426  1.0182749   1.94203693  1.52467696
+  0.83147239  1.66674214  0.84102353  1.2170976   0.71436102  1.35327602
+  1.42014179  2.23514286  1.38142337  0.47714045  1.93131028  0.56944922
+  0.76624741  1.228858    0.33950912  0.94095069  1.54623337  0.69449172
+  0.51366061  1.02381826  2.06455025         nan  0.80962166  1.22169601
+  0.57129815  0.64812361  1.56259827  0.6183464   1.03413851  1.43331604
+  1.05991172  0.5658582   1.16368076  0.82561593  1.5573897   0.46998609
+  0.63980531  1.54731824  1.6082826   1.72118411  0.50320611  0.35407237
+  1.0678853   1.58708778  0.69550568  1.76019024  0.60689158  1.862021
+  1.46789585  0.55282001  1.00525247  0.66381109  0.87913927  1.45582593
+  1.30408998  1.40100934  0.61936149  1.01652636  0.99194825  0.97056062
+  0.5210095   0.84155083  1.01682142  0.24626548  1.83434023  1.9728026
+  2.20768024  1.85922177  1.57124753  0.89632089  1.08487258  1.07898862
+  0.94732176  0.84176319  1.76280912  0.43820814  0.79901296  1.65837332
+  0.90294458  0.7758824   0.81113088  0.91577738  1.65079797  0.93642742
+  0.77820364  0.80288055  1.98595104  1.40128966  1.44136397  0.61905372
+  1.5555344   1.44146937  0.37985352  1.01589648  0.47173813  1.25509244
+  0.92543078  1.28287171  0.45115346  0.85866506  0.80050099  0.94443457
+  0.50331639  1.69340175  0.77479501  1.04439318  0.59836411  0.85912487
+  1.57424214  1.79665611  1.40577407  1.57716177  2.1251673   0.89726167
+  0.28512236  0.97337073  1.21250326  1.12060465  1.71228404  0.97638867
+  0.48970932  0.70117618  0.56312507  0.73045861  1.12913302  1.08395039
+  1.24393071  0.92616517  1.61540686  1.32708485  1.19958284  0.90956781
+  1.14870846  1.36929299  0.55491857  1.02286813  0.72696503  1.26566168
+  3.2269833   0.55572429  0.33339787  1.05786758  2.33904006  0.68081004
+  1.68101226  1.41730511  1.71733933  0.44982953  0.40964897  0.5214816
+  0.60358934  0.95446789  0.84202923  1.12666916  0.55775269  0.34049255
+  1.25131077  1.02043929  0.55086763  1.08152431  0.34246945  1.99463302
+  1.00990902  1.63732783  1.49057432  0.75511403  1.38408968  1.63975542
+  0.77710005  0.10085126  0.47609356  0.77455379  0.59062762  0.70874885
+  1.01020771  1.46173709  1.10646387  0.54983484  1.51813137  1.18319111
+  1.58463953  1.81019313  0.88275554  1.23086035  1.21753721  1.5024897
+  0.81861827  0.90135332  0.5232334   1.35224404  0.62183489  1.20252997
+  1.05445534  0.99532499  2.42197625  1.25170736  1.65121533  1.95691948
+  1.47710661  1.15050407         nan  1.20918776  1.43100092  0.65256781
+  1.68431306  1.14097644  0.60104983  1.42314499  1.51125534  1.32454124
+  1.03178648  1.585683    1.0149542   1.2287535   0.33198242  0.74767941
+  1.97586203  1.49168399  1.28623048  1.27449613  1.43499432  0.76956334
+  1.23338285  0.43853726  0.95774044  2.42365906  1.01300072  0.61248697
+  1.33168263  2.21784337  1.3826206   0.48962956  1.0325435   0.37992025
+  1.18225611  1.7016285   0.98516092  0.78662962  0.55315689  0.56286719
+  1.48609215  1.55976832  0.80293674  1.03099649  1.54754677  1.98036989
+  1.64837307  1.12032301  0.45549684  0.58865672  0.97130492  0.55936634
+  0.78684541  0.67586787  1.14415131  1.22703576  1.18162977  0.46981305
+  1.84797578  1.25157157  1.42920471  1.14056114  1.17488198  1.9640587
+  0.8877105   2.06235282  0.64446459  1.18051954  0.95552196  1.18300299
+  1.01002316  1.00624536  0.6882616   1.10144512  1.53464934  1.38243122
+  1.63671103  1.05969063  1.01544646  1.6134607   1.47023101  0.62145015
+  0.89771953  0.76588522  1.29900906  1.98330703  1.22929524  2.42344056
+  0.98204893  0.65394789  0.46320007  1.07795199  1.89483584  0.92965107
+  1.22915117  0.74957981  0.49952063  0.95074162  1.58696298  0.97963818
+  0.71681791  0.65249953  0.92787925  1.29327634  1.6823212   1.27105734
+  0.86796548  1.23773315  0.57237947  0.62528353  1.54503914  0.4912932
+  1.41124628  1.57340728  0.90026216  0.61037588  0.37182372  0.76221475
+  0.74616326  0.47065674  1.15077612  1.99500034  1.70240037  1.68374978
+  1.33820846  1.62224435  1.06518074  0.38503899  1.56489351  0.58854939
+  0.96200474  1.2541482  -0.          2.10314191  0.76218242  1.31794765
+  1.67514218  1.50252486  0.43029362  0.7275343   1.55892053  2.169636
+  1.03709582  1.01393671  0.90796349  0.77946209  1.19163425  1.03438219
+  2.01292712  1.73508899  2.12831149  0.90878041  1.81075306  0.58267762
+  1.95054686  2.16583957  1.36946058  1.55346018  0.62696299  0.47571767
+  1.02564961  0.65272372  0.99083846  0.77207965  1.21816359  1.52634966
+  0.80916852  0.82356979  1.67372713  0.37051024  1.42966735  0.76566037
+  2.37891982  1.22831596  1.11559783  0.46787333  0.96842639  0.8876738
+  0.52231332  0.50206719  0.92745118  1.54996959  1.38963301  1.19816536
+  0.80067526  1.50882414  0.59581055  1.34246958  0.63866743  1.35864842
+  1.17960602  1.65726872  1.48462495  1.28409285  0.85676052  1.60458415
+  1.47673196  1.40693541  0.58956803 -0.          0.96968567  0.66068433
+  0.68804493  0.8914054   1.25241092  0.80183701  1.07805402  0.62115924
+  0.83345575  1.8503201 ]
+[411 344 181  75 126 226 152  26 167 172  53 381 328 104 245 339 160 350
+  87 235 159 110 260 302 387 269  47 331 106 371 182  21   3 243 132 323
+ 308 391  52 114  30  72 161 390 200 189 170  61 250 146 151 166 263 251
+ 134  43  23  36 320 365 341 261 410 184 398 118 218 162  58 327 239  39
+ 101  68 419 293 202 321 370 400  48 278  37 313 215 373 301 413  63 265
+ 155 414 284  29  56 133   0 185  16 312 148 351 135 330 227 307 177 346
+ 329 383 295  24 233 375 183 116  91 180  96 357 249 264  88 112 396 417
+  97 254 378  34   5  92 198 379  45  12 420  14  73  85 164 406 111 119
+ 318  64 194 389 276 415  81 125 294 326 199  90 356 363 143  93 108 139
+ 392 314 305  95  27 113  84 309 163 280 236 342 388 412  71 262 127 131
+ 311 300 248 374  70 205  62 283 174 282 186 238 355 224 290 105  69  74
+   9 169 147  31 372 255 222 244  40 359 354 117 204 153 289  42 338  54
+ 303 418  83 171 137  82 285 188 386 259 129 165 136   8 273 217 266 144
+ 211 332  44 274 402 279 268 246 281 191 358 395 142 203 213 128  15 196
+ 376  35 267 385 225  25 306 298 195 234 319 138 168 271 207 416 343 107
+ 149 317 231 109 405 230 315 296  66   4 347 221 141 240 336 399 201  17
+ 401 145 368  20 287 242 178 394  67  99 122 409 324 157  18 219 272 382
+ 214  41 232 100 103  65 187  60 292 408 210 404 252 176 229 197 349 397
+ 220 190  11 377 286 322  28  49 256 393 369 102  46 352 253  38 340   2
+  80 325 120 123 192 223 310  55 407  50 291 140 337 288 175 179 258  94
+ 208 403  89  13 380 348 156 316 335 216 115 247 334 130 158  51 361  57
+  86]
+['PRSS3' 'PRSS1' 'LUM' 'CLCA3' 'HLA.DRB1' 'ZNF160' 'GPSM2' 'FCGRT' 'PLTP'
+ 'AA401952' 'MED11' 'PALLD' 'PSG1' 'CEAL1' 'ZNF233' 'TCTEX1D1' 'MGC39606'
+ 'SORT1' 'EXT1' 'SBP1' 'IGSF3' 'PRRX1' 'GYPA' 'ID4' 'EID.3' 'AA131320'
+ 'NCF2' 'EGLN2' 'TOMM40' 'FCGR2B' 'DCLRE1B' 'PRG1' 'IGF1R' 'AA598631'
+ 'FLJ35740' 'HNRNPG.T' 'CALM1' 'AIF1' 'PARP14' 'TFDP2' 'VAMP2' 'TMEM146'
+ 'CHN1' 'ZNF226' 'NPL' 'NLK' 'COX6A2' 'DIP2C' 'EDG1' 'DNASE1L1' 'SERPING1'
+ 'TAP1' 'N98591' 'FBXO32' 'WDR7' 'SPARC' 'COL9A2' 'DDEF1' 'MB' 'LAPTM5'
+ 'SCAMP5' 'OSR1' 'ZNF217' 'PARD3' 'CSPG2' 'NDUFB11' 'SLC15A2' 'MSTP9'
+ 'KIAA1543' 'HLA.G' 'PSG5' 'BCAM' 'F13A1' 'FAM84A' 'KCNK6' 'ATP6V1C1'
+ 'TBC1D7' 'AKR1C1' 'YWHAH' 'LHFPL2' 'CCDC3' 'URP2' 'OSBPL1A' 'DMN' 'WWTR1'
+ 'ADAM19' 'GBP1' 'A2BP1' 'PNCK' 'HCLS1' 'IQSEC1' 'ASPA' 'C4A' 'ACAD8'
+ 'NUAK1' 'IGHG1' 'GABBR1' 'H20822' 'PDE4DIP' 'SVIL' 'APCS' 'C6orf12'
+ 'CYBA' 'FABP3' 'NPC2' 'RGS16' 'CACNB2' 'PCDHGC3' 'RFXAP' 'CA11' 'SAA2'
+ 'RAB27B' 'D21S2089E' 'FREQ' 'RPS3A' 'ITGA3' 'HBA1' 'CD53' 'NDST1' 'YWHAG'
+ 'GADD45B' 'RALY' 'IGF2BP3' 'EDG3' 'AI002301' 'KNS2' 'NOTCH1' 'ARPP.19'
+ 'H24428' 'CDKN2D' 'LILRA1' 'MVP' 'AA489629' 'PRKCZ' 'ZNF419B' 'ZNF549'
+ 'FGF13' 'LYN' 'CBX6' 'DYNLT1' 'PDXP' 'X37864' 'MAPKBP1' 'BNIP2'
+ 'AA029415' 'VASP' 'R70506' 'GBP2' 'RAB20' 'MSN' 'PPP1R14A' 'PTPRZ1'
+ 'MOAP1' 'MGC42367' 'BLVRB' 'CAP2' 'FAS' 'PPP3CB' 'MRC2' 'ADFP' 'AA398420'
+ 'HMOX1' 'SLC35A2' 'H08563' 'LTF' 'CAMKK2' 'PRKAR1B' 'R70684' 'CBLN2'
+ 'AA479357' 'STXBP1' 'DDN' 'TTC23' 'SPAG6' 'ANXA1' 'S100A11' 'PYHIN1'
+ 'AP4B1' 'EPB49' 'W93688' 'APOC2' 'STC1' 'LOC146795' 'RTN3' 'EMP3'
+ 'H41096' 'NLGN1' 'NNMT' 'AA490257' 'APOC1' 'HEY1' 'NSF' 'HLA.A' 'CAPG'
+ 'IGFBP5' 'C1R' 'LAMA4' 'NMNAT2' 'MYBPC2' 'R61377' 'IL1RAP' 'CCL2'
+ 'SERPINA3' 'EDNRB' 'FZD7' 'CHI3L2' 'AA181288' 'DUS3L' 'EPHB1' 'LOC57228'
+ 'S100A1' 'IFI30' 'SERPINI1' 'C8orf4' 'UBA52' 'C16orf5' 'ADARB2' 'TIMP1'
+ 'T62491' 'L3MBTL4' 'CLIC1' 'HBXIP' 'KCNQ2' 'AA424849' 'C1orf63' 'DPYD'
+ 'CASP1' 'CAMK2A' 'GOT1' 'AKR1C2' 'S100A10' 'ADCY1' 'CLSTN3' 'ADM'
+ 'LOC283130' 'IMAGE.33267' 'MGC26694' 'FAM46A' 'ESM1' 'SUV39H1'
+ 'TNFRSF12A' 'LRBA' 'RAB11FIP4' 'COL3A1' 'TXNDC' 'SOCS3' 'STK17A' 'USP6NL'
+ 'CKMT1A' 'COL6A2' 'CTHRC1' 'TSPAN4' 'PCP4' 'C1orf187' 'DEF6' 'AEBP1'
+ 'TIMP3' 'KCNJ1' 'PRKCG' 'ITGA9' 'HAMP' 'RUNX1' 'GYPC' 'CDC20B' 'ABCA5'
+ 'COL4A2' 'DSCR1L1' 'MASP1' 'FLJ38984' 'INPP5F' 'KIAA1644' 'SNRPN'
+ 'AI350724' 'CACNB3' 'AA669383' 'FN1' 'SLC16A3' 'SRPX' 'SP100' 'PDPN'
+ 'AA598555' 'AA975768' 'R52960' 'FBXW7' 'ITPKA' 'NCF1' 'RND3' 'WASF1'
+ 'SYT7' 'PRKCB1' 'TMEM49' 'CD47' 'FBXL16' 'DES' 'PYCR1' 'CDKN1A'
+ 'MGC18216' 'MST150' 'RAB30' 'PLAUR' 'HSPG2' 'COX7A1' 'FBXO2' 'VEGF'
+ 'AI263051' 'MYCBP2' 'RPS19BP1' 'PLA2G2A' 'GPNMB' 'HPRT1' 'DKFZp313A2432'
+ 'C9orf48' 'BGN' 'T51726' 'PLOD2' 'DDIT4' 'ABCC3' 'UBE4B' 'AA281932' 'MGP'
+ 'MICAL2' 'VSNL1' 'ID3' 'PYGL' 'LGALS3' 'STEAP3' 'L1CAM' 'NY.SAR.48'
+ 'SYNGR3' 'H78560' 'LMO7' 'SCN2B' 'STMN1' 'NR4A1' 'BCL2A1' 'H10054'
+ 'SETD5' 'SERPINH1' 'LOC283070' 'TSPAN6' 'MTHFD2' 'LOC400451' 'KLRC2'
+ 'PPP3CA' 'ANXA5' 'T97457' 'KLRC3' 'X38595' 'RBP7' 'AI335002' 'COL1A2'
+ 'IL32' 'H86813' 'EFHB' 'SPINT2' 'CA12' 'GAS1' 'LY96' 'LOC388610' 'DECR2'
+ 'LOC541471' 'CAV1' 'NPTX1' 'TncRNA' 'COL1A1' 'CCR1' 'HLA.F' 'TNC' 'SNCG'
+ 'MMP2' 'KCNMA1' 'TNFAIP3' 'PLAU' 'AI005038' 'HK2' 'PSD3' 'TLL2' 'UGCG'
+ 'ANK3']
+(array([344, 411]),)
+['PRSS1' 'PRSS3']
+[Time: 29.06.23 14:17:35] [Level: info] transition: apply_scaling
+[CTRL] GET /data
+[Time: 29.06.23 14:17:36] [Level: info] state: apply_scaling
+[411 344 181  75 126 226 152  26 167 172  53 381 328 104 245 339 160 350
+  87 235 159 110 260 302 387 269  47 331 106 371 182  21   3 243 132 323
+ 308 391  52 114  30  72 161 390 200 189 170  61 250 146 151 166 263 251
+ 134  43  23  36 320 365 341 261 410 184 398 118 218 162  58 327 239  39
+ 101  68 419 293 202 321 370 400  48 278  37 313 215 373 301 413  63 265
+ 155 414 284  29  56 133   0 185  16 312 148 351 135 330 227 307 177 346
+ 329 383 295  24 233 375 183 116  91 180  96 357 249 264  88 112 396 417
+  97 254 378  34   5  92 198 379  45  12 420  14  73  85 164 406 111 119
+ 318  64 194 389 276 415  81 125 294 326 199  90 356 363 143  93 108 139
+ 392 314 305  95  27 113  84 309 163 280 236 342 388 412  71 262 127 131
+ 311 300 248 374  70 205  62 283 174 282 186 238 355 224 290 105  69  74
+   9 169 147  31 372 255 222 244  40 359 354 117 204 153 289  42 338  54
+ 303 418  83 171 137  82 285 188 386 259 129 165 136   8 273 217 266 144
+ 211 332  44 274 402 279 268 246 281 191 358 395 142 203 213 128  15 196
+ 376  35 267 385 225  25 306 298 195 234 319 138 168 271 207 416 343 107
+ 149 317 231 109 405 230 315 296  66   4 347 221 141 240 336 399 201  17
+ 401 145 368  20 287 242 178 394  67  99 122 409 324 157  18 219 272 382
+ 214  41 232 100 103  65 187  60 292 408 210 404 252 176 229 197 349 397
+ 220 190  11 377 286 322  28  49 256 393 369 102  46 352 253  38 340   2
+  80 325 120 123 192 223 310  55 407  50 291 140 337 288 175 179 258  94
+ 208 403  89  13 380 348 156 316 335 216 115 247 334 130 158  51 361  57
+  86]
+(array([344, 411]),)
+[Time: 29.06.23 14:17:36] [Level: info] transition: mfa_prerequisites
+[Time: 29.06.23 14:17:37] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 29.06.23 14:17:37] [Level: info] transition: start_power_iteration
+[Time: 29.06.23 14:17:38] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 0.71631516  0.37519388  1.24053938 ... -1.40676238  0.31247077
+   1.50968682]
+ [ 0.          0.          0.         ...  0.63858614  1.2341549
+   0.        ]
+ [-0.00218031 -1.20196695  0.         ...  0.         -1.31461006
+   1.42339436]
+ ...
+ [-1.93335727  1.25602891  0.31803289 ...  0.19061834 -0.33585557
+  -1.2964494 ]
+ [ 0.40530509 -0.48430895  0.23492254 ... -1.47030296  0.
+   1.26755622]
+ [-0.30918798 -0.77010057  0.23738252 ... -0.13318771  0.39120738
+   0.05023698]]
+[Time: 29.06.23 14:17:38] [Level: info] transition: aggregate_randomized_projections_cov[CTRL] POST /data
+
+[Time: 29.06.23 14:17:39] [Level: info] state: aggregate_randomized_projections_cov
+17
+Global cov
+[[ 1.         -0.03030264  0.02921338 ... -0.32549479  0.21254513
+  -0.36106932]
+ [-0.03030264  0.61904762 -0.12705105 ...  0.10477327 -0.14452839
+   0.08997865]
+ [ 0.02921338 -0.12705105  0.54761905 ... -0.0918079   0.11350578
+  -0.11226928]
+ ...
+ [-0.32549479  0.10477327 -0.0918079  ...  1.         -0.20556213
+   0.02612965]
+ [ 0.21254513 -0.14452839  0.11350578 ... -0.20556213  0.69047619
+  -0.12978465]
+ [-0.36106932  0.08997865 -0.11226928 ...  0.02612965 -0.12978465
+   0.9047619 ]]
+[Time: 29.06.23 14:17:39] [Level: info] transition: compute_final_h_cov
+[Time: 29.06.23 14:17:40] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+17
+[Time: 29.06.23 14:17:40] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:17:41] [Level: info] state: aggregate_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+[{'Local Eigenvector norm': 1533.690336482473}, {'Local Eigenvector norm': 2187.573186047369}]
+[Time: 29.06.23 14:17:44] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:45] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:17:45] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:17:46] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-4.518337385290708]}, {'Local Conorms': [4.518337385290712]}]
+[Time: 29.06.23 14:17:47] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:48] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+17
+[Time: 29.06.23 14:17:48] [Level: info] transition: aggregate_local_norm
+[Time: 29.06.23 14:17:49] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 336.3806484853574}, {'Local Eigenvector norm': 574.860947419966}]
+[Time: 29.06.23 14:17:50] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 29.06.23 14:17:51] [Level: info] state: compute_local_conorm
+[Time: 29.06.23 14:17:51] [Level: info] transition: aggregate_local_conorm
+[Time: 29.06.23 14:17:52] [Level: info] state: aggregate_local_conorm

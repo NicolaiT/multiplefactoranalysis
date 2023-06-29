@@ -1,0 +1,90 @@
+2023-06-29 13:44:14,911 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 13:44:14,912 INFO supervisord started with pid 7
+2023-06-29 13:44:15,914 INFO spawned: 'nginx' with pid 10
+2023-06-29 13:44:15,915 INFO spawned: 'app' with pid 11
+2023-06-29 13:44:16,926 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 13:44:16,927 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 13:44:18] [Level: info] id: df5fdef085226db2
+[Time: 29.06.23 13:44:18] [Level: info] coordinator: False
+[Time: 29.06.23 13:44:18] [Level: info] clients: ['df5fdef085226db2', '698ed2064b0e17e0']
+[Time: 29.06.23 13:44:18] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/hospital_data_bredel_1 - Copy.csv', '/mnt/input/hospital_data_bredel_1.csv']
+RUNNING ON:  ['/mnt/input/hospital_data_bredel_1 - Copy.csv', '/mnt/input/hospital_data_bredel_1.csv']
+number of omics:  2
+[STARTUP] Configuration copied
+Log Transform performed
+/app/apps/svd/FC_Federated_PCA.py:97: RuntimeWarning: invalid value encountered in log2
+  self.tabdata.scaled = np.log2(self.tabdata.scaled+1)
+[Time: 29.06.23 13:44:18] [Level: info] transition: wait_for_params
+[Time: 29.06.23 13:44:19] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['LOC283070', 'PPP1R14A', 'ESM1', 'SP100', 'PSG1', 'CAV1', 'FCGR2B', 'EID.3', 'NCF1', 'PRG1', 'BGN', 'LOC541471', 'PLAU', 'HMOX1', 'GPNMB', 'RTN3', 'DCLRE1B', 'CDKN2D', 'H78560', 'H10054', 'H91845', 'NCF2', 'MGC18216', 'AP4B1', 'SYT7', 'KIAA1543', 'LAPTM5', 'TXNDC', 'R70506', 'SERPINA3', 'FBXW7', 'PDXP', 'DDEF1', 'KCNK6', 'AA906888', 'PRSS3', 'LAMB1', 'PCP4', 'SNRPN', 'EPHB1', 'AI350724', 'HEY1', 'HCLS1', 'COL4A2', 'ZNF233', 'MB', 'CDKN1A', 'ANXA5', 'NMNAT2', 'AA401952', 'ITGA9', 'PRKCB1', 'C1orf63', 'C4A', 'AEBP1', 'LHFPL2', 'PDE2A', 'LOC400451', 'PLAUR', 'R70684', 'LGALS3', 'SNCG', 'ADCY1', 'TLL2', 'DNASE1L1', 'S100A1', 'PRKCZ', 'YWHAG', 'N98591', 'RPS3A', 'TSPAN4', 'KIAA1644', 'FN1', 'NSF', 'ARPP.19', 'PRKCG', 'NDUFB11', 'BLVRB', 'DDIT4', 'LOC388610', 'MYCBP2', 'MGC39606', 'KIAA0963', 'SLC15A2', 'GADD45B', 'TOMM40', 'IL32', 'PTPRZ1', 'FBXO2', 'BCAM', 'RPS19BP1', 'COL6A2', 'WASF1', 'PARD3', 'C1R', 'MASP1', 'T97457', 'POSTN', 'DEF6', 'ADM', 'GAS1', 'IQSEC1', 'APOC1', 'SRPX', 'IMAGE.33267', 'TncRNA', 'DDN', 'SVIL', 'RAB27B', 'PSD3', 'MYBPC2', 'SERPINI1', 'RFXAP', 'CLSTN3', 'ID3', 'DSCR1L1', 'PPP3CB', 'LOC389831', 'TAP1', 'CDC20B', 'MDFI', 'ABCA5', 'TTC23', 'NEFH', 'TNC', 'AA131320', 'TCF7L1', 'GPSM2', 'LOC283130', 'VEGF', 'COL1A1', 'H41096', 'SORT1', 'CBLN2', 'CAP2', 'C6orf12', 'PARP14', 'IL21R', 'ANXA1', 'MTHFD2', 'MYC', 'D21S2089E', 'UGCG', 'IGFBP5', 'MRC2', 'R52960', 'MICAL2', 'NPTX1', 'KLRC2', 'T62491', 'AI822135', 'IL1RAP', 'AA975768', 'ZFHX1B', 'AKR1C2', 'LOC57228', 'CBX6', 'GBP2', 'RALY', 'CA12', 'HLA.G', 'SCN2B', 'COL3A1', 'PRSS1', 'CCR1', 'STEAP3', 'STK17A', 'STMN1', 'PDPN', 'SYNGR3', 'CTHRC1', 'CASP1', 'ZNF419B', 'C1orf187', 'YWHAH', 'AI357047', 'CLTB', 'HLA.DRB1', 'AI262682', 'DIP2C', 'F13A1', 'MAPKBP1', 'ITPKA', 'HPRT1', 'AA424849', 'WWTR1', 'RUNX1', 'AI335002', 'ADAM19', 'TSPAN6', 'AA489629', 'DUS3L', 'CSPG2', 'SPAG6', 'PPP3CA', 'SUV39H1', 'OSBPL1A', 'COX7A1', 'IFI30', 'LMO7', 'LOC146795', 'IGFBP3', 'A2BP1', 'MDK', 'EXT1', 'CEAL1', 'FLJ38984', 'LUM', 'MAL2', 'CLCA3', 'MGC42367', 'KCNMA1', 'RND3', 'VASP', 'FLJ35740', 'CA11', 'RAB20', 'FAS', 'GABBR1', 'LY96', 'VAMP2', 'AA181288', 'FREQ', 'AA281932', 'FBXO32', 'HBA1', 'SOX4', 'S100A10', 'AI871056', 'EFHB', 'AI005038', 'ACAD8', 'NLGN1', 'NNMT', 'STXBP1', 'PALLD', 'H08563', 'ZNF160', 'TMEM49', 'DMN', 'UBE4B', 'FZD7', 'GYPC', 'RBP7', 'STC1', 'TGFBI', 'HBXIP', 'CALM1', 'ATP6V1C1', 'ADARB2', 'CYR61', 'FAM46A', 'SERPING1', 'CACNB2', 'EGLN2', 'IGSF3', 'H20822', 'DECR2', 'HLA.F', 'FCGRT', 'USP3', 'ID4', 'CAMK2A', 'ZNF329', 'PRRX1', 'ZNF226', 'AI263051', 'H86813', 'ADFP', 'PCDHGC3', 'ITGA5', 'RAB11FIP4', 'AKR1C1', 'DPYD', 'LAMA4', 'TCTEX1D1', 'ANK3', 'KCNJ1', 'CD44', 'PYCR1', 'OSR1', 'TIMP3', 'SCAMP5', 'R61377', 'SBP1', 'MSN', 'PRKAR1B', 'SOCS3', 'COX6A2', 'PYGL', 'PDE4DIP', 'LSP1', 'KCNQ2', 'FBXL16', 'KLRC3', 'NY.SAR.48', 'RAB30', 'CD58', 'AA029415', 'HAMP', 'LTF', 'DKFZp313A2432', 'NLK', 'FBL', 'LOC613212', 'C9orf48', 'BCL2A1', 'MST150', 'LILRA1', 'X37864', 'MED11', 'C16orf5', 'PLOD2', 'WDR7', 'APOC2', 'HNRNPG.T', 'NR4A1', 'EDG3', 'TMEM146', 'HLA.A', 'DES', 'FAM84B', 'CD47', 'RBP4', 'KNS2', 'DYNLT1', 'MGC26694', 'EPB49', 'TBC1D7', 'HSPG2', 'DLL3', 'BNIP2', 'EDNRB', 'NUAK1', 'SLC35A2', 'PLP2', 'SPINT2', 'CAMKK2', 'APCS', 'MSTP9', 'IGF2BP3', 'NPL', 'SAA2', 'TIMP1', 'CCDC3', 'CKMT1A', 'INPP5F', 'FABP3', 'CLIC1', 'PEG3', 'PNCK', 'NPC2', 'AA490257', 'ABCC3', 'PSG5', 'GYPA', 'HPCA', 'PLTP', 'CHN1', 'USP6NL', 'CD53', 'TFDP2', 'HK2', 'FAM84A', 'S100A11', 'EMP3', 'ASPA', 'NDST1', 'AA479357', 'GBP1', 'PHLDA1', 'PDLIM7', 'L1CAM', 'UBA52', 'VSNL1', 'TSPYL1', 'CHI3L2', 'TNFAIP3', 'ZNF217', 'COL9A2', 'AI002301', 'AA669383', 'MGP', 'CAPG', 'IGF1R', 'TNFRSF12A', 'MMP2', 'KLRC1', 'RGS16', 'H24428', 'LRBA', 'ITGA3', 'EDG1', 'T51726', 'AA598631', 'NOTCH1', 'GOT1', 'SERPINH1', 'MST1', 'URP2', 'SPARC', 'LYN', 'L3MBTL4', 'PLA2G2A', 'FGF13', 'AA598555', 'AIF1', 'PYHIN1', 'MVP', 'COL1A2', 'W93688', 'X38595', 'AA398420', 'SLC16A3', 'CCL2', 'C8orf4', 'MOAP1', 'ZNF549', 'CACNB3', 'SETD5', 'IGHG1', 'CYBA']
+INDEX
+[27, 420, 390, 208, 66, 399, 240, 20, 351, 418, 70, 79, 184, 175, 309, 75, 28, 269, 80, 401, 298, 316, 35, 44, 405, 22, 326, 396, 177, 198, 376, 168, 32, 56, 193, 317, 320, 379, 244, 191, 367, 160, 209, 122, 58, 238, 259, 192, 145, 386, 331, 339, 14, 241, 157, 108, 121, 156, 124, 398, 113, 218, 303, 53, 308, 341, 200, 213, 419, 183, 330, 153, 202, 281, 120, 416, 61, 65, 293, 203, 73, 3, 280, 421, 412, 360, 247, 302, 312, 49, 162, 159, 149, 5, 189, 88, 92, 267, 254, 144, 388, 362, 51, 380, 84, 409, 336, 2, 151, 106, 67, 347, 164, 271, 356, 334, 78, 235, 357, 265, 394, 131, 62, 186, 165, 136, 132, 50, 414, 100, 102, 383, 26, 337, 319, 335, 407, 284, 179, 176, 264, 42, 346, 219, 130, 342, 408, 422, 117, 311, 225, 328, 236, 400, 9, 137, 150, 338, 97, 110, 329, 404, 152, 368, 332, 114, 415, 187, 86, 372, 385, 252, 31, 361, 344, 207, 214, 417, 194, 1, 340, 170, 290, 288, 391, 190, 107, 215, 375, 258, 180, 21, 148, 6, 112, 163, 294, 18, 104, 226, 195, 115, 216, 272, 0, 19, 242, 378, 333, 17, 40, 228, 174, 12, 201, 352, 389, 306, 146, 248, 147, 249, 345, 101, 37, 310, 196, 325, 204, 262, 301, 13, 154, 128, 206, 397, 69, 45, 140, 33, 60, 411, 263, 63, 167, 358, 23, 251, 105, 4, 370, 275, 173, 16, 48, 64, 224, 135, 366, 300, 256, 171, 286, 38, 327, 24, 359, 181, 227, 229, 77, 282, 7, 223, 289, 10, 349, 34, 305, 220, 41, 123, 182, 185, 39, 68, 212, 85, 59, 243, 323, 211, 277, 188, 116, 353, 239, 133, 199, 304, 232, 166, 348, 413, 98, 109, 343, 138, 47, 127, 406, 155, 268, 126, 178, 43, 392, 321, 55, 217, 363, 96, 103, 292, 245, 387, 210, 393, 129, 161, 94, 410, 111, 307, 299, 89, 314, 295, 287, 230, 250, 119, 369, 82, 8, 278, 322, 141, 99, 139, 125, 364, 234, 221, 36, 11, 384, 318, 374, 15, 283, 57, 291, 382, 90, 74, 81, 402, 231, 246, 260, 253, 296, 93, 313, 95, 87, 266, 233, 197, 350, 270, 423, 72, 52, 71, 324, 118, 76, 279, 46, 373, 25, 371, 377, 237, 261, 143, 134, 285, 403, 395, 222, 276, 205, 354, 365, 297, 273, 158, 255, 257, 83, 142, 274, 315, 169, 29, 172, 91, 381, 355]
+[Time: 29.06.23 13:44:22] [Level: info] transition: compute_std
+[Time: 29.06.23 13:44:23] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(422, 1)
+[Time: 29.06.23 13:44:25] [Level: info] transition: apply_scaling
+[Time: 29.06.23 13:44:26] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[163  35 207 209 177 237 127 259 357  49 310 235   4 205  44 275  81 132
+ 204 284 255 264 355 261   7 125  21 254  85   6  16   9 384 394 214 315
+ 247 406 136 361 220 318 358 265 341 302 288 179 392  64 252 118  68 224
+ 313 400 379  32  45  26 282 280 378  93 192  76  83 339  25 160 354  89
+ 180 363  33 248 328 272 174  55 344 399 196 239 185 188 369 202 350  42
+ 101 366  53 231 333 420 218 256 290 107 338 135 421 347 351 388 253 269
+ 112 215 342 108 141 222  69 391 225 360 367  67  84 158 340 317 380 324
+ 395  74 389  17 308 408 190  66 172 417 404 401 156 325  31 309 181 331
+ 298 213  28 157 216 285   1  87 416 210  77 134 217 116 144 268 412  13
+ 334 236 300 337 286  59 133 368 234 106 122 193 138 364 407  23 327 410
+ 314 244 200  15 365 131 232 233 352 102  41  73 319 383 143  94 274  48
+ 110 283 151 414  29 332 241 376 221 191  39 155  65 198 111 415 373 311
+ 249 343 149 402 348 246 292 184  52 273 171 262 396 154 227  62 113  99
+ 128 104 326 251   2 195 385 390 271 162  27 287 166 359 345  91 170  70
+  37 173  98  54 281 277  75  50 299 186 242 119 121  43 115  95 206 346
+  71  38  40 418 381  72 413 103   3 168 405 152 145  30 182   8 212  92
+  24  51 238 322 293 320 279  46  22 307 296  58 329 197  88 129 266  80
+  90 403  14 183 301 305  10 393 312  78 353 240 223 382 146 374 114 289
+  60 165 372 295 169  18 199 161 167 316 306  19 419 397   0 189 139  57
+ 148 194  47  96 294 411 243 187 409  86 267 229 336 159 100 219  79 257
+  11   5 147 105 130 164 258 124  61 386 211 377  12 230 362 109  63 142
+ 276]
+(array([ 35, 163]),)
+[Time: 29.06.23 13:44:28] [Level: info] transition: mfa_prerequisites
+[Time: 29.06.23 13:44:29] [Level: info] state: mfa_prerequisites
+Calling prerequisites
+[Time: 29.06.23 13:44:29] [Level: info] transition: seperate_pca
+[Time: 29.06.23 13:44:30] [Level: info] state: seperate_pca
+[Time: 29.06.23 13:44:30] [Level: info] transition: initial
+[Time: 29.06.23 13:44:30] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 186, in run
+    self.transition(f'{self.current_state.name}_{transition}')
+  File "/app/engine/app.py", line 314, in transition
+    self.log(f'transition {name} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 29.06.23 13:44:30] [Level: fatal] transition seperate_pca_initial not found
+

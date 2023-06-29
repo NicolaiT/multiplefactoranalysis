@@ -1,0 +1,34 @@
+2023-06-29 13:08:47,755 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-06-29 13:08:47,757 INFO supervisord started with pid 7
+2023-06-29 13:08:48,760 INFO spawned: 'nginx' with pid 10
+2023-06-29 13:08:48,765 INFO spawned: 'app' with pid 11
+2023-06-29 13:08:49,796 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-06-29 13:08:49,796 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 29.06.23 13:08:57] [Level: info] id: 1a17ffabe98967f3
+[Time: 29.06.23 13:08:57] [Level: info] coordinator: True
+[Time: 29.06.23 13:08:57] [Level: info] clients: ['19cab4890b690204', '1a17ffabe98967f3']
+[Time: 29.06.23 13:08:57] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+TEST: None
+[Time: 29.06.23 13:08:57] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 46, in run
+    number_of_omics = len(self.load('svd').input_files)
+TypeError: object of type 'NoneType' has no len()
+
