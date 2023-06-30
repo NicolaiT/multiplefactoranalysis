@@ -60,8 +60,14 @@ class TabData:
         else:
             return cls(data, variable_names, sample_ids, scaled)
 
+    def merge(tabData_list) -> 'TabData':
+        merged_tb = copy.deepcopy(tabData_list[1])
+        for tabdata in tabData_list[1:]:
+            merged_tb.data = np.concatenate((merged_tb.data, tabdata.data),axis=0)
+            merged_tb.rows = np.concatenate((merged_tb.rows,tabdata.rows))
+            merged_tb.scaled = np.concatenate((merged_tb.scaled,tabdata.scaled),axis=0)
 
-
+        return merged_tb
 
 if __name__ == '__main__':
     tb = TabData.from_file('/home/anne/Documents/featurecloud/test-environment/controller/data/app_test/single/data_split/1/data.tsv')

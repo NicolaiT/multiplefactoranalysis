@@ -21,6 +21,7 @@ class SVD:
         self.rG = None
         self.rH = None
 
+
     @classmethod
     def init_random(cls,  tabdata, k=10) -> 'SVD':
         """
