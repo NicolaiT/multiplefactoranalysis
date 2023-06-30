@@ -108,6 +108,7 @@ class FCFederatedPCA:
         self.progress = 0.2
         self.pca = SVD.init_random(self.tabdata, k=self.k)
         self.k = self.pca.k
+        self.S = self.pca.S
         return True
 
     def compute_covariance(self):
@@ -187,6 +188,9 @@ class FCFederatedPCA:
             print('Selected')
         return self.tabdata.scaled.shape[0]
 
+    def get_eigenvalues(self):
+        eigen_values = self.S
+        return eigen_values
 
     def update_h(self, incoming):
         self.iteration_counter = self.iteration_counter + 1
@@ -194,6 +198,7 @@ class FCFederatedPCA:
         self.pca.H = incoming[COParams.H_GLOBAL.n]
         self.pca.G = np.dot(self.tabdata.scaled.T, self.pca.H)
         self.pca.S = np.linalg.norm(self.pca.G, axis=1)
+        self.S = self.pca.S
 
         if self.iteration_counter<self.pre_iterations:
             self.pca.H_list.append(incoming[COParams.H_GLOBAL.n])

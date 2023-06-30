@@ -8,7 +8,8 @@ from apps.svd.Client_FC_FederatedPCA import ClientFCFederatedPCA
 from apps.svd.FC_Federated_MFA import FCFederatedMFA
 from apps.svd.Steps import Step
 from apps.svd.COParams import COParams
-
+import copy
+import math
 
 
 
@@ -35,6 +36,8 @@ class InitialState(AppState):
 
     def run(self):
         self.store('idx_omics', 0)
+        self.store('data', [])
+        self.store('eigen_values', [])
         self.configure()
         print('[STARTUP] Instantiate SVD')
         self.progress_increment = 1/(20+self.config.k*2)
@@ -60,11 +63,14 @@ class InitPCA(AppState):
             self.store('svd', ClientFCFederatedPCA())
         self.load('svd').step = Step.LOAD_CONFIG
         self.load('svd').copy_configuration(self.load('configuration'))
-        number_of_omics = len(self.load('svd').input_files)
+        input_files = self.load('svd').input_files
+        number_of_omics = len(input_files)
+        if number_of_omics == 0:
+            raise KeyError('No data found. Please ensure that the data file is present and correctly named.')
         self.store('n_omics', number_of_omics)
         # if not isinstance(self.load('idx_omics'), int):
             
-        input_files = self.load('svd').input_files
+        
         print("RUNNING ON: ", input_files[self.load('idx_omics')])
         self.load('svd').set_input_file(input_files[self.load('idx_omics')])
         print("number of omics: ", number_of_omics)
@@ -227,7 +233,9 @@ class ScaleDataState(AppState):
         config = self.load('configuration')
         incoming = self.await_data()
         self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable)
-
+        current_data = self.load('svd').tabdata.scaled
+        print("CURRENT DATA: ", current_data)
+        self.store('current_tabdata', current_data)
         return 'mfa_prerequisites'
 
 @app_state('mfa_prerequisites', Role.BOTH)
@@ -512,7 +520,7 @@ class NormalizeGState(AppState):
 @app_state('normalize_g', Role.BOTH)
 class NormalizeGState(AppState):
     def register(self):
-        self.register_transition('seperate_pca', Role.BOTH) # save_results
+        self.register_transition('separate_pca', Role.BOTH) # save_results
         self.register_transition('share_projections', Role.COORDINATOR)
 
     def run(self):
@@ -528,13 +536,13 @@ class NormalizeGState(AppState):
         if config.send_projections and self.is_coordinator:
             return 'share_projections'
         else:
-            return 'seperate_pca' # save_results
+            return 'separate_pca' # save_results
 
 
 @app_state('share_projections', Role.COORDINATOR)
 class ShareProjectionsState(AppState):
     def register(self):
-        self.register_transition('seperate_pca', Role.COORDINATOR) # save_results
+        self.register_transition('separate_pca', Role.COORDINATOR) # save_results
 
 
     def run(self):
@@ -542,21 +550,57 @@ class ShareProjectionsState(AppState):
         self.load('svd').redistribute_projections(incoming)
         out = self.load('svd').out
         self.broadcast_data(out)
-        print('Starting seperate pca')
-        return 'seperate_pca' # original: save_results
+        print('Starting separate pca')
+        return 'separate_pca' # original: save_results
 
-@app_state('seperate_pca', Role.BOTH)
-class SeperatePCA(AppState):
+@app_state('separate_pca', Role.BOTH)
+class SeparatePCA(AppState):
     def register(self):
         self.register_transition('init_pca', Role.BOTH)
-        self.register_transition('factor_analysis', Role.BOTH)
+        self.register_transition('scale_tabdata', Role.BOTH)
     
     def run(self) -> str:
-        if self.load('idx_omics') != self.load('n_omics'):
+        eigen_values = self.load('svd').get_eigenvalues()
+        data = self.load('current_tabdata')
+        
+        new_data = self.load('data')
+        new_data.append(data)
+        new_eigen_values = self.load('eigen_values')
+        new_eigen_values.append(eigen_values)
+        
+        self.store('data', new_data)
+        self.store('eigen_values', new_eigen_values)
+        
+        if self.load('idx_omics')+1 != self.load('n_omics'):
             new_idx_omics = self.load('idx_omics') + 1
             self.store('idx_omics', new_idx_omics)
+            
             return 'init_pca'
         print('Starting factor analysis')
+        return 'scale_tabdata'
+    
+@app_state('scale_tabdata', Role.BOTH)
+class ScaleTabdata(AppState):
+    def register(self):
+        self.register_transition('merging_tabdata', Role.BOTH)
+        
+    def run(self):
+        data = copy.deepcopy(self.load('data')) # 2 x 422 x 17
+        eigen_values = self.load('eigen_values') # 2 x 17
+        first_singular_values = [eigenvalue[0] for eigenvalue in eigen_values] #singular values
+        new_data = []
+        for idx, omic in enumerate(data):
+            scaled_data = omic / first_singular_values[idx]
+            new_data.append(scaled_data)
+                
+        return 'merging_tabdata'
+
+@app_state('merging_tabdata', Role.BOTH)
+class MergingTabdata(AppState):
+    def register(self):
+        self.register_transition('factor_analysis', Role.BOTH)
+        
+    def run(self):
         return 'factor_analysis'
 
 @app_state('factor_analysis', Role.BOTH)
