@@ -1,0 +1,626 @@
+2023-07-01 13:25:50,275 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-01 13:25:50,278 INFO supervisord started with pid 7
+2023-07-01 13:25:51,280 INFO spawned: 'nginx' with pid 10
+2023-07-01 13:25:51,282 INFO spawned: 'app' with pid 11
+2023-07-01 13:25:52,320 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 13:25:52,320 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 01.07.23 13:26:00] [Level: info] id: 7dee906f1e231813
+[Time: 01.07.23 13:26:00] [Level: info] coordinator: True
+[Time: 01.07.23 13:26:00] [Level: info] clients: ['2f963fefd76fe028', '7dee906f1e231813']
+[Time: 01.07.23 13:26:00] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 01.07.23 13:26:00] [Level: info] transition: init_pca
+[Time: 01.07.23 13:26:01] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}
+[Time: 01.07.23 13:26:01] [Level: info] transition: check_row_names
+[Time: 01.07.23 13:26:02] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}, {'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}]
+['fruity', 'woody', 'coffee']
+['coffee', 'fruity', 'woody']
+[6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 01.07.23 13:26:05] [Level: info] transition: wait_for_params
+[Time: 01.07.23 13:26:06] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['coffee', 'fruity', 'woody']
+INDEX
+[2, 0, 1]
+[Time: 01.07.23 13:26:06] [Level: info] transition: aggregate_sums
+[CTRL] GET /data
+[Time: 01.07.23 13:26:07] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([5.5849625 , 6.39231742, 5.80735492]), 'Sample count': 3}, {'Sums': array([6.22881869, 6.5849625 , 5.9068906 ]), 'Sample count': 3}]
+SUMS
+[1.96896353 2.16287999 1.95237425]
+[Time: 01.07.23 13:26:08] [Level: info] transition: compute_std
+[Time: 01.07.23 13:26:09] [Level: info] state: compute_std
+(3, 1)
+[Time: 01.07.23 13:26:09] [Level: info] transition: aggregate_stds
+[CTRL] GET /data
+[Time: 01.07.23 13:26:10] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[2.14938332 1.94579145 1.64027687]
+[0.39662476 1.06128843 1.44375465]
+COMPUTE STD
+[2.54600807 3.00707988 3.08403153]
+STD
+[0.71358364 0.77551014 0.78537017]
+[0 1]
+['coffee' 'fruity']
+(array([], dtype=int64),)
+[]
+[Time: 01.07.23 13:26:11] [Level: info] transition: apply_scaling
+[Time: 01.07.23 13:26:12] [Level: info] state: apply_scaling
+[0 1]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f28ec904370>
+[Time: 01.07.23 13:26:12] [Level: info] transition: mfa_prerequisites
+[CTRL] GET /data
+[Time: 01.07.23 13:26:13] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 13:26:13] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 13:26:14] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.44487122 -0.53813037 -1.35788361]
+ [-1.49950327  0.54426434  0.83103354]
+ [ 1.088634    0.06064115 -1.21264378]]
+[Time: 01.07.23 13:26:14] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 01.07.23 13:26:15] [Level: info] state: aggregate_randomized_projections_cov
+[CTRL] POST /data
+3
+Global cov
+[[ 1.         -0.9282598   0.89413101]
+ [-0.9282598   1.         -0.9230407 ]
+ [ 0.89413101 -0.9230407   1.        ]]
+resetting k
+[Time: 01.07.23 13:26:17] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 13:26:18] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+2
+[Time: 01.07.23 13:26:18] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:19] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 9.626454740879916}, {'Local Eigenvector norm': 4.525391084925005}]
+[Time: 01.07.23 13:26:20] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 13:26:21] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 13:26:21] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:22] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.2698767637488996]}, {'Local Conorms': [0.26987676374889913]}]
+[Time: 01.07.23 13:26:23] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 13:26:24] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+2
+[Time: 01.07.23 13:26:24] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:25] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 0.2670862051248485}, {'Local Eigenvector norm': 0.26331493842382153}]
+[Time: 01.07.23 13:26:26] [Level: info] transition: normalize_g
+[Time: 01.07.23 13:26:27] [Level: info] state: normalize_g
+Normalising
+(3, 2)
+2
+End normalising
+(3, 2)
+(2, 2)
+(2,)
+(3, 2)
+[Time: 01.07.23 13:26:27] [Level: info] transition: separate_pca
+[CTRL] GET /data
+[Time: 01.07.23 13:26:28] [Level: info] state: separate_pca
+[Time: 01.07.23 13:26:28] [Level: info] transition: init_pca
+[Time: 01.07.23 13:26:29] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['red_fruit', 'roasted', 'vanillin', 'woody_2'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0])}
+[Time: 01.07.23 13:26:29] [Level: info] transition: check_row_names
+[Time: 01.07.23 13:26:30] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['red_fruit', 'roasted', 'vanillin', 'woody_2'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0])}, {'Row names': array(['red_fruit', 'roasted', 'vanillin', 'woody_2'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0])}]
+['red_fruit', 'roasted', 'vanillin', 'woody_2']
+['vanillin', 'red_fruit', 'woody_2', 'roasted']
+[6, 6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 01.07.23 13:26:32] [Level: info] transition: wait_for_params
+[Time: 01.07.23 13:26:33] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['vanillin', 'red_fruit', 'woody_2', 'roasted']
+INDEX
+[2, 0, 3, 1]
+[Time: 01.07.23 13:26:33] [Level: info] transition: aggregate_sums
+[CTRL] GET /data
+[Time: 01.07.23 13:26:34] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([6.32192809, 6.4918531 , 5.39231742, 6.4918531 ]), 'Sample count': 3}, {'Sums': array([6.12928302, 7.        , 6.7548875 , 6.7548875 ]), 'Sample count': 3}]
+SUMS
+[2.07520185 2.24864218 2.02453415 2.2077901 ]
+[Time: 01.07.23 13:26:35] [Level: info] transition: compute_std
+[Time: 01.07.23 13:26:36] [Level: info] state: compute_std
+(4, 1)
+[Time: 01.07.23 13:26:36] [Level: info] transition: aggregate_stds
+[CTRL] GET /data
+[Time: 01.07.23 13:26:37] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[2.07218448 0.5589529  1.85570183 0.54320072]
+[1.75298098 0.68818444 0.8213831  0.67243226]
+COMPUTE STD
+[3.82516546 1.24713734 2.67708493 1.21563298]
+STD
+[0.8746617  0.49942714 0.73172193 0.49307869]
+[3 1 2]
+['roasted' 'red_fruit' 'woody_2']
+(array([], dtype=int64),)
+[]
+[Time: 01.07.23 13:26:38] [Level: info] transition: apply_scaling
+[Time: 01.07.23 13:26:39] [Level: info] state: apply_scaling
+[3 1 2]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f28ec7fba90>
+[Time: 01.07.23 13:26:39] [Level: info] transition: mfa_prerequisites
+[CTRL] GET /data
+[Time: 01.07.23 13:26:40] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 13:26:40] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 13:26:41] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.05732096  0.28208191 -1.22927739]
+ [-1.32888189  0.14673995  0.67341218]
+ [ 1.06983368 -0.60073593 -1.40016871]
+ [ 0.76493348  0.23148028 -1.26314037]]
+[Time: 01.07.23 13:26:41] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 01.07.23 13:26:42] [Level: info] state: aggregate_randomized_projections_cov
+[CTRL] POST /data
+3
+Global cov
+[[ 1.         -0.91960414  0.85570599  0.96713063]
+ [-0.91960414  1.         -0.82382266 -0.89902451]
+ [ 0.85570599 -0.82382266  1.          0.87568938]
+ [ 0.96713063 -0.89902451  0.87568938  1.        ]]
+[Time: 01.07.23 13:26:44] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 13:26:45] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+3
+[Time: 01.07.23 13:26:45] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:46] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 9.652416136879374}, {'Local Eigenvector norm': 8.708671126667008}]
+[Time: 01.07.23 13:26:47] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 13:26:48] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 13:26:48] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:49] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.2183088987223159]}, {'Local Conorms': [-0.21830889872231676]}]
+[Time: 01.07.23 13:26:50] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 13:26:51] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 13:26:51] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:52] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 0.48060235950336205}, {'Local Eigenvector norm': 0.4750369465723125}]
+[Time: 01.07.23 13:26:53] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 13:26:54] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 13:26:54] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:55] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.01400154208008777, -0.08102233772145873]}, {'Local Conorms': [0.014001542080087758, 0.0810223377214591]}]
+[Time: 01.07.23 13:26:56] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 13:26:57] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 13:26:57] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:26:58] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 0.48583469480803715}, {'Local Eigenvector norm': 0.04834002498153983}]
+[Time: 01.07.23 13:26:59] [Level: info] transition: normalize_g
+[Time: 01.07.23 13:27:00] [Level: info] state: normalize_g
+Normalising
+(3, 3)
+3
+End normalising
+(3, 3)
+(3, 3)
+(3,)
+(3, 3)
+[Time: 01.07.23 13:27:00] [Level: info] transition: separate_pca
+[CTRL] GET /data
+[Time: 01.07.23 13:27:01] [Level: info] state: separate_pca
+[Time: 01.07.23 13:27:01] [Level: info] transition: init_pca
+[Time: 01.07.23 13:27:02] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}
+[Time: 01.07.23 13:27:02] [Level: info] transition: check_row_names
+[Time: 01.07.23 13:27:03] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}, {'Row names': array(['fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}]
+['fruity_2', 'butter', 'woody_3']
+['woody_3', 'fruity_2', 'butter']
+[6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 01.07.23 13:27:05] [Level: info] transition: wait_for_params
+[Time: 01.07.23 13:27:06] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['woody_3', 'fruity_2', 'butter']
+INDEX
+[2, 0, 1]
+[Time: 01.07.23 13:27:06] [Level: info] transition: aggregate_sums
+[CTRL] GET /data
+[Time: 01.07.23 13:27:07] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([6.        , 7.32192809, 6.12928302]), 'Sample count': 3}, {'Sums': array([6.97727992, 4.169925  , 7.39231742]), 'Sample count': 3}]
+SUMS
+[2.16287999 1.91530885 2.25360007]
+[Time: 01.07.23 13:27:08] [Level: info] transition: compute_std
+[Time: 01.07.23 13:27:09] [Level: info] state: compute_std
+(3, 1)
+[Time: 01.07.23 13:27:09] [Level: info] transition: aggregate_stds
+[CTRL] GET /data
+[Time: 01.07.23 13:27:10] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[2.07958967 1.34906669 1.88282629]
+[0.92749021 1.05604771 1.31083349]
+COMPUTE STD
+[3.00707988 2.4051144  3.19365978]
+STD
+[0.77551014 0.69355813 0.79920708]
+[1 0]
+['fruity_2' 'woody_3']
+(array([], dtype=int64),)
+[]
+[Time: 01.07.23 13:27:11] [Level: info] transition: apply_scaling
+[Time: 01.07.23 13:27:12] [Level: info] state: apply_scaling
+[1 0]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f28ec904790>
+[Time: 01.07.23 13:27:12] [Level: info] transition: mfa_prerequisites
+[CTRL] GET /data
+[Time: 01.07.23 13:27:13] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 13:27:13] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 13:27:14] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.07944432 -0.21002947 -1.49950327]
+ [ 0.12211111  0.58627998  1.56395131]
+ [ 0.69288031  0.08549477 -1.56855477]]
+[Time: 01.07.23 13:27:14] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 01.07.23 13:27:15] [Level: info] state: aggregate_randomized_projections_cov
+[CTRL] POST /data
+3
+Global cov
+[[ 1.         -0.61912682  0.95791864]
+ [-0.61912682  1.         -0.69649453]
+ [ 0.95791864 -0.69649453  1.        ]]
+resetting k
+[Time: 01.07.23 13:27:17] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 13:27:18] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+2
+[Time: 01.07.23 13:27:18] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:19] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 8.261402397506613}, {'Local Eigenvector norm': 4.366739072353798}]
+[Time: 01.07.23 13:27:20] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 13:27:21] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 13:27:21] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:22] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [-0.021904850008904634]}, {'Local Conorms': [0.021904850008904884]}]
+[Time: 01.07.23 13:27:23] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 13:27:24] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+2
+[Time: 01.07.23 13:27:24] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:25] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 0.8407091183139682}, {'Local Eigenvector norm': 1.3498905664774647}]
+[Time: 01.07.23 13:27:26] [Level: info] transition: normalize_g
+[Time: 01.07.23 13:27:27] [Level: info] state: normalize_g
+Normalising
+(3, 2)
+2
+End normalising
+(3, 2)
+(2, 2)
+(2,)
+(3, 2)
+[Time: 01.07.23 13:27:27] [Level: info] transition: separate_pca
+[CTRL] GET /data
+[Time: 01.07.23 13:27:28] [Level: info] state: separate_pca
+Starting scale tabdata
+[Time: 01.07.23 13:27:28] [Level: info] transition: scale_tabdata
+[Time: 01.07.23 13:27:29] [Level: info] state: scale_tabdata
+Starting merge tabdata
+[Time: 01.07.23 13:27:29] [Level: info] transition: merging_tabdata
+[Time: 01.07.23 13:27:30] [Level: info] state: merging_tabdata
+Starting global pca
+[Time: 01.07.23 13:27:30] [Level: info] transition: init_pca
+[Time: 01.07.23 13:27:31] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+Log Transform performed
+out {'Row names': array(['coffee', 'fruity', 'woody', 'vanillin', 'red_fruit', 'woody_2',
+       'roasted', 'woody_3', 'fruity_2', 'butter'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}
+[Time: 01.07.23 13:27:31] [Level: info] transition: check_row_names
+[CTRL] POST /data
+[Time: 01.07.23 13:27:32] [Level: info] state: check_row_names
+gathering
+unifying row names
+[{'Row names': array(['coffee', 'fruity', 'woody', 'vanillin', 'red_fruit', 'woody_2',
+       'roasted', 'woody_3', 'fruity_2', 'butter'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}, {'Row names': array(['coffee', 'fruity', 'woody', 'vanillin', 'red_fruit', 'woody_2',
+       'roasted', 'woody_3', 'fruity_2', 'butter'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}]
+['coffee', 'fruity', 'woody', 'vanillin', 'red_fruit', 'woody_2', 'roasted', 'woody_3', 'fruity_2', 'butter']
+['woody_3', 'woody_2', 'vanillin', 'coffee', 'fruity', 'red_fruit', 'fruity_2', 'woody', 'butter', 'roasted']
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 01.07.23 13:27:32] [Level: info] transition: wait_for_params
+[Time: 01.07.23 13:27:33] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['woody_3', 'woody_2', 'vanillin', 'coffee', 'fruity', 'red_fruit', 'fruity_2', 'woody', 'butter', 'roasted']
+INDEX
+[7, 5, 3, 0, 1, 4, 8, 2, 9, 6]
+[Time: 01.07.23 13:27:33] [Level: info] transition: aggregate_sums
+[CTRL] GET /data
+[Time: 01.07.23 13:27:34] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([-1.80672058, -1.52121028, -0.52031074, -1.40308646, -1.26866805,
+       -0.97668506,  1.35278446, -0.72872427, -2.05856002, -0.75260883]), 'Sample count': 3}, {'Sums': array([ 0.16710561,  0.41381638, -0.62567151,  0.18660243, -0.22650852,
+       -0.00570335, -2.57772897, -0.60141028,  0.18580577, -0.45185842]), 'Sample count': 3}]
+SUMS
+[-0.27326916 -0.18456565 -0.19099704 -0.20274734 -0.24919609 -0.1637314
+ -0.20415742 -0.22168909 -0.31212571 -0.20074454]
+[Time: 01.07.23 13:27:35] [Level: info] transition: compute_std
+[Time: 01.07.23 13:27:36] [Level: info] state: compute_std
+(10, 1)
+[Time: 01.07.23 13:27:36] [Level: info] transition: aggregate_stds
+[CTRL] GET /data
+[Time: 01.07.23 13:27:37] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[4.93393237 2.79600251 1.98878656 3.4379803  4.52546733 2.13128906
+ 1.59784258 2.24409247 5.84149263 1.89542063]
+[1.25361057 0.91205493 1.83419946 0.6335832  0.99753289 1.01467294
+ 2.44406639 2.23475901 1.66554996 2.1986069 ]
+COMPUTE STD
+[6.18754293 3.70805744 3.82298602 4.0715635  5.52300021 3.145962
+ 4.04190898 4.47885147 7.50704259 4.09402753]
+STD
+[1.11243363 0.86116868 0.87441249 0.90239276 1.05099954 0.79321649
+ 0.89910055 0.94645142 1.22531976 0.90487872]
+[5 1 2 6 3 9 7 4 0]
+['red_fruit' 'woody_2' 'vanillin' 'fruity_2' 'coffee' 'roasted' 'woody'
+ 'fruity' 'woody_3']
+(array([], dtype=int64),)
+[]
+[Time: 01.07.23 13:27:38] [Level: info] transition: apply_scaling
+[Time: 01.07.23 13:27:39] [Level: info] state: apply_scaling
+[5 1 2 6 3 9 7 4 0]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f28ec819550>
+[Time: 01.07.23 13:27:39] [Level: info] transition: mfa_prerequisites
+[CTRL] GET /data
+[Time: 01.07.23 13:27:40] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 13:27:40] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 13:27:41] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 0.83280286  0.09245508 -1.81242375]
+ [ 0.91226984 -0.35993602 -1.67582258]
+ [ 0.89921953  0.42920577 -1.26817869]
+ [ 1.11473772 -0.29486351 -1.70069294]
+ [-1.79902197  0.57662232  0.72660518]
+ [-1.66171362  0.33098055  0.71867966]
+ [ 0.32778161  0.66158656  1.19643488]
+ [ 0.91332448  0.28116051 -1.26174359]
+ [ 0.62328667  0.30695311 -1.8460684 ]
+ [ 0.72321829  0.39085286 -1.28025387]]
+[Time: 01.07.23 13:27:41] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 01.07.23 13:27:42] [Level: info] state: aggregate_randomized_projections_cov
+[CTRL] POST /data
+3
+Global cov
+[[ 1.          0.97397486  0.88192445  0.97280373 -0.67353397 -0.70484694
+  -0.57785066  0.89215792  0.9875193   0.88306234]
+ [ 0.97397486  1.          0.82869762  0.99025666 -0.72579521 -0.74147726
+  -0.66013298  0.85726827  0.94227818  0.8396432 ]
+ [ 0.88192445  0.82869762  1.          0.82332622 -0.73240816 -0.82808028
+  -0.3105805   0.99590445  0.87686598  0.98777365]
+ [ 0.97280373  0.99025666  0.82332622  1.         -0.77303312 -0.77432484
+  -0.58745535  0.84686719  0.93341934  0.81920885]
+ [-0.67353397 -0.72579521 -0.73240816 -0.77303312  1.          0.96366251
+   0.08502732 -0.74907249 -0.57255634 -0.66785165]
+ [-0.70484694 -0.74147726 -0.82808028 -0.77432484  0.96366251  1.
+   0.16354382 -0.84721622 -0.63627492 -0.79078124]
+ [-0.57785066 -0.66013298 -0.3105805  -0.58745535  0.08502732  0.16354382
+   1.         -0.37371643 -0.61773274 -0.42710933]
+ [ 0.89215792  0.85726827  0.99590445  0.84686719 -0.74907249 -0.84721622
+  -0.37371643  1.          0.8845561   0.99245766]
+ [ 0.9875193   0.94227818  0.87686598  0.93341934 -0.57255634 -0.63627492
+  -0.61773274  0.8845561   1.          0.89400271]
+ [ 0.88306234  0.8396432   0.98777365  0.81920885 -0.66785165 -0.79078124
+  -0.42710933  0.99245766  0.89400271  1.        ]]
+[Time: 01.07.23 13:27:44] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 13:27:45] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+3
+[Time: 01.07.23 13:27:45] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:46] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 27.375931567327555}, {'Local Eigenvector norm': 12.567412365178415}]
+[Time: 01.07.23 13:27:47] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 13:27:48] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 13:27:48] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:49] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.00661164871784092]}, {'Local Conorms': [-0.0066116487178404975]}]
+[Time: 01.07.23 13:27:50] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 13:27:51] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 13:27:51] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:52] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 3.054572103101802}, {'Local Eigenvector norm': 3.2933722709197504}]
+[Time: 01.07.23 13:27:53] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 13:27:54] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 13:27:54] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:55] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.3229892156275007, -0.3292553748888842]}, {'Local Conorms': [-0.32298921562750016, 0.32925537488888434]}]
+[Time: 01.07.23 13:27:56] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 13:27:57] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 13:27:57] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 13:27:58] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 1.9686139173190904}, {'Local Eigenvector norm': 0.5374231469413244}]
+[Time: 01.07.23 13:27:59] [Level: info] transition: normalize_g
+[Time: 01.07.23 13:28:00] [Level: info] state: normalize_g
+Normalising
+(3, 3)
+3
+End normalising
+(3, 3)
+(3, 3)
+(3,)
+(3, 3)
+[Time: 01.07.23 13:28:00] [Level: info] transition: separate_pca
+[CTRL] GET /data
+[Time: 01.07.23 13:28:01] [Level: info] state: separate_pca
+Starting factor analysis
+[Time: 01.07.23 13:28:01] [Level: info] transition: projection_matrix
+[Time: 01.07.23 13:28:02] [Level: info] state: projection_matrix
+M [[0.33333333 0.         0.        ]
+ [0.         0.33333333 0.        ]
+ [0.         0.         0.33333333]]
+U [[-0.3419617  -0.34037026 -0.3340651  -0.33965956  0.28017363  0.30009765
+   0.18233542 -0.3399857  -0.33363891 -0.33396841]
+ [-0.15141082 -0.17191602  0.14849195 -0.10503168 -0.44047841 -0.40335673
+   0.70122115  0.11714845 -0.2243364   0.04425568]
+ [ 0.02264127 -0.23331966  0.39627335 -0.29159055  0.50035931  0.26863869
+   0.26761499  0.31517894  0.18091409  0.42045221]]
+S [[2.51397587 0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         1.5872973  0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         1.25819186 0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+[Time: 01.07.23 13:28:02] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 639, in run
+    self.projection_matrix()
+  File "/app/apps/svd/app.py", line 655, in projection_matrix
+    P = np.dot(np.linalg.inv(np.sqrt(M)), np.dot(U, np.linalg.inv(S)))
+  File "<__array_function__ internals>", line 180, in inv
+  File "/usr/local/lib/python3.8/site-packages/numpy/linalg/linalg.py", line 545, in inv
+    ainv = _umath_linalg.inv(a, signature=signature, extobj=extobj)
+  File "/usr/local/lib/python3.8/site-packages/numpy/linalg/linalg.py", line 88, in _raise_linalgerror_singular
+    raise LinAlgError("Singular matrix")
+numpy.linalg.LinAlgError: Singular matrix
+

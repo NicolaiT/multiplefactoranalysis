@@ -1,0 +1,189 @@
+2023-07-01 09:45:32,387 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-01 09:45:32,394 INFO supervisord started with pid 7
+2023-07-01 09:45:33,396 INFO spawned: 'nginx' with pid 10
+2023-07-01 09:45:33,398 INFO spawned: 'app' with pid 11
+2023-07-01 09:45:34,423 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:45:34,423 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:34] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:34,916 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:35,919 INFO spawned: 'app' with pid 47
+2023-07-01 09:45:36,922 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:37] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:37,575 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:38,578 INFO spawned: 'app' with pid 71
+2023-07-01 09:45:39,580 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:40] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:40,205 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:41,208 INFO spawned: 'app' with pid 95
+2023-07-01 09:45:42,210 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:42] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:43,104 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:44,108 INFO spawned: 'app' with pid 119
+2023-07-01 09:45:45,110 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:45] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:45,879 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:46,886 INFO spawned: 'app' with pid 143
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:47] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:47,790 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:48,792 INFO spawned: 'app' with pid 167
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:49] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:49,987 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:45:49,988 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:49,991 INFO spawned: 'app' with pid 191
+2023-07-01 09:45:50,993 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:51] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:51,412 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:52,416 INFO spawned: 'app' with pid 215
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:53] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:53,576 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:45:53,576 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:54,578 INFO spawned: 'app' with pid 239
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:55] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:55,206 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:45:56,210 INFO spawned: 'app' with pid 263
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 551, in register
+    self.register_transition('separate_pca', Role.BOTH) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 287, in register_transition
+    self.log(f'source state {source} not accessible for participants', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:45:57] [Level: fatal] source state share_projections not accessible for participants
+2023-07-01 09:45:57,264 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:45:57,264 INFO exited: app (exit status 1; not expected)

@@ -66,6 +66,10 @@ class FCFederatedPCA:
         self.means_file = op.join(OUTPUT_DIR,config.output_dir, 'mean.tsv')
         self.stds_file = op.join(OUTPUT_DIR,config.output_dir, 'std.tsv')
         self.log_file = op.join(OUTPUT_DIR,config.output_dir, 'run_log.txt')
+        self.inertia_file = op.join(OUTPUT_DIR,config.output_dir, 'inertia.tsv')
+        self.F_file = op.join(OUTPUT_DIR,config.output_dir, 'global_factor_score.tsv')
+        self.F_omics_file = op.join(OUTPUT_DIR,config.output_dir, 'omic_factor_score.tsv')
+        self.P_file = op.join(OUTPUT_DIR,config.output_dir, 'projection_matrix.tsv')
         self.output_delimiter = config.output_delimiter
         self.k = config.k
 
@@ -91,7 +95,14 @@ class FCFederatedPCA:
         self.progress = 0.1
         self.tabdata = TabData.from_file(self.input_file, header=self.has_colnames,
                                          index=self.has_rownames, sep=self.sep)
+        self.fix_data()
 
+    def set_tabdata(self, tabdata):
+        self.progress = 0.1
+        self.tabdata = tabdata
+        self.fix_data()
+        
+    def fix_data(self):
         if self.log_transform:
             print('Log Transform performed')
             self.tabdata.scaled = np.log2(self.tabdata.scaled+1)
@@ -101,7 +112,6 @@ class FCFederatedPCA:
         isneginf = np.sum(np.isneginf(self.tabdata.scaled), axis=1)
         nans = np.sum([nans, isneginf, infs], axis=0)
         self.out = {COParams.ROW_NAMES.n : self.tabdata.rows, COParams.SAMPLE_COUNT.n: self.tabdata.col_count, COParams.NAN.n: nans}
-
 
     def init_random(self):
         print('[STARTUP] Random initialisation')
@@ -188,10 +198,6 @@ class FCFederatedPCA:
             print('Selected')
         return self.tabdata.scaled.shape[0]
 
-    def get_eigenvalues(self):
-        eigen_values = self.S
-        return eigen_values
-
     def update_h(self, incoming):
         self.iteration_counter = self.iteration_counter + 1
         # First, update the local G estimate
@@ -214,6 +220,19 @@ class FCFederatedPCA:
         return next
 
 
+    def save_MFA(self, inertia, F, F_omics, P): # test if it works
+        inertia = pd.DataFrame(inertia)
+        F = pd.DataFrame(F)
+        for idx, F_omic in enumerate(F_omics):
+            F_omic = pd.DataFrame(F_omic)
+            path, extension = os.path.splitext(self.F_omics_file)
+            F_omics.to_csv(path + str(idx) + extension, header=False, index=False, sep=str(self.output_delimiter))
+        P = pd.DataFrame(P)
+        inertia.to_csv(self.inertia_file, header=False, index=False, sep=str(self.output_delimiter))
+        F.to_csv(self.F_file, header=False, index=False, sep=str(self.output_delimiter))
+        
+        P.to_csv(self.P_file, header=False, index=False, sep=str(self.output_delimiter))
+    
     def save_scaled_data(self):
         saveme = pd.DataFrame(self.tabdata.scaled)
         saveme.to_csv(self.scaled_data_file, header=False, index=False, sep=str(self.output_delimiter))

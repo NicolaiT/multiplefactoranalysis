@@ -1,0 +1,159 @@
+2023-07-01 14:01:23,360 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-01 14:01:23,362 INFO supervisord started with pid 7
+2023-07-01 14:01:24,364 INFO spawned: 'nginx' with pid 10
+2023-07-01 14:01:24,367 INFO spawned: 'app' with pid 11
+2023-07-01 14:01:25,403 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 14:01:25,403 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 01.07.23 14:01:33] [Level: info] id: 918cfa1e455ec42b
+[Time: 01.07.23 14:01:33] [Level: info] coordinator: True
+[Time: 01.07.23 14:01:33] [Level: info] clients: ['918cfa1e455ec42b', '1fa59a8e3d1ab0c0']
+[Time: 01.07.23 14:01:33] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+YAML file does not follow specification: missing key: inertia
+Setting default: inertia.tsv
+YAML file does not follow specification: missing key: global_factor_score
+Setting default: global_factor_score.tsv
+YAML file does not follow specification: missing key: omic_factor_score
+Setting default: omic_factor_score.tsv
+YAML file does not follow specification: missing key: projection_matrix
+Setting default: projection_matrix.tsv
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 01.07.23 14:01:33] [Level: info] transition: init_pca
+[Time: 01.07.23 14:01:34] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}
+[Time: 01.07.23 14:01:34] [Level: info] transition: check_row_names
+[Time: 01.07.23 14:01:35] [Level: info] state: check_row_names
+gathering
+[CTRL] POST /data
+unifying row names
+[{'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}, {'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}]
+['fruity', 'woody', 'coffee']
+['coffee', 'woody', 'fruity']
+[6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 01.07.23 14:01:38] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 01.07.23 14:01:39] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['coffee', 'woody', 'fruity']
+INDEX
+[2, 1, 0]
+[Time: 01.07.23 14:01:39] [Level: info] transition: aggregate_sums
+[Time: 01.07.23 14:01:40] [Level: info] state: aggregate_sums
+[CTRL] POST /data
+setting parameters
+[{'Sums': array([5.5849625 , 5.80735492, 6.39231742]), 'Sample count': 3}, {'Sums': array([6.22881869, 5.9068906 , 6.5849625 ]), 'Sample count': 3}]
+SUMS
+[1.96896353 1.95237425 2.16287999]
+[Time: 01.07.23 14:01:41] [Level: info] transition: compute_std
+[CTRL] GET /data
+[Time: 01.07.23 14:01:42] [Level: info] state: compute_std
+(3, 1)
+[Time: 01.07.23 14:01:42] [Level: info] transition: aggregate_stds
+[Time: 01.07.23 14:01:43] [Level: info] state: aggregate_stds
+[CTRL] POST /data
+setting parameters
+[2.14938332 1.64027687 1.94579145]
+[0.39662476 1.44375465 1.06128843]
+COMPUTE STD
+[2.54600807 3.08403153 3.00707988]
+STD
+[0.71358364 0.78537017 0.77551014]
+[0 2]
+['coffee' 'fruity']
+(array([], dtype=int64),)
+[]
+[Time: 01.07.23 14:01:44] [Level: info] transition: apply_scaling
+[CTRL] GET /data
+[Time: 01.07.23 14:01:45] [Level: info] state: apply_scaling
+[0 2]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f74248252b0>
+[Time: 01.07.23 14:01:45] [Level: info] transition: mfa_prerequisites
+[Time: 01.07.23 14:01:46] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 14:01:46] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 14:01:47] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.44487122 -0.53813037 -1.35788361]
+ [ 1.088634    0.06064115 -1.21264378]
+ [-1.49950327  0.54426434  0.83103354]]
+[Time: 01.07.23 14:01:47] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 01.07.23 14:01:48] [Level: info] state: aggregate_randomized_projections_cov
+[CTRL] POST /data
+3
+Global cov
+[[ 1.          0.89413101 -0.9282598 ]
+ [ 0.89413101  1.         -0.9230407 ]
+ [-0.9282598  -0.9230407   1.        ]]
+resetting k
+[Time: 01.07.23 14:01:50] [Level: info] transition: compute_final_h_cov
+[CTRL] GET /data
+[Time: 01.07.23 14:01:51] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+2
+[Time: 01.07.23 14:01:51] [Level: info] transition: aggregate_local_norm
+[Time: 01.07.23 14:01:52] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 9.626454740879916}, {'Local Eigenvector norm': 4.525391084925003}]
+[Time: 01.07.23 14:01:53] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 01.07.23 14:01:54] [Level: info] state: compute_local_conorm
+[Time: 01.07.23 14:01:54] [Level: info] transition: aggregate_local_conorm
+[Time: 01.07.23 14:01:55] [Level: info] state: aggregate_local_conorm
+[CTRL] POST /data
+aggregating co norms
+[{'Local Conorms': [0.2698767637488983]}, {'Local Conorms': [-0.26987676374889824]}]
+[Time: 01.07.23 14:01:56] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 01.07.23 14:01:57] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+2
+[Time: 01.07.23 14:01:57] [Level: info] transition: aggregate_local_norm
+[Time: 01.07.23 14:01:58] [Level: info] state: aggregate_local_norm
+[CTRL] POST /data
+[{'Local Eigenvector norm': 0.2670862051248519}, {'Local Eigenvector norm': 0.26331493842381803}]
+[Time: 01.07.23 14:01:59] [Level: info] transition: normalize_g
+[CTRL] GET /data
+[Time: 01.07.23 14:02:00] [Level: info] state: normalize_g
+Normalising
+(3, 2)
+2
+End normalising
+(3, 2)
+(2, 2)
+(2,)
+(3, 2)
+[Time: 01.07.23 14:02:00] [Level: info] transition: separate_pca
+[Time: 01.07.23 14:02:01] [Level: info] state: separate_pca
+[Time: 01.07.23 14:02:01] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 569, in run
+    eigen_values = self.load('svd').get_eigenvalues()
+AttributeError: 'AggregatorFCFederatedPCA' object has no attribute 'get_eigenvalues'
+

@@ -158,9 +158,37 @@ class FCConfig:
                 try:
                     self.scaled_data_file =   parameter_list['output']['scaled_data_file']
                 except KeyError:
-                    print('YAML file does not follow specification: missing key: projections')
-                    print('Setting default: projections.tsv')
+                    print('YAML file does not follow specification: missing key: scaled_data')
+                    print('Setting default: scaled_data.tsv')
                     self.scaled_data_file = 'scaled_data.tsv'
+                
+                try:
+                    self.inertia_file =   parameter_list['output']['inertia_file']
+                except KeyError:
+                    print('YAML file does not follow specification: missing key: inertia')
+                    print('Setting default: inertia.tsv')
+                    self.inertia_file = 'inertia.tsv'
+                    
+                try:
+                    self.F_file =   parameter_list['output']['F_file']
+                except KeyError:
+                    print('YAML file does not follow specification: missing key: global_factor_score')
+                    print('Setting default: global_factor_score.tsv')
+                    self.F_file = 'global_factor_score.tsv'
+                    
+                try:
+                    self.F_omics_file =   parameter_list['output']['F_omics_file']
+                except KeyError:
+                    print('YAML file does not follow specification: missing key: omic_factor_score')
+                    print('Setting default: omic_factor_score.tsv')
+                    self.F_omics_file = 'omic_factor_score.tsv'
+                    
+                try:
+                    self.P_file =   parameter_list['output']['P_file']
+                except KeyError:
+                    print('YAML file does not follow specification: missing key: projection_matrix')
+                    print('Setting default: projection_matrix.tsv')
+                    self.P_file = 'projection_matrix.tsv'
 
                 try:
                     self.k = parameter_list['algorithm']['pcs']

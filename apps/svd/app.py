@@ -9,7 +9,7 @@ from apps.svd.FC_Federated_MFA import FCFederatedMFA
 from apps.svd.Steps import Step
 from apps.svd.COParams import COParams
 import copy
-import math
+import numpy as np
 
 
 
@@ -38,6 +38,7 @@ class InitialState(AppState):
         self.store('idx_omics', 0)
         self.store('data', [])
         self.store('eigen_values', [])
+        self.store('global_pca', False)
         self.configure()
         print('[STARTUP] Instantiate SVD')
         self.progress_increment = 1/(20+self.config.k*2)
@@ -63,30 +64,34 @@ class InitPCA(AppState):
             self.store('svd', ClientFCFederatedPCA())
         self.load('svd').step = Step.LOAD_CONFIG
         self.load('svd').copy_configuration(self.load('configuration'))
-        input_files = self.load('svd').input_files
-        number_of_omics = len(input_files)
-        if number_of_omics == 0:
-            raise KeyError('No data found. Please ensure that the data file is present and correctly named.')
-        self.store('n_omics', number_of_omics)
-        # if not isinstance(self.load('idx_omics'), int):
+        
+        if self.load('global_pca'):
+            self.load('svd').set_tabdata(self.load('global_pca_data'))            
+        else:
+            input_files = self.load('svd').input_files
+            number_of_omics = len(input_files)
+        
+            if number_of_omics == 0:
+                raise KeyError('No data found. Please ensure that the data file is present and correctly named.')
+            self.store('n_omics', number_of_omics)
+            # if not isinstance(self.load('idx_omics'), int):
             
-        
-        print("RUNNING ON: ", input_files[self.load('idx_omics')])
-        self.load('svd').set_input_file(input_files[self.load('idx_omics')])
-        print("number of omics: ", number_of_omics)
-        print('[STARTUP] Configuration copied')
-        
-        # READ INPUT DATA
-        self.load('svd').read_input_files()
+            
+            self.load('svd').set_input_file(input_files[self.load('idx_omics')])
+            print('[STARTUP] Configuration copied')
+            
+            # READ INPUT DATA
+            self.load('svd').read_input_files()
+            
         out = self.load('svd').out
-
-
+        print("out", out)
         self.send_data_to_coordinator(out)
-        
+            
         if self.is_coordinator:
             return 'check_row_names'
         else:
             return 'wait_for_params'
+            
 
 
 @app_state('check_row_names', Role.COORDINATOR)
@@ -103,8 +108,8 @@ class CheckRowNames(AppState):
     def run(self):
         print('gathering')
         incoming = self.gather_data()
-        print('unifying row names')
-        self.load('svd').unify_row_names(incoming)
+        print('unifying row names') 
+        self.load('svd').unify_row_names(incoming) # CRASH 'NoneType' object is not subscriptable
         out = self.load('svd').out
         self.broadcast_data(out)
         return 'wait_for_params'
@@ -233,7 +238,7 @@ class ScaleDataState(AppState):
         config = self.load('configuration')
         incoming = self.await_data()
         self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable)
-        current_data = self.load('svd').tabdata.scaled
+        current_data = self.load('svd').tabdata
         print("CURRENT DATA: ", current_data)
         self.store('current_tabdata', current_data)
         return 'mfa_prerequisites'
@@ -497,7 +502,7 @@ class AggregateHAndFinishState(AppState):
 @app_state('get_h_and_finish', Role.BOTH)
 class NormalizeGState(AppState):
     def register(self):
-        self.register_transition('mfa_final', Role.BOTH) # save_results
+        self.register_transition('separate_pca', Role.BOTH) # save_results
         self.register_transition('share_projections', Role.COORDINATOR)
 
     def run(self):
@@ -513,7 +518,7 @@ class NormalizeGState(AppState):
         if config.send_projections and self.is_coordinator:
             return 'share_projections'
         else:
-            return 'mfa_final' # save_results
+            return 'separate_pca' # save_results
 
 
 
@@ -542,8 +547,7 @@ class NormalizeGState(AppState):
 @app_state('share_projections', Role.COORDINATOR)
 class ShareProjectionsState(AppState):
     def register(self):
-        self.register_transition('separate_pca', Role.COORDINATOR) # save_results
-
+        self.register_transition('separate_pca', Role.COORDINATOR) 
 
     def run(self):
         incoming = self.gather_data()
@@ -551,20 +555,22 @@ class ShareProjectionsState(AppState):
         out = self.load('svd').out
         self.broadcast_data(out)
         print('Starting separate pca')
-        return 'separate_pca' # original: save_results
+        return 'separate_pca' 
 
 @app_state('separate_pca', Role.BOTH)
 class SeparatePCA(AppState):
     def register(self):
         self.register_transition('init_pca', Role.BOTH)
         self.register_transition('scale_tabdata', Role.BOTH)
-    
+        self.register_transition('projection_matrix', Role.COORDINATOR)
+        self.register_transition('waiting_for_projection_matrix', Role.PARTICIPANT)
+        
     def run(self) -> str:
-        eigen_values = self.load('svd').get_eigenvalues()
-        data = self.load('current_tabdata')
+        eigen_values = self.load('svd').pca.S
+        tabdata = self.load('current_tabdata')
         
         new_data = self.load('data')
-        new_data.append(data)
+        new_data.append(tabdata)
         new_eigen_values = self.load('eigen_values')
         new_eigen_values.append(eigen_values)
         
@@ -576,8 +582,15 @@ class SeparatePCA(AppState):
             self.store('idx_omics', new_idx_omics)
             
             return 'init_pca'
-        print('Starting factor analysis')
-        return 'scale_tabdata'
+        elif self.load('global_pca'):
+            print('Starting factor analysis')
+            if self.is_coordinator:
+                return 'projection_matrix'
+            else:
+                return 'waiting_for_projection_matrix'
+        else:
+            print('Starting scale tabdata')
+            return 'scale_tabdata'
     
 @app_state('scale_tabdata', Role.BOTH)
 class ScaleTabdata(AppState):
@@ -585,32 +598,159 @@ class ScaleTabdata(AppState):
         self.register_transition('merging_tabdata', Role.BOTH)
         
     def run(self):
-        data = copy.deepcopy(self.load('data')) # 2 x 422 x 17
+        data = self.load('data') # 2 x tabdata
         eigen_values = self.load('eigen_values') # 2 x 17
-        first_singular_values = [eigenvalue[0] for eigenvalue in eigen_values] #singular values
-        new_data = []
+        first_singular_values = [np.sqrt(eigenvalue[0]) for eigenvalue in eigen_values] # 1 x 2 #singular values
         for idx, omic in enumerate(data):
-            scaled_data = omic / first_singular_values[idx]
-            new_data.append(scaled_data)
-                
+            omic.scaled = omic.scaled / first_singular_values[idx]   
+        print('Starting merge tabdata')
         return 'merging_tabdata'
 
 @app_state('merging_tabdata', Role.BOTH)
 class MergingTabdata(AppState):
     def register(self):
-        self.register_transition('factor_analysis', Role.BOTH)
+        self.register_transition('init_pca', Role.BOTH)
         
     def run(self):
-        return 'factor_analysis'
+        data = self.load('data')
+        merged_tabdata = self.merge(data)
+        self.store('global_pca_data', merged_tabdata)
+        self.store('global_pca', True)
+        print('Starting global pca')
+        return 'init_pca'
+        
+    def merge(self, tabData_list):
+        merged_tb = copy.deepcopy(tabData_list[0])
+        for tabdata in tabData_list[1:]:
+            merged_tb.data = np.concatenate((merged_tb.data, tabdata.data),axis=0)
+            merged_tb.rows = np.concatenate((merged_tb.rows,tabdata.rows))
+            merged_tb.scaled = np.concatenate((merged_tb.scaled,tabdata.scaled),axis=0)
 
-@app_state('factor_analysis', Role.BOTH)
-class FactorAnalysis(AppState):
+        return merged_tb
+    
+@app_state('projection_matrix', Role.COORDINATOR)
+class ProjectionMatrix(AppState):
     def register(self):
-        self.register_transition('mfa_final')
+        self.register_transition('factor_scores', Role.COORDINATOR)
+    
+    def run(self):
+        self.generate_M()
+        self.projection_matrix()
+        out = self.load('P')
+        self.broadcast_data(out, False)
+        return 'factor_scores'
+    
+    def projection_matrix(self): # implement
+        M = self.load('M')
+        U = np.transpose(self.load('svd').pca.H)
+        eigen_values = self.load('svd').pca.S
+        S = [np.sqrt(eigenvalue) for eigenvalue in eigen_values]
+        S = np.diag(S)
+        S = np.linalg.inv(S)
+        pad = len(U[0])-len(S)
+        S = np.pad(S, ((0, pad), (0, pad)), mode='constant')
+        print("M", M)
+        print("U", U)
+        print("S", S)
+        P = np.dot(np.linalg.inv(np.sqrt(M)), np.dot(U, S))
+        print("P", P)
+        self.store('P', P)
+    
+    def generate_M(self):# implement
+        n = len(self.load('svd').pca.S)
+        M = np.zeros((n,n))
+        np.fill_diagonal(M, 1/n)
+        self.store('M', M)
+    
+@app_state('waiting_for_projection_matrix', Role.PARTICIPANT)
+class WaitingForProjectionMatrix(AppState):
+    def register(self):
+        self.register_transition('factor_scores', Role.PARTICIPANT)
+    
+    def run(self):
+        incoming = self.await_data()
+        self.store('P', incoming)
+        return 'factor_scores'
+
+@app_state('factor_scores', Role.BOTH)
+class FactorScores(AppState):
+    def register(self):
+        self.register_transition('global_factor_score', Role.COORDINATOR)
+        self.register_transition('waiting_for_global_factor_score', Role.PARTICIPANT)
 
     def run(self):
-        print('Starting MFA final')
+        self.F_omics()
+        if self.is_coordinator:
+            return 'global_factor_score'
+        else:
+            return 'waiting_for_global_factor_score'
+        
+    def F_omics(self): # implement
+        T = self.load('n_omics')
+        P = self.load('P')
+        print("P:", P)
+        data = self.load('data')
+        F_omics = []
+        for i in range(T):
+            Z = data[0].scaled
+            print("Z", Z)
+            F = T * np.dot((np.dot(Z, np.transpose(Z))), P)
+            F_omics.append(F)
+        self.store('F_omics', F_omics)
+    
+@app_state('global_factor_score', Role.COORDINATOR)
+class GlobalFactorScore(AppState):
+    def register(self):
+        self.register_transition('inertia', Role.COORDINATOR)
+    
+    def run(self):
+        self.F()
+        out = self.load('F')
+        self.broadcast_data(out, False)
+        return 'inertia'
+    
+    def F(self): # implement
+        M = self.load('M')
+        U = np.transpose(self.load('svd').pca.H)
+        eigen_values = self.load('svd').pca.S
+        S = [np.sqrt(eigenvalue) for eigenvalue in eigen_values]
+        S = np.diag(S)
+        pad = len(U[0])-len(S)
+        S = np.pad(S, ((0, pad), (0, pad)), mode='constant')
+        print("M", M)
+        print("U", U)
+        print("S", S)
+        P = np.dot(np.linalg.inv(np.sqrt(M)), np.dot(U, S))
+        print("P", P)
+        self.store('P', P)
+        
+@app_state('waiting_for_global_factor_score', Role.PARTICIPANT)
+class WaitingForGlobalFactorScore(AppState):
+    def register(self):
+        self.register_transition('inertia', Role.PARTICIPANT)
+    
+    def run(self):
+        incoming = self.await_data()
+        self.store('F', incoming)
+        return 'inertia'
+    
+@app_state('inertia', Role.BOTH)
+class Intertia(AppState):
+    def register(self):
+        self.register_transition('mfa_final', Role.BOTH)
+        
+    def run(self):
+        self.inertia()
         return 'mfa_final'
+    
+    def inertia(self):
+        eigen_values = self.load('svd').pca.S
+        S = [np.sqrt(eigenvalue) for eigenvalue in eigen_values]
+        total = np.sum(S)
+        inertia = []
+        for singular_value in S:
+            inertia.append(singular_value/total)
+        self.store('inertia', inertia)
 
 @app_state('mfa_final', Role.BOTH)
 class MFAFinal(AppState):
@@ -620,7 +760,6 @@ class MFAFinal(AppState):
     def run(self):
         print('Starting save results')
         return 'save_results'
-
 
 @app_state('save_results', Role.BOTH)
 class ShareProjectionsState(AppState):
@@ -637,6 +776,11 @@ class ShareProjectionsState(AppState):
         else:
             # save only local projections
             self.load('svd').save_projections()
+        inertia = self.load('intertia')
+        F = self.load('F')
+        F_omics = self.load('F_omics')
+        P = self.load('P')
+        self.load('svd').save_MFA(inertia, F, F_omics, P)
         self.load('svd').save_explained_variance()
         self.load('svd').save_pca()
         self.load('svd').save_scaled_data()

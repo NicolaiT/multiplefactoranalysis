@@ -1,0 +1,270 @@
+2023-07-01 09:16:44,807 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-01 09:16:44,810 INFO supervisord started with pid 7
+2023-07-01 09:16:45,813 INFO spawned: 'nginx' with pid 10
+2023-07-01 09:16:45,816 INFO spawned: 'app' with pid 11
+2023-07-01 09:16:46,877 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:16:46,878 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:16:47] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:16:47,592 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:16:48,596 INFO spawned: 'app' with pid 47
+2023-07-01 09:16:49,598 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:16:49] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:16:50,254 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:16:51,258 INFO spawned: 'app' with pid 71
+2023-07-01 09:16:52,260 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:16:52] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:16:52,931 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:16:53,935 INFO spawned: 'app' with pid 95
+2023-07-01 09:16:54,937 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:16:55] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:16:55,683 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:16:56,688 INFO spawned: 'app' with pid 119
+2023-07-01 09:16:57,690 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:16:58] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:16:58,480 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:16:59,484 INFO spawned: 'app' with pid 143
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:00] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:00,446 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:01,449 INFO spawned: 'app' with pid 167
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:02] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:02,344 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:04,348 INFO spawned: 'app' with pid 191
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:05] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:05,455 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:17:05,455 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:06,460 INFO spawned: 'app' with pid 215
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:07] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:07,524 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:17:07,525 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:08,527 INFO spawned: 'app' with pid 239
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:09] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:09,179 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:10,183 INFO spawned: 'app' with pid 263
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:11] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:11,295 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:17:11,295 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:12,299 INFO spawned: 'app' with pid 287
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:13] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:13,315 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 09:17:13,316 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:14,318 INFO spawned: 'app' with pid 311
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:14] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:14,969 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:15,973 INFO spawned: 'app' with pid 335
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:16] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:16,709 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:18,714 INFO spawned: 'app' with pid 359
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:19] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:19,541 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:22,546 INFO spawned: 'app' with pid 383
+Traceback (most recent call last):
+  File "/app/main.py", line 14, in <module>
+    app.register()
+  File "/app/engine/app.py", line 202, in register
+    state.register()
+  File "/app/apps/svd/app.py", line 552, in register
+    self.register_transition('factor_analysis', Role.COORDINATOR) 
+  File "/app/engine/app.py", line 424, in register_transition
+    self._app.register_transition(f'{self.name}_{name}', self.name, target, participant, coordinator)
+  File "/app/engine/app.py", line 293, in register_transition
+    self.log(f'target state {target} not found', level=LogLevel.FATAL)
+  File "/app/engine/app.py", line 340, in log
+    raise RuntimeError(msg)
+RuntimeError: [Time: 01.07.23 09:17:23] [Level: fatal] target state factor_analysis not found
+2023-07-01 09:17:23,145 INFO exited: app (exit status 1; not expected)
+2023-07-01 09:17:24,146 INFO gave up: app entered FATAL state, too many start retries too quickly

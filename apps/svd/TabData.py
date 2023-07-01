@@ -60,8 +60,8 @@ class TabData:
         else:
             return cls(data, variable_names, sample_ids, scaled)
 
-    def merge(tabData_list) -> 'TabData':
-        merged_tb = copy.deepcopy(tabData_list[1])
+    def merge(self, tabData_list) -> 'TabData':
+        merged_tb = copy.deepcopy(tabData_list[0])
         for tabdata in tabData_list[1:]:
             merged_tb.data = np.concatenate((merged_tb.data, tabdata.data),axis=0)
             merged_tb.rows = np.concatenate((merged_tb.rows,tabdata.rows))

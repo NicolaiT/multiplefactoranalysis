@@ -1,0 +1,357 @@
+2023-07-01 11:58:03,158 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-01 11:58:03,162 INFO supervisord started with pid 7
+2023-07-01 11:58:04,165 INFO spawned: 'nginx' with pid 10
+2023-07-01 11:58:04,168 INFO spawned: 'app' with pid 11
+2023-07-01 11:58:05,203 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-01 11:58:05,204 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 01.07.23 11:58:06] [Level: info] id: 585344a35093816f
+[Time: 01.07.23 11:58:06] [Level: info] coordinator: False
+[Time: 01.07.23 11:58:06] [Level: info] clients: ['585344a35093816f', 'f4b86666791bd3a7']
+[Time: 01.07.23 11:58:06] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 01.07.23 11:58:06] [Level: info] transition: init_pca
+[Time: 01.07.23 11:58:07] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['fruity', 'woody', 'coffee'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}
+[Time: 01.07.23 11:58:08] [Level: info] transition: wait_for_params
+[Time: 01.07.23 11:58:09] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['fruity', 'woody', 'coffee']
+INDEX
+[0, 1, 2]
+[Time: 01.07.23 11:58:11] [Level: info] transition: compute_std
+[Time: 01.07.23 11:58:12] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(3, 1)
+[Time: 01.07.23 11:58:14] [Level: info] transition: apply_scaling
+[Time: 01.07.23 11:58:15] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[2 0]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f5d90346340>
+[Time: 01.07.23 11:58:17] [Level: info] transition: mfa_prerequisites
+[Time: 01.07.23 11:58:18] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 11:58:18] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 11:58:19] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.07944432 -0.74520945 -0.21002947]
+ [-1.21264378  0.80546508  0.47054734]
+ [-0.53813037  0.49463657  0.49463657]]
+[Time: 01.07.23 11:58:19] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 11:58:20] [Level: info] state: compute_final_h_cov
+[CTRL] GET /data
+[CTRL] POST /data
+Setting k
+starting eigenvector norms
+2
+[Time: 01.07.23 11:58:23] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 11:58:24] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 01.07.23 11:58:26] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 11:58:27] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+2
+[Time: 01.07.23 11:58:29] [Level: info] transition: normalize_g
+[Time: 01.07.23 11:58:30] [Level: info] state: normalize_g
+[CTRL] GET /data
+[CTRL] POST /data
+Normalising
+(3, 2)
+2
+End normalising
+(3, 2)
+(2, 2)
+(2,)
+(3, 2)
+[Time: 01.07.23 11:58:32] [Level: info] transition: separate_pca
+[Time: 01.07.23 11:58:33] [Level: info] state: separate_pca
+[Time: 01.07.23 11:58:33] [Level: info] transition: init_pca
+[Time: 01.07.23 11:58:34] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['red_fruit', 'roasted', 'vanillin', 'woody_2'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0])}
+[Time: 01.07.23 11:58:34] [Level: info] transition: wait_for_params
+[Time: 01.07.23 11:58:35] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['roasted', 'red_fruit', 'vanillin', 'woody_2']
+INDEX
+[1, 0, 2, 3]
+[Time: 01.07.23 11:58:38] [Level: info] transition: compute_std
+[Time: 01.07.23 11:58:39] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(4, 1)
+[Time: 01.07.23 11:58:41] [Level: info] transition: apply_scaling
+[Time: 01.07.23 11:58:42] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[0 1 3]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f5d90346070>
+[Time: 01.07.23 11:58:44] [Level: info] transition: mfa_prerequisites
+[Time: 01.07.23 11:58:45] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 11:58:45] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 11:58:46] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[-1.26314037  0.76493348  0.76493348]
+ [ 1.5044393  -0.49785477 -0.49785477]
+ [-1.22927739  0.83707     0.28208191]
+ [-0.60073593  0.76590344  0.76590344]]
+[Time: 01.07.23 11:58:46] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 11:58:47] [Level: info] state: compute_final_h_cov
+[CTRL] GET /data
+[CTRL] POST /data
+Setting k
+starting eigenvector norms
+3
+[Time: 01.07.23 11:58:50] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 11:58:51] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 01.07.23 11:58:53] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 11:58:54] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 11:58:56] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 11:58:57] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 01.07.23 11:58:59] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 11:59:00] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 11:59:02] [Level: info] transition: normalize_g
+[Time: 01.07.23 11:59:03] [Level: info] state: normalize_g
+[CTRL] GET /data
+[CTRL] POST /data
+Normalising
+(3, 3)
+3
+End normalising
+(3, 3)
+(3, 3)
+(3,)
+(3, 3)
+[Time: 01.07.23 11:59:05] [Level: info] transition: separate_pca
+[Time: 01.07.23 11:59:06] [Level: info] state: separate_pca
+[Time: 01.07.23 11:59:06] [Level: info] transition: init_pca
+[Time: 01.07.23 11:59:07] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0])}
+[Time: 01.07.23 11:59:07] [Level: info] transition: wait_for_params
+[Time: 01.07.23 11:59:08] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['fruity_2', 'woody_3', 'butter']
+INDEX
+[0, 2, 1]
+[Time: 01.07.23 11:59:11] [Level: info] transition: compute_std
+[Time: 01.07.23 11:59:12] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(3, 1)
+[Time: 01.07.23 11:59:14] [Level: info] transition: apply_scaling
+[Time: 01.07.23 11:59:15] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[0 1]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f5d903fabb0>
+[Time: 01.07.23 11:59:17] [Level: info] transition: mfa_prerequisites
+[Time: 01.07.23 11:59:18] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 11:59:18] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 11:59:19] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[-0.47630665 -0.47630665 -1.3197291 ]
+ [-0.74520945  0.83103354  0.54426434]
+ [-0.83662619  0.69288031  0.93392557]]
+[Time: 01.07.23 11:59:19] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 11:59:20] [Level: info] state: compute_final_h_cov
+[CTRL] GET /data
+[CTRL] POST /data
+Setting k
+starting eigenvector norms
+2
+[Time: 01.07.23 11:59:23] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 11:59:24] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 01.07.23 11:59:26] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 11:59:27] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+2
+[Time: 01.07.23 11:59:29] [Level: info] transition: normalize_g
+[Time: 01.07.23 11:59:30] [Level: info] state: normalize_g
+[CTRL] GET /data
+[CTRL] POST /data
+Normalising
+(3, 2)
+2
+End normalising
+(3, 2)
+(2, 2)
+(2,)
+(3, 2)
+[Time: 01.07.23 11:59:32] [Level: info] transition: separate_pca
+[Time: 01.07.23 11:59:33] [Level: info] state: separate_pca
+Starting scale tabdata
+[Time: 01.07.23 11:59:33] [Level: info] transition: scale_tabdata
+[Time: 01.07.23 11:59:34] [Level: info] state: scale_tabdata
+Starting merge tabdata
+[Time: 01.07.23 11:59:34] [Level: info] transition: merging_tabdata
+[Time: 01.07.23 11:59:35] [Level: info] state: merging_tabdata
+Starting global pca
+[Time: 01.07.23 11:59:35] [Level: info] transition: init_pca
+[Time: 01.07.23 11:59:36] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/data_wine_1.csv', '/mnt/input/data_wine_2.csv', '/mnt/input/data_wine_3.csv']
+Log Transform performed
+out {'Row names': array(['fruity', 'woody', 'coffee', 'roasted', 'red_fruit', 'vanillin',
+       'woody_2', 'fruity_2', 'woody_3', 'butter'], dtype=object), 'Sample count': 3, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}
+[Time: 01.07.23 11:59:36] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 01.07.23 11:59:37] [Level: info] state: wait_for_params
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['red_fruit', 'coffee', 'roasted', 'fruity_2', 'vanillin', 'fruity', 'woody', 'woody_3', 'woody_2', 'butter']
+INDEX
+[4, 2, 3, 7, 5, 0, 1, 8, 6, 9]
+[Time: 01.07.23 11:59:38] [Level: info] transition: compute_std
+[Time: 01.07.23 11:59:39] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(10, 1)
+[Time: 01.07.23 11:59:41] [Level: info] transition: apply_scaling
+[Time: 01.07.23 11:59:42] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[0 8 4 3 1 2 6 5 7]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f5d903469a0>
+[Time: 01.07.23 11:59:44] [Level: info] transition: mfa_prerequisites
+[Time: 01.07.23 11:59:45] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 01.07.23 11:59:45] [Level: info] transition: start_power_iteration
+[Time: 01.07.23 11:59:46] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.1999393  -0.29394295 -0.29394295]
+ [-0.29486351  0.58784112  0.58784112]
+ [-1.28025387  0.72321829  0.72321829]
+ [-0.2402658  -0.2402658  -1.70527145]
+ [-1.26817869  0.77872632  0.42920577]
+ [ 0.84447177 -0.42845581  0.07977852]
+ [-1.26174359  0.76367254  0.56532965]
+ [-0.40674389  0.71930767  0.57460204]
+ [-0.35993602  0.74171239  0.74171239]
+ [-0.43598684  0.62328667  0.72852877]]
+[Time: 01.07.23 11:59:46] [Level: info] transition: compute_final_h_cov
+[Time: 01.07.23 11:59:47] [Level: info] state: compute_final_h_cov
+[CTRL] GET /data
+[CTRL] POST /data
+Setting k
+starting eigenvector norms
+3
+[Time: 01.07.23 11:59:50] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 11:59:51] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 01.07.23 11:59:53] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 11:59:54] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 11:59:56] [Level: info] transition: compute_local_conorm
+[Time: 01.07.23 11:59:57] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 01.07.23 11:59:59] [Level: info] transition: compute_local_norm
+[Time: 01.07.23 12:00:00] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+3
+[Time: 01.07.23 12:00:02] [Level: info] transition: normalize_g
+[Time: 01.07.23 12:00:03] [Level: info] state: normalize_g
+[CTRL] GET /data
+[CTRL] POST /data
+Normalising
+(3, 3)
+3
+End normalising
+(3, 3)
+(3, 3)
+(3,)
+(3, 3)
+[Time: 01.07.23 12:00:05] [Level: info] transition: separate_pca
+[Time: 01.07.23 12:00:06] [Level: info] state: separate_pca
+Starting factor analysis
+[Time: 01.07.23 12:00:06] [Level: info] transition: waiting_for_projection_matrix
+[Time: 01.07.23 12:00:07] [Level: info] state: waiting_for_projection_matrix
