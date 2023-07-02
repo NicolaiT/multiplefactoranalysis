@@ -224,9 +224,9 @@ class FCFederatedPCA:
         inertia = pd.DataFrame(inertia)
         F = pd.DataFrame(F)
         for idx, F_omic in enumerate(F_omics):
-            F_omic = pd.DataFrame(F_omic)
             path, extension = os.path.splitext(self.F_omics_file)
-            F_omics.to_csv(path + str(idx) + extension, header=False, index=False, sep=str(self.output_delimiter))
+            F_omic = pd.DataFrame(F_omic)
+            F_omic.to_csv(path + str(idx) + extension, header=False, index=False, sep=str(self.output_delimiter))
         P = pd.DataFrame(P)
         inertia.to_csv(self.inertia_file, header=False, index=False, sep=str(self.output_delimiter))
         F.to_csv(self.F_file, header=False, index=False, sep=str(self.output_delimiter))

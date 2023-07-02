@@ -219,8 +219,6 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
         self.computation_done = True
         self.send_data = True
 
-
-
     def compute_covariance(self):
         super(AggregatorFCFederatedPCA, self).compute_covariance()
         self.iteration_counter = self.iteration_counter + 1

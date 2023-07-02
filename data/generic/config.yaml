@@ -4,7 +4,7 @@ fc_pca:
   input:
     dir: '' # In which directory is the data located
     data: hospital_data_bredel_1.csv   # name of the input file (required)
-    datas: data_wine_
+    datas: hospital_data_freije_
     extension: .csv
     delimiter: ","  # field separator in the input file
   output:

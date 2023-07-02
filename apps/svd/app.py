@@ -634,6 +634,7 @@ class ProjectionMatrix(AppState):
         self.register_transition('factor_scores', Role.COORDINATOR)
     
     def run(self):
+        return 'factor_scores' #remove
         self.generate_M()
         self.projection_matrix()
         out = self.load('P')
@@ -656,7 +657,7 @@ class ProjectionMatrix(AppState):
         print("P", P)
         self.store('P', P)
     
-    def generate_M(self):# implement
+    def generate_M(self):
         n = len(self.load('svd').pca.S)
         M = np.zeros((n,n))
         np.fill_diagonal(M, 1/n)
@@ -668,6 +669,7 @@ class WaitingForProjectionMatrix(AppState):
         self.register_transition('factor_scores', Role.PARTICIPANT)
     
     def run(self):
+        return 'factor_scores' #remove
         incoming = self.await_data()
         self.store('P', incoming)
         return 'factor_scores'
@@ -679,20 +681,20 @@ class FactorScores(AppState):
         self.register_transition('waiting_for_global_factor_score', Role.PARTICIPANT)
 
     def run(self):
-        self.F_omics()
+        #self.F_omics() #uncomment
         if self.is_coordinator:
             return 'global_factor_score'
         else:
             return 'waiting_for_global_factor_score'
         
-    def F_omics(self): # implement
+    def F_omics(self):
         T = self.load('n_omics')
         P = self.load('P')
         print("P:", P)
         data = self.load('data')
         F_omics = []
         for i in range(T):
-            Z = data[0].scaled
+            Z = data[i].scaled
             print("Z", Z)
             F = T * np.dot((np.dot(Z, np.transpose(Z))), P)
             F_omics.append(F)
@@ -704,12 +706,13 @@ class GlobalFactorScore(AppState):
         self.register_transition('inertia', Role.COORDINATOR)
     
     def run(self):
+        return 'inertia' # remove
         self.F()
         out = self.load('F')
         self.broadcast_data(out, False)
         return 'inertia'
     
-    def F(self): # implement
+    def F(self):
         M = self.load('M')
         U = np.transpose(self.load('svd').pca.H)
         eigen_values = self.load('svd').pca.S
@@ -720,9 +723,9 @@ class GlobalFactorScore(AppState):
         print("M", M)
         print("U", U)
         print("S", S)
-        P = np.dot(np.linalg.inv(np.sqrt(M)), np.dot(U, S))
-        print("P", P)
-        self.store('P', P)
+        F = np.dot(np.linalg.inv(np.sqrt(M)), np.dot(U, S))
+        print("F", F)
+        self.store('F', F)
         
 @app_state('waiting_for_global_factor_score', Role.PARTICIPANT)
 class WaitingForGlobalFactorScore(AppState):
@@ -730,6 +733,7 @@ class WaitingForGlobalFactorScore(AppState):
         self.register_transition('inertia', Role.PARTICIPANT)
     
     def run(self):
+        return 'inertia' # remove
         incoming = self.await_data()
         self.store('F', incoming)
         return 'inertia'
@@ -776,11 +780,12 @@ class ShareProjectionsState(AppState):
         else:
             # save only local projections
             self.load('svd').save_projections()
-        inertia = self.load('intertia')
-        F = self.load('F')
-        F_omics = self.load('F_omics')
-        P = self.load('P')
-        self.load('svd').save_MFA(inertia, F, F_omics, P)
+        inertia = self.load('inertia')
+        # F = self.load('F')
+        # F_omics = self.load('F_omics')
+        # P = self.load('P')
+        # self.load('svd').save_MFA(inertia, F, F_omics, P)
+        print("inertia: ", inertia)
         self.load('svd').save_explained_variance()
         self.load('svd').save_pca()
         self.load('svd').save_scaled_data()

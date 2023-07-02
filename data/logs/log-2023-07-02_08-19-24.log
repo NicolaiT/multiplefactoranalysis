@@ -1,0 +1,484 @@
+{"component":"MAIN","instance":"","level":"info","msg":"Controller start","time":"2023-07-02T08:19:24Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Mode: Dockerized (isolated)","time":"2023-07-02T08:19:24Z"}
+{"component":"MAIN","instance":"","level":"info","msg":"Configuration value 'HasGPU': false","time":"2023-07-02T08:19:24Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removing leftover Docker entities for label: fc-controller-label","time":"2023-07-02T08:19:24Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 0 leftover containers","time":"2023-07-02T08:19:24Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 0 of 1 leftover volumes","time":"2023-07-02T08:19:24Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Removed 1 of 1 leftover networks","time":"2023-07-02T08:19:24Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9151","time":"2023-07-02T08:19:24Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Listening on port 9150","time":"2023-07-02T08:19:24Z"}
+{"component":"TESTBED","instance":"","level":"info","msg":"Create new test","time":"2023-07-02T08:19:34Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Create volumes and containers...","time":"2023-07-02T08:19:34Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_input_0_1688285974","time":"2023-07-02T08:19:34Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_output_0_1688285974","time":"2023-07-02T08:19:34Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move data to workspace from /mnt/c/dev/multiplefactoranalysis/data/h1","time":"2023-07-02T08:19:34Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-07-02T08:19:34Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:19:34Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-07-02T08:19:36Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-07-02T08:19:37Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move generic data to input volume from /mnt/c/dev/multiplefactoranalysis/data/generic","time":"2023-07-02T08:19:37Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-07-02T08:19:37Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:19:38Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-07-02T08:19:39Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-07-02T08:19:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start application","time":"2023-07-02T08:19:40Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:19:40Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Append app to list","time":"2023-07-02T08:19:42Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_input_1_1688285982","time":"2023-07-02T08:19:42Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Create volume test_1_output_1_1688285982","time":"2023-07-02T08:19:42Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move data to workspace from /mnt/c/dev/multiplefactoranalysis/data/h2","time":"2023-07-02T08:19:42Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-07-02T08:19:42Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:19:42Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-07-02T08:19:44Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-07-02T08:19:45Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Move generic data to input volume from /mnt/c/dev/multiplefactoranalysis/data/generic","time":"2023-07-02T08:19:45Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to workspace","time":"2023-07-02T08:19:45Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:19:45Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-07-02T08:19:47Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Intermediary container used for moving data from host to volume has been removed","time":"2023-07-02T08:19:48Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start application","time":"2023-07-02T08:19:48Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:19:48Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Append app to list","time":"2023-07-02T08:19:49Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link fc_featurecloudaifcmultiplefactoranalysis_721270042 with global socket server","time":"2023-07-02T08:19:49Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link fc_featurecloudaifcmultiplefactoranalysis_370473250 with global socket server","time":"2023-07-02T08:19:49Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start local socket server","time":"2023-07-02T08:19:49Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Start local socket server","time":"2023-07-02T08:19:49Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link to global address","time":"2023-07-02T08:19:49Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Link to global address","time":"2023-07-02T08:19:49Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Registered new participant controller","time":"2023-07-02T08:19:49Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Registered new coordinator controller","time":"2023-07-02T08:19:49Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Received setup trigger","time":"2023-07-02T08:19:49Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Received setup trigger","time":"2023-07-02T08:19:49Z"}
+{"component":"LOCAL","instance":"","level":"error","msg":"Got error during setup to http://172.19.0.4:9000: Post \"http://172.19.0.4:9000/setup\": dial tcp 172.19.0.4:9000: connect: connection refused","time":"2023-07-02T08:19:49Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Setup 89c1d65820d7636717c4feafd7361dd2a740dff3d8e5e37f6f6696b9a3f3e746","time":"2023-07-02T08:19:50Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Setup triggered","time":"2023-07-02T08:19:50Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"2 apps and server created and running","time":"2023-07-02T08:19:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:19:55Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:19:55Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 304 bytes","time":"2023-07-02T08:19:55Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 304 bytes to Coordinator","time":"2023-07-02T08:19:55Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 304 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:19:55Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:19:55Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:19:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:19:56Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 126 bytes","time":"2023-07-02T08:19:56Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 126 bytes","time":"2023-07-02T08:19:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 126 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:19:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:19:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:19:58Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:19:58Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 199 bytes","time":"2023-07-02T08:19:58Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 199 bytes to Coordinator","time":"2023-07-02T08:19:58Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 199 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:19:58Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:19:58Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:19:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:19:59Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 182 bytes","time":"2023-07-02T08:19:59Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 182 bytes","time":"2023-07-02T08:19:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 182 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:19:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:19:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:01Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:01Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 191 bytes","time":"2023-07-02T08:20:01Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 191 bytes to Coordinator","time":"2023-07-02T08:20:01Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 191 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:01Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:01Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:02Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 387 bytes","time":"2023-07-02T08:20:02Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 387 bytes","time":"2023-07-02T08:20:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 387 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:07Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:07Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 245 bytes","time":"2023-07-02T08:20:07Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 245 bytes to Coordinator","time":"2023-07-02T08:20:07Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 245 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:07Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:07Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:08Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 214 bytes","time":"2023-07-02T08:20:08Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 214 bytes","time":"2023-07-02T08:20:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 214 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:10Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:10Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:20:10Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:20:10Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:10Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:10Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:12Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:20:12Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:20:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:13Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:13Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 43 bytes","time":"2023-07-02T08:20:13Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 43 bytes to Coordinator","time":"2023-07-02T08:20:13Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 43 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:13Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:13Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:15Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 175 bytes","time":"2023-07-02T08:20:15Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 175 bytes","time":"2023-07-02T08:20:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 175 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:16Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:16Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:20:16Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:20:16Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:16Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:16Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:18Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:20:18Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:20:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:22Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:22Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 329 bytes","time":"2023-07-02T08:20:22Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 329 bytes to Coordinator","time":"2023-07-02T08:20:22Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 329 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:22Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:22Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:24Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 143 bytes","time":"2023-07-02T08:20:24Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 143 bytes","time":"2023-07-02T08:20:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 143 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:25Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:25Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 207 bytes","time":"2023-07-02T08:20:26Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 207 bytes to Coordinator","time":"2023-07-02T08:20:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 207 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:27Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 190 bytes","time":"2023-07-02T08:20:27Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 190 bytes","time":"2023-07-02T08:20:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 190 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:29Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 199 bytes","time":"2023-07-02T08:20:29Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 199 bytes to Coordinator","time":"2023-07-02T08:20:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 199 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:30Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 411 bytes","time":"2023-07-02T08:20:30Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 411 bytes","time":"2023-07-02T08:20:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 411 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:35Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 301 bytes","time":"2023-07-02T08:20:35Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 301 bytes to Coordinator","time":"2023-07-02T08:20:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 301 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:36Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 262 bytes","time":"2023-07-02T08:20:36Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 262 bytes","time":"2023-07-02T08:20:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 262 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:38Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:20:38Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:20:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:39Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:20:39Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:20:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:41Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 43 bytes","time":"2023-07-02T08:20:41Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 43 bytes to Coordinator","time":"2023-07-02T08:20:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 43 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:42Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 175 bytes","time":"2023-07-02T08:20:42Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 175 bytes","time":"2023-07-02T08:20:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 175 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:44Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:20:44Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:20:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:45Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:20:45Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:20:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:47Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 53 bytes","time":"2023-07-02T08:20:47Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 53 bytes to Coordinator","time":"2023-07-02T08:20:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 53 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:48Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 183 bytes","time":"2023-07-02T08:20:48Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 183 bytes","time":"2023-07-02T08:20:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 183 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:50Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:20:50Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:20:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:51Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:20:51Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:20:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:56Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 308 bytes","time":"2023-07-02T08:20:56Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 308 bytes to Coordinator","time":"2023-07-02T08:20:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 308 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:56Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:20:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:57Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 130 bytes","time":"2023-07-02T08:20:57Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 130 bytes","time":"2023-07-02T08:20:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 130 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:20:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:20:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:20:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:20:59Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 199 bytes","time":"2023-07-02T08:20:59Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 199 bytes to Coordinator","time":"2023-07-02T08:20:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 199 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:20:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:20:59Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:00Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:00Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 182 bytes","time":"2023-07-02T08:21:00Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 182 bytes","time":"2023-07-02T08:21:00Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 182 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:00Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:00Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:02Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 191 bytes","time":"2023-07-02T08:21:02Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 191 bytes to Coordinator","time":"2023-07-02T08:21:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 191 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:03Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:03Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 387 bytes","time":"2023-07-02T08:21:03Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 387 bytes","time":"2023-07-02T08:21:03Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 387 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:03Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:03Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:08Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 245 bytes","time":"2023-07-02T08:21:08Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 245 bytes to Coordinator","time":"2023-07-02T08:21:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 245 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:08Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:09Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:09Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 214 bytes","time":"2023-07-02T08:21:09Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 214 bytes","time":"2023-07-02T08:21:09Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 214 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:09Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:09Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:11Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:11Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:21:11Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:21:11Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:11Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:11Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:12Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:21:12Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:21:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:14Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:14Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 43 bytes","time":"2023-07-02T08:21:14Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 43 bytes to Coordinator","time":"2023-07-02T08:21:14Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 43 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:14Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:14Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:15Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 175 bytes","time":"2023-07-02T08:21:15Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 175 bytes","time":"2023-07-02T08:21:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 175 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:15Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:17Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:17Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:21:17Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:21:17Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:17Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:17Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:18Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:21:18Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:21:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:18Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:23Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:23Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 433 bytes","time":"2023-07-02T08:21:23Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 433 bytes to Coordinator","time":"2023-07-02T08:21:23Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 433 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:23Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:23Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:24Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 199 bytes","time":"2023-07-02T08:21:24Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 199 bytes","time":"2023-07-02T08:21:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 199 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:24Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:26Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 255 bytes","time":"2023-07-02T08:21:26Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 255 bytes to Coordinator","time":"2023-07-02T08:21:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 255 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:26Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:27Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 238 bytes","time":"2023-07-02T08:21:27Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 238 bytes","time":"2023-07-02T08:21:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 238 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:27Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:29Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 247 bytes","time":"2023-07-02T08:21:29Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 247 bytes to Coordinator","time":"2023-07-02T08:21:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 247 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:29Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:30Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 555 bytes","time":"2023-07-02T08:21:30Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 555 bytes","time":"2023-07-02T08:21:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 555 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:30Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:35Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 976 bytes","time":"2023-07-02T08:21:35Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 976 bytes to Coordinator","time":"2023-07-02T08:21:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 976 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:35Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:36Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 406 bytes","time":"2023-07-02T08:21:36Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 406 bytes","time":"2023-07-02T08:21:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 406 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:36Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:38Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:21:38Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:21:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:38Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:39Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:21:39Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:21:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:39Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:41Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 43 bytes","time":"2023-07-02T08:21:41Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 43 bytes to Coordinator","time":"2023-07-02T08:21:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 43 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:41Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:42Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 175 bytes","time":"2023-07-02T08:21:42Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 175 bytes","time":"2023-07-02T08:21:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 175 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:42Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:44Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:21:44Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:21:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:44Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:45Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:21:45Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:21:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:45Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:47Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 53 bytes","time":"2023-07-02T08:21:47Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 53 bytes to Coordinator","time":"2023-07-02T08:21:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 53 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:47Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:48Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 183 bytes","time":"2023-07-02T08:21:48Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 183 bytes","time":"2023-07-02T08:21:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 183 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:48Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:21:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:50Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 49 bytes","time":"2023-07-02T08:21:50Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 49 bytes to Coordinator","time":"2023-07-02T08:21:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 49 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:21:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:21:50Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:51Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 173 bytes","time":"2023-07-02T08:21:51Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 173 bytes","time":"2023-07-02T08:21:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 173 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:51Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:54Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:54Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 389 bytes","time":"2023-07-02T08:21:54Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 389 bytes","time":"2023-07-02T08:21:54Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 389 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:54Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:54Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: New data available","time":"2023-07-02T08:21:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:21:57Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.3:9000/data: Fetched 4 bytes","time":"2023-07-02T08:21:57Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"Coordinator (ID: b71ea5f69b88dc84) broadcasting 4 bytes","time":"2023-07-02T08:21:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 4 bytes from Client b71ea5f69b88dc84","time":"2023-07-02T08:21:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.4:9000/data?client=b71ea5f69b88dc84 [Try 1/3]","time":"2023-07-02T08:21:57Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.4:9000/status: New data available","time":"2023-07-02T08:22:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Mode: plain","time":"2023-07-02T08:22:02Z"}
+{"component":"LOCAL","instance":"","level":"debug","msg":"http://172.19.0.4:9000/data: Fetched 67 bytes","time":"2023-07-02T08:22:02Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: a54cb93e5cf4379b) sending 67 bytes to Coordinator","time":"2023-07-02T08:22:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"received 67 bytes from Client a54cb93e5cf4379b","time":"2023-07-02T08:22:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"POST to http://172.19.0.3:9000/data?client=a54cb93e5cf4379b [Try 1/3]","time":"2023-07-02T08:22:02Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"http://172.19.0.3:9000/status: Finished","time":"2023-07-02T08:22:12Z"}
+{"component":"GLOBAL","instance":"","level":"info","msg":"[GLOBAL] Participant (ID: b71ea5f69b88dc84) finished the current step","time":"2023-07-02T08:22:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Shutdown","time":"2023-07-02T08:22:12Z"}
+{"component":"LOCAL","instance":"","level":"info","msg":"Shutdown","time":"2023-07-02T08:22:12Z"}
+{"component":"GLOBAL","instance":"","level":"error","msg":"Participant (ID: a54cb93e5cf4379b): relaying stopped due to: EOF","time":"2023-07-02T08:22:12Z"}
+{"component":"GLOBAL","instance":"","level":"error","msg":"Participant (ID: b71ea5f69b88dc84): relaying stopped due to: EOF","time":"2023-07-02T08:22:12Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping test id: 1","time":"2023-07-02T08:22:12Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping container fc_featurecloudaifcmultiplefactoranalysis_721270042","time":"2023-07-02T08:22:12Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to host","time":"2023-07-02T08:22:12Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:22:13Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-07-02T08:22:14Z"}
+{"component":"DOCKER","instance":"","level":"debug","msg":"Intermediary container used for moving data from volume to host has been removed","time":"2023-07-02T08:22:15Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Saved output volume content to /data/tests/results_test_1_client_0_fc_featurecloudaifcmultiplefactoranalysis_721270042.zip","time":"2023-07-02T08:22:15Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_output_0_1688285974","time":"2023-07-02T08:22:15Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_0_1688285974","time":"2023-07-02T08:22:15Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_0_1688285974","time":"2023-07-02T08:22:15Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_0_1688285974","time":"2023-07-02T08:22:15Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Stopping container fc_featurecloudaifcmultiplefactoranalysis_370473250","time":"2023-07-02T08:22:15Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Move data to host","time":"2023-07-02T08:22:16Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Attach to internal network","time":"2023-07-02T08:22:16Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove application","time":"2023-07-02T08:22:18Z"}
+{"component":"DOCKER","instance":"","level":"debug","msg":"Intermediary container used for moving data from volume to host has been removed","time":"2023-07-02T08:22:19Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Saved output volume content to /data/tests/results_test_1_client_1_fc_featurecloudaifcmultiplefactoranalysis_370473250.zip","time":"2023-07-02T08:22:19Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_output_1_1688285982","time":"2023-07-02T08:22:19Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_1_1688285982","time":"2023-07-02T08:22:19Z"}
+{"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_1_1688285982","time":"2023-07-02T08:22:19Z"}
+{"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_1_1688285982","time":"2023-07-02T08:22:19Z"}

@@ -11,6 +11,8 @@ class TabData:
         self.columns = columns
         self.rows = rows
         self.scaled = scaled
+
+        
         self.row_count = data.shape[0]
         self.col_count = data.shape[1]
 

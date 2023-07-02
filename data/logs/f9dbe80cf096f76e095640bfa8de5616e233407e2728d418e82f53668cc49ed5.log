@@ -1,0 +1,1295 @@
+2023-07-02 15:43:58,878 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-02 15:43:58,879 INFO supervisord started with pid 7
+2023-07-02 15:43:59,882 INFO spawned: 'nginx' with pid 10
+2023-07-02 15:43:59,886 INFO spawned: 'app' with pid 11
+2023-07-02 15:44:00,914 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-02 15:44:00,914 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 02.07.23 15:44:02] [Level: info] id: 954a1d1f4c27bbbe
+[Time: 02.07.23 15:44:02] [Level: info] coordinator: False
+[Time: 02.07.23 15:44:02] [Level: info] clients: ['954a1d1f4c27bbbe', 'fae4045aad331cc6']
+[Time: 02.07.23 15:44:02] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+YAML file does not follow specification: missing key: inertia
+Setting default: inertia.tsv
+YAML file does not follow specification: missing key: global_factor_score
+Setting default: global_factor_score.tsv
+YAML file does not follow specification: missing key: omic_factor_score
+Setting default: omic_factor_score.tsv
+YAML file does not follow specification: missing key: projection_matrix
+Setting default: projection_matrix.tsv
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 02.07.23 15:44:02] [Level: info] transition: init_pca
+[Time: 02.07.23 15:44:03] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/hospital_data_freije_1.csv']
+[STARTUP] Configuration copied
+Log Transform performed
+out {'Row names': array(['C5orf31', 'MLL', 'FOLR1', 'NDUFS1', 'ATAD1', 'GLUD1', 'OSBP',
+       'MYST4', 'NUDT3', 'FNIP1', 'KIAA0776', 'SLC7A1', 'ANXA1',
+       'BC003660', 'RAB18', 'ZMYM2', 'MAPT', 'FBXO30', 'SLC1A4',
+       'GTF2IRD2', 'KIF3A', 'AI860012', 'PPM1L', 'CHI3L1', 'GLA', 'HPSE2',
+       'AF274957', 'SRP19', 'GPHN', 'TMEM127', 'FRY', 'ZMYND11', 'AKT3',
+       'ARL4C', 'ARIH1', 'GARNL1', 'AI982758', 'DENND4A', 'GLUD2',
+       'ZFP91', 'P15RS', 'MIB1', 'PPM1A', 'GUSB', 'ACBD5', 'VPS24',
+       'SERPINE1', 'AF116616', 'SLC18A2', 'ZRANB1', 'ANGPT2', 'WHSC1L1',
+       'AI690169', 'SAMD9L', 'BC001425', 'TBC1D9B', 'LARP1', 'PPP2R5A',
+       'RSC1A1', 'IDI1', 'SP3', 'SPAG9', 'RABGGTB', 'FDFT1', 'SOCS3',
+       'TGFBR1', 'RABGAP1L', 'USP4', 'DDHD1', 'SLC25A36', 'PPP1R15A',
+       'CAP1', 'ZDHHC21', 'EWSR1', 'MRC2', 'C2orf11', 'C19orf50', 'NAV1',
+       'ADPGK', 'SF1', 'SPRY1', 'SCD', 'C19orf48', 'SERPINA3', 'FCGBP',
+       'ANXA5', 'TMSB10', 'MLSTD2', 'ADM', 'RAB2', 'SNX24', 'KPNB1',
+       'LONPL', 'AA934610', 'WAC', 'KIAA1279', 'WDR34', 'TCF8', 'RNF135',
+       'IFNGR2', 'CPEB4', 'DNAJB14', 'ARMC1', 'FARSLB', 'CTNNA1',
+       'CDCA7L', 'MYST1', 'NET1', 'HAPLN3', 'SAMD9', 'TMCO4', 'RAB34',
+       'SPIN', 'ADPRHL2', 'MPDZ', 'UACA', 'IKIP', 'DDX17', 'TRIP6',
+       'RB1CC1', 'AASDHPPT', 'RNASE4', 'NUDT4', 'CENTD3', 'LUZP2',
+       'SLC11A2', 'DHX8', 'ANXA2', 'SNX8', 'FAM120AOS', 'KCNIP3',
+       'SLC25A3', 'PTGFRN', 'C6orf111', 'STEAP3', 'ZNF22', 'CEP170',
+       'KRT10', 'NTRK2', 'BBX', 'AA935461', 'FSTL1', 'UPP1', 'TTC3',
+       'MGC39518', 'FUK', 'CAMSAP1L1', 'COL4A2', 'ENSA', 'EIF4EBP2',
+       'AF119855', 'ABI1', 'IPO7', 'DNAJC12', 'TLOC1', 'HMGCR', 'LATS2',
+       'S100A4', 'LOC492311', 'KIAA0652', 'C4orf12', 'NEK1', 'C11orf54',
+       'BRD2', 'BF594695', 'XM_208778', 'PANK1', 'LOXL3', 'CHES1',
+       'ALDH16A1', 'TAX1BP3', 'TEX261', 'S100A11', 'ZHX1', 'COL4A1',
+       'PDLIM1', 'MGC4677', 'ZADH2', 'RPL37', 'STAT1', 'C17orf63',
+       'KLF12', 'SLC27A3', 'OSBPL11', 'REXO2', 'SP100', 'HNRPH3', 'HIPK2',
+       'LOC54103', 'XM_379512', 'FGF12', 'ABLIM1', 'NBN', 'HLA-DPB1',
+       'CD74', 'PAPD1', 'PIGT', 'GSS', 'VPS13D', 'MRCL3', 'IGFBP2',
+       'NKTR', 'C20orf108', 'GIT2', 'DKFZp434B1231', 'SERPINA1', 'F11R',
+       'LOC143941', 'HSMPP8', 'VEGF', 'HSPG2', 'RBMS1', 'C20orf149',
+       'NAGA', 'PDPN', 'RAP2B', 'YTHDC1', 'FOXO3A', 'HOXA3', 'HLA-DQB1',
+       'SLC35E1', 'ANXA2P2', 'ALDH5A1', 'AKAP11', 'PPP2CB', 'GPR65',
+       'PITPNC1', 'PHYHIPL', 'TNIK', 'AHCYL1', 'GDF15', 'CRBN',
+       'AI733194', 'KLHL24', 'INSIG1', 'MRPS28', 'SH3BGRL3', 'CNTN1',
+       'HLA-DOA', 'UBXD2', 'C20orf119', 'SOX6', 'MST150', 'SCG3', 'GNAI2',
+       'ZAK', 'EMP3', 'WDR68', 'IQGAP1', 'TNRC6B', 'TMEFF2', 'RPN2',
+       'SQRDL', 'RAP2A', 'RBM39', 'UQCRC2', 'PAFAH1B1', 'JARID1A',
+       'CLASP2', 'HEXB', 'DPYD', 'C10orf10', 'PFAAP5', 'SLC25A19',
+       'NM_013307', 'ARSD', 'ALDH6A1', 'FAM111A', 'CCNI', 'ACTN1',
+       'CPSF2', 'C2orf33', 'WISP1', 'RNUXA', 'DIMT1L', 'ITGB3BP', 'SCAP2',
+       'SPIRE1', 'EPB41L2', 'ARHGAP5', 'CD163', 'PAEP', 'LAMC1', 'SP110',
+       'HLA-DPA1', 'EDNRB', 'KLF10', 'PIAS1', 'LYPLAL1', 'TNFSF13',
+       'CD63', 'CYBASC3', 'SYDE1', 'ZFP36L2', 'AI267414', 'CMTM3', 'OAS1',
+       'AIM1', 'C1S', 'ANKRD17', 'WWOX', 'DIRAS3', 'SCAMP1', 'TBC1D10A',
+       'CALR', 'ZNFX1', 'PUM2', 'AKAP13', 'RASSF4', 'LOC339803', 'CAPG',
+       'BF677084', 'SREBF2', 'SMS', 'BCL2A1', 'GBA', 'PUM1', 'CCDC109B',
+       'AK027219', 'MAPK8', 'AU144267', 'RRAGD', 'SMC4', 'GHITM', 'WDFY1',
+       'PIK3R1', 'CD58', 'NUCKS1', 'PLCB1', 'HDGFRP3', 'COMMD7', 'GAS2L3',
+       'LOC283378', 'PITPNB', 'KIAA0999', 'PHPT1', 'FADS1', 'ZWILCH',
+       'AKAP1', 'NCAM1', 'KIAA1946', 'KIAA1462', 'ZNF83', 'RAB8A',
+       'FKBP10', 'C12orf29', 'USP8', 'CFI', 'RAB6IP1', 'SH3GLB1', 'TJP2',
+       'FXYD5', 'TUB', 'AA088873', 'PRKCA', 'RPL22', 'SLC1A1', 'RABGAP1',
+       'AP2B1', 'WASF3', 'CAPZA1', 'HSPA6', 'BF435290', 'KRAS', 'NNMT',
+       'MYO9B', 'YWHAB', 'RNASE6', 'sep-11', 'FAM20C', 'ETNK1', 'ZNF710',
+       'PLAT', 'NR2F2', 'XM_168590', 'GNG12', 'KIAA1704', 'MCM5', 'CHD9',
+       'C1orf192', 'SPRN', 'STAT2', 'RER1', 'TYMS', 'BMS1L', 'IKBKB',
+       'ABAT', 'KPNA5', 'TPM3', 'LITAF', 'LOC283130', 'AP1S2', 'TRIM56',
+       'CALCRL', 'SMARCC1', 'FLJ31951', 'NDRG3', 'NM_020037', 'ZDHHC7',
+       'SAT1', 'LUC7L2', 'SUMO4', 'SULT1C2', 'SYNPO', 'XM_496931', 'C1R',
+       'MSR1', 'CENTA2', 'ZYG11B', 'NF1', 'GABBR1', 'FLRT1', 'IFI30',
+       'MRLC2', 'GNG5', 'AAK1', 'COX7AP2', 'RUFY3', 'SMC3', 'CSTA',
+       'TNFRSF1A', 'FKBP9', 'BCL3', 'D85181', 'LOC143381', 'ADCY2', 'LYZ',
+       'GYS1', 'FN1', 'EIF2C3', 'MSN', 'SDCBP', 'ZNF24', 'LYPLA1',
+       'TRPM8', 'HADHB', 'EHD4', 'BE669703', 'LSM10', 'BF941414',
+       'ATP6V0A1', 'RYR3', 'NIT2', 'HLA-DRB1', 'CROP', 'LCOR', 'N72185',
+       'DDOST', 'FOXJ1', 'TNFRSF12A', 'C21orf62', 'BTBD15', 'TREM2',
+       'TRIM9', 'KIAA0907', 'TMSB4X', 'RAD21', 'GCSH', 'PGM2', 'AF113008',
+       'PREPL', 'C9orf80', 'MULK', 'HLA-DMA', 'LOC400924', 'RICTOR',
+       'JMJD1C', 'AF130080', 'APOE', 'CALD1', 'ANKRD28', 'PKNOX2',
+       'LOC92689', 'DDB2', 'CLIC1', 'UBE3C', 'HDAC4', 'COL5A2', 'TNFAIP3',
+       'PSMD9', 'CTNNB1', 'RP1-93H18.5', 'RRP22', 'EPHB1', 'EIF4G1',
+       'NT5C3', 'AF130082', 'PAXIP1', 'TIMP1', 'RPA3', 'CTBP2', 'TAGLN2',
+       'LOX', 'CHD7', 'WDR54', 'PLAUR', 'AL119491', 'TMED8', 'MAP3K7IP2',
+       'ZNF25', 'TM9SF3', 'SGCD', 'GGH', 'QKI', 'LILRB1', 'MYL6',
+       'C6orf115', 'MBOAT2', 'MAPBPIP', 'TSPO', 'KIF5B', 'TMEM106B',
+       'TCEA3', 'FLJ20273', 'GPNMB', 'RGS19', 'BE326808', 'TMEM41B',
+       'TNKS2', 'TTC7A', 'LIN7C', 'MFSD1', 'ZNF291', 'ZNF18', 'MESDC2',
+       'RPS25', 'KIAA1344', 'NDRG2', 'IGFBP5', 'GALNT13', 'TncRNA',
+       'CDC42', 'DUSP6', 'TOMM40L', 'SEZ6L', 'C1RL', 'PSMB8', 'MAN2B1',
+       'ST8SIA4', 'SCP2', 'PDRG1', 'SLC4A4', 'PPP1R12A', 'AI868039',
+       'HLA-DRB5', 'VKORC1', 'ALOX5AP', 'LUM', 'POGZ', 'BCR', 'CASK',
+       'ANXA13', 'PDLIM4', 'NRP1', 'LTF', 'WDR1', 'FAM82B', 'ADIPOR2',
+       'DTNA', 'BTN3A3', 'LIFR', 'MS4A6A', 'ATP5J2', 'TRIM6', 'SLC16A3',
+       'N50714', 'ZNF148', 'CCM2', 'ZNF770', 'SPP1', 'AV685992', 'MGEA5',
+       'C10orf62', 'IPO11', 'RPS6KA3', 'IQGAP3', 'CMTM6', 'SCOTIN',
+       'DYNC1H1', 'CYP2E1', 'MTP18', 'TMEM165', 'C8orf46', 'AGTRAP', 'C3',
+       'WDFY3', 'CTSB', 'BCAT1', 'WDR22', 'GPAM', 'ST13', 'EGR1',
+       'XM_376043', 'RABL5', 'GNL1', 'AA868809', 'C13orf18', 'THNSL1',
+       'SUSD4', 'CAPN5', 'ENAH', 'MTDH', 'MSI2', 'COL27A1', 'SULT1A3',
+       'ADRM1', 'LAMB1', 'SYF2', 'LSG1', 'SLC15A2', 'EFEMP2', 'FBXO21',
+       'SSR1', 'ARPC2', 'CD300A'], dtype=object), 'Sample count': 51, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}
+[Time: 02.07.23 15:44:03] [Level: info] transition: wait_for_params
+[Time: 02.07.23 15:44:04] [Level: info] state: wait_for_params
+[CTRL] GET /data
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['IFNGR2', 'SREBF2', 'TBC1D10A', 'ARL4C', 'MSN', 'TIMP1', 'NTRK2', 'SLC11A2', 'ADPGK', 'TNFAIP3', 'CSTA', 'RAP2A', 'SH3BGRL3', 'TMEM127', 'FAM82B', 'RGS19', 'CENTA2', 'WDFY3', 'BF594695', 'PDLIM4', 'CEP170', 'EIF4G1', 'SLC25A3', 'BMS1L', 'SMS', 'PHPT1', 'NDUFS1', 'C20orf149', 'TRPM8', 'SULT1C2', 'PAPD1', 'TNFRSF12A', 'WAC', 'SNX24', 'AF119855', 'FADS1', 'CHD7', 'FBXO30', 'LSM10', 'EPB41L2', 'AI267414', 'LYPLA1', 'NAV1', 'FKBP9', 'TCF8', 'GNAI2', 'CDCA7L', 'INSIG1', 'AK027219', 'ZDHHC21', 'RER1', 'RABGAP1L', 'CTSB', 'BBX', 'DHX8', 'UACA', 'RABL5', 'CD163', 'FUK', 'FLJ20273', 'SCG3', 'CLIC1', 'SLC1A4', 'AU144267', 'LAMB1', 'CAPN5', 'TSPO', 'SPAG9', 'HLA-DRB1', 'ADRM1', 'PPM1L', 'SCOTIN', 'SGCD', 'FOLR1', 'HEXB', 'YTHDC1', 'NUDT3', 'ZMYM2', 'MGC39518', 'SDCBP', 'IFI30', 'DKFZp434B1231', 'HLA-DMA', 'SLC27A3', 'RAB8A', 'AIM1', 'DIMT1L', 'sep-11', 'ZFP36L2', 'LTF', 'CASK', 'ITGB3BP', 'YWHAB', 'AI733194', 'WDR54', 'DTNA', 'XM_376043', 'TRIM9', 'PIGT', 'MAPK8', 'COL4A2', 'VPS13D', 'GTF2IRD2', 'TNRC6B', 'TUB', 'KIAA1344', 'SCAP2', 'IDI1', 'ARSD', 'SAMD9L', 'DIRAS3', 'EHD4', 'RPL37', 'MLL', 'LUM', 'BTN3A3', 'TMEM106B', 'C5orf31', 'HAPLN3', 'ADM', 'CPSF2', 'DDX17', 'ZNF24', 'AP1S2', 'ALOX5AP', 'MSR1', 'CCDC109B', 'SLC25A19', 'KIAA0999', 'TMEM165', 'GYS1', 'CAPG', 'KIAA1279', 'ANXA1', 'GBA', 'GUSB', 'TBC1D9B', 'WDFY1', 'MGEA5', 'PDRG1', 'ATAD1', 'CHES1', 'ARHGAP5', 'GDF15', 'IKBKB', 'TncRNA', 'ZNF83', 'WDR22', 'AA935461', 'C1RL', 'DNAJB14', 'C19orf50', 'ANXA2P2', 'QKI', 'GPNMB', 'SYDE1', 'MYL6', 'MAPBPIP', 'FXYD5', 'UBE3C', 'LAMC1', 'PITPNB', 'PPP2CB', 'TNKS2', 'GARNL1', 'LOC492311', 'DDOST', 'AKT3', 'KCNIP3', 'TLOC1', 'ADPRHL2', 'SUSD4', 'LOC283130', 'RB1CC1', 'NDRG2', 'AGTRAP', 'PREPL', 'NET1', 'HDAC4', 'KIAA1704', 'CCNI', 'RYR3', 'HSPA6', 'ALDH6A1', 'ANGPT2', 'MTP18', 'SLC7A1', 'RAB18', 'BC001425', 'FOXO3A', 'GPR65', 'CHD9', 'HOXA3', 'ATP6V0A1', 'LILRB1', 'TRIM6', 'RAP2B', 'RNUXA', 'AI690169', 'OAS1', 'NNMT', 'LOX', 'MAN2B1', 'RAB6IP1', 'TNFRSF1A', 'CTBP2', 'GNL1', 'XM_496931', 'TRIP6', 'C1S', 'FARSLB', 'MRPS28', 'SRP19', 'AI982758', 'MAP3K7IP2', 'UPP1', 'ABLIM1', 'AP2B1', 'CENTD3', 'WDR34', 'LYPLAL1', 'SCAMP1', 'PAEP', 'EPHB1', 'CHI3L1', 'IKIP', 'ACTN1', 'TAGLN2', 'XM_379512', 'LOXL3', 'SOX6', 'C8orf46', 'JMJD1C', 'ZAK', 'LIN7C', 'GAS2L3', 'RPA3', 'C2orf33', 'NIT2', 'REXO2', 'RBMS1', 'OSBP', 'AKAP11', 'VEGF', 'BE326808', 'FGF12', 'DNAJC12', 'EIF2C3', 'FDFT1', 'P15RS', 'KIAA0776', 'PPP1R12A', 'HLA-DQB1', 'KIAA1462', 'ACBD5', 'BF677084', 'SPP1', 'DDB2', 'LOC143941', 'DDHD1', 'PFAAP5', 'PRKCA', 'DYNC1H1', 'XM_208778', 'MGC4677', 'SLC18A2', 'LATS2', 'BTBD15', 'FN1', 'SLC25A36', 'PUM2', 'UBXD2', 'SYNPO', 'STAT1', 'LOC283378', 'TGFBR1', 'SERPINE1', 'SLC1A1', 'TTC7A', 'PDPN', 'C11orf54', 'TCEA3', 'NDRG3', 'TMEM41B', 'RRAGD', 'ABI1', 'NKTR', 'TNIK', 'LUC7L2', 'CTNNA1', 'THNSL1', 'AF116616', 'C1orf192', 'C3', 'ANKRD17', 'FAM111A', 'BF941414', 'PLCB1', 'GLUD2', 'LONPL', 'PGM2', 'C12orf29', 'TAX1BP3', 'SCP2', 'ZFP91', 'POGZ', 'PANK1', 'TMEFF2', 'EFEMP2', 'PLAT', 'RNASE4', 'ZNF770', 'C2orf11', 'PAFAH1B1', 'CYBASC3', 'HDGFRP3', 'C20orf108', 'LOC92689', 'ZYG11B', 'BCAT1', 'TMCO4', 'FAM120AOS', 'ALDH5A1', 'C1R', 'TMED8', 'AF130082', 'CMTM3', 'IGFBP5', 'KLF12', 'TJP2', 'C9orf80', 'SMC3', 'LSG1', 'NM_013307', 'USP8', 'SNX8', 'KIF3A', 'FSTL1', 'SP110', 'CYP2E1', 'AASDHPPT', 'RNASE6', 'COL5A2', 'BCR', 'MLSTD2', 'KLHL24', 'NUCKS1', 'SMARCC1', 'DENND4A', 'MRC2', 'TEX261', 'HIPK2', 'GSS', 'TRIM56', 'MULK', 'RUFY3', 'WISP1', 'WHSC1L1', 'AI868039', 'CAMSAP1L1', 'EWSR1', 'KIAA1946', 'GLUD1', 'FLRT1', 'CALR', 'SPIN', 'NBN', 'UQCRC2', 'OSBPL11', 'ADCY2', 'SUMO4', 'ATP5J2', 'NRP1', 'AV685992', 'LYZ', 'KIAA0907', 'BF435290', 'FCGBP', 'RPN2', 'BE669703', 'AA868809', 'HLA-DPB1', 'AF130080', 'TREM2', 'CD58', 'NUDT4', 'AA088873', 'CPEB4', 'C6orf111', 'MSI2', 'RPS25', 'LIFR', 'PIAS1', 'KPNB1', 'SF1', 'CCM2', 'HADHB', 'MYO9B', 'C17orf63', 'MRLC2', 'HLA-DOA', 'MYST1', 'ST13', 'MAPT', 'PTGFRN', 'TM9SF3', 'ZMYND11', 'PLAUR', 'WDR68', 'CROP', 'LUZP2', 'SP3', 'ZADH2', 'NR2F2', 'CD63', 'COL4A1', 'FAM20C', 'ARIH1', 'SERPINA1', 'GALNT13', 'LCOR', 'PKNOX2', 'TNFSF13', 'AL119491', 'AF274957', 'ARPC2', 'NEK1', 'STEAP3', 'ZHX1', 'ZNF710', 'RABGGTB', 'IPO11', 'IQGAP3', 'AHCYL1', 'GIT2', 'CRBN', 'CD300A', 'PHYHIPL', 'PUM1', 'RASSF4', 'NT5C3', 'RPS6KA3', 'ZNF148', 'WWOX', 'ZWILCH', 'MESDC2', 'MTDH', 'CALD1', 'STAT2', 'SAMD9', 'CMTM6', 'EDNRB', 'FLJ31951', 'C13orf18', 'SOCS3', 'PSMB8', 'SYF2', 'HSMPP8', 'SPRN', 'AAK1', 'N72185', 'RICTOR', 'S100A4', 'GPHN', 'TMSB10', 'SMC4', 'HMGCR', 'RP1-93H18.5', 'HLA-DRB5', 'N50714', 'SLC15A2', 'ENSA', 'C20orf119', 'PDLIM1', 'COL27A1', 'C21orf62', 'KRAS', 'SCD', 'NAGA', 'TMSB4X', 'APOE', 'PAXIP1', 'ANKRD28', 'WASF3', 'MFSD1', 'ANXA2', 'MST150', 'SLC16A3', 'RSC1A1', 'ZNF22', 'JARID1A', 'MCM5', 'PITPNC1', 'AI860012', 'NCAM1', 'SP100', 'FBXO21', 'BC003660', 'AKAP1', 'CTNNB1', 'XM_168590', 'PPP2R5A', 'SLC35E1', 'LITAF', 'PPM1A', 'RAD21', 'ARMC1', 'AKAP13', 'USP4', 'GLA', 'C10orf10', 'KLF10', 'RBM39', 'PIK3R1', 'EIF4EBP2', 'IPO7', 'SQRDL', 'IGFBP2', 'F11R', 'SEZ6L', 'ZNFX1', 'MRCL3', 'HNRPH3', 'ANXA5', 'ZNF18', 'C4orf12', 'CDC42', 'PPP1R15A', 'C19orf48', 'VPS24', 'TPM3', 'CNTN1', 'SAT1', 'SPRY1', 'BCL3', 'LOC143381', 'EMP3', 'ABAT', 'BCL2A1', 'ZRANB1', 'ZDHHC7', 'LARP1', 'AF113008', 'S100A11', 'SPIRE1', 'ETNK1', 'GGH', 'KIF5B', 'COX7AP2', 'SLC4A4', 'CALCRL', 'ST8SIA4', 'MPDZ', 'COMMD7', 'LOC339803', 'PSMD9', 'FKBP10', 'HLA-DPA1', 'SULT1A3', 'NM_020037', 'RAB2', 'DUSP6', 'NF1', 'MIB1', 'VKORC1', 'TOMM40L', 'TYMS', 'CD74', 'GNG5', 'HPSE2', 'WDR1', 'C10orf62', 'D85181', 'MBOAT2', 'FOXJ1', 'KRT10', 'GHITM', 'KIAA0652', 'MS4A6A', 'AA934610', 'RNF135', 'ALDH16A1', 'FRY', 'CAPZA1', 'GNG12', 'SERPINA3', 'ADIPOR2', 'RABGAP1', 'C6orf115', 'KPNA5', 'DPYD', 'EGR1', 'CFI', 'BRD2', 'CLASP2', 'ENAH', 'GCSH', 'IQGAP1', 'SH3GLB1', 'SSR1', 'LOC400924', 'FNIP1', 'LOC54103', 'RAB34', 'HSPG2', 'TTC3', 'ZNF291', 'ZNF25', 'ANXA13', 'GABBR1', 'RPL22', 'GPAM', 'MYST4', 'RRP22', 'CAP1']
+INDEX
+[99, 312, 303, 33, 430, 488, 138, 125, 78, 478, 419, 253, 236, 29, 556, 515, 407, 585, 164, 552, 136, 484, 131, 384, 313, 335, 3, 212, 434, 402, 195, 449, 94, 90, 150, 336, 493, 17, 438, 278, 294, 433, 77, 421, 97, 244, 105, 234, 318, 72, 382, 66, 586, 139, 126, 115, 593, 280, 145, 513, 243, 474, 18, 320, 606, 599, 509, 61, 443, 605, 22, 577, 501, 2, 259, 216, 8, 15, 144, 431, 412, 204, 463, 182, 343, 297, 274, 368, 293, 554, 550, 275, 366, 232, 494, 558, 592, 453, 196, 319, 147, 198, 19, 249, 352, 526, 276, 59, 265, 53, 301, 436, 178, 1, 547, 559, 511, 0, 108, 88, 270, 117, 432, 391, 546, 406, 317, 263, 334, 581, 427, 310, 95, 12, 315, 43, 55, 324, 571, 540, 4, 168, 279, 230, 385, 530, 342, 588, 140, 535, 101, 76, 221, 503, 514, 292, 505, 508, 351, 475, 282, 333, 224, 518, 35, 158, 447, 32, 130, 154, 113, 598, 390, 119, 527, 583, 460, 107, 476, 376, 268, 441, 361, 266, 50, 580, 11, 14, 54, 217, 225, 378, 218, 440, 504, 563, 215, 273, 52, 296, 364, 492, 537, 348, 420, 490, 594, 404, 118, 298, 103, 235, 27, 36, 498, 142, 191, 358, 123, 96, 288, 302, 281, 483, 23, 116, 269, 491, 189, 167, 241, 582, 466, 245, 520, 331, 489, 271, 442, 184, 211, 6, 223, 209, 516, 190, 153, 429, 63, 40, 10, 542, 219, 341, 44, 311, 569, 473, 207, 68, 262, 354, 578, 165, 176, 48, 156, 451, 428, 69, 306, 239, 403, 179, 332, 65, 46, 356, 519, 214, 162, 512, 396, 517, 321, 151, 201, 228, 400, 104, 597, 47, 379, 584, 299, 267, 439, 328, 38, 92, 458, 345, 170, 539, 39, 548, 166, 250, 610, 372, 121, 568, 75, 256, 291, 329, 202, 472, 408, 587, 110, 129, 222, 405, 497, 486, 295, 528, 181, 350, 461, 418, 608, 264, 346, 128, 20, 141, 283, 579, 120, 367, 477, 549, 87, 233, 327, 394, 37, 74, 171, 187, 197, 392, 462, 417, 272, 51, 543, 146, 73, 340, 5, 411, 304, 112, 192, 255, 183, 425, 401, 562, 553, 570, 426, 454, 362, 84, 251, 437, 595, 193, 467, 452, 326, 122, 353, 100, 133, 602, 525, 560, 287, 91, 79, 567, 435, 365, 180, 413, 238, 106, 590, 16, 132, 500, 31, 495, 247, 444, 124, 60, 177, 373, 290, 174, 369, 34, 205, 529, 445, 471, 289, 496, 26, 613, 161, 134, 173, 371, 62, 573, 575, 229, 203, 231, 614, 227, 316, 308, 485, 574, 566, 300, 337, 524, 601, 469, 381, 109, 576, 285, 395, 596, 64, 536, 607, 208, 380, 415, 446, 465, 157, 28, 86, 322, 155, 481, 544, 565, 609, 148, 240, 175, 603, 450, 363, 81, 213, 455, 468, 487, 470, 359, 521, 127, 242, 564, 58, 135, 257, 377, 226, 21, 339, 185, 611, 13, 338, 480, 374, 57, 220, 389, 42, 456, 102, 307, 67, 24, 261, 286, 254, 325, 149, 152, 252, 200, 206, 534, 305, 199, 186, 85, 523, 160, 531, 70, 82, 45, 388, 237, 399, 80, 422, 424, 246, 386, 314, 49, 398, 56, 459, 172, 277, 370, 502, 510, 416, 541, 393, 538, 114, 330, 309, 479, 344, 284, 604, 397, 89, 532, 409, 41, 545, 533, 383, 194, 414, 25, 555, 572, 423, 507, 448, 137, 323, 159, 561, 93, 98, 169, 30, 360, 375, 83, 557, 357, 506, 387, 260, 591, 347, 163, 258, 600, 457, 248, 349, 612, 464, 9, 188, 111, 210, 143, 522, 499, 551, 410, 355, 589, 7, 482, 71]
+[Time: 02.07.23 15:44:06] [Level: info] transition: compute_std
+[Time: 02.07.23 15:44:07] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(615, 1)
+[Time: 02.07.23 15:44:09] [Level: info] transition: apply_scaling
+[Time: 02.07.23 15:44:10] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[ 22 304  58 593 434 136 346 357 162 270 169 288 529 241 151 258 350 479
+ 156 600 540 396  69 398 212  79 553 294 222 530 367  75 234 548 446 237
+ 370 506 402 482 180 575 508  37 388 283 456 371 390 609 452   1 401 397
+ 197 438 159 614 555 289 303 558 526 238 360  14 205 576 330 147 203   2
+ 321 271 393 514 132 496 560 314 334 420 445  25 563 170 139 414 417 389
+  50 431   8 610 318 311 539  41 515  17 577 441 137 118  84 373 395 344
+ 332 259 583 261 254  86  96 338 157 520 522 366 570 424 599 408 476 430
+ 541 442 316 399 392 290  35 405 587 386 249 411 364 544 134 586 596 179
+ 198   7 140  29 292 228  94 425 217 278 488 459 375 196 532 509 607 345
+ 412 141  71 103 173 130 105 612 435 242 324 315  56 448 301 166  15  23
+  27 380 421 426 155  38 572 213 378 521  40 554 464   0 146 545 313 248
+ 450 443 286 354 117 589 547 239  49  30 267 568 428 214 606 187 142 500
+  42 285 484 274 352  48 211 122 564 552 167 406  88  18   6 220  98 164
+  90  52 299 260  16 573  99 490  54  53 498 340 505 523  74 507 287 351
+ 512 562 251 409 113 384 295 280  24 524  26  21 189 501 444  92 178 165
+ 359 116 343 466 423 368 144  33 120 206 127 365 429 504 210 282 112 447
+  67 306 229  47 598  62 135  11  91 296 347 153 312  32 387 150  97 302
+ 186 300 358 457 247  63 262  20 461  45 101 284 474 269 250 363 546 163
+ 263 275 595 362 480 128  12 107 470 121 503 161 265 102 549 255 594 335
+ 333 305 611 483 115 111 236 221 489  39 382 336 579  66 584 537 148 158
+ 433 400  76 499  34 256 326  65 394  73 160 369 202 176 486 353 422 601
+ 355 188 379 472 591  72 436 191 567 298 502  43 104  95 437 204 588 477
+ 331 513 138 183 219 218  87 268 605 533 337 453 145 468 152 518  55 216
+ 322 469 349 582  44 478 463 439 407 427 493 225 403 172 495 124 310 109
+ 542   4 123 391 257 293 381 181 244  82 492   9 245 580 108 516 571  70
+ 297  83 208 525 329 308 449  59 231 465  68 451 193  85 416 602 327 266
+  31  93 175 195  77 171 491 252 471 597 110 372 277 494 131 264 551  51
+ 473 557 207 485 487  61 126 608 240 307 561 613 566 413 190 199 527  13
+ 323 592 574 458 531 319 309 209 418 106 519 342  78 317 550 273  46 578
+ 361 232 226 510 348 356 168 100 272 243 543 383   3 233 281 230 119 585
+ 565 339 341 149 511  80 125 174 227 404  10 590 415]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f6a460281c0>
+[Time: 02.07.23 15:44:12] [Level: info] transition: mfa_prerequisites
+[Time: 02.07.23 15:44:13] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 02.07.23 15:44:13] [Level: info] transition: start_power_iteration
+[Time: 02.07.23 15:44:14] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 0.56084772  0.94478769  1.36354594 ...  1.1404976  -0.94739606
+  -1.09629025]
+ [-1.9536314  -0.24194881 -1.31201357 ... -0.11785715 -0.02272654
+   2.02077468]
+ [-0.42796132 -1.28884659 -0.88051982 ...  1.1700909  -1.33827673
+   1.95176112]
+ ...
+ [-0.15149062 -0.37381092 -1.7813329  ... -0.13936113  1.23705399
+   1.78837158]
+ [-0.98456388 -1.03786185 -1.1749803  ... -0.63926758  0.89064492
+   1.82440964]
+ [ 0.03009708  0.06951096  0.59685058 ...  0.65548559  1.00911888
+  -1.68755785]]
+[Time: 02.07.23 15:44:14] [Level: info] transition: compute_final_h_cov
+[Time: 02.07.23 15:44:15] [Level: info] state: compute_final_h_cov
+[CTRL] GET /data
+[CTRL] POST /data
+Setting k
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:18] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:19] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:21] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:22] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:24] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:25] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:27] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:28] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:30] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:31] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:33] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:34] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:36] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:37] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:39] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:40] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:42] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:43] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:46] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:47] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:49] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:50] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:52] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:53] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:44:55] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:44:56] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:44:58] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:44:59] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:01] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:02] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:04] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:05] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:07] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:08] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:10] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:11] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:13] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:14] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:16] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:17] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:19] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:20] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:22] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:23] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:25] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:26] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:28] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:29] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:31] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:32] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:34] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:35] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:37] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:38] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:40] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:41] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:43] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:44] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:46] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:47] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:49] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:50] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:52] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:53] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:45:55] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:45:56] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:45:58] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:45:59] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:01] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:02] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:04] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:05] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:07] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:08] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:10] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:11] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:13] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:14] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:16] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:17] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:19] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:20] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:22] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:23] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:25] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:26] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:28] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:29] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:31] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:32] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:34] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:35] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:37] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:38] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:40] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:41] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:43] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:44] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:46] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:47] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:49] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:50] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:52] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:53] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:46:55] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:46:56] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:46:58] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:46:59] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:01] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:02] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:47:04] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:47:05] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:07] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:08] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:47:10] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:47:11] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:13] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:14] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:47:16] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:47:17] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:19] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:20] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:47:22] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:47:23] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:25] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:26] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:47:28] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:47:29] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:31] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:32] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:47:34] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:47:35] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:37] [Level: info] transition: normalize_g
+[Time: 02.07.23 15:47:38] [Level: info] state: normalize_g
+[CTRL] GET /data
+[CTRL] POST /data
+Normalising
+(51, 34)
+34
+End normalising
+(51, 34)
+(34, 34)
+(34,)
+(51, 34)
+[Time: 02.07.23 15:47:40] [Level: info] transition: separate_pca
+[Time: 02.07.23 15:47:41] [Level: info] state: separate_pca
+Starting scale tabdata
+[Time: 02.07.23 15:47:41] [Level: info] transition: scale_tabdata
+[Time: 02.07.23 15:47:42] [Level: info] state: scale_tabdata
+Starting merge tabdata
+[Time: 02.07.23 15:47:42] [Level: info] transition: merging_tabdata
+[Time: 02.07.23 15:47:43] [Level: info] state: merging_tabdata
+Starting global pca
+[Time: 02.07.23 15:47:43] [Level: info] transition: init_pca
+[Time: 02.07.23 15:47:44] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: ['/mnt/input/hospital_data_freije_1.csv']
+Log Transform performed
+out {'Row names': array(['IFNGR2', 'SREBF2', 'TBC1D10A', 'ARL4C', 'MSN', 'TIMP1', 'NTRK2',
+       'SLC11A2', 'ADPGK', 'TNFAIP3', 'CSTA', 'RAP2A', 'SH3BGRL3',
+       'TMEM127', 'FAM82B', 'RGS19', 'CENTA2', 'WDFY3', 'BF594695',
+       'PDLIM4', 'CEP170', 'EIF4G1', 'SLC25A3', 'BMS1L', 'SMS', 'PHPT1',
+       'NDUFS1', 'C20orf149', 'TRPM8', 'SULT1C2', 'PAPD1', 'TNFRSF12A',
+       'WAC', 'SNX24', 'AF119855', 'FADS1', 'CHD7', 'FBXO30', 'LSM10',
+       'EPB41L2', 'AI267414', 'LYPLA1', 'NAV1', 'FKBP9', 'TCF8', 'GNAI2',
+       'CDCA7L', 'INSIG1', 'AK027219', 'ZDHHC21', 'RER1', 'RABGAP1L',
+       'CTSB', 'BBX', 'DHX8', 'UACA', 'RABL5', 'CD163', 'FUK', 'FLJ20273',
+       'SCG3', 'CLIC1', 'SLC1A4', 'AU144267', 'LAMB1', 'CAPN5', 'TSPO',
+       'SPAG9', 'HLA-DRB1', 'ADRM1', 'PPM1L', 'SCOTIN', 'SGCD', 'FOLR1',
+       'HEXB', 'YTHDC1', 'NUDT3', 'ZMYM2', 'MGC39518', 'SDCBP', 'IFI30',
+       'DKFZp434B1231', 'HLA-DMA', 'SLC27A3', 'RAB8A', 'AIM1', 'DIMT1L',
+       'sep-11', 'ZFP36L2', 'LTF', 'CASK', 'ITGB3BP', 'YWHAB', 'AI733194',
+       'WDR54', 'DTNA', 'XM_376043', 'TRIM9', 'PIGT', 'MAPK8', 'COL4A2',
+       'VPS13D', 'GTF2IRD2', 'TNRC6B', 'TUB', 'KIAA1344', 'SCAP2', 'IDI1',
+       'ARSD', 'SAMD9L', 'DIRAS3', 'EHD4', 'RPL37', 'MLL', 'LUM',
+       'BTN3A3', 'TMEM106B', 'C5orf31', 'HAPLN3', 'ADM', 'CPSF2', 'DDX17',
+       'ZNF24', 'AP1S2', 'ALOX5AP', 'MSR1', 'CCDC109B', 'SLC25A19',
+       'KIAA0999', 'TMEM165', 'GYS1', 'CAPG', 'KIAA1279', 'ANXA1', 'GBA',
+       'GUSB', 'TBC1D9B', 'WDFY1', 'MGEA5', 'PDRG1', 'ATAD1', 'CHES1',
+       'ARHGAP5', 'GDF15', 'IKBKB', 'TncRNA', 'ZNF83', 'WDR22',
+       'AA935461', 'C1RL', 'DNAJB14', 'C19orf50', 'ANXA2P2', 'QKI',
+       'GPNMB', 'SYDE1', 'MYL6', 'MAPBPIP', 'FXYD5', 'UBE3C', 'LAMC1',
+       'PITPNB', 'PPP2CB', 'TNKS2', 'GARNL1', 'LOC492311', 'DDOST',
+       'AKT3', 'KCNIP3', 'TLOC1', 'ADPRHL2', 'SUSD4', 'LOC283130',
+       'RB1CC1', 'NDRG2', 'AGTRAP', 'PREPL', 'NET1', 'HDAC4', 'KIAA1704',
+       'CCNI', 'RYR3', 'HSPA6', 'ALDH6A1', 'ANGPT2', 'MTP18', 'SLC7A1',
+       'RAB18', 'BC001425', 'FOXO3A', 'GPR65', 'CHD9', 'HOXA3',
+       'ATP6V0A1', 'LILRB1', 'TRIM6', 'RAP2B', 'RNUXA', 'AI690169',
+       'OAS1', 'NNMT', 'LOX', 'MAN2B1', 'RAB6IP1', 'TNFRSF1A', 'CTBP2',
+       'GNL1', 'XM_496931', 'TRIP6', 'C1S', 'FARSLB', 'MRPS28', 'SRP19',
+       'AI982758', 'MAP3K7IP2', 'UPP1', 'ABLIM1', 'AP2B1', 'CENTD3',
+       'WDR34', 'LYPLAL1', 'SCAMP1', 'PAEP', 'EPHB1', 'CHI3L1', 'IKIP',
+       'ACTN1', 'TAGLN2', 'XM_379512', 'LOXL3', 'SOX6', 'C8orf46',
+       'JMJD1C', 'ZAK', 'LIN7C', 'GAS2L3', 'RPA3', 'C2orf33', 'NIT2',
+       'REXO2', 'RBMS1', 'OSBP', 'AKAP11', 'VEGF', 'BE326808', 'FGF12',
+       'DNAJC12', 'EIF2C3', 'FDFT1', 'P15RS', 'KIAA0776', 'PPP1R12A',
+       'HLA-DQB1', 'KIAA1462', 'ACBD5', 'BF677084', 'SPP1', 'DDB2',
+       'LOC143941', 'DDHD1', 'PFAAP5', 'PRKCA', 'DYNC1H1', 'XM_208778',
+       'MGC4677', 'SLC18A2', 'LATS2', 'BTBD15', 'FN1', 'SLC25A36', 'PUM2',
+       'UBXD2', 'SYNPO', 'STAT1', 'LOC283378', 'TGFBR1', 'SERPINE1',
+       'SLC1A1', 'TTC7A', 'PDPN', 'C11orf54', 'TCEA3', 'NDRG3', 'TMEM41B',
+       'RRAGD', 'ABI1', 'NKTR', 'TNIK', 'LUC7L2', 'CTNNA1', 'THNSL1',
+       'AF116616', 'C1orf192', 'C3', 'ANKRD17', 'FAM111A', 'BF941414',
+       'PLCB1', 'GLUD2', 'LONPL', 'PGM2', 'C12orf29', 'TAX1BP3', 'SCP2',
+       'ZFP91', 'POGZ', 'PANK1', 'TMEFF2', 'EFEMP2', 'PLAT', 'RNASE4',
+       'ZNF770', 'C2orf11', 'PAFAH1B1', 'CYBASC3', 'HDGFRP3', 'C20orf108',
+       'LOC92689', 'ZYG11B', 'BCAT1', 'TMCO4', 'FAM120AOS', 'ALDH5A1',
+       'C1R', 'TMED8', 'AF130082', 'CMTM3', 'IGFBP5', 'KLF12', 'TJP2',
+       'C9orf80', 'SMC3', 'LSG1', 'NM_013307', 'USP8', 'SNX8', 'KIF3A',
+       'FSTL1', 'SP110', 'CYP2E1', 'AASDHPPT', 'RNASE6', 'COL5A2', 'BCR',
+       'MLSTD2', 'KLHL24', 'NUCKS1', 'SMARCC1', 'DENND4A', 'MRC2',
+       'TEX261', 'HIPK2', 'GSS', 'TRIM56', 'MULK', 'RUFY3', 'WISP1',
+       'WHSC1L1', 'AI868039', 'CAMSAP1L1', 'EWSR1', 'KIAA1946', 'GLUD1',
+       'FLRT1', 'CALR', 'SPIN', 'NBN', 'UQCRC2', 'OSBPL11', 'ADCY2',
+       'SUMO4', 'ATP5J2', 'NRP1', 'AV685992', 'LYZ', 'KIAA0907',
+       'BF435290', 'FCGBP', 'RPN2', 'BE669703', 'AA868809', 'HLA-DPB1',
+       'AF130080', 'TREM2', 'CD58', 'NUDT4', 'AA088873', 'CPEB4',
+       'C6orf111', 'MSI2', 'RPS25', 'LIFR', 'PIAS1', 'KPNB1', 'SF1',
+       'CCM2', 'HADHB', 'MYO9B', 'C17orf63', 'MRLC2', 'HLA-DOA', 'MYST1',
+       'ST13', 'MAPT', 'PTGFRN', 'TM9SF3', 'ZMYND11', 'PLAUR', 'WDR68',
+       'CROP', 'LUZP2', 'SP3', 'ZADH2', 'NR2F2', 'CD63', 'COL4A1',
+       'FAM20C', 'ARIH1', 'SERPINA1', 'GALNT13', 'LCOR', 'PKNOX2',
+       'TNFSF13', 'AL119491', 'AF274957', 'ARPC2', 'NEK1', 'STEAP3',
+       'ZHX1', 'ZNF710', 'RABGGTB', 'IPO11', 'IQGAP3', 'AHCYL1', 'GIT2',
+       'CRBN', 'CD300A', 'PHYHIPL', 'PUM1', 'RASSF4', 'NT5C3', 'RPS6KA3',
+       'ZNF148', 'WWOX', 'ZWILCH', 'MESDC2', 'MTDH', 'CALD1', 'STAT2',
+       'SAMD9', 'CMTM6', 'EDNRB', 'FLJ31951', 'C13orf18', 'SOCS3',
+       'PSMB8', 'SYF2', 'HSMPP8', 'SPRN', 'AAK1', 'N72185', 'RICTOR',
+       'S100A4', 'GPHN', 'TMSB10', 'SMC4', 'HMGCR', 'RP1-93H18.5',
+       'HLA-DRB5', 'N50714', 'SLC15A2', 'ENSA', 'C20orf119', 'PDLIM1',
+       'COL27A1', 'C21orf62', 'KRAS', 'SCD', 'NAGA', 'TMSB4X', 'APOE',
+       'PAXIP1', 'ANKRD28', 'WASF3', 'MFSD1', 'ANXA2', 'MST150',
+       'SLC16A3', 'RSC1A1', 'ZNF22', 'JARID1A', 'MCM5', 'PITPNC1',
+       'AI860012', 'NCAM1', 'SP100', 'FBXO21', 'BC003660', 'AKAP1',
+       'CTNNB1', 'XM_168590', 'PPP2R5A', 'SLC35E1', 'LITAF', 'PPM1A',
+       'RAD21', 'ARMC1', 'AKAP13', 'USP4', 'GLA', 'C10orf10', 'KLF10',
+       'RBM39', 'PIK3R1', 'EIF4EBP2', 'IPO7', 'SQRDL', 'IGFBP2', 'F11R',
+       'SEZ6L', 'ZNFX1', 'MRCL3', 'HNRPH3', 'ANXA5', 'ZNF18', 'C4orf12',
+       'CDC42', 'PPP1R15A', 'C19orf48', 'VPS24', 'TPM3', 'CNTN1', 'SAT1',
+       'SPRY1', 'BCL3', 'LOC143381', 'EMP3', 'ABAT', 'BCL2A1', 'ZRANB1',
+       'ZDHHC7', 'LARP1', 'AF113008', 'S100A11', 'SPIRE1', 'ETNK1', 'GGH',
+       'KIF5B', 'COX7AP2', 'SLC4A4', 'CALCRL', 'ST8SIA4', 'MPDZ',
+       'COMMD7', 'LOC339803', 'PSMD9', 'FKBP10', 'HLA-DPA1', 'SULT1A3',
+       'NM_020037', 'RAB2', 'DUSP6', 'NF1', 'MIB1', 'VKORC1', 'TOMM40L',
+       'TYMS', 'CD74', 'GNG5', 'HPSE2', 'WDR1', 'C10orf62', 'D85181',
+       'MBOAT2', 'FOXJ1', 'KRT10', 'GHITM', 'KIAA0652', 'MS4A6A',
+       'AA934610', 'RNF135', 'ALDH16A1', 'FRY', 'CAPZA1', 'GNG12',
+       'SERPINA3', 'ADIPOR2', 'RABGAP1', 'C6orf115', 'KPNA5', 'DPYD',
+       'EGR1', 'CFI', 'BRD2', 'CLASP2', 'ENAH', 'GCSH', 'IQGAP1',
+       'SH3GLB1', 'SSR1', 'LOC400924', 'FNIP1', 'LOC54103', 'RAB34',
+       'HSPG2', 'TTC3', 'ZNF291', 'ZNF25', 'ANXA13', 'GABBR1', 'RPL22',
+       'GPAM', 'MYST4', 'RRP22', 'CAP1'], dtype=object), 'Sample count': 51, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}
+[Time: 02.07.23 15:47:44] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 02.07.23 15:47:45] [Level: info] state: wait_for_params
+[CTRL] POST /data
+setting parameters
+[API] Setting parameters
+['IFNGR2', 'SREBF2', 'TBC1D10A', 'ARL4C', 'MSN', 'TIMP1', 'NTRK2', 'SLC11A2', 'ADPGK', 'TNFAIP3', 'CSTA', 'RAP2A', 'SH3BGRL3', 'TMEM127', 'FAM82B', 'RGS19', 'CENTA2', 'WDFY3', 'BF594695', 'PDLIM4', 'CEP170', 'EIF4G1', 'SLC25A3', 'BMS1L', 'SMS', 'PHPT1', 'NDUFS1', 'C20orf149', 'TRPM8', 'SULT1C2', 'PAPD1', 'TNFRSF12A', 'WAC', 'SNX24', 'AF119855', 'FADS1', 'CHD7', 'FBXO30', 'LSM10', 'EPB41L2', 'AI267414', 'LYPLA1', 'NAV1', 'FKBP9', 'TCF8', 'GNAI2', 'CDCA7L', 'INSIG1', 'AK027219', 'ZDHHC21', 'RER1', 'RABGAP1L', 'CTSB', 'BBX', 'DHX8', 'UACA', 'RABL5', 'CD163', 'FUK', 'FLJ20273', 'SCG3', 'CLIC1', 'SLC1A4', 'AU144267', 'LAMB1', 'CAPN5', 'TSPO', 'SPAG9', 'HLA-DRB1', 'ADRM1', 'PPM1L', 'SCOTIN', 'SGCD', 'FOLR1', 'HEXB', 'YTHDC1', 'NUDT3', 'ZMYM2', 'MGC39518', 'SDCBP', 'IFI30', 'DKFZp434B1231', 'HLA-DMA', 'SLC27A3', 'RAB8A', 'AIM1', 'DIMT1L', 'sep-11', 'ZFP36L2', 'LTF', 'CASK', 'ITGB3BP', 'YWHAB', 'AI733194', 'WDR54', 'DTNA', 'XM_376043', 'TRIM9', 'PIGT', 'MAPK8', 'COL4A2', 'VPS13D', 'GTF2IRD2', 'TNRC6B', 'TUB', 'KIAA1344', 'SCAP2', 'IDI1', 'ARSD', 'SAMD9L', 'DIRAS3', 'EHD4', 'RPL37', 'MLL', 'LUM', 'BTN3A3', 'TMEM106B', 'C5orf31', 'HAPLN3', 'ADM', 'CPSF2', 'DDX17', 'ZNF24', 'AP1S2', 'ALOX5AP', 'MSR1', 'CCDC109B', 'SLC25A19', 'KIAA0999', 'TMEM165', 'GYS1', 'CAPG', 'KIAA1279', 'ANXA1', 'GBA', 'GUSB', 'TBC1D9B', 'WDFY1', 'MGEA5', 'PDRG1', 'ATAD1', 'CHES1', 'ARHGAP5', 'GDF15', 'IKBKB', 'TncRNA', 'ZNF83', 'WDR22', 'AA935461', 'C1RL', 'DNAJB14', 'C19orf50', 'ANXA2P2', 'QKI', 'GPNMB', 'SYDE1', 'MYL6', 'MAPBPIP', 'FXYD5', 'UBE3C', 'LAMC1', 'PITPNB', 'PPP2CB', 'TNKS2', 'GARNL1', 'LOC492311', 'DDOST', 'AKT3', 'KCNIP3', 'TLOC1', 'ADPRHL2', 'SUSD4', 'LOC283130', 'RB1CC1', 'NDRG2', 'AGTRAP', 'PREPL', 'NET1', 'HDAC4', 'KIAA1704', 'CCNI', 'RYR3', 'HSPA6', 'ALDH6A1', 'ANGPT2', 'MTP18', 'SLC7A1', 'RAB18', 'BC001425', 'FOXO3A', 'GPR65', 'CHD9', 'HOXA3', 'ATP6V0A1', 'LILRB1', 'TRIM6', 'RAP2B', 'RNUXA', 'AI690169', 'OAS1', 'NNMT', 'LOX', 'MAN2B1', 'RAB6IP1', 'TNFRSF1A', 'CTBP2', 'GNL1', 'XM_496931', 'TRIP6', 'C1S', 'FARSLB', 'MRPS28', 'SRP19', 'AI982758', 'MAP3K7IP2', 'UPP1', 'ABLIM1', 'AP2B1', 'CENTD3', 'WDR34', 'LYPLAL1', 'SCAMP1', 'PAEP', 'EPHB1', 'CHI3L1', 'IKIP', 'ACTN1', 'TAGLN2', 'XM_379512', 'LOXL3', 'SOX6', 'C8orf46', 'JMJD1C', 'ZAK', 'LIN7C', 'GAS2L3', 'RPA3', 'C2orf33', 'NIT2', 'REXO2', 'RBMS1', 'OSBP', 'AKAP11', 'VEGF', 'BE326808', 'FGF12', 'DNAJC12', 'EIF2C3', 'FDFT1', 'P15RS', 'KIAA0776', 'PPP1R12A', 'HLA-DQB1', 'KIAA1462', 'ACBD5', 'BF677084', 'SPP1', 'DDB2', 'LOC143941', 'DDHD1', 'PFAAP5', 'PRKCA', 'DYNC1H1', 'XM_208778', 'MGC4677', 'SLC18A2', 'LATS2', 'BTBD15', 'FN1', 'SLC25A36', 'PUM2', 'UBXD2', 'SYNPO', 'STAT1', 'LOC283378', 'TGFBR1', 'SERPINE1', 'SLC1A1', 'TTC7A', 'PDPN', 'C11orf54', 'TCEA3', 'NDRG3', 'TMEM41B', 'RRAGD', 'ABI1', 'NKTR', 'TNIK', 'LUC7L2', 'CTNNA1', 'THNSL1', 'AF116616', 'C1orf192', 'C3', 'ANKRD17', 'FAM111A', 'BF941414', 'PLCB1', 'GLUD2', 'LONPL', 'PGM2', 'C12orf29', 'TAX1BP3', 'SCP2', 'ZFP91', 'POGZ', 'PANK1', 'TMEFF2', 'EFEMP2', 'PLAT', 'RNASE4', 'ZNF770', 'C2orf11', 'PAFAH1B1', 'CYBASC3', 'HDGFRP3', 'C20orf108', 'LOC92689', 'ZYG11B', 'BCAT1', 'TMCO4', 'FAM120AOS', 'ALDH5A1', 'C1R', 'TMED8', 'AF130082', 'CMTM3', 'IGFBP5', 'KLF12', 'TJP2', 'C9orf80', 'SMC3', 'LSG1', 'NM_013307', 'USP8', 'SNX8', 'KIF3A', 'FSTL1', 'SP110', 'CYP2E1', 'AASDHPPT', 'RNASE6', 'COL5A2', 'BCR', 'MLSTD2', 'KLHL24', 'NUCKS1', 'SMARCC1', 'DENND4A', 'MRC2', 'TEX261', 'HIPK2', 'GSS', 'TRIM56', 'MULK', 'RUFY3', 'WISP1', 'WHSC1L1', 'AI868039', 'CAMSAP1L1', 'EWSR1', 'KIAA1946', 'GLUD1', 'FLRT1', 'CALR', 'SPIN', 'NBN', 'UQCRC2', 'OSBPL11', 'ADCY2', 'SUMO4', 'ATP5J2', 'NRP1', 'AV685992', 'LYZ', 'KIAA0907', 'BF435290', 'FCGBP', 'RPN2', 'BE669703', 'AA868809', 'HLA-DPB1', 'AF130080', 'TREM2', 'CD58', 'NUDT4', 'AA088873', 'CPEB4', 'C6orf111', 'MSI2', 'RPS25', 'LIFR', 'PIAS1', 'KPNB1', 'SF1', 'CCM2', 'HADHB', 'MYO9B', 'C17orf63', 'MRLC2', 'HLA-DOA', 'MYST1', 'ST13', 'MAPT', 'PTGFRN', 'TM9SF3', 'ZMYND11', 'PLAUR', 'WDR68', 'CROP', 'LUZP2', 'SP3', 'ZADH2', 'NR2F2', 'CD63', 'COL4A1', 'FAM20C', 'ARIH1', 'SERPINA1', 'GALNT13', 'LCOR', 'PKNOX2', 'TNFSF13', 'AL119491', 'AF274957', 'ARPC2', 'NEK1', 'STEAP3', 'ZHX1', 'ZNF710', 'RABGGTB', 'IPO11', 'IQGAP3', 'AHCYL1', 'GIT2', 'CRBN', 'CD300A', 'PHYHIPL', 'PUM1', 'RASSF4', 'NT5C3', 'RPS6KA3', 'ZNF148', 'WWOX', 'ZWILCH', 'MESDC2', 'MTDH', 'CALD1', 'STAT2', 'SAMD9', 'CMTM6', 'EDNRB', 'FLJ31951', 'C13orf18', 'SOCS3', 'PSMB8', 'SYF2', 'HSMPP8', 'SPRN', 'AAK1', 'N72185', 'RICTOR', 'S100A4', 'GPHN', 'TMSB10', 'SMC4', 'HMGCR', 'RP1-93H18.5', 'HLA-DRB5', 'N50714', 'SLC15A2', 'ENSA', 'C20orf119', 'PDLIM1', 'COL27A1', 'C21orf62', 'KRAS', 'SCD', 'NAGA', 'TMSB4X', 'APOE', 'PAXIP1', 'ANKRD28', 'WASF3', 'MFSD1', 'ANXA2', 'MST150', 'SLC16A3', 'RSC1A1', 'ZNF22', 'JARID1A', 'MCM5', 'PITPNC1', 'AI860012', 'NCAM1', 'SP100', 'FBXO21', 'BC003660', 'AKAP1', 'CTNNB1', 'XM_168590', 'PPP2R5A', 'SLC35E1', 'LITAF', 'PPM1A', 'RAD21', 'ARMC1', 'AKAP13', 'USP4', 'GLA', 'C10orf10', 'KLF10', 'RBM39', 'PIK3R1', 'EIF4EBP2', 'IPO7', 'SQRDL', 'IGFBP2', 'F11R', 'SEZ6L', 'ZNFX1', 'MRCL3', 'HNRPH3', 'ANXA5', 'ZNF18', 'C4orf12', 'CDC42', 'PPP1R15A', 'C19orf48', 'VPS24', 'TPM3', 'CNTN1', 'SAT1', 'SPRY1', 'BCL3', 'LOC143381', 'EMP3', 'ABAT', 'BCL2A1', 'ZRANB1', 'ZDHHC7', 'LARP1', 'AF113008', 'S100A11', 'SPIRE1', 'ETNK1', 'GGH', 'KIF5B', 'COX7AP2', 'SLC4A4', 'CALCRL', 'ST8SIA4', 'MPDZ', 'COMMD7', 'LOC339803', 'PSMD9', 'FKBP10', 'HLA-DPA1', 'SULT1A3', 'NM_020037', 'RAB2', 'DUSP6', 'NF1', 'MIB1', 'VKORC1', 'TOMM40L', 'TYMS', 'CD74', 'GNG5', 'HPSE2', 'WDR1', 'C10orf62', 'D85181', 'MBOAT2', 'FOXJ1', 'KRT10', 'GHITM', 'KIAA0652', 'MS4A6A', 'AA934610', 'RNF135', 'ALDH16A1', 'FRY', 'CAPZA1', 'GNG12', 'SERPINA3', 'ADIPOR2', 'RABGAP1', 'C6orf115', 'KPNA5', 'DPYD', 'EGR1', 'CFI', 'BRD2', 'CLASP2', 'ENAH', 'GCSH', 'IQGAP1', 'SH3GLB1', 'SSR1', 'LOC400924', 'FNIP1', 'LOC54103', 'RAB34', 'HSPG2', 'TTC3', 'ZNF291', 'ZNF25', 'ANXA13', 'GABBR1', 'RPL22', 'GPAM', 'MYST4', 'RRP22', 'CAP1']
+INDEX
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614]
+[Time: 02.07.23 15:47:46] [Level: info] transition: compute_std
+[Time: 02.07.23 15:47:47] [Level: info] state: compute_std
+[CTRL] GET /data
+[CTRL] POST /data
+(615, 1)
+[Time: 02.07.23 15:47:49] [Level: info] transition: apply_scaling
+[Time: 02.07.23 15:47:50] [Level: info] state: apply_scaling
+[CTRL] GET /data
+[CTRL] POST /data
+[569 348 158   9  73 360   8 486 304 200 376 356  74 364 398  89 201  62
+ 407 333 518 357 484 416  47  94 113  52 427 530 422 559 237  64 448 134
+ 507 564  65 549   0 520 337 521 288 272  80 399 325  12 367 396 418 202
+ 390 238 570 349  90 485 213 384  51 430 436 332 590 451 196 535 342  16
+ 130  56 428 368 111 241 131   2 482 320 504 258  23 160 119 601  29 222
+  79 402  18 577  96 393 586 209  61 269  85 470  42 409 156 426  31 414
+ 473 456 279 579 480 110  30 541 511 118 176 447 302 260 547  81 314 121
+  25 606 310 139 219  37 438 532 319 186 290 101 254 107 362 263 490 433
+ 123  48 252 363 229 211 500 190 180 592 388   1 394 294 218 576 289 265
+ 181 499 512 551 441 446 286  43 495 575 343 475 344 444  40 309 122 487
+ 443 198 223  17  71 405 152 515 501 401 154  82 420 543  27  92 391 264
+ 424 528 183   7 239 539 434 353  72 514 476 600 523 125 412 450 167 371
+ 366 555 574  88 140  75  58 235 381 132 369 284 204 112   5  38 306  53
+ 323 280  26 243 208 531 595 580  59 453  76 178 285  15 517 553 149  44
+ 124 232 228 468 179 308 197  36 386 145 598 168 165 212 529 133 291 477
+ 493 301  57 316 250  45 278 334   4 509 452  99 266  35 350 318 227 610
+ 340 561 242 146  41 141 330 607 425 439 513  22 375 338 385 159 522 153
+ 157 172 271 593 169 307 552  49 173 267 329 115 275 540 100 148 609 231
+ 506 582 365 292 417 560 400 127 545 143 566 465 411 445 460 392 170 193
+ 255 449 268   6 461 474 155 516 296 546 203 602 109 246 537 429 359  68
+ 462 604 248 147 565 395 459 377 129 128 273 295 587 591 612 277 247  86
+ 312 298  83  46 187 397 534 562 389 220 557 370  67 335 207 151 583 387
+ 378  63  77 234 423 311 466 192 374  28 597 336 508 221 245 536 225  91
+ 554 380 415 345 287  95 114  66 614 262 494  39 326 251 321 194 142 161
+ 544 457 572 324 135 166 556 305 137 351 182 283 472  93 191 226  84 205
+ 533 550 164 489 346 270 408 300  24 105 217 136 548 479 373  19 464 299
+ 498 503 253 162 249 313 347 327 106 150 120  10 244 410 588 558 104 435
+ 236 603 259 526 355 276 542 567 483 481 469  11 144 185 421 538 297 413
+ 505 382  21 605 458 525 257   3 328 406 578  14 497 403 240 224 467 599
+  69 352 216 527 230  50 188 563 354 372 573 596 585 613 594 419 437 117
+ 488 210  32 108 496 189 282 568 261  87 303 195 317]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f6a45f41b80>
+[Time: 02.07.23 15:47:52] [Level: info] transition: mfa_prerequisites
+[Time: 02.07.23 15:47:53] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 02.07.23 15:47:53] [Level: info] transition: start_power_iteration
+[Time: 02.07.23 15:47:54] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 0.59295538  0.95667809  1.34127008 ...  1.13794704 -0.95251299
+  -1.11639262]
+ [-2.07633436 -0.20142106 -1.33849164 ... -0.07632303  0.01869635
+   1.89556503]
+ [-0.39509086 -1.323871   -0.87436688 ...  1.15881824 -1.37944669
+   1.85135012]
+ ...
+ [-0.10770751 -0.33010655 -1.84539603 ... -0.09569423  1.19331063
+   1.67232807]
+ [-0.94030853 -0.99595264 -1.14036159 ... -0.58621602  0.86300942
+   1.66511601]
+ [ 0.07081479  0.10904902  0.60891201 ...  0.66319231  0.98531635
+  -1.73022228]]
+[Time: 02.07.23 15:47:54] [Level: info] transition: compute_final_h_cov
+[CTRL] GET /data
+[Time: 02.07.23 15:47:55] [Level: info] state: compute_final_h_cov
+[CTRL] POST /data
+Setting k
+starting eigenvector norms
+34
+[Time: 02.07.23 15:47:58] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:47:59] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:01] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:02] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:04] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:05] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:07] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:08] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:10] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:11] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:13] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:14] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:16] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:17] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:19] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:20] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:22] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:23] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:25] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:26] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:28] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:29] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:31] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:32] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:34] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:35] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:37] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:38] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:40] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:41] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:43] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:44] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:46] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:47] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:49] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:50] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:52] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:53] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:48:55] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:48:56] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:48:58] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:48:59] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:01] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:02] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:04] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:05] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:07] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:08] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:10] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:11] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:13] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:14] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:16] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:17] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:19] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:20] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:22] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:23] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:25] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:26] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:28] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:29] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:31] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:32] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:34] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:35] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:37] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:38] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:40] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:41] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:43] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:44] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:46] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:47] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:49] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:50] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:52] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:49:53] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:49:56] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:49:57] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:49:59] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:00] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:02] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:03] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:05] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:06] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:08] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:09] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:11] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:12] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:14] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:15] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:17] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:18] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:20] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:21] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:23] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:24] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:26] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:27] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:29] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:30] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:32] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:33] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:35] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:36] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:38] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:39] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:41] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:42] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:44] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:45] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:47] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:48] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:50] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:51] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:53] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:50:54] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:50:56] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:50:57] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:50:59] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:51:00] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:51:02] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:51:03] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:51:05] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:51:06] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:51:08] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:51:09] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:51:11] [Level: info] transition: compute_local_conorm
+[Time: 02.07.23 15:51:12] [Level: info] state: compute_local_conorm
+[CTRL] GET /data
+[CTRL] POST /data
+[Time: 02.07.23 15:51:14] [Level: info] transition: compute_local_norm
+[Time: 02.07.23 15:51:15] [Level: info] state: compute_local_norm
+[CTRL] GET /data
+[CTRL] POST /data
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+34
+[Time: 02.07.23 15:51:17] [Level: info] transition: normalize_g
+[Time: 02.07.23 15:51:18] [Level: info] state: normalize_g
+[CTRL] GET /data
+[CTRL] POST /data
+Normalising
+(51, 34)
+34
+End normalising
+(51, 34)
+(34, 34)
+(34,)
+(51, 34)
+[Time: 02.07.23 15:51:20] [Level: info] transition: separate_pca
+[Time: 02.07.23 15:51:21] [Level: info] state: separate_pca
+Starting factor analysis
+[Time: 02.07.23 15:51:21] [Level: info] transition: waiting_for_projection_matrix
+[Time: 02.07.23 15:51:22] [Level: info] state: waiting_for_projection_matrix
+[Time: 02.07.23 15:51:22] [Level: info] transition: factor_scores
+[Time: 02.07.23 15:51:23] [Level: info] state: factor_scores
+[Time: 02.07.23 15:51:23] [Level: info] transition: waiting_for_global_factor_score
+[Time: 02.07.23 15:51:24] [Level: info] state: waiting_for_global_factor_score
+[Time: 02.07.23 15:51:24] [Level: info] transition: inertia
+[Time: 02.07.23 15:51:25] [Level: info] state: inertia
+[Time: 02.07.23 15:51:25] [Level: info] transition: mfa_final
+[Time: 02.07.23 15:51:26] [Level: info] state: mfa_final
+Starting save results
+[Time: 02.07.23 15:51:26] [Level: info] transition: save_results
+[Time: 02.07.23 15:51:27] [Level: info] state: save_results
+SAVING RESULTS
+inertia:  [0.06827907485308447, 0.043922773047084966, 0.04141892495815785, 0.03746201954459981, 0.036173879296634716, 0.03519442793004206, 0.032822629299794, 0.03189927771843012, 0.031127780708268812, 0.030149617009012218, 0.029140216262621806, 0.028916617474518097, 0.028650797855105256, 0.02821068619906687, 0.02716675189351531, 0.02707309267515755, 0.026854735573650944, 0.026361962793988336, 0.025996326493147322, 0.025737314319044514, 0.025422582105911265, 0.02530571144313391, 0.025160717088507197, 0.02502640518271284, 0.024602290106370894, 0.024292864240682478, 0.024163383109059185, 0.02389649021587742, 0.02376424822967813, 0.023541897239258498, 0.02320299223927859, 0.023111605040914574, 0.023021389764781797, 0.022928518088908226]
+saving pca/mnt/output/pca/left_eigenvectors.tsv
+	
+MOVE INPUT TO OUTPUT
+[Time: 02.07.23 15:51:27] [Level: info] transition: finalize
+[Time: 02.07.23 15:51:28] [Level: info] state: finalize
+[Time: 02.07.23 15:51:28] [Level: info] transition: terminal
+[Time: 02.07.23 15:51:28] [Level: info] done
+[CTRL] GET /data

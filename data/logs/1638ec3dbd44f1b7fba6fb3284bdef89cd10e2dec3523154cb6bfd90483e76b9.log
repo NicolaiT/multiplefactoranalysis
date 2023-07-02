@@ -1,0 +1,45 @@
+2023-07-02 09:57:57,147 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-02 09:57:57,150 INFO supervisord started with pid 7
+2023-07-02 09:57:58,154 INFO spawned: 'nginx' with pid 10
+2023-07-02 09:57:58,160 INFO spawned: 'app' with pid 11
+2023-07-02 09:57:59,195 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-02 09:57:59,195 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 02.07.23 09:58:00] [Level: info] id: 37fece78ed33f8cc
+[Time: 02.07.23 09:58:00] [Level: info] coordinator: False
+[Time: 02.07.23 09:58:00] [Level: info] clients: ['37fece78ed33f8cc', '0acab43e85d4c45e']
+[Time: 02.07.23 09:58:00] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+YAML file does not follow specification: missing key: inertia
+Setting default: inertia.tsv
+YAML file does not follow specification: missing key: global_factor_score
+Setting default: global_factor_score.tsv
+YAML file does not follow specification: missing key: omic_factor_score
+Setting default: omic_factor_score.tsv
+YAML file does not follow specification: missing key: projection_matrix
+Setting default: projection_matrix.tsv
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 02.07.23 09:58:00] [Level: info] transition: init_pca
+[Time: 02.07.23 09:58:01] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/hospital_data_bredel_1.csv
+TEST: []
+[Time: 02.07.23 09:58:01] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 75, in run
+    raise KeyError('No data found. Please ensure that the data file is present and correctly named.')
+KeyError: 'No data found. Please ensure that the data file is present and correctly named.'
+
