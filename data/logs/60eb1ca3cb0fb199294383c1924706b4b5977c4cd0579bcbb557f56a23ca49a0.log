@@ -1,0 +1,41 @@
+2023-07-03 06:36:05,982 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-03 06:36:05,986 INFO supervisord started with pid 7
+2023-07-03 06:36:06,989 INFO spawned: 'nginx' with pid 10
+2023-07-03 06:36:06,992 INFO spawned: 'app' with pid 11
+2023-07-03 06:36:08,083 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-03 06:36:08,083 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 03.07.23 06:36:09] [Level: info] id: e2e82aca57ca5589
+[Time: 03.07.23 06:36:09] [Level: info] coordinator: True
+[Time: 03.07.23 06:36:09] [Level: info] clients: ['e2e82aca57ca5589']
+[Time: 03.07.23 06:36:09] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+YAML file does not follow specification: privacy settings
+[Time: 03.07.23 06:36:09] [Level: info] Traceback (most recent call last):
+  File "/app/apps/svd/config.py", line 154, in parse_configuration
+    self.send_projections = parameter_list['privacy']['send_projections']
+KeyError: 'privacy'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 36, in run
+    self.configure()
+  File "/app/apps/svd/app.py", line 25, in configure
+    self.config.parse_configuration()
+  File "/app/apps/svd/config.py", line 163, in parse_configuration
+    raise KeyError
+KeyError
+

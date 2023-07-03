@@ -1,0 +1,133 @@
+2023-07-03 06:38:28,306 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-03 06:38:28,307 INFO supervisord started with pid 7
+2023-07-03 06:38:29,310 INFO spawned: 'nginx' with pid 10
+2023-07-03 06:38:29,314 INFO spawned: 'app' with pid 11
+2023-07-03 06:38:30,346 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-03 06:38:30,346 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 03.07.23 06:38:32] [Level: info] id: 93481217f3a14fa3
+[Time: 03.07.23 06:38:32] [Level: info] coordinator: True
+[Time: 03.07.23 06:38:32] [Level: info] clients: ['93481217f3a14fa3']
+[Time: 03.07.23 06:38:32] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+[STARTUP] Configuration copied
+Log Transform performed
+[Time: 03.07.23 06:38:32] [Level: info] transition: check_row_names
+[Time: 03.07.23 06:38:33] [Level: info] state: check_row_names
+gathering
+unifying row names
+[{'Row names': array(['fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 6, 'Nans': array([0, 0, 0])}]
+['fruity_2', 'butter', 'woody_3']
+['woody_3', 'fruity_2', 'butter']
+[6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 03.07.23 06:38:33] [Level: info] transition: wait_for_params
+[Time: 03.07.23 06:38:34] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['woody_3', 'fruity_2', 'butter']
+INDEX
+[2, 0, 1]
+[Time: 03.07.23 06:38:34] [Level: info] transition: aggregate_sums
+[CTRL] GET /data
+[Time: 03.07.23 06:38:35] [Level: info] state: aggregate_sums
+setting parameters
+[{'Sums': array([12.97727992, 11.4918531 , 13.52160044]), 'Sample count': 6}]
+SUMS
+[2.16287999 1.91530885 2.25360007]
+[Time: 03.07.23 06:38:35] [Level: info] transition: compute_std
+[Time: 03.07.23 06:38:36] [Level: info] state: compute_std
+(3, 1)
+[Time: 03.07.23 06:38:36] [Level: info] transition: aggregate_stds
+[Time: 03.07.23 06:38:37] [Level: info] state: aggregate_stds
+setting parameters
+[3.00707988 2.4051144  3.19365978]
+COMPUTE STD
+[3.00707988 2.4051144  3.19365978]
+STD
+[0.77551014 0.69355813 0.79920708]
+[1 0]
+['fruity_2' 'woody_3']
+(array([], dtype=int64),)
+[]
+[Time: 03.07.23 06:38:37] [Level: info] transition: apply_scaling
+[Time: 03.07.23 06:38:38] [Level: info] state: apply_scaling
+[1 0][CTRL] GET /data
+
+(array([], dtype=int64),)
+[Time: 03.07.23 06:38:38] [Level: info] transition: start_power_iteration
+[Time: 03.07.23 06:38:39] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 1.07944432 -0.21002947 -1.49950327 -0.74520945  0.83103354  0.54426434]
+ [ 0.12211111  0.58627998  1.56395131 -0.47630665 -0.47630665 -1.3197291 ]
+ [ 0.69288031  0.08549477 -1.56855477 -0.83662619  0.69288031  0.93392557]]
+[Time: 03.07.23 06:38:39] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 03.07.23 06:38:40] [Level: info] state: aggregate_randomized_projections_cov
+6
+Global cov
+[[ 1.         -0.61912682  0.95791864]
+ [-0.61912682  1.         -0.69649453]
+ [ 0.95791864 -0.69649453  1.        ]]
+resetting k
+[Time: 03.07.23 06:38:40] [Level: info] transition: compute_final_h_cov
+[CTRL] GET /data
+[Time: 03.07.23 06:38:41] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+2
+[Time: 03.07.23 06:38:41] [Level: info] transition: aggregate_local_norm
+[Time: 03.07.23 06:38:42] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 12.628141469860415}]
+[Time: 03.07.23 06:38:42] [Level: info] transition: compute_local_conorm
+[Time: 03.07.23 06:38:43] [Level: info] state: compute_local_conorm
+[Time: 03.07.23 06:38:43] [Level: info] transition: aggregate_local_conorm
+[Time: 03.07.23 06:38:44] [Level: info] state: aggregate_local_conorm
+aggregating co norms
+[{'Local Conorms': [2.8117908930106025e-16]}]
+[Time: 03.07.23 06:38:44] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 03.07.23 06:38:45] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+2
+[Time: 03.07.23 06:38:45] [Level: info] transition: aggregate_local_norm
+[Time: 03.07.23 06:38:46] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 2.1905996847914326}]
+[Time: 03.07.23 06:38:46] [Level: info] transition: normalize_g
+[Time: 03.07.23 06:38:47] [Level: info] state: normalize_g
+Normalising
+(6, 2)
+2
+End normalising
+(6, 2)
+(2, 2)
+(2,)
+(6, 2)
+[Time: 03.07.23 06:38:47] [Level: info] transition: save_results
+[CTRL] GET /data
+[Time: 03.07.23 06:38:48] [Level: info] state: save_results
+SAVING RESULTS
+saving pca/mnt/output/pca/left_eigenvectors.tsv
+	
+MOVE INPUT TO OUTPUT
+[Time: 03.07.23 06:38:48] [Level: info] transition: finalize
+[Time: 03.07.23 06:38:49] [Level: info] state: finalize
+[Time: 03.07.23 06:38:49] [Level: info] transition: terminal
+[Time: 03.07.23 06:38:49] [Level: info] done
+[CTRL] GET /data
+[CTRL] GET /data

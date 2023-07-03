@@ -1792,3 +1792,5 @@
 {"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_output_1_1688312631","time":"2023-07-02T15:51:48Z"}
 {"component":"DOCKER","instance":"","level":"info","msg":"Remove volume test_1_input_1_1688312631","time":"2023-07-02T15:51:48Z"}
 {"component":"TESTBED","instance":"1","level":"info","msg":"Deleted volume test_1_input_1_1688312631","time":"2023-07-02T15:51:48Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-07-03T06:23:24Z"}
+{"component":"FLOW","instance":"","level":"error","msg":"Error getting workflow data: Get \"https://featurecloud.ai/api/project-states/12639/?token=e90c6964-01e8-4b46-a26a-e896d5884041\": dial tcp: lookup featurecloud.ai on 127.0.0.11:53: no such host","time":"2023-07-03T06:23:27Z"}

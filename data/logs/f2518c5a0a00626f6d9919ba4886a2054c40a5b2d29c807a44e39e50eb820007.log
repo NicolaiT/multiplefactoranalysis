@@ -1,0 +1,37 @@
+2023-07-03 10:18:50,780 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-03 10:18:50,788 INFO supervisord started with pid 7
+2023-07-03 10:18:51,790 INFO spawned: 'nginx' with pid 10
+2023-07-03 10:18:51,791 INFO spawned: 'app' with pid 11
+2023-07-03 10:18:52,849 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-03 10:18:52,849 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 03.07.23 10:18:58] [Level: info] id: 0d60ffe2541aecf3
+[Time: 03.07.23 10:18:58] [Level: info] coordinator: True
+[Time: 03.07.23 10:18:58] [Level: info] clients: ['0d60ffe2541aecf3']
+[Time: 03.07.23 10:18:58] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[STARTUP] Copy configuration and create dir
+[STARTUP] Configuration copied
+Log Transform performed
+[Time: 03.07.23 10:18:58] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 51, in run
+    self.load('svd').read_input_files()
+  File "/app/apps/svd/FC_Federated_PCA.py", line 89, in read_input_files
+    self.tabdata.scaled = np.log2(self.tabdata.scaled+1)
+TypeError: can only concatenate str (not "int") to str
+
