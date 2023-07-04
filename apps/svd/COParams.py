@@ -80,4 +80,7 @@ class COParams(Enum):
     REMOVE = 'remove rows', False
     SELECT = 'select rows', False
     VARIANCES = 'variance', False
+    L2 = 'l2', False
+    # Counts all the samples for all clients
+    GLOBAL_SAMPLE_COUNT = 'Global sample count', False
 

@@ -1,10 +1,10 @@
 fc_pca:
   algorithm:
-    pcs: 43   # retrieve 10 Eigenvectors
+    pcs: 500   # retrieve 10 Eigenvectors
   input:
     dir: '' # In which directory is the data located
     data: data_wine_full_all_omics.csv   # name of the input file (required)
-    datas: data_wine_full
+    datas: data_wine_
     extension: .csv
     delimiter: ","  # field separator in the input file
   output:

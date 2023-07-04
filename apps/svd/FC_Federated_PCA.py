@@ -164,12 +164,14 @@ class FCFederatedPCA:
     
     def compute_sum_of_squares(self, incoming):
         self.means = incoming[COParams.MEANS.n].reshape((len(incoming[COParams.MEANS.n]),1))
+        self.global_sample_count = incoming[COParams.GLOBAL_SAMPLE_COUNT.n]
         print(self.means.shape)
         self.sos = np.nansum(np.square(self.tabdata.scaled-self.means), axis=1)
         self.out = {COParams.SUM_OF_SQUARES.n: self.sos.flatten()}
 
     def apply_scaling(self, incoming, highly_variable=True):
         self.std = incoming[COParams.STDS.n].reshape((len(incoming[COParams.STDS.n]),1))
+        self.L2 = incoming[COParams.L2.n].reshape((len(incoming[COParams.L2.n]),1))
         self.variances = incoming[COParams.VARIANCES.n]
         remove = incoming[COParams.REMOVE.n] # remove due to 0
         select = incoming[COParams.SELECT.n] # select due to highly var
@@ -182,8 +184,6 @@ class FCFederatedPCA:
         if self.L2_norm:
             self.tabdata.scaled = self.tabdata.scaled/self.L2
             
-
-
         # self.tabdata.scaled = np.delete(self.tabdata.scaled, remove)
         # self.tabdata.rows = np.delete(self.tabdata.rows, remove)
         if self.unit_variance:
