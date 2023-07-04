@@ -571,6 +571,7 @@ class SeparatePCA(AppState):
         eigen_values = self.load('svd').pca.S
         print("singular values", eigen_values)
         tabdata = self.load('current_tabdata')
+        print('data', tabdata.scaled)
         
         new_data = self.load('data')
         new_data.append(tabdata)
@@ -603,7 +604,7 @@ class ScaleTabdata(AppState):
     def run(self):
         data = self.load('data') # 2 x tabdata
         eigen_values = self.load('eigen_values') # 2 x 17
-        first_singular_values = [np.sqrt(eigenvalue[0]) for eigenvalue in eigen_values] # 1 x 2 #singular values
+        first_singular_values = [eigenvalue[0] for eigenvalue in eigen_values] # 1 x 2 #singular values
         for idx, omic in enumerate(data):
             omic.scaled = omic.scaled / first_singular_values[idx]   
         print('Starting merge tabdata')
@@ -752,7 +753,8 @@ class Intertia(AppState):
     
     def inertia(self):
         eigen_values = self.load('svd').pca.S
-        S = [np.sqrt(eigenvalue) for eigenvalue in eigen_values]
+        # Converting singular values to eigenvalues
+        S = [eigenvalue**2 for eigenvalue in eigen_values]
         total = np.sum(S)
         inertia = []
         for singular_value in S:
