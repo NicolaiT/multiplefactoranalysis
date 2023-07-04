@@ -1,0 +1,101 @@
+2023-07-03 13:43:25,422 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-03 13:43:25,423 INFO supervisord started with pid 7
+2023-07-03 13:43:26,426 INFO spawned: 'nginx' with pid 10
+2023-07-03 13:43:26,427 INFO spawned: 'app' with pid 11
+2023-07-03 13:43:27,439 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-03 13:43:27,439 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 03.07.23 13:43:29] [Level: info] id: 9f70d2372495c360
+[Time: 03.07.23 13:43:29] [Level: info] coordinator: True
+[Time: 03.07.23 13:43:29] [Level: info] clients: ['9f70d2372495c360']
+[Time: 03.07.23 13:43:29] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+YAML file does not follow specification: missing key: inertia
+Setting default: inertia.tsv
+YAML file does not follow specification: missing key: global_factor_score
+Setting default: global_factor_score.tsv
+YAML file does not follow specification: missing key: omic_factor_score
+Setting default: omic_factor_score.tsv
+YAML file does not follow specification: missing key: projection_matrix
+Setting default: projection_matrix.tsv
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 03.07.23 13:43:29] [Level: info] transition: init_pca
+[Time: 03.07.23 13:43:30] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/data_wine_full_all_omics.csv
+TEST: ['/mnt/input/data_wine_full_all_omics.csv']
+[STARTUP] Configuration copied
+out {'Row names': array(['fruity', 'woody', 'coffee', 'red_fruit', 'roasted', 'vanillin',
+       'woody_2', 'fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 6, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}
+[Time: 03.07.23 13:43:30] [Level: info] transition: check_row_names
+[Time: 03.07.23 13:43:31] [Level: info] state: check_row_names
+gathering
+unifying row names
+[{'Row names': array(['fruity', 'woody', 'coffee', 'red_fruit', 'roasted', 'vanillin',
+       'woody_2', 'fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 6, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}]
+['fruity', 'woody', 'coffee', 'red_fruit', 'roasted', 'vanillin', 'woody_2', 'fruity_2', 'butter', 'woody_3']
+['vanillin', 'butter', 'fruity_2', 'woody_3', 'woody_2', 'roasted', 'woody', 'coffee', 'fruity', 'red_fruit']
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 03.07.23 13:43:31] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 03.07.23 13:43:32] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['vanillin', 'butter', 'fruity_2', 'woody_3', 'woody_2', 'roasted', 'woody', 'coffee', 'fruity', 'red_fruit']
+INDEX
+[5, 8, 7, 9, 6, 4, 1, 2, 0, 3]
+[Time: 03.07.23 13:43:32] [Level: info] transition: aggregate_sums
+[Time: 03.07.23 13:43:33] [Level: info] state: aggregate_sums
+setting parameters
+[{'Sums': array([-1.73472348e-17, -1.00000000e-02,  1.00000000e-02,  0.00000000e+00,
+        0.00000000e+00, -1.00000000e-02, -1.00000000e-02,  1.00000000e-02,
+       -4.16333634e-17,  0.00000000e+00]), 'Sample count': 6}]
+SUMS
+[-2.89120579e-18 -1.66666667e-03  1.66666667e-03  0.00000000e+00
+  0.00000000e+00 -1.66666667e-03 -1.66666667e-03  1.66666667e-03
+ -6.93889390e-18  0.00000000e+00]
+[Time: 03.07.23 13:43:33] [Level: info] transition: compute_std
+[Time: 03.07.23 13:43:34] [Level: info] state: compute_std
+(10, 1)
+[Time: 03.07.23 13:43:34] [Level: info] transition: aggregate_stds
+[CTRL] GET /data
+[Time: 03.07.23 13:43:35] [Level: info] state: aggregate_stds
+setting parameters
+[0.2766     0.39488333 0.40168333 0.4032     0.2724     0.26628333
+ 0.34768333 0.34488333 0.3388     0.2704    ]
+COMPUTE STD
+[0.2766     0.39488333 0.40168333 0.4032     0.2724     0.26628333
+ 0.34768333 0.34488333 0.3388     0.2704    ]
+STD
+[0.23520204 0.28102788 0.28343724 0.28397183 0.23340951 0.23077406
+ 0.26369806 0.26263409 0.26030751 0.23255107]
+[5 9 4 0 8 7 6 1 2 3]
+['roasted' 'red_fruit' 'woody_2' 'vanillin' 'fruity' 'coffee' 'woody'
+ 'butter' 'fruity_2' 'woody_3']
+(array([], dtype=int64),)
+[]
+[Time: 03.07.23 13:43:35] [Level: info] transition: apply_scaling
+[Time: 03.07.23 13:43:36] [Level: info] state: apply_scaling
+[Time: 03.07.23 13:43:36] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 240, in run
+    self.load('svd').apply_scaling(incoming, highly_variable=config.highly_variable)
+  File "/app/apps/svd/FC_Federated_PCA.py", line 182, in apply_scaling
+    self.tabdata.scaled = self.tabdata.scaled/self.L2
+ValueError: operands could not be broadcast together with shapes (10,6) (10,) 
+
+[CTRL] GET /data

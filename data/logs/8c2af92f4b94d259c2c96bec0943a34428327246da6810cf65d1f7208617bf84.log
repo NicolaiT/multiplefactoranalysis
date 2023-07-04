@@ -1,0 +1,269 @@
+2023-07-03 13:56:09,860 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-07-03 13:56:09,862 INFO supervisord started with pid 7
+2023-07-03 13:56:10,864 INFO spawned: 'nginx' with pid 10
+2023-07-03 13:56:10,869 INFO spawned: 'app' with pid 11
+2023-07-03 13:56:11,915 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-07-03 13:56:11,915 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 03.07.23 13:56:13] [Level: info] id: 305046144774b7f4
+[Time: 03.07.23 13:56:13] [Level: info] coordinator: True
+[Time: 03.07.23 13:56:13] [Level: info] clients: ['305046144774b7f4']
+[Time: 03.07.23 13:56:13] [Level: info] state: initial
+[CLIENT] Parsing parameter file...
+[API] /setup parsing parameter file 
+[API] /setup config file found ... parsing file: /mnt/input/config.yaml
+YAML file does not follow specification: missing key: eigenvalues
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: explained_variance
+Setting default: eigenvalues.tsv
+YAML file does not follow specification: missing key: output delimiter
+Setting default: tab
+YAML file does not follow specification: missing key: inertia
+Setting default: inertia.tsv
+YAML file does not follow specification: missing key: global_factor_score
+Setting default: global_factor_score.tsv
+YAML file does not follow specification: missing key: omic_factor_score
+Setting default: omic_factor_score.tsv
+YAML file does not follow specification: missing key: projection_matrix
+Setting default: projection_matrix.tsv
+[API] /setup config file found ... parsing done
+[CLIENT] finished parsing parameter file.
+[STARTUP] Instantiate SVD
+[Time: 03.07.23 13:56:13] [Level: info] transition: init_pca
+[Time: 03.07.23 13:56:14] [Level: info] state: init_pca
+[STARTUP] Copy configuration and create dir
+/mnt/input/data_wine_full_all_omics.csv
+TEST: ['/mnt/input/data_wine_full_all_omics.csv']
+[STARTUP] Configuration copied
+out {'Row names': array(['fruity', 'woody', 'coffee', 'red_fruit', 'roasted', 'vanillin',
+       'woody_2', 'fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 6, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}
+[Time: 03.07.23 13:56:14] [Level: info] transition: check_row_names
+[Time: 03.07.23 13:56:15] [Level: info] state: check_row_names
+gathering
+unifying row names
+[{'Row names': array(['fruity', 'woody', 'coffee', 'red_fruit', 'roasted', 'vanillin',
+       'woody_2', 'fruity_2', 'butter', 'woody_3'], dtype=object), 'Sample count': 6, 'Nans': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])}]
+['fruity', 'woody', 'coffee', 'red_fruit', 'roasted', 'vanillin', 'woody_2', 'fruity_2', 'butter', 'woody_3']
+['butter', 'coffee', 'vanillin', 'woody_3', 'fruity', 'woody', 'roasted', 'red_fruit', 'woody_2', 'fruity_2']
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+[API] [COORDINATOR] row names identified!
+[Time: 03.07.23 13:56:15] [Level: info] transition: wait_for_params
+[CTRL] GET /data
+[Time: 03.07.23 13:56:16] [Level: info] state: wait_for_params
+setting parameters
+[API] Setting parameters
+['butter', 'coffee', 'vanillin', 'woody_3', 'fruity', 'woody', 'roasted', 'red_fruit', 'woody_2', 'fruity_2']
+INDEX
+[8, 2, 5, 9, 0, 1, 4, 3, 6, 7]
+[Time: 03.07.23 13:56:16] [Level: info] transition: aggregate_sums
+[Time: 03.07.23 13:56:17] [Level: info] state: aggregate_sums
+setting parameters
+[{'Sums': array([-1.00000000e-02,  1.00000000e-02, -1.73472348e-17,  0.00000000e+00,
+       -4.16333634e-17, -1.00000000e-02, -1.00000000e-02,  0.00000000e+00,
+        0.00000000e+00,  1.00000000e-02]), 'Sample count': 6}]
+SUMS
+[-1.66666667e-03  1.66666667e-03 -2.89120579e-18  0.00000000e+00
+ -6.93889390e-18 -1.66666667e-03 -1.66666667e-03  0.00000000e+00
+  0.00000000e+00  1.66666667e-03]
+[Time: 03.07.23 13:56:17] [Level: info] transition: compute_std
+[Time: 03.07.23 13:56:18] [Level: info] state: compute_std
+(10, 1)
+[Time: 03.07.23 13:56:18] [Level: info] transition: aggregate_stds
+[CTRL] GET /data
+[Time: 03.07.23 13:56:19] [Level: info] state: aggregate_stds
+setting parameters
+[0.39488333 0.34488333 0.2766     0.4032     0.3388     0.34768333
+ 0.26628333 0.2704     0.2724     0.40168333]
+COMPUTE STD
+[0.39488333 0.34488333 0.2766     0.4032     0.3388     0.34768333
+ 0.26628333 0.2704     0.2724     0.40168333]
+STD
+[0.28102788 0.26263409 0.23520204 0.28397183 0.26030751 0.26369806
+ 0.23077406 0.23255107 0.23340951 0.28343724]
+[6 7 8 2 4 1 5 0 9 3]
+['roasted' 'red_fruit' 'woody_2' 'vanillin' 'fruity' 'coffee' 'woody'
+ 'butter' 'fruity_2' 'woody_3']
+(array([], dtype=int64),)
+[]
+[Time: 03.07.23 13:56:19] [Level: info] transition: apply_scaling
+[Time: 03.07.23 13:56:20] [Level: info] state: apply_scaling
+std [[0.28102788]
+ [0.26263409]
+ [0.23520204]
+ [0.28397183]
+ [0.26030751]
+ [0.26369806]
+ [0.23077406]
+ [0.23255107]
+ [0.23340951]
+ [0.28343724]]
+L2 [[0.62839743]
+ [0.58726768]
+ [0.52592775]
+ [0.63498031]
+ [0.58206529]
+ [0.58964679]
+ [0.51602649]
+ [0.52      ]
+ [0.52191953]
+ [0.63378493]]
+[6 7 8 2 4 1 5 0 9 3]
+(array([], dtype=int64),)
+CURRENT DATA:  <apps.svd.TabData.TabData object at 0x7f80d11a7040>
+[Time: 03.07.23 13:56:20] [Level: info] transition: mfa_prerequisites
+[Time: 03.07.23 13:56:21] [Level: info] state: mfa_prerequisites
+Calling start_power_iteration
+[Time: 03.07.23 13:56:21] [Level: info] transition: start_power_iteration
+[CTRL] GET /data
+[Time: 03.07.23 13:56:22] [Level: info] state: start_power_iteration
+[STARTUP] Computing covariance matrix
+[STARTUP] Random initialisation
+TABDATA SCALED
+[[ 0.19 -0.04 -0.39 -0.27  0.19  0.31]
+ [ 0.45 -0.16 -0.28 -0.16  0.08  0.08]
+ [ 0.3   0.02 -0.27 -0.27  0.2   0.02]
+ [ 0.36 -0.12 -0.36 -0.24  0.24  0.12]
+ [-0.33  0.11  0.22  0.33 -0.22 -0.11]
+ [ 0.34 -0.04 -0.3  -0.3   0.21  0.08]
+ [ 0.18  0.03 -0.29 -0.29  0.18  0.18]
+ [-0.26  0.    0.13  0.39 -0.13 -0.13]
+ [ 0.28 -0.17 -0.28 -0.17  0.17  0.17]
+ [-0.02  0.11  0.51 -0.15 -0.15 -0.29]]
+[Time: 03.07.23 13:56:22] [Level: info] transition: aggregate_randomized_projections_cov
+[Time: 03.07.23 13:56:23] [Level: info] state: aggregate_randomized_projections_cov
+6
+Global cov
+[[ 0.07898  0.05686  0.05572  0.07224 -0.06358  0.06578  0.06288 -0.05408
+   0.06002 -0.057  ]
+ [ 0.05686  0.06898  0.05364  0.06984 -0.06138  0.06292  0.04652 -0.04732
+   0.0572  -0.03612]
+ [ 0.05572  0.05364  0.05532  0.0636  -0.0583   0.06136  0.05016 -0.0494
+   0.0479  -0.02736]
+ [ 0.07224  0.06984  0.0636   0.08064 -0.07128  0.07344  0.06    -0.05616
+   0.0648  -0.04776]
+ [-0.06358 -0.06138 -0.0583  -0.07128  0.06776 -0.06732 -0.055    0.0572
+  -0.05698  0.02926]
+ [ 0.06578  0.06292  0.06136  0.07344 -0.06732  0.06954  0.05724 -0.05642
+   0.05726 -0.03478]
+ [ 0.06288  0.04652  0.05016  0.06    -0.055    0.05724  0.05326 -0.04888
+   0.0474  -0.03678]
+ [-0.05408 -0.04732 -0.0494  -0.05616  0.0572  -0.05642 -0.04888  0.05408
+  -0.04394  0.01404]
+ [ 0.06002  0.0572   0.0479   0.0648  -0.05698  0.05726  0.0474  -0.04394
+   0.05448 -0.04328]
+ [-0.057   -0.03612 -0.02736 -0.04776  0.02926 -0.03478 -0.03678  0.01404
+  -0.04328  0.08034]]
+[Time: 03.07.23 13:56:23] [Level: info] transition: compute_final_h_cov
+[Time: 03.07.23 13:56:24] [Level: info] state: compute_final_h_cov
+Setting k
+starting eigenvector norms
+6
+[Time: 03.07.23 13:56:24] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:25] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 2.7988062326536216}]
+[Time: 03.07.23 13:56:25] [Level: info] transition: compute_local_conorm
+[Time: 03.07.23 13:56:26] [Level: info] state: compute_local_conorm
+[Time: 03.07.23 13:56:26] [Level: info] transition: aggregate_local_conorm
+[Time: 03.07.23 13:56:27] [Level: info] state: aggregate_local_conorm
+aggregating co norms
+[{'Local Conorms': [-5.3919664750142743e-17]}]
+[Time: 03.07.23 13:56:27] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:28] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+6
+[Time: 03.07.23 13:56:28] [Level: info] transition: aggregate_local_norm
+[Time: 03.07.23 13:56:29] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 0.35552009697850306}]
+[Time: 03.07.23 13:56:29] [Level: info] transition: compute_local_conorm
+[Time: 03.07.23 13:56:30] [Level: info] state: compute_local_conorm
+[Time: 03.07.23 13:56:30] [Level: info] transition: aggregate_local_conorm
+[Time: 03.07.23 13:56:31] [Level: info] state: aggregate_local_conorm
+aggregating co norms
+[{'Local Conorms': [-4.14766651924175e-17, 5.35323120610279e-16]}]
+[Time: 03.07.23 13:56:31] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:32] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+6
+[Time: 03.07.23 13:56:32] [Level: info] transition: aggregate_local_norm
+[Time: 03.07.23 13:56:33] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 0.11571283690549831}]
+[Time: 03.07.23 13:56:33] [Level: info] transition: compute_local_conorm
+[Time: 03.07.23 13:56:34] [Level: info] state: compute_local_conorm
+[Time: 03.07.23 13:56:34] [Level: info] transition: aggregate_local_conorm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:35] [Level: info] state: aggregate_local_conorm
+aggregating co norms
+[{'Local Conorms': [-8.2953330384835e-17, 6.98247548622103e-16, -3.2102231307649696e-15]}]
+[Time: 03.07.23 13:56:35] [Level: info] transition: compute_local_norm
+[Time: 03.07.23 13:56:36] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+6
+[Time: 03.07.23 13:56:36] [Level: info] transition: aggregate_local_norm
+[Time: 03.07.23 13:56:37] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 0.03348487157637613}]
+[Time: 03.07.23 13:56:37] [Level: info] transition: compute_local_conorm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:38] [Level: info] state: compute_local_conorm
+[Time: 03.07.23 13:56:38] [Level: info] transition: aggregate_local_conorm
+[Time: 03.07.23 13:56:39] [Level: info] state: aggregate_local_conorm
+aggregating co norms
+[{'Local Conorms': [6.6362664307868e-17, -1.7747125194145118e-16, 1.869017914893346e-15, 1.6220190351279284e-14]}]
+[Time: 03.07.23 13:56:39] [Level: info] transition: compute_local_norm
+[Time: 03.07.23 13:56:40] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+6
+[Time: 03.07.23 13:56:40] [Level: info] transition: aggregate_local_norm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:41] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 0.013362832111715461}]
+[Time: 03.07.23 13:56:41] [Level: info] transition: compute_local_conorm
+[Time: 03.07.23 13:56:42] [Level: info] state: compute_local_conorm
+[Time: 03.07.23 13:56:42] [Level: info] transition: aggregate_local_conorm
+[Time: 03.07.23 13:56:43] [Level: info] state: aggregate_local_conorm
+aggregating co norms
+[{'Local Conorms': [9.170231444886056e-17, 5.074454963138919e-16, -2.874563258387402e-15, -3.391225366129135e-14, 7.167869197872012e-14]}]
+[Time: 03.07.23 13:56:43] [Level: info] transition: compute_local_norm
+[CTRL] GET /data
+[Time: 03.07.23 13:56:44] [Level: info] state: compute_local_norm
+starting orthogonalise_current
+ending orthogonalise_current
+starting eigenvector norms
+6
+[Time: 03.07.23 13:56:44] [Level: info] transition: aggregate_local_norm
+[Time: 03.07.23 13:56:45] [Level: info] state: aggregate_local_norm
+[{'Local Eigenvector norm': 1.631311375157683e-06}]
+[Time: 03.07.23 13:56:45] [Level: info] transition: normalize_g
+[Time: 03.07.23 13:56:46] [Level: info] state: normalize_g
+Normalising
+(6, 6)
+6
+End normalising
+(6, 6)
+(6, 6)
+(6,)
+(6, 6)
+[Time: 03.07.23 13:56:46] [Level: info] transition: separate_pca
+[CTRL] GET /data
+[Time: 03.07.23 13:56:47] [Level: info] state: separate_pca
+singular values [1.6729633088187026, 0.5962550603378584, 0.3401658961528894, 0.1829887198063753, 0.11559771672362504, 0.001277228004374193]
+[Time: 03.07.23 13:56:47] [Level: info] Traceback (most recent call last):
+  File "/app/engine/app.py", line 169, in guarded_run
+    self.run()
+  File "/app/engine/app.py", line 184, in run
+    transition = self.current_state.run()
+  File "/app/apps/svd/app.py", line 580, in run
+    raise KeyError('test')
+KeyError: 'test'
+
+[CTRL] GET /data

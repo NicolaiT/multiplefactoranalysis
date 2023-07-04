@@ -42,6 +42,7 @@ class FCFederatedPCA:
 
         self.means = None
         self.std = None
+        self.L2 = None
 
         self.total_sampels = 0
 
@@ -82,6 +83,7 @@ class FCFederatedPCA:
         self.subsample = config.subsample
 
         self.center = config.center
+        self.L2_norm = config.L2
         self.unit_variance = config.unit_variance
         self.highly_variable = config.highly_variable
         self.perc_highly_var = config.perc_highly_var
@@ -159,7 +161,7 @@ class FCFederatedPCA:
         self.sums = np.nansum(self.tabdata.scaled, axis=1)
 
         self.out = {COParams.SUMS.n: self.sums, COParams.SAMPLE_COUNT.n: self.tabdata.col_count}
-
+    
     def compute_sum_of_squares(self, incoming):
         self.means = incoming[COParams.MEANS.n].reshape((len(incoming[COParams.MEANS.n]),1))
         print(self.means.shape)
@@ -175,6 +177,11 @@ class FCFederatedPCA:
         #     self.tabdata.scaled[row, :]= self.tabdata.scaled[row, :]- self.means[row,0]
         if self.center:
             self.tabdata.scaled = np.subtract(self.tabdata.scaled,self.means)
+        print("std", self.std)
+        print("L2", self.L2)
+        if self.L2_norm:
+            self.tabdata.scaled = self.tabdata.scaled/self.L2
+            
 
 
         # self.tabdata.scaled = np.delete(self.tabdata.scaled, remove)

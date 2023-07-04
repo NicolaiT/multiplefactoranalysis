@@ -81,7 +81,7 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
 
         self.out = {COParams.MEANS.n : my_sums }
         self.number_of_samples = my_samples
-
+    
     def compute_std(self, incoming):
         my_ssq  = []
         for s in incoming:
@@ -89,6 +89,7 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
             my_ssq.append(s[COParams.SUM_OF_SQUARES.n])
         my_ssq = np.stack(my_ssq)
         my_ssq = np.nansum(my_ssq, axis=0)
+        self.L2 = np.sqrt(my_ssq).reshape(-1,1)
         print('COMPUTE STD')
         print(my_ssq)
         val_per_row = [v-1 for v in self.values_per_row]

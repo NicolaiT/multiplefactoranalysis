@@ -30,16 +30,17 @@ class FCConfig:
         self.use_smpc = False
         self.exponent = 3
         
-        self.center = True
-        self.unit_variance = True
-        self.highly_variable = True
-        self.perc_highly_var = 0.1
-        self.log_transform = True
-        self.max_nan_fraction = 0.5
-        
         # hard coded
         self.send_projections=False
         self.subsample = True
+        
+        self.center = True
+        self.L2 = True
+        self.unit_variance = False
+        self.highly_variable = False
+        self.perc_highly_var = 1
+        self.log_transform = False
+        self.max_nan_fraction = 0.9
 
 
     def parse_configuration(self):
@@ -197,15 +198,15 @@ class FCConfig:
                     print('K not specified, defaulting to 10')
                     self.k = 10
 
-                try:
-                    self.center = parameter_list['scaling']['center']
-                    self.unit_variance = parameter_list['scaling']['variance']
-                    self.highly_variable = parameter_list['scaling']['highly_variable']
-                    self.perc_highly_var = parameter_list['scaling']['perc_highly_var']
-                    self.log_transform = parameter_list['scaling']['log_transform']
-                    self.max_nan_fraction = parameter_list['scaling']['max_nan_fraction']
-                except KeyError:
-                    print('Scaling functionalities not specified.')
+                # try:
+                #     self.center = parameter_list['scaling']['center']
+                #     self.unit_variance = parameter_list['scaling']['variance']
+                #     self.highly_variable = parameter_list['scaling']['highly_variable']
+                #     self.perc_highly_var = parameter_list['scaling']['perc_highly_var']
+                #     self.log_transform = parameter_list['scaling']['log_transform']
+                #     self.max_nan_fraction = parameter_list['scaling']['max_nan_fraction']
+                # except KeyError:
+                #     print('Scaling functionalities not specified.')
 
                 # try:
                 #     self.send_projections = parameter_list['privacy']['send_projections']

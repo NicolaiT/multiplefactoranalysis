@@ -66,7 +66,9 @@ class InitPCA(AppState):
         self.load('svd').copy_configuration(self.load('configuration'))
         
         if self.load('global_pca'):
-            self.load('svd').set_tabdata(self.load('global_pca_data'))            
+            self.load('svd').set_tabdata(self.load('global_pca_data')) 
+            self.load('svd').center = False
+            self.load('svd').L2_norm = False         
         else:
             input_files = self.load('svd').input_files
             number_of_omics = len(input_files)
@@ -567,6 +569,7 @@ class SeparatePCA(AppState):
         
     def run(self) -> str:
         eigen_values = self.load('svd').pca.S
+        print("singular values", eigen_values)
         tabdata = self.load('current_tabdata')
         
         new_data = self.load('data')
