@@ -14,6 +14,10 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
         self.dummy = None
         self.coordinator = True
         FCFederatedPCA.__init__(self)
+        
+    @classmethod
+    def intersect(cls, list_1, list_2):
+        return [value for value in list_1 if value in list_2]
 
     def unify_row_names(self, incoming):
         '''
@@ -30,7 +34,9 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
         '''
         print(incoming)
         mysample_count = 0
-        myintersect = set(incoming[0][COParams.ROW_NAMES.n])
+        print("incoming[0][COParams.ROW_NAMES.n]", incoming[0][COParams.ROW_NAMES.n])
+        print("type: ", type(incoming[0][COParams.ROW_NAMES.n]))
+        myintersect = incoming[0][COParams.ROW_NAMES.n]
 
         nandict = {}
         for s in incoming:
@@ -39,7 +45,7 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
                     nandict[n] = nandict[n]+v
                 else:
                     nandict[n] = v
-            myintersect = myintersect.intersection(set(s[COParams.ROW_NAMES.n]))
+            myintersect = self.intersect(myintersect, s[COParams.ROW_NAMES.n])
             mysample_count = s[COParams.SAMPLE_COUNT.n]+mysample_count
 
         select = []
@@ -48,19 +54,20 @@ class AggregatorFCFederatedPCA(FCFederatedPCA):
             if fract<=self.max_nan_fraction:
                 select.append(n)
 
-        print(select)
-        myintersect = myintersect.intersection(set(select))
+        print("Select: ", select)
+        myintersect = self.intersect(myintersect, select)
+        # myintersect = myintersect.intersection(set(select))
         self.total_sampels = mysample_count
         self.out = {COParams.PCS.n: self.k, COParams.SEND_PROJ: self.send_projections}
-        newrownames = list(myintersect)
+        newrownames = myintersect
         self.out[COParams.ROW_NAMES.n] = newrownames
 
         values_per_row = []
         for n in newrownames:
             values_per_row.append(mysample_count-nandict[n])
         self.values_per_row = values_per_row
-        print(newrownames)
-        print(values_per_row)
+        print("newrownames: ", newrownames)
+        print("values_per_row: ", values_per_row)
         print('[API] [COORDINATOR] row names identified!')
 
     def compute_means(self, incoming):

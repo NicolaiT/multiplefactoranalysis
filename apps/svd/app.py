@@ -600,6 +600,7 @@ class ScaleTabdata(AppState):
         
     def run(self):
         data = self.load('data') # 2 x tabdata
+        print('data: ', data)
         eigen_values = self.load('eigen_values') # 2 x 17
         first_singular_values = [eigenvalue[0] for eigenvalue in eigen_values] # 1 x 2 #singular values
         for idx, omic in enumerate(data):
@@ -614,9 +615,6 @@ class MergingTabdata(AppState):
         
     def run(self):
         data = self.load('data')
-        print('data[0]', data[0].scaled)
-        print('data[1]', data[1].scaled)
-        print('data[2]', data[2].scaled)
         merged_tabdata = self.merge(data)
         print('merged_data', merged_tabdata.scaled)
         self.store('global_pca_data', merged_tabdata)
@@ -678,12 +676,14 @@ class FactorScores(AppState):
     def F_omics(self):
         T = self.load('n_omics')
         P = self.load('P')
+        print("n_omics: ", T)
         print("P:", P)
         data = self.load('data')
         F_omics = []
         for i in range(T):
             Z = data[i].scaled
             print("Z", Z)
+            print("Z.shape", Z.shape)
             F = T * np.dot((np.dot(np.transpose(Z), Z)), P)
             F_omics.append(F)
         self.store('F_omics', F_omics)
@@ -726,7 +726,7 @@ class Intertia(AppState):
         S = self.load('svd').pca.S
         # Converting singular values to eigenvalues
         eigenvalues = [s**2 for s in S]
-        total = np.sum(S)
+        total = np.sum(eigenvalues)
         inertia = []
         for eigen_value in eigenvalues:
             inertia.append(eigen_value/total)
