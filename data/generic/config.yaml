@@ -4,7 +4,7 @@ fc_pca:
   input:
     dir: '' # In which directory is the data located
     data: data_wine_full_all_omics.csv   # name of the input file (required)
-    datas: data_wine_
+    datas: data_wine_full
     extension: .csv
     delimiter: ","  # field separator in the input file
   output:
