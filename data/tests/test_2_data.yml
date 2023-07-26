@@ -1,9 +1,10 @@
 id: 2
-image: featurecloud.ai/federated_svd
-createdat: 2023-07-03T10:22:34.822968586Z
+image: featurecloud.ai/fc_multiple_factor_analysis
+createdat: 2023-07-26T09:51:26.626279188Z
 relayaddress: localhost
 queryinterval: 3
 dirs:
 - h1
+- h2
 gendir: generic
 resultdir: /data/tests

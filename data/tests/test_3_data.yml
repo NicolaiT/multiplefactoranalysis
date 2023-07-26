@@ -1,9 +1,0 @@
-id: 3
-image: featurecloud.ai/federated_svd
-createdat: 2023-07-03T10:26:43.590438602Z
-relayaddress: localhost
-queryinterval: 3
-dirs:
-- h1
-gendir: generic
-resultdir: /data/tests

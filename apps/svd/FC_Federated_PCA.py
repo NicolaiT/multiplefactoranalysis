@@ -69,6 +69,7 @@ class FCFederatedPCA:
         self.log_file = op.join(OUTPUT_DIR,config.output_dir, 'run_log.txt')
         self.inertia_file = op.join(OUTPUT_DIR,config.output_dir, 'inertia.tsv')
         self.F_file = op.join(OUTPUT_DIR,config.output_dir, 'global_factor_score.tsv')
+        self.F_principal_components = op.join(OUTPUT_DIR,config.output_dir, 'two_principal_components_factor_score.tsv')
         self.F_omics_file = op.join(OUTPUT_DIR,config.output_dir, 'omic_factor_score.tsv')
         self.P_file = op.join(OUTPUT_DIR,config.output_dir, 'projection_matrix.tsv')
         self.output_delimiter = config.output_delimiter
@@ -237,6 +238,10 @@ class FCFederatedPCA:
         P = pd.DataFrame(P)
         inertia.to_csv(self.inertia_file, header=False, index=False, sep=str(self.output_delimiter))
         F.to_csv(self.F_file, header=False, index=False, sep=str(self.output_delimiter))
+        # Grabs the first two principal components of the factor score
+        two_pc_f = F.loc[:, 0:1]
+        two_pc_f.columns = ["x", "y"]
+        two_pc_f.to_csv(self.F_principal_components, sep=str(self.output_delimiter))
         
         P.to_csv(self.P_file, header=False, index=False, sep=str(self.output_delimiter))
     
